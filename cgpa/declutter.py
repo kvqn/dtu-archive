@@ -19,6 +19,9 @@ REMOVE_REGEXES = [
     r"^ *Visit.*$",
     r"^ *Sem +:.*$",
     r"^ *PRESENTATION +SKILLS.*$",
+    r"^ *4 +4 + 4+.*$",
+    r"^ *HARMONY.*$", # if someone has this name i will cry
+    r"^ *MANAGEMENT.*$",
 ]
 
 def declutter():
