@@ -1,11 +1,11 @@
-from . import Paths, Student
+from . import Student
+from typing import List
 import re
 import logging
 
 class ParsingException(Exception):
     pass
 
-STUDENT_OUTPUT_FILE = "students.txt"
 
 def force_split(arg):
     if arg is None:
@@ -15,10 +15,9 @@ def force_split(arg):
 HANDLE_NAMELESS_ENTRIES = True
 
 
-def find_tables():
-    with open(Paths.TEXT_DECLUTTERED, "r") as file:
-        with open(STUDENT_OUTPUT_FILE, "w") as output_file:
-            
+def extract_students(input_path : str):
+    STUDENTS : List[Student] = []
+    with open(input_path, "r") as file:
             try:
                 line_number = 0
                 STUDENTS = []
@@ -97,7 +96,7 @@ def find_tables():
                                 student.failed_papers.extend(force_split(match.group("failed_papers")))
                         
                         # student.finalize()
-                        output_file.write(str(student))
+                        STUDENTS.append(student)
             except Exception as e:
                 err = f"Error at line {line_number}"
                 logging.error(err)

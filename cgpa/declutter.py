@@ -1,4 +1,3 @@
-from . import Paths
 import re
 
 REMOVE_REGEXES = [
@@ -24,9 +23,9 @@ REMOVE_REGEXES = [
     r"^ *MANAGEMENT.*$",
 ]
 
-def declutter():
-    with open(Paths.TEXT, "r") as file:
-        with open(Paths.TEXT_DECLUTTERED, "w") as file2:
+def declutter(input_path : str, output_path : str):
+    with open(input_path, "r") as file:
+        with open(output_path, "w") as file2:
             while True:
                 line = file.readline()
                 if not line:

@@ -1,9 +1,4 @@
 
-class Paths:
-    PDF = "O21_BTECH_I_1446.pdf"
-    TEXT = "new_text.txt"
-    TEXT_DECLUTTERED = "new_text_decluttered.txt"
-
 class Student:
     def __init__(self, subjects):
         self.subjects = subjects
@@ -23,5 +18,4 @@ class Student:
         self.failed_papers = " ".join(self.failed_papers)
 
 from .declutter import declutter
-from .pdf_to_text import pdf_to_text
-from .find_tables import find_tables
+from .extract_text import extract_text
