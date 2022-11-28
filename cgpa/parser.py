@@ -14,6 +14,10 @@ commands["declutter"] = subparsers.add_parser("declutter", help="Declutter the t
 commands["declutter"].add_argument("input", help="The file to read the text from")
 commands["declutter"].add_argument("--output", "-o", help="The file to write the decluttered text to", required=False)
 
+commands["parse"] = subparsers.add_parser("parse", aliases=["extract-students"], help="Parse the decluttered text")
+commands["parse"].add_argument("input", help="The file to read the decluttered text from")
+commands["parse"].add_argument("--output", "-o", help="The file to write the parsed data to", required=False)
+
 # commands["to-csv"] = subparsers.add_parser("to-csv", help="Convert the text to CSV")
 # commands["to-csv"].add_argument("input", help="The file to read the text from")
 # commands["to-csv"].add_argument("output", "-o", help="The file to write the CSV to", required=False)
@@ -36,7 +40,14 @@ def parse_input():
                 args.output = args.input.replace(".txt", ".decluttered.txt")
             from .declutter import declutter
             declutter(args.input, args.output)
-            print("Next step is csv/excel conversion. Run `cgpa to-csv` to convert the text to CSV.")
+            print("Next step is to parse the text. Run `cgpa parse` to parse the text.")
+        
+        case "parse":
+            if args.output is None:
+                args.output = args.input.replace(".txt", ".json")
+            from .extract_students import extract_students
+            extract_students(args.input, args.output)
+            
         
 
             

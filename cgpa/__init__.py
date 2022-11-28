@@ -14,8 +14,25 @@ class Student:
         return f"(Student: {self.sno}, {self.name}, {self.rollno}, {self.grades}, {self.tc}, {self.cgpa}, {self.failed_papers})\n"
     
     def finalize(self):
+        self.sno = int(self.sno) if self.sno is not None else None
         self.name = " ".join(self.name)
         self.failed_papers = " ".join(self.failed_papers)
+        self.grades.extend(["NULL"] * (len(self.subjects) - len(self.grades)))
+        self.grades = {subject: grade for subject, grade in zip(self.subjects, self.grades)}
+        self.cgpa = float(self.cgpa)
+        self.tc = int(self.tc)
+    
+    def to_dict(self):
+        return {
+            "sno": self.sno,
+            "name": self.name,
+            "rollno": self.rollno,
+            "grades": self.grades,
+            "tc": self.tc,
+            "cgpa": self.cgpa,
+            "failed_papers": self.failed_papers
+        }
+        
 
 from .declutter import declutter
 from .extract_text import extract_text

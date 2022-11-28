@@ -2,6 +2,7 @@ from . import Student
 from typing import List
 import re
 import logging
+import json
 
 class ParsingException(Exception):
     pass
@@ -15,10 +16,10 @@ def force_split(arg):
 HANDLE_NAMELESS_ENTRIES = True
 
 
-def extract_students(input_path : str):
+def extract_students(input_path : str, output_path : str):
     STUDENTS : List[Student] = []
     with open(input_path, "r") as file:
-        lines = file.readlines()
+        lines = iter(file.readlines())
     try:
         line_number = 0
         STUDENTS = []
@@ -41,7 +42,7 @@ def extract_students(input_path : str):
                 logging.error(err)
                 raise ParsingException(err)
             subjects = match.group("subjects").split()
-            print(subjects)
+            # print(subjects)
             
             # Expecting students
             
@@ -65,7 +66,7 @@ def extract_students(input_path : str):
                     line = next(lines)
                     line_number+=1
 
-                match = re.match(r"^ *(?P<sno>[0-9]+)? +(?P<name>[A-Za-z\.]+(?: +[A-Za-z\.]+)*)? +(?P<rollno>2K[0-9]{2}/[A-Z][0-9]+/[0-9]+)? +(?P<grades>[A-Z]\+?(?: +[A-Z]\+?)*) +(?P<tc>[0-9]+) +(?P<cgpa>[0-9\.]+)(?: +(?P<failed_papers>[A-Z]+[0-9]+ *,?(?: *[A-Z]+[0-9]+(?: *,)?)*))? *$", line)
+                match = re.match(r"^ *(?P<sno>[0-9]+)? +(?P<name>[A-Za-z\.]+(?: +[A-Za-z\.]+)*)? +(?P<rollno>2K[0-9]{2}/[A-Z][0-9]+/[0-9]+)? +(?P<grades>(?:[A-Z]|NULL)\+?(?: +(?:[A-Z]|NULL)\+?)*) +(?P<tc>[0-9]+) +(?P<cgpa>[0-9\.]+)(?: +(?P<failed_papers>[A-Z]+[0-9]+ *,?(?: *[A-Z]+[0-9]+(?: *,)?)*))? *$", line)
                 if not match:
                     match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[0-9]+ {,5})*) .*$", line)
                     if not match:
@@ -89,9 +90,8 @@ def extract_students(input_path : str):
                 # QOL checks
                 
                 if len(student.grades) != len(subjects):
-                    err = f"Error: Number of grades ({len(student.grades)}) does not match number of subjects ({len(subjects)})."
-                    logging.error(err)
-                    raise ParsingException(err)
+                    err = f"Warning (line {line_number}): Number of grades ({len(student.grades)}) does not match number of subjects ({len(subjects)})."
+                    logging.warning(err)
                     
 
                 line = next(lines)
@@ -104,18 +104,21 @@ def extract_students(input_path : str):
                         student.name.extend(force_split(match.group("name")))
                         student.failed_papers.extend(force_split(match.group("failed_papers")))
                 
-                # student.finalize()
+                student.finalize()
                 STUDENTS.append(student)
+    except StopIteration:
+        pass
     except Exception as e:
         err = f"Error at line {line_number}"
         logging.error(err)
         print(err)
         raise e
 
-                
-            
-            
-
-                    
-            
+    data = []
+    for student in STUDENTS:
+        data.append(student.to_dict())
     
+    with open(output_path, "w") as file:
+        json.dump(data, file, indent=4)
+
+    print(f"Extracted {len(STUDENTS)} students. Output saved to {output_path}.")
