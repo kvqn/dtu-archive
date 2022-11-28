@@ -17,7 +17,6 @@ class Student:
         self.sno = int(self.sno) if self.sno is not None else None
         self.name = " ".join(self.name)
         self.failed_papers = " ".join(self.failed_papers)
-        self.grades.extend(["NULL"] * (len(self.subjects) - len(self.grades)))
         self.grades = {subject: grade for subject, grade in zip(self.subjects, self.grades)}
         self.cgpa = float(self.cgpa)
         self.tc = int(self.tc)
@@ -32,6 +31,18 @@ class Student:
             "cgpa": self.cgpa,
             "failed_papers": self.failed_papers
         }
+    
+    @staticmethod
+    def from_dict(data):
+        student = Student([])
+        student.sno = data["sno"]
+        student.name = data["name"]
+        student.rollno = data["rollno"]
+        student.grades = data["grades"]
+        student.tc = data["tc"]
+        student.cgpa = data["cgpa"]
+        student.failed_papers = data["failed_papers"]
+        return student
         
 
 from .declutter import declutter

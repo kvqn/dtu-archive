@@ -22,6 +22,10 @@ commands["parse"].add_argument("--output", "-o", help="The file to write the par
 # commands["to-csv"].add_argument("input", help="The file to read the text from")
 # commands["to-csv"].add_argument("output", "-o", help="The file to write the CSV to", required=False)
 
+commands["to-excel"] = subparsers.add_parser("to-excel", help="Convert the JSON to Excel")
+commands["to-excel"].add_argument("input", help="The file to read the JSON from")
+commands["to-excel"].add_argument("--output", "-o", help="The file to write the Excel to", required=False)
+
 def parse_input():
     
     args = parser.parse_args()
@@ -47,6 +51,13 @@ def parse_input():
                 args.output = args.input.replace(".txt", ".json")
             from .extract_students import extract_students
             extract_students(args.input, args.output)
+        
+        case "to-excel":
+            if args.output is None:
+                args.output = args.input.replace(".json", ".xlsx")
+            from .excel import to_excel
+            to_excel(args.input, args.output)
+            print("Done!")
             
         
 

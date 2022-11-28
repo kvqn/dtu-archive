@@ -113,13 +113,19 @@ def extract_students(input_path : str, output_path : str):
         print(err)
         raise e
 
-    data = []
+    data = {
+        "n_students": len(STUDENTS),
+        "students": []
+    }
+
     N_SUBJECT_COLUMNS_REQUIRED = 0
     for student in STUDENTS:
         N_SUBJECT_COLUMNS_REQUIRED = max(N_SUBJECT_COLUMNS_REQUIRED, len(student.grades))
         student.finalize()
-        data.append(student.to_dict())
-    
+        data["students"].append(student.to_dict())
+
+    data["n_subject_columns_required"] = N_SUBJECT_COLUMNS_REQUIRED
+
     with open(output_path, "w") as file:
         json.dump(data, file, indent=4)
 
