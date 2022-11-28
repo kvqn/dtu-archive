@@ -33,4 +33,6 @@ def declutter(input_path : str, output_path : str):
                 for regex in REMOVE_REGEXES:
                     line = re.sub(regex, "", line)
                 file2.write(line)
+        print(f"Successfully declutterd. Output saved to {output_path}.")
+        print("Next step is csv/excel extraction")
         

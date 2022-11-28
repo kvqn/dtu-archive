@@ -14,6 +14,5 @@ def extract_text(pdf_path : str, output_path : str):
                 text = page.extract_text(layout=True, y_density=10)
                 file.write(text)
             sys.stdout.write(f"\rProcessed Pages [{total_pages}/{total_pages}]\n")
-        sys.stdout.write(f"Successfully extracted text from PDF. Next step is to declutter.\n")
-        sys.stdout.write(f"cgpa declutter {output_path}\n")
-        sys.stdout.flush()
+            sys.stdout.flush()
+        print(f"Successfully extracted text from PDF. Output saved at {output_path}.\n")

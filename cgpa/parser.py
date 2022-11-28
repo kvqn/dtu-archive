@@ -29,12 +29,14 @@ def parse_input():
                 args.output = args.pdf.replace(".pdf", ".txt")
             from .extract_text import extract_text
             extract_text(args.pdf, args.output)
+            print("Next step is to declutter the text. Run `cgpa declutter` to declutter the text.")
         
         case "declutter":
             if args.output is None:
                 args.output = args.input.replace(".txt", ".decluttered.txt")
             from .declutter import declutter
             declutter(args.input, args.output)
+            print("Next step is csv/excel conversion. Run `cgpa to-csv` to convert the text to CSV.")
         
 
             
