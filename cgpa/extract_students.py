@@ -104,7 +104,6 @@ def extract_students(input_path : str, output_path : str):
                         student.name.extend(force_split(match.group("name")))
                         student.failed_papers.extend(force_split(match.group("failed_papers")))
                 
-                student.finalize()
                 STUDENTS.append(student)
     except StopIteration:
         pass
@@ -115,10 +114,14 @@ def extract_students(input_path : str, output_path : str):
         raise e
 
     data = []
+    N_SUBJECT_COLUMNS_REQUIRED = 0
     for student in STUDENTS:
+        N_SUBJECT_COLUMNS_REQUIRED = max(N_SUBJECT_COLUMNS_REQUIRED, len(student.grades))
+        student.finalize()
         data.append(student.to_dict())
     
     with open(output_path, "w") as file:
         json.dump(data, file, indent=4)
 
     print(f"Extracted {len(STUDENTS)} students. Output saved to {output_path}.")
+    print(f"Number of subject columns required: {N_SUBJECT_COLUMNS_REQUIRED}")
