@@ -75,6 +75,7 @@ def extract_students(input_path : str):
                             else:
                                 DONT_READ_LINE = True
                                 break
+
                         if match.group("sno") is None:
                             logging.info(f"Nameless student at line {line_number}")
                         student.sno = match.group("sno")
@@ -84,6 +85,14 @@ def extract_students(input_path : str):
                         student.tc = match.group("tc")
                         student.cgpa = match.group("cgpa")
                         student.failed_papers.extend(force_split(match.group("failed_papers")))
+
+                        # QOL checks
+                        
+                        if len(student.grades) != len(subjects):
+                            err = f"Error: Number of grades ({len(student.grades)}) does not match number of subjects ({len(subjects)})."
+                            logging.error(err)
+                            raise ParsingException(err)
+                            
 
                         line = next(lines)
                         line_number+=1
