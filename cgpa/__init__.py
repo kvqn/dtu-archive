@@ -14,7 +14,8 @@ class Student:
         return f"(Student: {self.sno}, {self.name}, {self.rollno}, {self.grades}, {self.tc}, {self.cgpa}, {self.failed_papers})\n"
     
     def finalize(self):
-        self.sno = int(self.sno) if self.sno is not None else None
+        self.sno = int(self.sno) if self.sno is not None else 0
+        self.rollno = self.rollno if self.rollno is not None else ""
         self.name = " ".join(self.name)
         self.failed_papers = " ".join(self.failed_papers)
         self.grades = {subject: grade for subject, grade in zip(self.subjects, self.grades)}

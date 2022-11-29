@@ -118,13 +118,21 @@ def extract_students(input_path : str, output_path : str):
         "students": []
     }
 
+    STUDENTS.sort(key=lambda x: x.rollno if x.rollno is not None else "")
+
     N_SUBJECT_COLUMNS_REQUIRED = 0
+    UNIQUE_CLASSES = set()
     for student in STUDENTS:
         N_SUBJECT_COLUMNS_REQUIRED = max(N_SUBJECT_COLUMNS_REQUIRED, len(student.grades))
         student.finalize()
-        data["students"].append(student.to_dict())
+        match = re.match(r"^2K[0-9]{2}/([A-Z][0-9]+)/[0-9]+$", student.rollno)
+        if match:
+            UNIQUE_CLASSES.add(match.group(1))
+        if student.sno > 0:
+            data["students"].append(student.to_dict())
 
     data["n_subject_columns_required"] = N_SUBJECT_COLUMNS_REQUIRED
+    data["unique_classes"] = list(UNIQUE_CLASSES)
 
     with open(output_path, "w") as file:
         json.dump(data, file, indent=4)
