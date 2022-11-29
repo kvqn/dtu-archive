@@ -26,6 +26,10 @@ commands["to-excel"] = subparsers.add_parser("to-excel", help="Convert the JSON 
 commands["to-excel"].add_argument("input", help="The file to read the JSON from")
 commands["to-excel"].add_argument("--output", "-o", help="The file to write the Excel to", required=False)
 
+commands["complete"] = subparsers.add_parser("complete", help="Complete the process in one go")
+commands["complete"].add_argument("pdf", help="The PDF file to extract text from")
+commands["complete"].add_argument("--output", "-o", help="The file to write the Excel to", required=False)
+
 def parse_input():
     
     args = parser.parse_args()
@@ -35,29 +39,37 @@ def parse_input():
         case "extract-text":
             if args.output is None:
                 args.output = args.pdf.replace(".pdf", ".txt")
-            from .extract_text import extract_text
-            extract_text(args.pdf, args.output)
+            from .extract_text import extract_text_and_save
+            extract_text_and_save(args.pdf, args.output)
             print("Next step is to declutter the text. Run `cgpa declutter` to declutter the text.")
         
         case "declutter":
             if args.output is None:
                 args.output = args.input.replace(".txt", ".decluttered.txt")
-            from .declutter import declutter
-            declutter(args.input, args.output)
+            from .declutter import declutter_and_save
+            declutter_and_save(args.input, args.output)
             print("Next step is to parse the text. Run `cgpa parse` to parse the text.")
         
         case "parse":
             if args.output is None:
                 args.output = args.input.replace(".txt", ".json")
-            from .extract_students import extract_students
-            extract_students(args.input, args.output)
+            from .extract_students import extract_students_and_save
+            extract_students_and_save(args.input, args.output)
         
         case "to-excel":
             if args.output is None:
                 args.output = args.input.replace(".json", ".xlsx")
-            from .excel import to_excel
-            to_excel(args.input, args.output)
+            from .excel import to_excel_from_json
+            to_excel_from_json(args.input, args.output)
             print("Done!")
+        
+        case "complete":
+            if args.output is None:
+                args.output = args.pdf.replace(".pdf", ".xlsx")
+            from .complete import complete_conversion
+            complete_conversion(args.pdf, args.output)
+
+            
             
         
 

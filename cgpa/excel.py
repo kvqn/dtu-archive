@@ -3,20 +3,11 @@ from . import Student
 import logging
 import xlsxwriter
 import re
+from typing import List
 
 
-def to_excel(input_path : str, output_path : str):
+def to_excel(students : List[Student], N_SUBJECT_COLUMNS_REQUIRED, output_path : str):
     
-    # get students
-    with open(input_path, "r") as f:
-        data = json.load(f)
-
-    N_SUBJECT_COLUMNS_REQUIRED = data["n_subject_columns_required"]
-    UNIQUE_CLASSES = data["unique_classes"]
-    
-    students = []
-    for student_data in data["students"]:
-        students.append(Student.from_dict(student_data))
     
     workbook = xlsxwriter.Workbook(output_path)
 
@@ -86,8 +77,20 @@ def to_excel(input_path : str, output_path : str):
             worksheet.write(worksheet.n_students, 2 + N_SUBJECT_COLUMNS_REQUIRED*2 + 1, student.cgpa)
     
     workbook.close()
+    print("Excel file created successfully.")
         
+def to_excel_from_json(input_path : str, output_path : str):
+    # get students
+    with open(input_path, "r") as f:
+        data = json.load(f)
+
+    N_SUBJECT_COLUMNS_REQUIRED = data["n_subject_columns_required"]
     
+    students = []
+    for student_data in data["students"]:
+        students.append(Student.from_dict(student_data))
+    
+    to_excel(students, N_SUBJECT_COLUMNS_REQUIRED, output_path)
 
     
     

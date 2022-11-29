@@ -16,10 +16,11 @@ def force_split(arg):
 HANDLE_NAMELESS_ENTRIES = True
 
 
-def extract_students(input_path : str, output_path : str):
+def extract_students(decluttered_text : str):
     STUDENTS : List[Student] = []
-    with open(input_path, "r") as file:
-        lines = iter(file.readlines())
+    lines = decluttered_text.splitlines()
+    lines = iter(lines)
+    n_skipped_students = 0
     try:
         line_number = 0
         STUDENTS = []
@@ -31,7 +32,7 @@ def extract_students(input_path : str, output_path : str):
                 while True:
                     line = next(lines)
                     line_number+=1
-                    if not line.isspace():
+                    if not (line.isspace() or line == ""):
                         break
             
             DONT_READ_LINE = False
@@ -51,7 +52,7 @@ def extract_students(input_path : str, output_path : str):
                 
                 line = next(lines)
                 line_number+=1
-                if line.isspace():
+                if line.isspace() or line == "":
                     blank_lines+=1
                     continue
                 
@@ -104,35 +105,42 @@ def extract_students(input_path : str, output_path : str):
                         student.name.extend(force_split(match.group("name")))
                         student.failed_papers.extend(force_split(match.group("failed_papers")))
                 
-                STUDENTS.append(student)
+                if student.sno is None:
+                    n_skipped_students += 1
+                else:
+                    STUDENTS.append(student)
     except StopIteration:
         pass
     except Exception as e:
         err = f"Error at line {line_number}"
         logging.error(err)
         print(err)
+        print(line)
         raise e
 
-    data = {
-        "n_students": len(STUDENTS),
-        "students": []
-    }
 
     STUDENTS.sort(key=lambda x: x.rollno if x.rollno is not None else "")
 
     N_SUBJECT_COLUMNS_REQUIRED = 0
-    UNIQUE_CLASSES = set()
     for student in STUDENTS:
         N_SUBJECT_COLUMNS_REQUIRED = max(N_SUBJECT_COLUMNS_REQUIRED, len(student.grades))
         student.finalize()
-        match = re.match(r"^2K[0-9]{2}/([A-Z][0-9]+)/[0-9]+$", student.rollno)
-        if match:
-            UNIQUE_CLASSES.add(match.group(1))
-        if student.sno > 0:
-            data["students"].append(student.to_dict())
+    
+    return STUDENTS, N_SUBJECT_COLUMNS_REQUIRED
+
+def extract_students_and_save(input_path, output_path):
+    with open(input_path, "r") as file:
+        decluttered_text = file.read()
+
+    STUDENTS, N_SUBJECT_COLUMNS_REQUIRED = extract_students(decluttered_text)
+    
+    data = {
+        "n_students": len(STUDENTS),
+    }
 
     data["n_subject_columns_required"] = N_SUBJECT_COLUMNS_REQUIRED
-    data["unique_classes"] = list(UNIQUE_CLASSES)
+
+    data["students"] = [student.to_dict() for student in STUDENTS]
 
     with open(output_path, "w") as file:
         json.dump(data, file, indent=4)

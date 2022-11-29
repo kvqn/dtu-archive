@@ -23,16 +23,18 @@ REMOVE_REGEXES = [
     r"^ *MANAGEMENT.*$",
 ]
 
-def declutter(input_path : str, output_path : str):
+def declutter(text : str):
+    for regex in REMOVE_REGEXES:
+        text = re.sub(regex, "", text, flags=re.MULTILINE)
+    return text
+
+def declutter_and_save(input_path : str, output_path : str):
     with open(input_path, "r") as file:
-        with open(output_path, "w") as file2:
-            while True:
-                line = file.readline()
-                if not line:
-                    break
-                for regex in REMOVE_REGEXES:
-                    line = re.sub(regex, "", line)
-                file2.write(line)
-        print(f"Successfully declutterd. Output saved to {output_path}.")
-        print("Next step is csv/excel extraction")
+        text = file.read()
+    text = declutter(text)
+    with open(output_path, "w") as file:
+        file.write(text)
+    print(f"Successfully declutterd. Output saved to {output_path}.")
+    print("Next step is csv/excel extraction")
+        
         
