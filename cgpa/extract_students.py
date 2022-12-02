@@ -74,7 +74,11 @@ def extract_students(decluttered_text : str):
                     line = next(lines)
                     line_number+=1
 
-                match = re.match(r"^ *(?P<sno>[0-9]+)? +(?P<name>[A-Za-z\.]+(?: +[A-Za-z\.]+)*)? +(?P<rollno>2K[0-9]{2}/[A-Z][0-9]+/[0-9]+)? +(?P<grades>(?:[A-Z]|NULL)\+?(?: +(?:[A-Z]|NULL)\+?)*) +(?P<tc>[0-9]+) +(?P<cgpa>[0-9\.]+)(?: +(?P<failed_papers>[A-Z]+[0-9]+ *,?(?: *[A-Z]+[0-9]+(?: *,)?)*))? *$", line)
+                # https://regex101.com/r/nz1MKW/1
+                match = re.match(
+                    r"^ *(?P<sno>[0-9]+)? +(?P<name>[A-Za-z\.]+(?: +[A-Za-z\.]+)*)? +(?P<rollno>2K[0-9]{2}\/[A-Z0-9]+\/[0-9]+)? +(?P<grades>[A-Z\+]+(?: +[A-Z\+]+)*) +(?P<tc>[0-9]+) +(?P<cgpa>[0-9\.]+)(?: +(?P<failed_papers>[A-Z]+[0-9]+ *,?(?: *[A-Z]+[0-9]+(?: *,)?)*))? *$"
+                    , line
+                )
                 if not match:
                     match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[0-9]+ {,5})*) .*$", line)
                     if not match:

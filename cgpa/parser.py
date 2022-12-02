@@ -9,6 +9,7 @@ commands = {}
 commands["extract-text"] = subparsers.add_parser("extract-text", help="Extract text from the PDF")
 commands["extract-text"].add_argument("pdf", help="The PDF file to extract text from")
 commands["extract-text"].add_argument("--output", "-o", help="The file to write the extracted text to", required=False)
+commands["extract-text"].add_argument("--y-density", "-y", help="The y-density of the PDF. This adjusts how many white pixels make up a space or newline character. Default is 10", type=int, required=False, default=12)
 
 commands["declutter"] = subparsers.add_parser("declutter", help="Declutter the text")
 commands["declutter"].add_argument("input", help="The file to read the text from")
@@ -40,7 +41,7 @@ def parse_input():
             if args.output is None:
                 args.output = args.pdf.replace(".pdf", ".txt")
             from .extract_text import extract_text_and_save
-            extract_text_and_save(args.pdf, args.output)
+            extract_text_and_save(args.pdf, args.output, args.y_density)
             print("Next step is to declutter the text. Run `cgpa declutter` to declutter the text.")
         
         case "declutter":
