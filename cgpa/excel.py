@@ -5,11 +5,43 @@ import xlsxwriter
 import re
 from typing import List
 
+    
+class Worksheet:
+
+    def __init__(self, worksheet : xlsxwriter.workbook.Worksheet):
+        self.worksheet = worksheet
+        self.column_widths = {}
+    
+    def write(self, row, column, data, *args, **kwargs):
+        self.worksheet.write(row, column, data, *args, **kwargs)
+        self.column_widths[column] = max(self.column_widths.get(column, 0), len(str(data)))
+    
+    def set_column_widths(self):
+        for column, width in self.column_widths.items():
+            self.worksheet.set_column(column, column, width+1)
+
+
+class Workbook(xlsxwriter.Workbook):
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.my_worksheets = {}
+    
+    def add_worksheet(self, name):
+        worksheet = Worksheet(super().add_worksheet(name))
+        self.my_worksheets[name] = worksheet
+        return worksheet
+    
+    def set_column_widths(self):
+        for worksheet in self.my_worksheets.values():
+            worksheet.set_column_widths()
+    
+
 
 def to_excel(students : List[Student], N_SUBJECT_COLUMNS_REQUIRED, output_path : str):
     
     
-    workbook = xlsxwriter.Workbook(output_path)
+    workbook = Workbook(output_path)
 
     # Creating all worksheet
     all_worksheet = workbook.add_worksheet("All")
@@ -76,6 +108,7 @@ def to_excel(students : List[Student], N_SUBJECT_COLUMNS_REQUIRED, output_path :
             worksheet.write(worksheet.n_students, 2 + N_SUBJECT_COLUMNS_REQUIRED*2, student.tc)
             worksheet.write(worksheet.n_students, 2 + N_SUBJECT_COLUMNS_REQUIRED*2 + 1, student.cgpa)
     
+    workbook.set_column_widths()
     workbook.close()
     print("Excel file created successfully.")
         
