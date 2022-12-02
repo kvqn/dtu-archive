@@ -16,6 +16,13 @@ def force_split(arg):
 HANDLE_NAMELESS_ENTRIES = True
 
 
+def sort_function(student : Student):
+    match = re.match(r"2K(?P<year>[0-9]{2})/(?P<batch>[A-Z])(?P<batch_no>[0-9]+)?/(?P<rollno>[0-9]+)", student.rollno)
+    if match:
+        return int(match.group("year")), match.group("batch"), int(match.group("batch_no") if match.group("batch_no") else 0), int(match.group("rollno"))
+    else:
+        return 0, "", 0, 0
+
 def extract_students(decluttered_text : str):
     STUDENTS : List[Student] = []
     lines = decluttered_text.splitlines()
@@ -119,7 +126,7 @@ def extract_students(decluttered_text : str):
         raise e
 
 
-    STUDENTS.sort(key=lambda x: x.rollno if x.rollno is not None else "")
+    STUDENTS.sort(key=sort_function)
 
     N_SUBJECT_COLUMNS_REQUIRED = 0
     for student in STUDENTS:
