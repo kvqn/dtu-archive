@@ -30,6 +30,7 @@ commands["to-excel"].add_argument("--output", "-o", help="The file to write the 
 commands["complete"] = subparsers.add_parser("complete", help="Complete the process in one go")
 commands["complete"].add_argument("pdf", help="The PDF file to extract text from")
 commands["complete"].add_argument("--output", "-o", help="The file to write the Excel to", required=False)
+commands["complete"].add_argument("--y-density", "-y", help="The y-density of the PDF. This adjusts how many white pixels make up a space or newline character. Default is 10", type=int, required=False, default=12)
 
 def parse_input():
     
@@ -68,7 +69,7 @@ def parse_input():
             if args.output is None:
                 args.output = args.pdf.replace(".pdf", ".xlsx")
             from .complete import complete_conversion
-            complete_conversion(args.pdf, args.output)
+            complete_conversion(args.pdf, args.output, args.y_density)
 
             
             

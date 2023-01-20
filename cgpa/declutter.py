@@ -9,6 +9,7 @@ REMOVE_REGEXES = [
     r"^ *Program.*$",
     r"^ *Branch.*$",
     r"^ *[A-Z]+[0-9]* +:.*$",
+    r"^ *[A-Z]+[0-9]*[a-z]? +:.*$",
     r"^ *Credits.*$",
     r"^ *Any +discrepancy.*$",
     r"^ *Digitally +Signed.*$",
@@ -23,6 +24,20 @@ REMOVE_REGEXES = [
     r"^ *MANAGEMENT.*$",
     r"^.*BASIC MECHANICAL ENGINEERING.*$",
     r"^ *Students\).*$",
+    r"^ *: APPLIED MATHEMATICS.*$",
+    r"^ *EquipmentDesign.*$",
+    r"^ *APPLICATIONS.*$",
+    r"^ *: BUSINESS.*$",
+    r"^ *: METHODS.*$",
+    r"^ *EE207.*$",
+    r"^ *MEASUREMENT.*$",
+    r"^ *:.+$",
+    r"^ *ANALYSIS.*$",
+    r"^ *MICROBIOLOGY.*$",
+    r"^ *DESIGN.*$",
+    r"^ *Engineering.*$",
+    r"^ *AND.*$",
+    r"^ *METHODS.*$",
 ]
 
 def declutter(text : str):
