@@ -33,9 +33,9 @@ commands["complete"].add_argument("--output", "-o", help="The file to write the 
 commands["complete"].add_argument("--y-density", "-y", help="The y-density of the PDF. This adjusts how many white pixels make up a space or newline character. Default is 10", type=int, required=False, default=12)
 
 def parse_input():
-    
+
     args = parser.parse_args()
-    
+
     match args.command:
 
         case "extract-text":
@@ -44,35 +44,38 @@ def parse_input():
             from .extract_text import extract_text_and_save
             extract_text_and_save(args.pdf, args.output, args.y_density)
             print("Next step is to declutter the text. Run `cgpa declutter` to declutter the text.")
-        
+
         case "declutter":
             if args.output is None:
                 args.output = args.input.replace(".txt", ".decluttered.txt")
             from .declutter import declutter_and_save
             declutter_and_save(args.input, args.output)
             print("Next step is to parse the text. Run `cgpa parse` to parse the text.")
-        
+
         case "parse":
             if args.output is None:
-                args.output = args.input.replace(".txt", ".json")
+                if args.input.endswith(".decluttered.txt"):
+                    args.output = args.input.replace(".decluttered.txt", ".json")
+                else:
+                    args.output = args.input.replace(".txt", ".json")
             from .extract_students import extract_students_and_save
             extract_students_and_save(args.input, args.output)
-        
+
         case "to-excel":
             if args.output is None:
                 args.output = args.input.replace(".json", ".xlsx")
             from .excel import to_excel_from_json
             to_excel_from_json(args.input, args.output)
             print("Done!")
-        
+
         case "complete":
             if args.output is None:
                 args.output = args.pdf.replace(".pdf", ".xlsx")
             from .complete import complete_conversion
             complete_conversion(args.pdf, args.output, args.y_density)
 
-            
-            
-        
 
-            
+
+
+
+
