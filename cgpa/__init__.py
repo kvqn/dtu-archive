@@ -12,7 +12,7 @@ class Student:
 
     def __str__(self):
         return f"(Student: {self.sno}, {self.name}, {self.rollno}, {self.grades}, {self.tc}, {self.cgpa}, {self.failed_papers})\n"
-    
+
     def finalize(self):
         self.sno = int(self.sno) if self.sno is not None else 0
         self.rollno = self.rollno if self.rollno is not None else ""
@@ -21,7 +21,7 @@ class Student:
         self.grades = {subject: grade for subject, grade in zip(self.subjects, self.grades)}
         self.cgpa = float(self.cgpa)
         self.tc = int(self.tc)
-    
+
     def to_dict(self):
         return {
             "sno": self.sno,
@@ -32,7 +32,7 @@ class Student:
             "cgpa": self.cgpa,
             "failed_papers": self.failed_papers
         }
-    
+
     @staticmethod
     def from_dict(data):
         student = Student([])
@@ -44,7 +44,7 @@ class Student:
         student.cgpa = data["cgpa"]
         student.failed_papers = data["failed_papers"]
         return student
-        
+
 
 from .declutter import declutter
 from .extract_text import extract_text
