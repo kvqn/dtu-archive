@@ -38,6 +38,7 @@ REMOVE_REGEXES = [
     r"^ *Engineering.*$",
     r"^ *AND.*$",
     r"^ *METHODS.*$",
+    r"^ *Regular Result Notification.*$",
 ]
 
 def declutter(text : str):
