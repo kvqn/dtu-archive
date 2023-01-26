@@ -32,7 +32,7 @@ commands["complete"].add_argument("pdf", help="The PDF file to extract text from
 commands["complete"].add_argument("--output", "-o", help="The file to write the Excel to", required=False)
 commands["complete"].add_argument("--y-density", "-y", help="The y-density of the PDF. This adjusts how many white pixels make up a space or newline character. Default is 10", type=int, required=False, default=12)
 
-def parse_input():
+def cli_main():
 
     args = parser.parse_args()
 

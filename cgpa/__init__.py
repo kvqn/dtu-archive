@@ -48,4 +48,4 @@ class Student:
 
 from .declutter import declutter
 from .extract_text import extract_text
-from .parser import parse_input
+from .cli import cli_main
