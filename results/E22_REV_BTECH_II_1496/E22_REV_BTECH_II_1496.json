@@ -1,0 +1,261 @@
+{
+    "n_students": 15,
+    "n_subject_columns_required": 7,
+    "students": [
+        {
+            "sno": 11,
+            "name": "SAINYAM SETHI",
+            "rollno": "2K21/A18/09",
+            "grades": {
+                "MA102": "B",
+                "AP102": "B+",
+                "EE102": "A+",
+                "CO102": "B",
+                "ME102": "A",
+                "MS199": "A",
+                "FEC47": "O"
+            },
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": ""
+        },
+        {
+            "sno": 13,
+            "name": "SATENDER",
+            "rollno": "2K21/A18/15",
+            "grades": {
+                "MA102": "C",
+                "AP102": "B",
+                "EE102": "B+",
+                "CO102": "B+",
+                "ME102": "A+",
+                "MS199": "A",
+                "FEC52": "A+"
+            },
+            "tc": 22,
+            "cgpa": 6.91,
+            "failed_papers": ""
+        },
+        {
+            "sno": 4,
+            "name": "SAURABH MEENA",
+            "rollno": "2K21/A18/21",
+            "grades": {
+                "MA102": "P",
+                "AP102": "P",
+                "EE102": "B+",
+                "CO102": "B",
+                "ME102": "A",
+                "MS199": "A+",
+                "FEC1": "B"
+            },
+            "tc": 22,
+            "cgpa": 5.91,
+            "failed_papers": ""
+        },
+        {
+            "sno": 12,
+            "name": "SHIVAM",
+            "rollno": "2K21/A18/26",
+            "grades": {
+                "MA102": "C",
+                "AP102": "P",
+                "EE102": "C",
+                "CO102": "B+",
+                "ME102": "A+",
+                "MS199": "A",
+                "FEC47": "A"
+            },
+            "tc": 22,
+            "cgpa": 6.09,
+            "failed_papers": ""
+        },
+        {
+            "sno": 10,
+            "name": "SHIVAM KUMAR",
+            "rollno": "2K21/A18/28",
+            "grades": {
+                "MA102": "F",
+                "AP102": "C",
+                "EE102": "P",
+                "CO102": "C",
+                "ME102": "A",
+                "MS199": "O",
+                "FEC28": "A+"
+            },
+            "tc": 18,
+            "cgpa": 5.0,
+            "failed_papers": "MA102"
+        },
+        {
+            "sno": 5,
+            "name": "SINCHAN ROY",
+            "rollno": "2K21/A18/39",
+            "grades": {
+                "MA102": "B+",
+                "AP102": "B",
+                "EE102": "A+",
+                "CO102": "A+",
+                "ME102": "A+",
+                "MS199": "A+",
+                "FEC1": "B"
+            },
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": ""
+        },
+        {
+            "sno": 6,
+            "name": "SOHAN SINGH MEENA",
+            "rollno": "2K21/A18/40",
+            "grades": {
+                "MA102": "P",
+                "AP102": "C",
+                "EE102": "B+",
+                "CO102": "P",
+                "ME102": "B+",
+                "MS199": "A",
+                "FEC1": "F"
+            },
+            "tc": 20,
+            "cgpa": 5.0,
+            "failed_papers": ""
+        },
+        {
+            "sno": 7,
+            "name": "SOMYA SINGH",
+            "rollno": "2K21/A18/41",
+            "grades": {
+                "MA102": "A+",
+                "AP102": "B+",
+                "EE102": "A",
+                "CO102": "B+",
+                "ME102": "A",
+                "MS199": "A",
+                "FEC13": "A+"
+            },
+            "tc": 22,
+            "cgpa": 7.91,
+            "failed_papers": ""
+        },
+        {
+            "sno": 14,
+            "name": "TINA JAIN",
+            "rollno": "2K21/A18/51",
+            "grades": {
+                "MA102": "A+",
+                "AP102": "A",
+                "EE102": "A+",
+                "CO102": "A+",
+                "ME102": "O",
+                "MS199": "A+",
+                "FEC7": "A"
+            },
+            "tc": 22,
+            "cgpa": 8.82,
+            "failed_papers": ""
+        },
+        {
+            "sno": 15,
+            "name": "VANSH MALHOTRA",
+            "rollno": "2K21/A18/58",
+            "grades": {
+                "MA102": "P",
+                "AP102": "P",
+                "EE102": "C",
+                "CO102": "B",
+                "ME102": "B+",
+                "MS199": "A",
+                "FEC7": "B+"
+            },
+            "tc": 22,
+            "cgpa": 5.45,
+            "failed_papers": ""
+        },
+        {
+            "sno": 8,
+            "name": "VIVEK DHIR",
+            "rollno": "2K21/A18/67",
+            "grades": {
+                "MA102": "B+",
+                "AP102": "B+",
+                "EE102": "A",
+                "CO102": "A+",
+                "ME102": "A",
+                "MS199": "A+",
+                "FEC2": "B+"
+            },
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": ""
+        },
+        {
+            "sno": 9,
+            "name": "YASH KUMAR",
+            "rollno": "2K21/A18/72",
+            "grades": {
+                "MA102": "B",
+                "AP102": "B",
+                "EE102": "B+",
+                "CO102": "B+",
+                "ME102": "B+",
+                "MS199": "A",
+                "FEC27": "A"
+            },
+            "tc": 22,
+            "cgpa": 6.82,
+            "failed_papers": ""
+        },
+        {
+            "sno": 3,
+            "name": "AADITHYA MURALIDHARAN BALAKRISHNAN",
+            "rollno": "2K21/B1/022",
+            "grades": {
+                "MA102": "B+",
+                "AP102": "A",
+                "AC102": "B+",
+                "ME104": "B+",
+                "ME106": "B+",
+                "MS199": "A+",
+                "FEC9": "B+"
+            },
+            "tc": 22,
+            "cgpa": 7.36,
+            "failed_papers": ""
+        },
+        {
+            "sno": 2,
+            "name": "SIDDHANT BANGER",
+            "rollno": "2K21/B9/53",
+            "grades": {
+                "MA102": "A",
+                "AP102": "B+",
+                "AC102": "A",
+                "ME104": "B+",
+                "ME106": "A",
+                "MS199": "A+",
+                "FEC51": "A+"
+            },
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": ""
+        },
+        {
+            "sno": 1,
+            "name": "DEVANSH GUPTA",
+            "rollno": "2K21/B14/09",
+            "grades": {
+                "MA102": "A+",
+                "AP102": "A",
+                "AC102": "B+",
+                "ME104": "B+",
+                "ME106": "A",
+                "MS199": "A+",
+                "FEC32": "A"
+            },
+            "tc": 22,
+            "cgpa": 7.91,
+            "failed_papers": ""
+        }
+    ]
+}

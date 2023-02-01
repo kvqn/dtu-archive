@@ -139,12 +139,7 @@ def extract_students(decluttered_text : str):
     
     return STUDENTS, N_SUBJECT_COLUMNS_REQUIRED
 
-def extract_students_and_save(input_path, output_path):
-    with open(input_path, "r") as file:
-        decluttered_text = file.read()
-
-    STUDENTS, N_SUBJECT_COLUMNS_REQUIRED = extract_students(decluttered_text)
-    
+def save_students(STUDENTS, N_SUBJECT_COLUMNS_REQUIRED, output_path):
     data = {
         "n_students": len(STUDENTS),
     }
@@ -155,6 +150,15 @@ def extract_students_and_save(input_path, output_path):
 
     with open(output_path, "w") as file:
         json.dump(data, file, indent=4)
+
+
+def extract_students_and_save(input_path, output_path):
+    with open(input_path, "r") as file:
+        decluttered_text = file.read()
+
+    STUDENTS, N_SUBJECT_COLUMNS_REQUIRED = extract_students(decluttered_text)
+
+    save_students(STUDENTS, N_SUBJECT_COLUMNS_REQUIRED, output_path)
 
     print(f"Extracted {len(STUDENTS)} students. Output saved to {output_path}.")
     print(f"Number of subject columns required: {N_SUBJECT_COLUMNS_REQUIRED}")

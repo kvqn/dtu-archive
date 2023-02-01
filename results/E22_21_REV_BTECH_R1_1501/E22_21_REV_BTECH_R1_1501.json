@@ -1,0 +1,72 @@
+{
+    "n_students": 4,
+    "n_subject_columns_required": 7,
+    "students": [
+        {
+            "sno": 1,
+            "name": "HIMANSHU SILOLIYA",
+            "rollno": "2K21/B3/24",
+            "grades": {
+                "MA102": "B+",
+                "AP102": "B+",
+                "AC102": "A",
+                "ME104": "B+",
+                "ME106": "A",
+                "FEC10": "A+"
+            },
+            "tc": 20,
+            "cgpa": 7.5,
+            "failed_papers": ""
+        },
+        {
+            "sno": 3,
+            "name": "ADITYA GUPTA",
+            "rollno": "2K21/B6/77",
+            "grades": {
+                "MA102": "C",
+                "AP102": "P",
+                "AC102": "C",
+                "ME104": "B+",
+                "ME106": "A",
+                "MS199": "O",
+                "FEC7": "B"
+            },
+            "tc": 22,
+            "cgpa": 6.0,
+            "failed_papers": ""
+        },
+        {
+            "sno": 2,
+            "name": "NAMAN GOYAL",
+            "rollno": "2K21/B8/46",
+            "grades": {
+                "MA102": "F",
+                "AP102": "F",
+                "AC102": "P",
+                "ME104": "F",
+                "ME106": "B+",
+                "MS199": "A+"
+            },
+            "tc": 8,
+            "cgpa": 2.4,
+            "failed_papers": "MA102AP102, ME104,"
+        },
+        {
+            "sno": 4,
+            "name": "HARSH KUMAR",
+            "rollno": "2K21/B14/76",
+            "grades": {
+                "MA102": "B",
+                "AP102": "C",
+                "AC102": "B",
+                "ME104": "B+",
+                "ME106": "A",
+                "MS199": "C",
+                "FEC7": "B+"
+            },
+            "tc": 22,
+            "cgpa": 6.18,
+            "failed_papers": ""
+        }
+    ]
+}
