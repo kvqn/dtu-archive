@@ -14,7 +14,7 @@ app.add_middleware(
 @app.get("/all")
 def get_all():
     return {
-            "rows": [
+            "students": [
                 {
                     "roll" : 1,
                     "name": "John",
@@ -22,3 +22,8 @@ def get_all():
                     }
                 ]
             }
+
+@app.get("/sem1")
+def get_sem1():
+    from .sem1 import get_sem1_results
+    return get_sem1_results()
