@@ -1,7 +1,5 @@
 
-
-
-
+console.log("main.js loaded");
 
 var table = document.getElementById('main-table')
 
