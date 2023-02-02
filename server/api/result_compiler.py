@@ -1,18 +1,8 @@
 import json
 from typing import TypedDict, Callable
-from .types import Student, CompiledResult
+from .types import Student, CompiledResult, UnprocessedStudent
 import os
 
-
-class UnprocessedStudent(TypedDict):
-    sno : int
-    name : str
-    rollno : str
-    cgpa : float
-    grades : dict[str, str]
-    tc : int
-    cgpa : float
-    failed_papers : str
 
 
 def convert_folder_names_to_json_paths(folder_names : list[str]) -> list[str]:

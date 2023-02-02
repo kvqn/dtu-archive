@@ -24,6 +24,6 @@ def get_all():
             }
 
 @app.get("/sem1")
-def get_sem1():
+def get_sem1(branch : str | None = None):
     from .sem1 import get_sem1_results
-    return get_sem1_results()
+    return get_sem1_results(branch)
