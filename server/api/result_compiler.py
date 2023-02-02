@@ -1,5 +1,5 @@
 import json
-from typing import TypedDict
+from typing import TypedDict, Callable
 from .types import Student, CompiledResult
 import os
 
@@ -43,31 +43,21 @@ def convert_folder_names_to_json_paths(folder_names : list[str]) -> list[str]:
     return json_paths
 
 
-
-
-def compile_results(results : list[str]) -> CompiledResult:
+def compile_students(students : list[UnprocessedStudent]) -> CompiledResult:
     """
-    Compiles the result from various jsons (for the same term) into a single json.
-    Return value ready for API.
+    Compiles a list of UnprocessedStudent into a CompiledResult.
+    Use this function at the last, after applying all filters and queries.
 
     Args:
-        results: list of json file paths
+        students: list[UnprocessedStudent]
 
     Returns:
         CompiledResult
     """
 
-    students = {}
     subject_codes = set()
 
-    for result in results:
-        with open(result, 'r') as f:
-            data = json.load(f)
-
-        for student in data['students']:
-            students[student['name']] = student
-
-    for student in students.values():
+    for student in students:
         for code in student['grades'].keys():
             subject_codes.add(code)
 
@@ -78,7 +68,6 @@ def compile_results(results : list[str]) -> CompiledResult:
         students=[]
             )
 
-    students = list(students.values())
     students.sort(key=lambda x: x['cgpa'], reverse=True)
 
     for index, student in enumerate(students):
@@ -94,4 +83,56 @@ def compile_results(results : list[str]) -> CompiledResult:
         compiled_result['students'].append(compiled_student)
 
     return compiled_result
+
+
+def filter_students(students : list[UnprocessedStudent], check_function : Callable[ [ UnprocessedStudent ], bool ] ) -> list[UnprocessedStudent]:
+    """
+    Filters a list of UnprocessedStudent using a check_function.
+    check_function should return True if the student is to be included in the result.
+
+    Args:
+        students: list[UnprocessedStudent]
+        check_function: function that takes an UnprocessedStudent and returns a boolean
+
+    Returns:
+        list[UnprocessedStudent] : filtered list of students.
+    """
+
+    filtered_students = []
+
+    for student in students:
+        if check_function(student):
+            filtered_students.append(student)
+
+    return filtered_students
+
+
+def compile_json_paths(json_paths : list[str], check_function : Callable[ [ UnprocessedStudent ], bool ] = lambda x: True) -> CompiledResult:
+    """
+    Compiles the result from various jsons (for the same term) into a single json.
+    Accepts no queries.
+    Return value ready for API.
+
+    Args:
+        results: list of json file paths
+
+    Returns:
+        CompiledResult
+    """
+
+    students = {}
+
+    for path in json_paths:
+        with open(path, 'r') as f:
+            data = json.load(f)
+
+        for student in data['students']:
+            students[student['name']] = student
+
+    students = list(students.values())
+
+    students = filter_students(students, check_function)
+
+    return compile_students(students)
+
 

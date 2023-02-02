@@ -1,4 +1,4 @@
-from .result_compiler import compile_results, convert_folder_names_to_json_paths, CompiledResult
+from .result_compiler import compile_json_paths, convert_folder_names_to_json_paths, CompiledResult
 
 
 def get_sem1_results() -> CompiledResult:
@@ -9,5 +9,5 @@ def get_sem1_results() -> CompiledResult:
 
     json_paths = convert_folder_names_to_json_paths(results)
 
-    return compile_results(json_paths)
+    return compile_json_paths(json_paths)
 
