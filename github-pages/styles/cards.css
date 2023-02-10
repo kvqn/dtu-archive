@@ -1,0 +1,37 @@
+/* fancy cards */
+
+body {
+    display: flex;
+}
+
+#cards {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 300px;
+    max-height: 200px;
+    width : calc(100% - 20px);
+}
+
+.card {
+      cursor: pointer;
+    --height: 70px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /*   font-family: "Titillium Web"; */
+    font-size: 26px;
+    font-weight: bold;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+    transition: background-color 0.5s ease;
+    vertical-align: middle;
+    width: 130px;
+}
+
+.card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.5s ease;
+}
