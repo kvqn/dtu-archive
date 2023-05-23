@@ -26,7 +26,6 @@ class Result(TypedDict):
     students: list[Student]
 
 class FinalStudent(TypedDict):
-    sno: int
     name: str
     rollno: str
     grades: list[str]
@@ -95,7 +94,6 @@ def create_sem_result(args):
     # Add students to the result
     for student in students.values():
         final_student = FinalStudent(
-            sno=student["sno"],
             name=student["name"],
             rollno=student["rollno"],
             grades=[],
