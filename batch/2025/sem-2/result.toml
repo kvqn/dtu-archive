@@ -1,0 +1,13 @@
+output_file = "sem-2.json"
+input_files = [
+  "../../../results/E22_BTECH_II_AUG_1481/E22_BTECH_II_AUG_1481.json",
+  "../../../results/E22_REV_BTECH_II_1496/E22_REV_BTECH_II_1496.json",
+]
+
+[subjects]
+"MA102" = "MA102"
+"AP102" = "AP102"
+"AC102 / EE102" = "(?:AC102)|(?:EE102)"
+"ME104 / CO102" = "(?:ME104)|(?:CO102)"
+"ME106 / ME102" = "(?:ME106)|(?:ME102)"
+"FEC" = "FEC"
