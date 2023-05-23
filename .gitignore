@@ -1,3 +1,5 @@
 .venv
 .enter.zsh
 .leave.zsh
+**/__pycache__
+

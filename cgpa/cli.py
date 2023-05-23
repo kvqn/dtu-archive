@@ -32,6 +32,11 @@ commands["complete"].add_argument("pdf", help="The PDF file to extract text from
 commands["complete"].add_argument("--output", "-o", help="The file to write the Excel to", required=False)
 commands["complete"].add_argument("--y-density", "-y", help="The y-density of the PDF. This adjusts how many white pixels make up a space or newline character. Default is 10", type=int, required=False, default=12)
 
+# This is better to do with a config file because there will a lot of options
+commands["create-sem-result"] = subparsers.add_parser("create-sem-result", help="Create a semester result according to the specified config file.")
+commands["create-sem-result"].add_argument("--config", "-c", help="The config file to use", default="result.toml", required=False)
+
+
 def cli_main():
 
     args = parser.parse_args()
@@ -73,6 +78,10 @@ def cli_main():
                 args.output = args.pdf.replace(".pdf", ".xlsx")
             from .complete import complete_conversion
             complete_conversion(args.pdf, args.output, args.y_density)
+
+        case "create-sem-result":
+            from .create_sem_result import create_sem_result
+            create_sem_result(args)
 
 
 
