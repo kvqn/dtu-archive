@@ -1,0 +1,426 @@
+{
+  "n_students": 42,
+  "n_semesters": 3,
+  "students": [
+    {
+      "rollno": "2K21/BT/01",
+      "name": "ABHISHEK SHARMA",
+      "cgpas": [
+        7.8,
+        7.73,
+        7.64
+      ],
+      "aggregate": 7.723333333333334
+    },
+    {
+      "rollno": "2K21/BT/02",
+      "name": "AMAN YADAV",
+      "cgpas": [
+        7.8,
+        4.18,
+        7.82
+      ],
+      "aggregate": 6.6000000000000005
+    },
+    {
+      "rollno": "2K21/BT/04",
+      "name": "ANJALI",
+      "cgpas": [
+        8.5,
+        8.82,
+        9.27
+      ],
+      "aggregate": 8.863333333333333
+    },
+    {
+      "rollno": "2K21/BT/05",
+      "name": "ANKUR THAKUR",
+      "cgpas": [
+        9.4,
+        5.64,
+        7.27
+      ],
+      "aggregate": 7.4366666666666665
+    },
+    {
+      "rollno": "2K21/BT/06",
+      "name": "ANURAG",
+      "cgpas": [
+        6.8,
+        2.64,
+        3.45
+      ],
+      "aggregate": 4.296666666666667
+    },
+    {
+      "rollno": "2K21/BT/07",
+      "name": "ASHU KUMAR THAKUR",
+      "cgpas": [
+        8.2,
+        5.18,
+        5.82
+      ],
+      "aggregate": 6.3999999999999995
+    },
+    {
+      "rollno": "2K21/BT/08",
+      "name": "BHAVYA CHOUDHARY",
+      "cgpas": [
+        8.1,
+        5.55,
+        7.45
+      ],
+      "aggregate": 7.033333333333332
+    },
+    {
+      "rollno": "2K21/BT/09",
+      "name": "DIKSHA KHATRI",
+      "cgpas": [
+        9.1,
+        7.73,
+        8.27
+      ],
+      "aggregate": 8.366666666666665
+    },
+    {
+      "rollno": "2K21/BT/10",
+      "name": "GAURANG DEV JEVARIYA",
+      "cgpas": [
+        8.2,
+        6.73,
+        6.36
+      ],
+      "aggregate": 7.096666666666667
+    },
+    {
+      "rollno": "2K21/BT/11",
+      "name": "HARSHIT BHARDWAJ",
+      "cgpas": [
+        8.1,
+        7.91,
+        8.36
+      ],
+      "aggregate": 8.123333333333333
+    },
+    {
+      "rollno": "2K21/BT/12",
+      "name": "HUTASHAN SOLANKI",
+      "cgpas": [
+        7.5,
+        5.91,
+        4.36
+      ],
+      "aggregate": 5.923333333333333
+    },
+    {
+      "rollno": "2K21/BT/13",
+      "name": "JALAGAM SAIKIRAN",
+      "cgpas": [
+        7.8,
+        5.45,
+        2.91
+      ],
+      "aggregate": 5.386666666666667
+    },
+    {
+      "rollno": "2K21/BT/14",
+      "name": "KANISHKA SAPRA",
+      "cgpas": [
+        8.7,
+        5.0,
+        0.0
+      ],
+      "aggregate": 4.566666666666666
+    },
+    {
+      "rollno": "2K21/BT/15",
+      "name": "KARTIK KUSHWAHA",
+      "cgpas": [
+        8.6,
+        6.27,
+        7.55
+      ],
+      "aggregate": 7.473333333333333
+    },
+    {
+      "rollno": "2K21/BT/16",
+      "name": "KATYAYANI AGARWAL",
+      "cgpas": [
+        9.0,
+        8.64,
+        9.91
+      ],
+      "aggregate": 9.183333333333334
+    },
+    {
+      "rollno": "2K21/BT/17",
+      "name": "KRISH KUMAR",
+      "cgpas": [
+        9.4,
+        8.18,
+        5.27
+      ],
+      "aggregate": 7.616666666666666
+    },
+    {
+      "rollno": "2K21/BT/18",
+      "name": "LALIT SINGH",
+      "cgpas": [
+        8.6,
+        7.73,
+        7.36
+      ],
+      "aggregate": 7.896666666666666
+    },
+    {
+      "rollno": "2K21/BT/19",
+      "name": "MIHIT SHREE",
+      "cgpas": [
+        8.0,
+        5.73,
+        6.91
+      ],
+      "aggregate": 6.88
+    },
+    {
+      "rollno": "2K21/BT/20",
+      "name": "MUSKAAN JASRAJ",
+      "cgpas": [
+        9.1,
+        7.18,
+        8.73
+      ],
+      "aggregate": 8.336666666666668
+    },
+    {
+      "rollno": "2K21/BT/21",
+      "name": "NAMAN K BYADWAL",
+      "cgpas": [
+        7.4,
+        0.0,
+        0.0
+      ],
+      "aggregate": 2.466666666666667
+    },
+    {
+      "rollno": "2K21/BT/22",
+      "name": "NISHANT YADAV",
+      "cgpas": [
+        8.0,
+        7.18,
+        6.64
+      ],
+      "aggregate": 7.273333333333333
+    },
+    {
+      "rollno": "2K21/BT/23",
+      "name": "PARTH AGGARWAL",
+      "cgpas": [
+        9.4,
+        7.73,
+        7.91
+      ],
+      "aggregate": 8.346666666666668
+    },
+    {
+      "rollno": "2K21/BT/24",
+      "name": "PRAJAKTA TIWARI",
+      "cgpas": [
+        9.1,
+        9.18,
+        9.73
+      ],
+      "aggregate": 9.336666666666668
+    },
+    {
+      "rollno": "2K21/BT/25",
+      "name": "PRIYANKA VASHIST",
+      "cgpas": [
+        8.2,
+        7.82,
+        8.0
+      ],
+      "aggregate": 8.006666666666666
+    },
+    {
+      "rollno": "2K21/BT/26",
+      "name": "RAHUL MOHAN",
+      "cgpas": [
+        8.2,
+        4.82,
+        5.36
+      ],
+      "aggregate": 6.126666666666666
+    },
+    {
+      "rollno": "2K21/BT/27",
+      "name": "RAJ DEVANSHU",
+      "cgpas": [
+        8.2,
+        6.73,
+        7.64
+      ],
+      "aggregate": 7.523333333333333
+    },
+    {
+      "rollno": "2K21/BT/28",
+      "name": "RAMAN AIND",
+      "cgpas": [
+        8.8,
+        8.09,
+        9.73
+      ],
+      "aggregate": 8.873333333333333
+    },
+    {
+      "rollno": "2K21/BT/29",
+      "name": "RICHEL TRISHA MUNSHI",
+      "cgpas": [
+        8.9,
+        7.18,
+        8.0
+      ],
+      "aggregate": 8.026666666666666
+    },
+    {
+      "rollno": "2K21/BT/30",
+      "name": "SAARTHAK VERMA",
+      "cgpas": [
+        8.3,
+        7.0,
+        7.73
+      ],
+      "aggregate": 7.676666666666667
+    },
+    {
+      "rollno": "2K21/BT/31",
+      "name": "SAMVED DUBEY",
+      "cgpas": [
+        7.8,
+        4.64,
+        6.0
+      ],
+      "aggregate": 6.146666666666666
+    },
+    {
+      "rollno": "2K21/BT/32",
+      "name": "SANSKAR SRIVASTAVA",
+      "cgpas": [
+        8.6,
+        7.0,
+        7.64
+      ],
+      "aggregate": 7.746666666666666
+    },
+    {
+      "rollno": "2K21/BT/33",
+      "name": "SATYAM SINGH",
+      "cgpas": [
+        8.6,
+        7.09,
+        8.18
+      ],
+      "aggregate": 7.956666666666666
+    },
+    {
+      "rollno": "2K21/BT/34",
+      "name": "SAURABH SAINI",
+      "cgpas": [
+        8.4,
+        5.64,
+        5.18
+      ],
+      "aggregate": 6.406666666666666
+    },
+    {
+      "rollno": "2K21/BT/35",
+      "name": "SHASHANK SHONAK",
+      "cgpas": [
+        7.4,
+        4.36,
+        7.0
+      ],
+      "aggregate": 6.253333333333334
+    },
+    {
+      "rollno": "2K21/BT/36",
+      "name": "SHIVAM RAJU",
+      "cgpas": [
+        7.7,
+        6.82,
+        8.55
+      ],
+      "aggregate": 7.69
+    },
+    {
+      "rollno": "2K21/BT/37",
+      "name": "SHREESH KUMAR SHUKLA",
+      "cgpas": [
+        9.2,
+        8.82,
+        9.45
+      ],
+      "aggregate": 9.156666666666666
+    },
+    {
+      "rollno": "2K21/BT/38",
+      "name": "SIDDARTH MALIK",
+      "cgpas": [
+        8.4,
+        7.73,
+        8.73
+      ],
+      "aggregate": 8.286666666666667
+    },
+    {
+      "rollno": "2K21/BT/39",
+      "name": "SONIA RAVISHANKAR",
+      "cgpas": [
+        0.5,
+        0.0,
+        0.0
+      ],
+      "aggregate": 0.16666666666666666
+    },
+    {
+      "rollno": "2K21/BT/40",
+      "name": "SUNNY KUMAR",
+      "cgpas": [
+        7.56,
+        6.55,
+        7.18
+      ],
+      "aggregate": 7.096666666666667
+    },
+    {
+      "rollno": "2K21/BT/41",
+      "name": "SWARNALI GHOSH",
+      "cgpas": [
+        9.2,
+        9.73,
+        0.0
+      ],
+      "aggregate": 6.31
+    },
+    {
+      "rollno": "2K21/BT/42",
+      "name": "VISHAL PRAJAPAT",
+      "cgpas": [
+        7.9,
+        6.55,
+        5.36
+      ],
+      "aggregate": 6.603333333333333
+    },
+    {
+      "rollno": "2K21/BT/43",
+      "name": "YASH SINGH",
+      "cgpas": [
+        6.9,
+        7.91,
+        6.73
+      ],
+      "aggregate": 7.18
+    }
+  ]
+}

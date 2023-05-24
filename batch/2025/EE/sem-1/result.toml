@@ -1,0 +1,18 @@
+output_file = "result.json"
+do_rollno_transformation = true
+rollno_json = "../../rollno.json"
+rollno_regex = "2K21/EE/\\d+"
+
+input_files = [
+  "../../../../results/O21_BTECH_I_1446/O21_BTECH_I_1446.json",
+  "../../../../results/O21_REV_BTECH_I_1483/O21_REV_BTECH_I_1483.json"
+]
+
+[subjects]
+"MA101" = "MA101"
+"AP101" = "AP101"
+"AC101 / EE101" = "(?:AC101)|(?:EE101)"
+"ME101 / CO101" = "(?:ME101)|(?:CO101)"
+"ME103 / ME105" = "(?:ME103)|(?:ME105)"
+"FEC" = "FEC"
+

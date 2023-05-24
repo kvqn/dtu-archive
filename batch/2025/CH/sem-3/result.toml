@@ -1,0 +1,16 @@
+output_file = "result.json"
+do_rollno_transformation = false
+rollno_json = "../../rollno.json"
+rollno_regex = "2K21/CH/\\d+"
+input_files = [
+  "../../../../results/O22_BTECH_III_1516/O22_BTECH_III_1516.decluttered.json",
+  "../../../../results/O22_BTECH_ME_III_1519/O22_BTECH_ME_III_1519.json",
+]
+
+[subjects]
+"PE261" = "PE261"
+"CH201" = "CH201"
+"CH203" = "CH203"
+"CH205" = "CH205"
+"CH207" = "CH207"
+"FEC" = "FEC"
