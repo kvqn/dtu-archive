@@ -61,6 +61,20 @@ def _create_empty_result(config_file: str):
     with open(config_file, "w") as f:
         tomlkit.dump(config.dict(), f)
 
+def transform_rollno(rollno: str, config: ResultConfig):
+    if not transform_rollno.loaded:
+        with open(config.rollno_json, "r") as f:
+            transform_rollno.transformations = json.load(f)
+        transform_rollno.loaded = True
+
+    try:
+        return transform_rollno.transformations[rollno]
+    except KeyError:
+        print(f"Warning: Rollno {rollno} not found in rollno.json")
+        return rollno
+
+transform_rollno.loaded = False
+
 
 
 def create_sem_result(args):
@@ -82,17 +96,6 @@ def create_sem_result(args):
             print("Input file", file, "does not exist.")
             return
 
-    # Load rollno transformation data
-    if config.do_rollno_transformation:
-        try:
-            with open(config.rollno_json, "r") as f:
-                rollno_transformation = json.load(f)
-        except FileNotFoundError:
-            print(f"Warning: {config.rollno_json} not found")
-            rollno_transformation = {}
-    else:
-        rollno_transformation = {}
-
     students : dict[str, Student] = {}      # rollno -> student
     for file in config.input_files:
         with open(file, "r") as f:
@@ -100,10 +103,7 @@ def create_sem_result(args):
             for student in data["students"]:
                 rollno = student["rollno"]
                 if config.do_rollno_transformation:
-                    try:
-                        rollno = rollno_transformation[rollno]
-                    except KeyError:
-                        print(f"Warning: Rollno {rollno} not found in rollno.json")
+                    rollno = transform_rollno(rollno, config)
                 match = re.match(config.rollno_regex, rollno)
                 if not match:
                     continue
