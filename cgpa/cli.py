@@ -36,6 +36,8 @@ commands["complete"].add_argument("--y-density", "-y", help="The y-density of th
 commands["create-sem-result"] = subparsers.add_parser("create-sem-result", help="Create a result according to the specified config file.")
 commands["create-sem-result"].add_argument("--config", "-c", help="The config file to use", default="result.toml", required=False)
 
+commands["create-aggregate-result"] = subparsers.add_parser("create-aggregate-result", help="Create an aggregate result according to the semester results in the subfolders")
+
 commands["list-subjects"] = subparsers.add_parser("list-subjects", help="List the subjects in the semester result for the filtered students.")
 commands["list-subjects"].add_argument("--config", "-c", help="The config file to use", default="result.toml", required=False)
 
@@ -85,6 +87,10 @@ def cli_main():
         case "create-sem-result":
             from .create_sem_result import create_sem_result
             create_sem_result(args)
+
+        case "create-aggregate-result":
+            from .create_aggregate_result import create_aggregate_result
+            create_aggregate_result(args)
 
         case "list-subjects":
             from .list_subjects import list_subjects
