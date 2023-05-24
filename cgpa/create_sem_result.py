@@ -125,7 +125,7 @@ def create_sem_result(args):
             grades=[],
             tc=student["tc"],
             cgpa=student["cgpa"],
-            failed_papers=student["failed_papers"].replace(',', ' ').split(' ')
+            failed_papers=[i for i in student["failed_papers"].replace(',', ' ').split(' ') if i != ""]
         )
         for subject_regex in config.subjects.values():
             for subject, grade in student["grades"].items():

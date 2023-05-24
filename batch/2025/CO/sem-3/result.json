@@ -22,9 +22,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AADITYA VERMA",
@@ -56,9 +54,7 @@
             ],
             "tc": 22,
             "cgpa": 7.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AASTVIK GOEL",
@@ -73,9 +69,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AAYUSH KASHYAP",
@@ -90,9 +84,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABDULLAH HANEEF",
@@ -107,9 +99,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHIMANYU",
@@ -124,9 +114,7 @@
             ],
             "tc": 22,
             "cgpa": 7.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHINAV DAHIYA",
@@ -141,9 +129,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHINAV SHARMA",
@@ -159,8 +145,7 @@
             "tc": 18,
             "cgpa": 4.27,
             "failed_papers": [
-                "CO201",
-                ""
+                "CO201"
             ]
         },
         {
@@ -178,11 +163,8 @@
             "cgpa": 2.18,
             "failed_papers": [
                 "CO201",
-                "",
                 "CO203",
-                "",
-                "CO205",
-                ""
+                "CO205"
             ]
         },
         {
@@ -198,9 +180,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARUSHI MISHRA",
@@ -215,9 +195,7 @@
             ],
             "tc": 22,
             "cgpa": 6.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARYAN ADLAKHA",
@@ -232,9 +210,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARYAN JAIN",
@@ -249,9 +225,7 @@
             ],
             "tc": 22,
             "cgpa": 7.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARYAVRAT CHAUHAN",
@@ -266,9 +240,7 @@
             ],
             "tc": 22,
             "cgpa": 6.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARYIN KHANTAL",
@@ -285,9 +257,7 @@
             "cgpa": 2.91,
             "failed_papers": [
                 "CO201",
-                "",
-                "CO205",
-                ""
+                "CO205"
             ]
         },
         {
@@ -303,9 +273,7 @@
             ],
             "tc": 22,
             "cgpa": 9.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ASHISH KUMAR",
@@ -320,9 +288,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ASHISH KUMAR",
@@ -337,9 +303,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHINAV SINGH",
@@ -354,9 +318,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ASHISH KUMAR",
@@ -371,9 +333,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ASHISH SINGH",
@@ -388,9 +348,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ASHNA MITTAL",
@@ -405,9 +363,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ASHUTOASH",
@@ -422,9 +378,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ASHUTOSH",
@@ -439,9 +393,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ASHUTOSH KUMAR SINGH",
@@ -456,9 +408,7 @@
             ],
             "tc": 22,
             "cgpa": 6.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ATISHAY SONI",
@@ -473,9 +423,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ATUL KUMAR CHAUDHARY",
@@ -490,9 +438,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHINAV SINHA",
@@ -507,9 +453,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AVIRAL KUMAR",
@@ -524,9 +468,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AVNEESH KUMAR PATHAK",
@@ -541,9 +483,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AVNI AMIT KUMAR",
@@ -558,9 +498,7 @@
             ],
             "tc": 22,
             "cgpa": 9.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AYAN MAITY",
@@ -575,9 +513,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AYUSH AGGARWAL",
@@ -592,9 +528,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AYUSH GARG",
@@ -609,9 +543,7 @@
             ],
             "tc": 22,
             "cgpa": 7.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AYUSH KUMAR SINGH",
@@ -626,9 +558,7 @@
             ],
             "tc": 22,
             "cgpa": 7.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AYUSH SINGH",
@@ -643,9 +573,7 @@
             ],
             "tc": 22,
             "cgpa": 7.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AYUSH SRIVASTAVA",
@@ -660,9 +588,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AZMAT MATIN SHADAB",
@@ -677,9 +603,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHISHEK",
@@ -694,9 +618,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "BHANU PRATAP",
@@ -711,9 +633,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "BHAVYA SINGH",
@@ -728,9 +648,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "BHUVAN PAREWA",
@@ -746,8 +664,7 @@
             "tc": 18,
             "cgpa": 4.64,
             "failed_papers": [
-                "CO201",
-                ""
+                "CO201"
             ]
         },
         {
@@ -763,9 +680,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "BINCY SEBASTIAN",
@@ -780,9 +695,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "CHATRA RAJ REGMI",
@@ -797,9 +710,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "CHESHTA KAPOOR",
@@ -814,9 +725,7 @@
             ],
             "tc": 22,
             "cgpa": 10.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHISHEK AGGARWAL",
@@ -831,9 +740,7 @@
             ],
             "tc": 22,
             "cgpa": 8.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "CHIHLA KAPIL NARANBHAI",
@@ -848,9 +755,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "CHINMAY BOKOLIA",
@@ -865,9 +770,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DAKSH KHULLAR",
@@ -882,9 +785,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DANISH SOHAIL",
@@ -900,8 +801,7 @@
             "tc": 18,
             "cgpa": 4.82,
             "failed_papers": [
-                "CO201",
-                ""
+                "CO201"
             ]
         },
         {
@@ -917,9 +817,7 @@
             ],
             "tc": 22,
             "cgpa": 5.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DEEPAK KUMAR",
@@ -934,9 +832,7 @@
             ],
             "tc": 22,
             "cgpa": 5.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DEEPAK KUMAR",
@@ -951,9 +847,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DEEPAKSHI UJJWAL",
@@ -968,9 +862,7 @@
             ],
             "tc": 22,
             "cgpa": 9.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DEEPANSHU",
@@ -985,9 +877,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DEV GUPTA",
@@ -1002,9 +892,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHISHEK CHAUHAN",
@@ -1019,9 +907,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DEVANSH DINESH WASSISTA",
@@ -1036,9 +922,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DEVANSH GUPTA",
@@ -1053,9 +937,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DEVESH MITTAL",
@@ -1070,9 +952,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DHRITIRAJ MEDHI",
@@ -1087,9 +967,7 @@
             ],
             "tc": 22,
             "cgpa": 5.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DHRUV",
@@ -1104,9 +982,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DHRUV ARORA",
@@ -1121,9 +997,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DHRUV KAPOOR",
@@ -1138,9 +1012,7 @@
             ],
             "tc": 22,
             "cgpa": 5.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DHRUV KATYAL",
@@ -1155,9 +1027,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DHRUV SAGAR",
@@ -1174,13 +1044,9 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO207",
-                "",
-                "FEC46",
-                ""
+                "FEC46"
             ]
         },
         {
@@ -1196,9 +1062,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHISHEK GUPTA",
@@ -1215,9 +1079,7 @@
             "cgpa": 2.09,
             "failed_papers": [
                 "EC261CO201",
-                "",
-                "CO205",
-                ""
+                "CO205"
             ]
         },
         {
@@ -1233,9 +1095,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DIVYANS C KASHYAP",
@@ -1250,9 +1110,7 @@
             ],
             "tc": 22,
             "cgpa": 7.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DIVYANSHI",
@@ -1267,9 +1125,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "DRUTI CHOUDHURY",
@@ -1284,9 +1140,7 @@
             ],
             "tc": 22,
             "cgpa": 6.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "EMAD ABD AL FATAH KAID SAEID",
@@ -1301,9 +1155,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "FARNEET SINGH",
@@ -1318,9 +1170,7 @@
             ],
             "tc": 22,
             "cgpa": 8.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "GAGANDEEP SINGH",
@@ -1335,9 +1185,7 @@
             ],
             "tc": 22,
             "cgpa": 6.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "GARV LUTHRA",
@@ -1352,9 +1200,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "GAURAV KUMAR MEENA",
@@ -1369,9 +1215,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHISHEK KUMAR",
@@ -1386,9 +1230,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "GAURAV SINGH",
@@ -1403,9 +1245,7 @@
             ],
             "tc": 22,
             "cgpa": 7.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "GAURISH SIWAN",
@@ -1420,9 +1260,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "GODWILL MINTAH SARBAH",
@@ -1437,9 +1275,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "GYANENDAR KUMAR",
@@ -1454,9 +1290,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "GYANESH CHAURASIA",
@@ -1471,9 +1305,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HAIDER MUSTAFA NAQVI",
@@ -1488,9 +1320,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARISH",
@@ -1505,9 +1335,7 @@
             ],
             "tc": 22,
             "cgpa": 7.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSH JHA",
@@ -1522,9 +1350,7 @@
             ],
             "tc": 22,
             "cgpa": 9.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSH KUMAR",
@@ -1539,9 +1365,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSH KUMAR",
@@ -1556,9 +1380,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSH KUMAR J",
@@ -1573,9 +1395,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSH SISODIA",
@@ -1590,9 +1410,7 @@
             ],
             "tc": 22,
             "cgpa": 5.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHDEEP JAYWANT",
@@ -1607,9 +1425,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT",
@@ -1624,9 +1440,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT CHOPRA",
@@ -1641,9 +1455,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT DEVAL",
@@ -1658,9 +1470,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT GUPTA",
@@ -1675,9 +1485,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT JAIN",
@@ -1692,9 +1500,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT JAIN",
@@ -1709,9 +1515,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT JAIN",
@@ -1726,9 +1530,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABHISHEK PANDA",
@@ -1760,9 +1562,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT MALHOTRA",
@@ -1777,9 +1577,7 @@
             ],
             "tc": 22,
             "cgpa": 7.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT NAAGAR",
@@ -1794,9 +1592,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HARSHIT VERMA",
@@ -1811,9 +1607,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HEMANG HOODA",
@@ -1828,9 +1622,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HEMANG KRISH",
@@ -1845,9 +1637,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HEMANT GOYAL",
@@ -1862,9 +1652,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HEMANT PANCHARIYA",
@@ -1879,9 +1667,7 @@
             ],
             "tc": 22,
             "cgpa": 9.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HIMAN NAYAK",
@@ -1896,9 +1682,7 @@
             ],
             "tc": 22,
             "cgpa": 7.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HIMANSHI",
@@ -1913,9 +1697,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADARSH KUMAR",
@@ -1931,8 +1713,7 @@
             "tc": 18,
             "cgpa": 5.27,
             "failed_papers": [
-                "CO201",
-                ""
+                "CO201"
             ]
         },
         {
@@ -1948,9 +1729,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HIMANSHU",
@@ -1965,9 +1744,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HIMANSHU BAURAI",
@@ -1982,9 +1759,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HIMANSHU MAAN",
@@ -1999,9 +1774,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HIMANSHU SHERWAN",
@@ -2016,9 +1789,7 @@
             ],
             "tc": 22,
             "cgpa": 6.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "HITEN MALHOTRA",
@@ -2033,9 +1804,7 @@
             ],
             "tc": 22,
             "cgpa": 9.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ISHAN JHA",
@@ -2050,9 +1819,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ISHANT KUMAR",
@@ -2067,9 +1834,7 @@
             ],
             "tc": 22,
             "cgpa": 6.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "JAI KUMAR MEENA",
@@ -2084,9 +1849,7 @@
             ],
             "tc": 22,
             "cgpa": 5.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "JAI VERMA",
@@ -2101,9 +1864,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "JANHVI AGRAWAL",
@@ -2118,9 +1879,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "JATIN",
@@ -2135,9 +1894,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "JATIN YADAV",
@@ -2152,9 +1909,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "JAY KUMAR BHARTI",
@@ -2169,9 +1924,7 @@
             ],
             "tc": 22,
             "cgpa": 5.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "JAYESH JHA",
@@ -2186,9 +1939,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "JINAY BOTHRA",
@@ -2203,9 +1954,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KANGAN GUPTA",
@@ -2220,9 +1969,7 @@
             ],
             "tc": 22,
             "cgpa": 10.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KANHAIYA SINGH",
@@ -2237,9 +1984,7 @@
             ],
             "tc": 22,
             "cgpa": 7.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KANISHK JHA",
@@ -2254,9 +1999,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITI CHAUHAN",
@@ -2271,9 +2014,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KANISHKA BRIJESH JOSHI",
@@ -2288,9 +2029,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KANISHKA MEENA",
@@ -2322,9 +2061,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KAPIL KUMAR",
@@ -2339,9 +2076,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KARANSINH RANVIRSINH RATHOD",
@@ -2356,9 +2091,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KARTIK KASANA",
@@ -2373,9 +2106,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KARTIK NAGPAL",
@@ -2390,9 +2121,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KARTIK SANGWAN",
@@ -2407,9 +2136,7 @@
             ],
             "tc": 22,
             "cgpa": 6.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KARTIK UPADHYAY",
@@ -2424,9 +2151,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KARTIKAY AZAD",
@@ -2441,9 +2166,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITYA GARG",
@@ -2458,9 +2181,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KARTIKEY BHARDWAJ",
@@ -2475,9 +2196,7 @@
             ],
             "tc": 22,
             "cgpa": 6.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KARTIKEY SAXENA",
@@ -2492,9 +2211,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KARUNYA SEHGAL",
@@ -2509,9 +2226,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KAUSHAL KUMAR",
@@ -2526,9 +2241,7 @@
             ],
             "tc": 22,
             "cgpa": 6.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KAUSHAL KUMAR",
@@ -2543,9 +2256,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KAUSHAL KUMAR THAKUR",
@@ -2560,9 +2271,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KESHAV KAPOOR",
@@ -2577,9 +2286,7 @@
             ],
             "tc": 22,
             "cgpa": 5.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KESHAV PRAKASH SHARMA",
@@ -2594,9 +2301,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KHUSHAL PABRI",
@@ -2611,9 +2316,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITYA GOYAL",
@@ -2628,9 +2331,7 @@
             ],
             "tc": 22,
             "cgpa": 7.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KHUSHPREET SINGH",
@@ -2645,9 +2346,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KINZANG TOBGAY",
@@ -2662,9 +2361,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KOMAL MEENA",
@@ -2679,9 +2376,7 @@
             ],
             "tc": 22,
             "cgpa": 5.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KRISHNA PODDAR",
@@ -2696,9 +2391,7 @@
             ],
             "tc": 22,
             "cgpa": 9.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KRISHNANSHU BANSAL",
@@ -2713,9 +2406,7 @@
             ],
             "tc": 22,
             "cgpa": 7.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KRITI ARORA",
@@ -2730,9 +2421,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KUMAR SU PRASHANT",
@@ -2747,9 +2436,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KUNAL",
@@ -2764,9 +2451,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITYA KESARWANI",
@@ -2782,8 +2467,7 @@
             "tc": 18,
             "cgpa": 4.36,
             "failed_papers": [
-                "CO201",
-                ""
+                "CO201"
             ]
         },
         {
@@ -2799,9 +2483,7 @@
             ],
             "tc": 22,
             "cgpa": 10.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KUNAL SINGHAL",
@@ -2816,9 +2498,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "KUSHAGRA RAJ",
@@ -2833,9 +2513,7 @@
             ],
             "tc": 22,
             "cgpa": 5.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "LAKSHAY",
@@ -2850,9 +2528,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "LAKSHAY DABAS",
@@ -2867,9 +2543,7 @@
             ],
             "tc": 22,
             "cgpa": 5.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "LAKSHAY KUMAR",
@@ -2884,9 +2558,7 @@
             ],
             "tc": 22,
             "cgpa": 7.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "LAKSHAY KUMAR SINGH",
@@ -2901,9 +2573,7 @@
             ],
             "tc": 22,
             "cgpa": 9.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "LAKSHAY NIJHAWAN",
@@ -2918,9 +2588,7 @@
             ],
             "tc": 22,
             "cgpa": 10.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "LAKSHYA",
@@ -2935,9 +2603,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "LAKSHYA VERMA",
@@ -2952,9 +2618,7 @@
             ],
             "tc": 22,
             "cgpa": 9.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITYA KUMAR",
@@ -2969,9 +2633,7 @@
             ],
             "tc": 22,
             "cgpa": 6.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "LALHMANGAIHSANGA",
@@ -2987,8 +2649,7 @@
             "tc": 20,
             "cgpa": 4.91,
             "failed_papers": [
-                "FEC7",
-                ""
+                "FEC7"
             ]
         },
         {
@@ -3004,9 +2665,7 @@
             ],
             "tc": 22,
             "cgpa": 9.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MADHAV GUPTA",
@@ -3021,9 +2680,7 @@
             ],
             "tc": 22,
             "cgpa": 9.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MAHENDRA MAJHI",
@@ -3038,9 +2695,7 @@
             ],
             "tc": 22,
             "cgpa": 8.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANAN GAUTAM",
@@ -3055,9 +2710,7 @@
             ],
             "tc": 22,
             "cgpa": 5.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANAN JAIN",
@@ -3072,9 +2725,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANAN MAURYA",
@@ -3089,9 +2740,7 @@
             ],
             "tc": 22,
             "cgpa": 9.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANAV CHHABRA",
@@ -3106,9 +2755,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANEESH KUMAR",
@@ -3123,9 +2770,7 @@
             ],
             "tc": 22,
             "cgpa": 7.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANISH",
@@ -3140,9 +2785,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITYA MADAN",
@@ -3157,9 +2800,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANISH",
@@ -3174,9 +2815,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANJEET",
@@ -3191,9 +2830,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANOJ",
@@ -3208,9 +2845,7 @@
             ],
             "tc": 22,
             "cgpa": 9.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANTHAN KUMAR",
@@ -3225,9 +2860,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MANTHAN SINGH",
@@ -3242,9 +2875,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MAYANK",
@@ -3259,9 +2890,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MAYANK JOSHI",
@@ -3276,9 +2905,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MAYANK KUMAR",
@@ -3293,9 +2920,7 @@
             ],
             "tc": 22,
             "cgpa": 4.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MAYANK ROHILLA",
@@ -3310,9 +2935,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MAYUR SIWAS",
@@ -3328,8 +2951,7 @@
             "tc": 18,
             "cgpa": 5.09,
             "failed_papers": [
-                "CO201",
-                ""
+                "CO201"
             ]
         },
         {
@@ -3345,9 +2967,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MD SAEID ANWAR",
@@ -3362,9 +2982,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MD SHAHNWAZ",
@@ -3379,9 +2997,7 @@
             ],
             "tc": 22,
             "cgpa": 7.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MEENAKSHI",
@@ -3396,9 +3012,7 @@
             ],
             "tc": 22,
             "cgpa": 4.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MILIND MOHANPURIA",
@@ -3413,9 +3027,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MITALI MAHESHWARI",
@@ -3430,9 +3042,7 @@
             ],
             "tc": 22,
             "cgpa": 7.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MOHAK BANSAL",
@@ -3448,8 +3058,7 @@
             "tc": 18,
             "cgpa": 5.09,
             "failed_papers": [
-                "CO201",
-                ""
+                "CO201"
             ]
         },
         {
@@ -3465,9 +3074,7 @@
             ],
             "tc": 22,
             "cgpa": 6.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MOHAMMAD SAMEER",
@@ -3482,9 +3089,7 @@
             ],
             "tc": 22,
             "cgpa": 7.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MOHAMMED SAQIB MASOOD",
@@ -3499,9 +3104,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MOHD QASIM",
@@ -3516,9 +3119,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITYA RAJ",
@@ -3533,9 +3134,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MOHIT GUPTA",
@@ -3550,9 +3149,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MONEEB KHURSHEED",
@@ -3567,9 +3164,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MRINAL DEB",
@@ -3584,9 +3179,7 @@
             ],
             "tc": 22,
             "cgpa": 9.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MRITUINJAY SHAHI",
@@ -3601,9 +3194,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MUHAMMAD AREEB QUADRI",
@@ -3618,9 +3209,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MUKUL DEV",
@@ -3635,9 +3224,7 @@
             ],
             "tc": 22,
             "cgpa": 9.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MUNNA KUMAR PANDIT",
@@ -3652,9 +3239,7 @@
             ],
             "tc": 22,
             "cgpa": 6.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "MURILO JESUS JOAQUIM",
@@ -3669,9 +3254,7 @@
             ],
             "tc": 22,
             "cgpa": 7.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NAMAN PATHAK",
@@ -3686,9 +3269,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NAND KISHORE SONI",
@@ -3703,9 +3284,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITYA SHAH",
@@ -3721,8 +3300,7 @@
             "tc": 14,
             "cgpa": 2.91,
             "failed_papers": [
-                "EC261CO201",
-                ""
+                "EC261CO201"
             ]
         },
         {
@@ -3738,9 +3316,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NIKHIL",
@@ -3755,9 +3331,7 @@
             ],
             "tc": 22,
             "cgpa": 6.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NIKHIL DHARRA",
@@ -3773,8 +3347,7 @@
             "tc": 12,
             "cgpa": 3.2,
             "failed_papers": [
-                "EC261CO201",
-                ""
+                "EC261CO201"
             ]
         },
         {
@@ -3790,9 +3363,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NIKHIL KANSOTIA",
@@ -3807,9 +3378,7 @@
             ],
             "tc": 22,
             "cgpa": 7.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NIKHIL MEENA",
@@ -3824,9 +3393,7 @@
             ],
             "tc": 22,
             "cgpa": 6.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NIKHIL MEENA",
@@ -3842,8 +3409,7 @@
             "tc": 18,
             "cgpa": 3.55,
             "failed_papers": [
-                "CO201",
-                ""
+                "CO201"
             ]
         },
         {
@@ -3859,9 +3425,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NILESH",
@@ -3876,9 +3440,7 @@
             ],
             "tc": 22,
             "cgpa": 7.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NIMIT GARG",
@@ -3893,9 +3455,7 @@
             ],
             "tc": 22,
             "cgpa": 9.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITYA TIWARY",
@@ -3910,9 +3470,7 @@
             ],
             "tc": 22,
             "cgpa": 5.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NIPUN MEENA",
@@ -3944,9 +3502,7 @@
             ],
             "tc": 22,
             "cgpa": 7.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NIRBHAY GUPTA",
@@ -3961,9 +3517,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NISHANT",
@@ -3978,9 +3532,7 @@
             ],
             "tc": 22,
             "cgpa": 7.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NISHANT CHANDRA SUMAN",
@@ -3995,9 +3547,7 @@
             ],
             "tc": 22,
             "cgpa": 6.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NISHTHA SAINI",
@@ -4012,9 +3562,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NITI",
@@ -4029,9 +3577,7 @@
             ],
             "tc": 22,
             "cgpa": 7.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NITYAM",
@@ -4046,9 +3592,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NIYATI NARWAL",
@@ -4063,9 +3607,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "NUFAIL ABDUL HAFIZ VHORA",
@@ -4080,9 +3622,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ADITYA TOPPO",
@@ -4097,9 +3637,7 @@
             ],
             "tc": 22,
             "cgpa": 6.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "OJASWINI SONI",
@@ -4116,15 +3654,10 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
                 "CO207",
-                "",
-                "FEC7",
-                ""
+                "FEC7"
             ]
         },
         {
@@ -4142,13 +3675,9 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
-                "CO207",
-                ""
+                "CO207"
             ]
         },
         {
@@ -4164,9 +3693,7 @@
             ],
             "tc": 22,
             "cgpa": 8.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PARAS KUMAR ARUN",
@@ -4181,9 +3708,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PARIKSHIT KAIRON",
@@ -4198,9 +3723,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PARIKSHIT TOMAR",
@@ -4232,9 +3755,7 @@
             ],
             "tc": 22,
             "cgpa": 5.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PAWAN RAJ",
@@ -4249,9 +3770,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PIYUSH BHAWSAR",
@@ -4283,9 +3802,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AGRIM GUPTA",
@@ -4300,9 +3817,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PIYUSH VERMA",
@@ -4317,9 +3832,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "POOJITA",
@@ -4334,9 +3847,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRABAL KHANGURA",
@@ -4351,9 +3862,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRAJWAL DANGWAL",
@@ -4368,9 +3877,7 @@
             ],
             "tc": 22,
             "cgpa": 6.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRAKARSH PANWAR",
@@ -4385,9 +3892,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRAKHAR TRIVEDI",
@@ -4402,9 +3907,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRANAV JASWAL",
@@ -4436,9 +3939,7 @@
             ],
             "tc": 22,
             "cgpa": 5.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRANAY AVNISH KACHHAP",
@@ -4453,9 +3954,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRANSHU AJAY",
@@ -4470,9 +3969,7 @@
             ],
             "tc": 22,
             "cgpa": 7.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRASHANT",
@@ -4487,9 +3984,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRATEEK AGARWAL",
@@ -4504,9 +3999,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRATYAKSH DALAL",
@@ -4521,9 +4014,7 @@
             ],
             "tc": 22,
             "cgpa": 9.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRAVEEN KUMAR",
@@ -4538,9 +4029,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRERNA SAINI",
@@ -4555,9 +4044,7 @@
             ],
             "tc": 22,
             "cgpa": 9.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRINCE KUMAR",
@@ -4573,8 +4060,7 @@
             "tc": 18,
             "cgpa": 4.27,
             "failed_papers": [
-                "CO205",
-                ""
+                "CO205"
             ]
         },
         {
@@ -4590,9 +4076,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRITESH DAS",
@@ -4607,9 +4091,7 @@
             ],
             "tc": 22,
             "cgpa": 6.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AHSAAN AHMAD AHANGER",
@@ -4624,9 +4106,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRIYANSH KUMAR SINGH",
@@ -4641,9 +4121,7 @@
             ],
             "tc": 22,
             "cgpa": 6.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRIYANSHI GUPTA",
@@ -4658,9 +4136,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRIYANSHU GUPTA",
@@ -4675,9 +4151,7 @@
             ],
             "tc": 22,
             "cgpa": 9.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PRIYANSHU SAHANI",
@@ -4692,9 +4166,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PULKIT",
@@ -4709,9 +4181,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PULKIT CHOUDHARY",
@@ -4726,9 +4196,7 @@
             ],
             "tc": 22,
             "cgpa": 6.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PULKIT SINGHAL",
@@ -4743,9 +4211,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PUNEET JAWLA",
@@ -4760,9 +4226,7 @@
             ],
             "tc": 22,
             "cgpa": 6.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PUSHKAR SINGH",
@@ -4777,9 +4241,7 @@
             ],
             "tc": 22,
             "cgpa": 9.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "PUSHPENDER SOLANKI",
@@ -4794,9 +4256,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AJAY",
@@ -4811,9 +4271,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAAD GHAZI ABDALLAH THABIT AL ZAEEM",
@@ -4828,9 +4286,7 @@
             ],
             "tc": 22,
             "cgpa": 7.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAGHAV BHATIA",
@@ -4845,9 +4301,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAGHAV CHATHLI",
@@ -4862,9 +4316,7 @@
             ],
             "tc": 22,
             "cgpa": 6.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAHUL",
@@ -4879,9 +4331,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAHUL",
@@ -4898,8 +4348,7 @@
             "cgpa": 3.55,
             "failed_papers": [
                 "EC261",
-                "CO205",
-                ""
+                "CO205"
             ]
         },
         {
@@ -4915,9 +4364,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAHUL KUMAR",
@@ -4932,9 +4379,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAJAT KUMAR DABAS",
@@ -4949,9 +4394,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AKASH",
@@ -4966,9 +4409,7 @@
             ],
             "tc": 22,
             "cgpa": 5.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAJAT MALIK",
@@ -4985,8 +4426,7 @@
             "cgpa": 3.09,
             "failed_papers": [
                 "EC261",
-                "CO205",
-                ""
+                "CO205"
             ]
         },
         {
@@ -5002,9 +4442,7 @@
             ],
             "tc": 22,
             "cgpa": 9.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAJNEESH KUMAR",
@@ -5019,9 +4457,7 @@
             ],
             "tc": 22,
             "cgpa": 6.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAJNEESH KUMAR",
@@ -5036,9 +4472,7 @@
             ],
             "tc": 22,
             "cgpa": 4.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAJVEER CHOUDHARY",
@@ -5055,8 +4489,7 @@
             "cgpa": 3.09,
             "failed_papers": [
                 "EC261",
-                "FEC3",
-                ""
+                "FEC3"
             ]
         },
         {
@@ -5072,9 +4505,7 @@
             ],
             "tc": 22,
             "cgpa": 7.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAMANPREET SINGH",
@@ -5089,9 +4520,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAMASHISH KUMAR THAKUR",
@@ -5106,9 +4535,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAMSWAROOP DUKIYA",
@@ -5123,9 +4550,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RAUSHAN KUMAR",
@@ -5140,9 +4565,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AKASH BHATT",
@@ -5157,9 +4580,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RIJUL THAKUR",
@@ -5174,9 +4595,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RISHABH AGGARWAL",
@@ -5191,9 +4610,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RISHABH GOYAL",
@@ -5225,9 +4642,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RISHI ROY",
@@ -5242,9 +4657,7 @@
             ],
             "tc": 22,
             "cgpa": 9.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RISHU RAJ",
@@ -5259,9 +4672,7 @@
             ],
             "tc": 22,
             "cgpa": 9.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RITESH KUMAR",
@@ -5276,9 +4687,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RITIK",
@@ -5293,9 +4702,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RITIK KUMAR RATHI",
@@ -5310,9 +4717,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RIYAN LATHEEF CP",
@@ -5328,8 +4733,7 @@
             "tc": 14,
             "cgpa": 3.27,
             "failed_papers": [
-                "EC261CO201",
-                ""
+                "EC261CO201"
             ]
         },
         {
@@ -5345,9 +4749,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ROHAN",
@@ -5362,9 +4764,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ROHAN MITTAL",
@@ -5379,9 +4779,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ROHIT",
@@ -5396,9 +4794,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ROHIT CHAKRABORTY",
@@ -5413,9 +4809,7 @@
             ],
             "tc": 22,
             "cgpa": 6.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ROHIT MOHAN",
@@ -5430,9 +4824,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "RONALDO PAL",
@@ -5447,9 +4839,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ROOPAL SHAKYA",
@@ -5464,9 +4854,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ROSHAN KUMAR",
@@ -5481,9 +4869,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ROUSHAN KUMAR",
@@ -5498,9 +4884,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "S SUCHENDRA BHARADWAJ",
@@ -5515,9 +4899,7 @@
             ],
             "tc": 22,
             "cgpa": 8.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AKASHDEEP",
@@ -5532,9 +4914,7 @@
             ],
             "tc": 22,
             "cgpa": 7.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SAARTHAK SHARMA",
@@ -5549,9 +4929,7 @@
             ],
             "tc": 22,
             "cgpa": 5.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SACHIN",
@@ -5566,9 +4944,7 @@
             ],
             "tc": 22,
             "cgpa": 7.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SACHIN NEGI",
@@ -5584,8 +4960,7 @@
             "tc": 18,
             "cgpa": 4.64,
             "failed_papers": [
-                "CO201",
-                ""
+                "CO201"
             ]
         },
         {
@@ -5601,9 +4976,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SAGAR",
@@ -5620,13 +4993,9 @@
             "cgpa": 0.82,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
-                "CO207",
-                ""
+                "CO207"
             ]
         },
         {
@@ -5642,9 +5011,7 @@
             ],
             "tc": 22,
             "cgpa": 9.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SAHIL GUPTA",
@@ -5659,9 +5026,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SAHIL ZOMBADE",
@@ -5676,9 +5041,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SAI DEEP",
@@ -5693,9 +5056,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AKSHAT JHA",
@@ -5710,9 +5071,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SAKET KUMAR",
@@ -5728,8 +5087,7 @@
             "tc": 14,
             "cgpa": 2.64,
             "failed_papers": [
-                "EC261CO201",
-                ""
+                "EC261CO201"
             ]
         },
         {
@@ -5745,9 +5103,7 @@
             ],
             "tc": 22,
             "cgpa": 7.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SALIL CHOUDHARY",
@@ -5762,9 +5118,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SAMARTH DHAR",
@@ -5779,9 +5133,7 @@
             ],
             "tc": 22,
             "cgpa": 5.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SAMYAK VERMA",
@@ -5796,9 +5148,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SANDESH SHRESTHA",
@@ -5813,9 +5163,7 @@
             ],
             "tc": 22,
             "cgpa": 9.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SANSKAR OJHA",
@@ -5830,9 +5178,7 @@
             ],
             "tc": 22,
             "cgpa": 9.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SANYA KHURANA",
@@ -5847,9 +5193,7 @@
             ],
             "tc": 22,
             "cgpa": 10.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ALI BOUSSAKSOU",
@@ -5864,9 +5208,7 @@
             ],
             "tc": 22,
             "cgpa": 5.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SANYAM",
@@ -5881,9 +5223,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SARTHAK GARG",
@@ -5898,9 +5238,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SARTHAK GUPTA",
@@ -5915,9 +5253,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SARTHAK GUPTA",
@@ -5932,9 +5268,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SARTHAK KUMAR",
@@ -5949,9 +5283,7 @@
             ],
             "tc": 22,
             "cgpa": 6.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SARTHAK SRIVASTAVA",
@@ -5966,9 +5298,7 @@
             ],
             "tc": 22,
             "cgpa": 7.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SARVESH PAHWA",
@@ -5983,9 +5313,7 @@
             ],
             "tc": 22,
             "cgpa": 9.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SATYAM GOYAL",
@@ -6000,9 +5328,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SATYAM KUMAR GUPTA",
@@ -6017,9 +5343,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SAURABH YADAV",
@@ -6034,9 +5358,7 @@
             ],
             "tc": 22,
             "cgpa": 6.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ALISHER KHAKIMOV SHERALI",
@@ -6053,15 +5375,10 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
                 "CO207",
-                "",
-                "FEC3",
-                ""
+                "FEC3"
             ]
         },
         {
@@ -6077,9 +5394,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHADAB KARIM",
@@ -6095,8 +5410,7 @@
             "tc": 14,
             "cgpa": 2.73,
             "failed_papers": [
-                "EC261CO201",
-                ""
+                "EC261CO201"
             ]
         },
         {
@@ -6112,9 +5426,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHAMBHU KUMAR",
@@ -6129,9 +5441,7 @@
             ],
             "tc": 22,
             "cgpa": 6.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHAONTI GOSWAMI",
@@ -6146,9 +5456,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHARAD GAUTAM",
@@ -6163,9 +5471,7 @@
             ],
             "tc": 22,
             "cgpa": 5.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHASHANK GAUR",
@@ -6180,9 +5486,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHAURYAN AGRAWAL",
@@ -6199,15 +5503,10 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
                 "CO207",
-                "",
-                "FEC14",
-                ""
+                "FEC14"
             ]
         },
         {
@@ -6223,9 +5522,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ALLEN TIGGA",
@@ -6240,9 +5537,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHISHIR GARG",
@@ -6257,9 +5552,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHIV KUMAR",
@@ -6274,9 +5567,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHIVALI GUPTA",
@@ -6291,9 +5582,7 @@
             ],
             "tc": 22,
             "cgpa": 7.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHIVAM AWASTHI",
@@ -6308,9 +5597,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHIVAM KANOJIA",
@@ -6325,9 +5612,7 @@
             ],
             "tc": 22,
             "cgpa": 6.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHIVAM PRATAP SINGH",
@@ -6344,15 +5629,10 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
                 "CO207",
-                "",
-                "FEC16",
-                ""
+                "FEC16"
             ]
         },
         {
@@ -6368,9 +5648,7 @@
             ],
             "tc": 22,
             "cgpa": 7.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHIVAM SUJAN",
@@ -6385,9 +5663,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHIVAM VERMA",
@@ -6402,9 +5678,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHIVANG GUPTA",
@@ -6419,9 +5693,7 @@
             ],
             "tc": 22,
             "cgpa": 7.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ALOK KUMAR MAURYA",
@@ -6436,9 +5708,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHIVANSH DHAWAN",
@@ -6453,9 +5723,7 @@
             ],
             "tc": 22,
             "cgpa": 9.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHOBHIT SINGH",
@@ -6470,9 +5738,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHRESHTH SUDHIR",
@@ -6487,9 +5753,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHRESHTTH",
@@ -6504,9 +5768,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHRUTI KISHORE",
@@ -6521,9 +5783,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHUBHAM HAZRA",
@@ -6538,9 +5798,7 @@
             ],
             "tc": 22,
             "cgpa": 9.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHUBHAM SHANDILYA",
@@ -6555,9 +5813,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHUBHAM SINGH KASHYAP",
@@ -6572,9 +5828,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHUBHAM VERMA",
@@ -6589,9 +5843,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMAAN AKHTAR",
@@ -6606,9 +5858,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SHUSHANT AGGARWAL",
@@ -6623,9 +5873,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SIDDHANT PANDEY",
@@ -6642,13 +5890,9 @@
             "cgpa": 0.64,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
-                "CO207",
-                ""
+                "CO207"
             ]
         },
         {
@@ -6681,9 +5925,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SIDDHARTH SINGH",
@@ -6698,9 +5940,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SIDDHARTHA PATWAL",
@@ -6715,9 +5955,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SIMRAN KAUR",
@@ -6732,9 +5970,7 @@
             ],
             "tc": 22,
             "cgpa": 6.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SINGAM VENKATA SAI DHEERAJ REDDY",
@@ -6749,9 +5985,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SIYA MITTAL",
@@ -6766,9 +6000,7 @@
             ],
             "tc": 22,
             "cgpa": 10.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SOURABH KUMAR",
@@ -6783,9 +6015,7 @@
             ],
             "tc": 22,
             "cgpa": 7.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMAN",
@@ -6800,9 +6030,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SOURAV SHARMA",
@@ -6819,15 +6047,10 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
                 "CO207",
-                "",
-                "FEC24",
-                ""
+                "FEC24"
             ]
         },
         {
@@ -6843,9 +6066,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SRIJAN SHANKAR",
@@ -6860,9 +6081,7 @@
             ],
             "tc": 22,
             "cgpa": 5.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SRISHTY",
@@ -6879,13 +6098,9 @@
             "cgpa": 0.64,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
-                "CO207",
-                ""
+                "CO207"
             ]
         },
         {
@@ -6901,9 +6116,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUDIKSHA AGGARWAL",
@@ -6918,9 +6131,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUDIPTY KONICA PAUL",
@@ -6935,9 +6146,7 @@
             ],
             "tc": 22,
             "cgpa": 5.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUKHDEEP SINGH SAINI",
@@ -6952,9 +6161,7 @@
             ],
             "tc": 22,
             "cgpa": 8.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUKRIT PRIYANK",
@@ -6969,9 +6176,7 @@
             ],
             "tc": 22,
             "cgpa": 7.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUMEDHA",
@@ -6986,9 +6191,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMAN BHARDWAJ",
@@ -7005,9 +6208,7 @@
             "cgpa": 0.8,
             "failed_papers": [
                 "EC261CO201",
-                "",
-                "CO203",
-                ""
+                "CO203"
             ]
         },
         {
@@ -7023,9 +6224,7 @@
             ],
             "tc": 22,
             "cgpa": 10.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUMIT NISHAD",
@@ -7040,9 +6239,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUMIT SURIN",
@@ -7057,9 +6254,7 @@
             ],
             "tc": 22,
             "cgpa": 6.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUMIT YADAV",
@@ -7074,9 +6269,7 @@
             ],
             "tc": 22,
             "cgpa": 7.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUMPANNA ACHARYA",
@@ -7091,9 +6284,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SURAJ KAUSHAL",
@@ -7110,15 +6301,10 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
                 "CO207",
-                "",
-                "FEC48",
-                ""
+                "FEC48"
             ]
         },
         {
@@ -7134,9 +6320,7 @@
             ],
             "tc": 22,
             "cgpa": 6.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SUYASH SHRINGI",
@@ -7151,9 +6335,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SWAPNIL MEENA",
@@ -7168,9 +6350,7 @@
             ],
             "tc": 22,
             "cgpa": 7.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "SWATI YADAV",
@@ -7185,9 +6365,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMAN HOODA",
@@ -7202,9 +6380,7 @@
             ],
             "tc": 22,
             "cgpa": 4.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "TANISH KHATRI",
@@ -7219,9 +6395,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "TUSHAR GUPTA",
@@ -7236,9 +6410,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "TUSHAR KHETERPAL",
@@ -7253,9 +6425,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "TUSHAR ROHILLA",
@@ -7270,9 +6440,7 @@
             ],
             "tc": 18,
             "cgpa": 8.11,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "TUSHAR SAI GUPTA",
@@ -7287,9 +6455,7 @@
             ],
             "tc": 22,
             "cgpa": 5.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "UDBHAV KHURANA",
@@ -7304,9 +6470,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "UGYEN WANGCHUK",
@@ -7321,9 +6485,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "UJWAL GUPTA",
@@ -7338,9 +6500,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "UMANG",
@@ -7355,9 +6515,7 @@
             ],
             "tc": 22,
             "cgpa": 4.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMAN KUMAR",
@@ -7372,9 +6530,7 @@
             ],
             "tc": 22,
             "cgpa": 5.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "UTPAL RAJ",
@@ -7389,9 +6545,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "UTTAM KUMAR YADAV",
@@ -7406,9 +6560,7 @@
             ],
             "tc": 22,
             "cgpa": 7.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VANI RAO",
@@ -7423,9 +6575,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VANSH TYAGI",
@@ -7440,9 +6590,7 @@
             ],
             "tc": 22,
             "cgpa": 6.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VANSH VERMA",
@@ -7457,9 +6605,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VANSHIKA ARORA",
@@ -7491,9 +6637,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VARSHIT GUMBER",
@@ -7508,9 +6652,7 @@
             ],
             "tc": 22,
             "cgpa": 7.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VATAN TOMAR",
@@ -7525,9 +6667,7 @@
             ],
             "tc": 22,
             "cgpa": 6.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VATSALYA KUMAR MISHRA",
@@ -7542,9 +6682,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMAN KUMAR SINGH",
@@ -7559,9 +6697,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VEDANT ROY",
@@ -7577,8 +6713,7 @@
             "tc": 14,
             "cgpa": 3.0,
             "failed_papers": [
-                "EC261CO201",
-                ""
+                "EC261CO201"
             ]
         },
         {
@@ -7594,9 +6729,7 @@
             ],
             "tc": 22,
             "cgpa": 5.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VIBHANSHU",
@@ -7613,15 +6746,10 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
                 "CO207",
-                "",
-                "FEC7",
-                ""
+                "FEC7"
             ]
         },
         {
@@ -7637,9 +6765,7 @@
             ],
             "tc": 22,
             "cgpa": 9.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VIDHI",
@@ -7654,9 +6780,7 @@
             ],
             "tc": 22,
             "cgpa": 5.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VIJAY KUMAR SAWHNEY",
@@ -7671,9 +6795,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VIJAY KUMAR YADAV",
@@ -7688,9 +6810,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VIJAY PAL",
@@ -7705,9 +6825,7 @@
             ],
             "tc": 22,
             "cgpa": 8.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VINAYAK KAPOOR",
@@ -7722,9 +6840,7 @@
             ],
             "tc": 22,
             "cgpa": 8.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VINEET DAGA",
@@ -7739,9 +6855,7 @@
             ],
             "tc": 22,
             "cgpa": 9.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMAN KUMAR YADAV",
@@ -7756,9 +6870,7 @@
             ],
             "tc": 22,
             "cgpa": 7.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VIRAT",
@@ -7773,9 +6885,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VISHAL",
@@ -7790,9 +6900,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VISHAL ANTIL",
@@ -7807,9 +6915,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VISHAL DAS",
@@ -7824,9 +6930,7 @@
             ],
             "tc": 22,
             "cgpa": 9.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VISHAL GUPTA",
@@ -7841,9 +6945,7 @@
             ],
             "tc": 22,
             "cgpa": 7.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VISHAL KUMAR GUPTA",
@@ -7858,9 +6960,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VIVEK JAIN",
@@ -7875,9 +6975,7 @@
             ],
             "tc": 22,
             "cgpa": 8.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "VIVEK YADAV",
@@ -7892,9 +6990,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMAN MAURYA",
@@ -7909,9 +7005,7 @@
             ],
             "tc": 22,
             "cgpa": 8.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "YASH DHAWAN",
@@ -7928,15 +7022,10 @@
             "cgpa": 0.0,
             "failed_papers": [
                 "EC261CO201",
-                "",
                 "CO203",
-                "",
                 "CO205",
-                "",
                 "CO207",
-                "",
-                "FEC7",
-                ""
+                "FEC7"
             ]
         },
         {
@@ -7952,9 +7041,7 @@
             ],
             "tc": 22,
             "cgpa": 10.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "YASH KUMAR",
@@ -7969,9 +7056,7 @@
             ],
             "tc": 22,
             "cgpa": 7.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "YASH SHARMA",
@@ -7986,9 +7071,7 @@
             ],
             "tc": 22,
             "cgpa": 6.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "YASHIKA AGGARWAL",
@@ -8003,9 +7086,7 @@
             ],
             "tc": 22,
             "cgpa": 5.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "YASHVARDHAN",
@@ -8020,9 +7101,7 @@
             ],
             "tc": 22,
             "cgpa": 7.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "YASEEN MOHAMMED AHMED",
@@ -8037,9 +7116,7 @@
             ],
             "tc": 22,
             "cgpa": 4.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ABUALHASSAN BABEKIR ELHAJ",
@@ -8054,9 +7131,7 @@
             ],
             "tc": 22,
             "cgpa": 5.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMAN PANCHAL",
@@ -8071,9 +7146,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ERKHEMBAYAR GANTULGA",
@@ -8089,8 +7162,7 @@
             "tc": 8,
             "cgpa": 1.45,
             "failed_papers": [
-                "FEC24",
-                ""
+                "FEC24"
             ]
         },
         {
@@ -8108,8 +7180,7 @@
             "cgpa": 1.0,
             "failed_papers": [
                 "CO201CO205",
-                "CO207",
-                ""
+                "CO207"
             ]
         },
         {
@@ -8125,9 +7196,7 @@
             ],
             "tc": 22,
             "cgpa": 7.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMIT MEENA",
@@ -8142,9 +7211,7 @@
             ],
             "tc": 22,
             "cgpa": 4.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "AMRIT BASHYAL",
@@ -8161,9 +7228,7 @@
             "cgpa": 3.64,
             "failed_papers": [
                 "CO203",
-                "",
-                "CO205",
-                ""
+                "CO205"
             ]
         },
         {
@@ -8179,9 +7244,7 @@
             ],
             "tc": 22,
             "cgpa": 5.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANANYA GOEL",
@@ -8196,9 +7259,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANAS AHMAD",
@@ -8213,9 +7274,7 @@
             ],
             "tc": 22,
             "cgpa": 8.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANIKET JAYSWAL",
@@ -8230,9 +7289,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANIKET KUSHWAHA",
@@ -8247,9 +7304,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANIL BYAR",
@@ -8264,9 +7319,7 @@
             ],
             "tc": 22,
             "cgpa": 8.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANJALI MEENA",
@@ -8281,9 +7334,7 @@
             ],
             "tc": 22,
             "cgpa": 6.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANKAJ JAISWAL",
@@ -8298,9 +7349,7 @@
             ],
             "tc": 22,
             "cgpa": 7.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANKIT KUMAR",
@@ -8315,9 +7364,7 @@
             ],
             "tc": 22,
             "cgpa": 6.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANKIT KUMAR",
@@ -8332,9 +7379,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANKUR GAUTAM",
@@ -8349,9 +7394,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANKUSH TYAGI",
@@ -8366,9 +7409,7 @@
             ],
             "tc": 22,
             "cgpa": 8.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANMOLPREET SINGH",
@@ -8383,9 +7424,7 @@
             ],
             "tc": 22,
             "cgpa": 8.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANSH GOEL",
@@ -8400,9 +7439,7 @@
             ],
             "tc": 22,
             "cgpa": 9.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANSH PUNIA",
@@ -8417,9 +7454,7 @@
             ],
             "tc": 22,
             "cgpa": 5.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANSHIT MITTAL",
@@ -8436,11 +7471,8 @@
             "cgpa": 2.18,
             "failed_papers": [
                 "CO201",
-                "",
                 "CO203",
-                "",
-                "CO205",
-                ""
+                "CO205"
             ]
         },
         {
@@ -8456,9 +7488,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANSHU PAL",
@@ -8473,9 +7503,7 @@
             ],
             "tc": 22,
             "cgpa": 6.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANSHUL AGRAWAL",
@@ -8490,9 +7518,7 @@
             ],
             "tc": 22,
             "cgpa": 8.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANSHUL SAGAR",
@@ -8507,9 +7533,7 @@
             ],
             "tc": 22,
             "cgpa": 5.73,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANSHUMAN MUDGAL",
@@ -8524,9 +7548,7 @@
             ],
             "tc": 22,
             "cgpa": 5.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANUBHAV DEOLI",
@@ -8541,9 +7563,7 @@
             ],
             "tc": 22,
             "cgpa": 7.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANUBHAV PAL",
@@ -8558,9 +7578,7 @@
             ],
             "tc": 22,
             "cgpa": 6.55,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANUGRAH S",
@@ -8575,9 +7593,7 @@
             ],
             "tc": 22,
             "cgpa": 8.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANUJ KHURANA",
@@ -8592,9 +7608,7 @@
             ],
             "tc": 22,
             "cgpa": 9.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANUKUL POKHAREL",
@@ -8609,9 +7623,7 @@
             ],
             "tc": 22,
             "cgpa": 9.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANUPAM MAURYA",
@@ -8626,9 +7638,7 @@
             ],
             "tc": 22,
             "cgpa": 8.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANURAG KAMRA",
@@ -8643,9 +7653,7 @@
             ],
             "tc": 22,
             "cgpa": 8.82,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ANURAG SAH",
@@ -8660,9 +7668,7 @@
             ],
             "tc": 22,
             "cgpa": 7.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARCHIT ASHRI",
@@ -8677,9 +7683,7 @@
             ],
             "tc": 22,
             "cgpa": 5.27,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARIHANT JAIN",
@@ -8694,9 +7698,7 @@
             ],
             "tc": 22,
             "cgpa": 7.36,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARIN GARG",
@@ -8711,9 +7713,7 @@
             ],
             "tc": 22,
             "cgpa": 9.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARINDAM RAO",
@@ -8728,9 +7728,7 @@
             ],
             "tc": 22,
             "cgpa": 5.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARJIT TYAGI",
@@ -8745,9 +7743,7 @@
             ],
             "tc": 22,
             "cgpa": 5.64,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARKOJIT DAS",
@@ -8762,9 +7758,7 @@
             ],
             "tc": 22,
             "cgpa": 7.91,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARMAAN GUPTA",
@@ -8779,9 +7773,7 @@
             ],
             "tc": 22,
             "cgpa": 9.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARNAV AGARWAL",
@@ -8796,9 +7788,7 @@
             ],
             "tc": 22,
             "cgpa": 9.45,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARNAV CHAUDHARY",
@@ -8813,9 +7803,7 @@
             ],
             "tc": 22,
             "cgpa": 9.18,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARNAV SHARMA",
@@ -8830,9 +7818,7 @@
             ],
             "tc": 22,
             "cgpa": 9.09,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         },
         {
             "name": "ARNAV SINGH",
@@ -8847,9 +7833,7 @@
             ],
             "tc": 22,
             "cgpa": 8.0,
-            "failed_papers": [
-                ""
-            ]
+            "failed_papers": []
         }
     ]
 }
