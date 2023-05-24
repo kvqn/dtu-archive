@@ -33,7 +33,7 @@ commands["complete"].add_argument("--output", "-o", help="The file to write the 
 commands["complete"].add_argument("--y-density", "-y", help="The y-density of the PDF. This adjusts how many white pixels make up a space or newline character. Default is 10", type=int, required=False, default=12)
 
 # This is better to do with a config file because there will a lot of options
-commands["create-sem-result"] = subparsers.add_parser("create-sem-result", help="Create a semester result according to the specified config file.")
+commands["create-sem-result"] = subparsers.add_parser("create-sem-result", help="Create a result according to the specified config file.")
 commands["create-sem-result"].add_argument("--config", "-c", help="The config file to use", default="result.toml", required=False)
 
 

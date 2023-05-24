@@ -2,4 +2,5 @@
 .enter.zsh
 .leave.zsh
 **/__pycache__
+hidden
 

@@ -8,8 +8,11 @@ import pydantic
 
 class ResultConfig(pydantic.BaseModel):
     output_file: str
-    subjects: dict[str, str] # subject name -> subject regex
+    do_rollno_transformation: bool
+    rollno_json: str
+    rollno_regex: str
     input_files: list[str]
+    subjects: dict[str, str] # subject name -> subject regex
 
 class Student(TypedDict):
     sno: int
@@ -47,7 +50,10 @@ def _create_empty_result(config_file: str):
     print("Creating an empty config file at", config_file)
 
     config = ResultConfig(
-        output_file="",
+        do_rollno_transformation=True,
+        rollno_json="../../rollno.json",
+        rollno_regex=r"2K21/IT/\d+",
+        output_file="result.json",
         subjects={},
         input_files=[]
     )
@@ -76,12 +82,32 @@ def create_sem_result(args):
             print("Input file", file, "does not exist.")
             return
 
+    # Load rollno transformation data
+    if config.do_rollno_transformation:
+        try:
+            with open(config.rollno_json, "r") as f:
+                rollno_transformation = json.load(f)
+        except FileNotFoundError:
+            print(f"Warning: {config.rollno_json} not found")
+            rollno_transformation = {}
+    else:
+        rollno_transformation = {}
+
     students : dict[str, Student] = {}      # rollno -> student
     for file in config.input_files:
         with open(file, "r") as f:
             data : Result = json.load(f)
             for student in data["students"]:
                 rollno = student["rollno"]
+                if config.do_rollno_transformation:
+                    try:
+                        rollno = rollno_transformation[rollno]
+                    except KeyError:
+                        print(f"Warning: Rollno {rollno} not found in rollno.json")
+                match = re.match(config.rollno_regex, rollno)
+                if not match:
+                    continue
+                student["rollno"] = rollno
                 students[rollno] = student
 
     # Create a new result
@@ -113,5 +139,7 @@ def create_sem_result(args):
     # Write the result to the output file
     with open(config.output_file, "w") as f:
         json.dump(result, f, indent=4)
+
+    print("Result written to", config.output_file)
 
 
