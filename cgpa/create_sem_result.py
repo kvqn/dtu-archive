@@ -136,6 +136,8 @@ def create_sem_result(args):
                 final_student["grades"].append("")
         result["students"].append(final_student)
 
+    result["students"].sort(key=lambda x: x["rollno"])
+
     # Write the result to the output file
     with open(config.output_file, "w") as f:
         json.dump(result, f, indent=4)

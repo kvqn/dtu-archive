@@ -53,7 +53,7 @@ def create_aggregate_result(args):
         student["aggregate"] = sum(student["cgpas"]) / len(folders)
 
     list_students = list(students.values())
-    list_students.sort(key=lambda student: student["aggregate"], reverse=True)
+    list_students.sort(key=lambda student: student["rollno"], reverse=False)
 
     aggregate_result = AggregateResult(
         n_students = len(list_students),
