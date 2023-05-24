@@ -37,7 +37,7 @@ def list_subjects(args):
     if "FEC" not in subjects:
         subjects["FEC"] = 0
     for subject, count in subjects.items():
-        if subject.startswith("FEC"):
+        if subject.startswith("FEC") and subject != "FEC":
             subjects["FEC"] += count
             flag_for_deletion.append(subject)
     if subjects["FEC"] == 0:
