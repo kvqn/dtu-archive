@@ -35,8 +35,10 @@ commands["complete"].add_argument("--y-density", "-y", help="The y-density of th
 # This is better to do with a config file because there will a lot of options
 commands["create-sem-result"] = subparsers.add_parser("create-sem-result", help="Create a result according to the specified config file.")
 commands["create-sem-result"].add_argument("--config", "-c", help="The config file to use", default="result.toml", required=False)
+commands["create-sem-result"].add_argument("--quiet", "-q", help="Don't print anything except errors to the console", action="store_true", required=False)
 
 commands["create-aggregate-result"] = subparsers.add_parser("create-aggregate-result", help="Create an aggregate result according to the semester results in the subfolders")
+commands["create-aggregate-result"].add_argument("--quiet", "-q", help="Don't print anything except errors to the console", action="store_true", required=False)
 
 commands["list-subjects"] = subparsers.add_parser("list-subjects", help="List the subjects in the semester result for the filtered students.")
 commands["list-subjects"].add_argument("--config", "-c", help="The config file to use", default="result.toml", required=False)

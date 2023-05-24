@@ -61,7 +61,7 @@ def _create_empty_result(config_file: str):
     with open(config_file, "w") as f:
         tomlkit.dump(config.dict(), f)
 
-def transform_rollno(rollno: str, config: ResultConfig):
+def transform_rollno(rollno: str, config: ResultConfig, quiet: bool = False):
     if not transform_rollno.loaded:
         with open(config.rollno_json, "r") as f:
             transform_rollno.transformations = json.load(f)
@@ -70,7 +70,8 @@ def transform_rollno(rollno: str, config: ResultConfig):
     try:
         return transform_rollno.transformations[rollno]
     except KeyError:
-        print(f"Warning: Rollno {rollno} not found in rollno.json")
+        if not quiet:
+            print(f"Warning: Rollno {rollno} not found in rollno.json")
         return rollno
 
 transform_rollno.loaded = False
@@ -103,7 +104,7 @@ def create_sem_result(args):
             for student in data["students"]:
                 rollno = student["rollno"]
                 if config.do_rollno_transformation:
-                    rollno = transform_rollno(rollno, config)
+                    rollno = transform_rollno(rollno, config, args.quiet)
                 match = re.match(config.rollno_regex, rollno)
                 if not match:
                     continue
@@ -142,6 +143,7 @@ def create_sem_result(args):
     with open(config.output_file, "w") as f:
         json.dump(result, f, indent=4)
 
-    print("Result written to", config.output_file)
+    if not args.quiet:
+        print("Result written to", config.output_file)
 
 

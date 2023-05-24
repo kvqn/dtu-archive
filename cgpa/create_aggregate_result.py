@@ -26,7 +26,8 @@ def create_aggregate_result(args):
     folders = [folder for folder in folders if os.path.isdir(folder) and folder.startswith("sem-")]
     folders.sort()
 
-    print("Detected folders:", ' '.join(folders))
+    if not args.quiet:
+        print("Detected folders:", ' '.join(folders))
 
     students : dict[str, Student] = {} # roll_no -> Student
     for n_folder, folder in enumerate(folders):
@@ -64,6 +65,7 @@ def create_aggregate_result(args):
     with open(OUTPUT_FILE, "w") as f:
         json.dump(aggregate_result, f, indent=2)
 
-    print("Done!")
+    if not args.quiet:
+        print("Done!")
 
 
