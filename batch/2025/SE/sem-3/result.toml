@@ -1,0 +1,16 @@
+output_file = "result.json"
+do_rollno_transformation = false
+rollno_json = "../../rollno.json"
+rollno_regex = "2K21/SE/\\d+"
+input_files = [
+  "../../../../results/O22_BTECH_III_1516/O22_BTECH_III_1516.decluttered.json",
+  "../../../../results/O22_BTECH_ME_III_1519/O22_BTECH_ME_III_1519.json",
+]
+
+[subjects]
+"EC271a" = "EC271a"
+"SE201" = "SE201"
+"SE203" = "SE203"
+"SE205a" = "SE205a"
+"SE207a" = "SE207a"
+"FEC" = "FEC"

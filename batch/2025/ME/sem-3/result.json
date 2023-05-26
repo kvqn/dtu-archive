@@ -1,0 +1,4573 @@
+{
+    "n_students": 293,
+    "subjects": [
+        "PE251",
+        "ME201",
+        "ME203",
+        "ME205",
+        "ME207",
+        "FEC"
+    ],
+    "students": [
+        {
+            "name": "AADITYA PRASAD",
+            "rollno": "2K21/ME/01",
+            "grades": [
+                "A",
+                "C",
+                "B+",
+                "A",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.36,
+            "failed_papers": []
+        },
+        {
+            "name": "AAKASH",
+            "rollno": "2K21/ME/02",
+            "grades": [
+                "B+",
+                "F",
+                "B+",
+                "A",
+                "B",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 5.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "AAKASH AMRITRAJ",
+            "rollno": "2K21/ME/03",
+            "grades": [
+                "B",
+                "F",
+                "B+",
+                "A",
+                "B",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 5.55,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "AARYAN MENDIRATTA",
+            "rollno": "2K21/ME/04",
+            "grades": [
+                "O",
+                "O",
+                "A+",
+                "O",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.73,
+            "failed_papers": []
+        },
+        {
+            "name": "AAYUSH RAGHAV",
+            "rollno": "2K21/ME/05",
+            "grades": [
+                "A+",
+                "A+",
+                "A",
+                "A+",
+                "A",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 8.73,
+            "failed_papers": []
+        },
+        {
+            "name": "ABDALBAGY MOHAMMED ALHAJ",
+            "rollno": "2K21/ME/06",
+            "grades": [
+                "B",
+                "F",
+                "B",
+                "B+",
+                "P",
+                "A+"
+            ],
+            "tc": 18,
+            "cgpa": 5.0,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ABDULLAH AHMAD KHAN",
+            "rollno": "2K21/ME/07",
+            "grades": [
+                "A",
+                "F",
+                "A+",
+                "B+",
+                "A",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 6.55,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ABHAY JAIN",
+            "rollno": "2K21/ME/08",
+            "grades": [
+                "A+",
+                "A",
+                "A",
+                "O",
+                "O",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.82,
+            "failed_papers": []
+        },
+        {
+            "name": "ABHIJEET SWAIN",
+            "rollno": "2K21/ME/09",
+            "grades": [
+                "B",
+                "F",
+                "B",
+                "C",
+                "C",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 4.73,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ABHIMANYU",
+            "rollno": "2K21/ME/10",
+            "grades": [
+                "P",
+                "F",
+                "C",
+                "B+",
+                "B",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 4.55,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "DHRUV KUMAR SINGH",
+            "rollno": "2K21/ME/100",
+            "grades": [
+                "B+",
+                "F",
+                "B",
+                "A+",
+                "B+",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 5.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "DHRUV UPRETI",
+            "rollno": "2K21/ME/101",
+            "grades": [
+                "C",
+                "F",
+                "B+",
+                "O",
+                "B",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 5.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "DIKSHANT KATARIA",
+            "rollno": "2K21/ME/102",
+            "grades": [
+                "B",
+                "F",
+                "B+",
+                "A+",
+                "B+",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 5.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "DILPREET SINGH",
+            "rollno": "2K21/ME/103",
+            "grades": [
+                "C",
+                "F",
+                "C",
+                "A",
+                "B",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 5.0,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "DINESH YADAV",
+            "rollno": "2K21/ME/104",
+            "grades": [
+                "B+",
+                "P",
+                "A+",
+                "A+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.55,
+            "failed_papers": []
+        },
+        {
+            "name": "DIPANSHU PRASAD",
+            "rollno": "2K21/ME/105",
+            "grades": [
+                "A+",
+                "O",
+                "A+",
+                "A+",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.36,
+            "failed_papers": []
+        },
+        {
+            "name": "DIVYANSH BANSAL",
+            "rollno": "2K21/ME/106",
+            "grades": [
+                "A",
+                "P",
+                "A+",
+                "A+",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.91,
+            "failed_papers": []
+        },
+        {
+            "name": "GAJENDRA REWAR",
+            "rollno": "2K21/ME/108",
+            "grades": [
+                "F",
+                "F",
+                "C",
+                "A",
+                "C",
+                "B+"
+            ],
+            "tc": 14,
+            "cgpa": 3.91,
+            "failed_papers": [
+                "PE251ME201"
+            ]
+        },
+        {
+            "name": "GARVIT KAPUR",
+            "rollno": "2K21/ME/109",
+            "grades": [
+                "O",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.45,
+            "failed_papers": []
+        },
+        {
+            "name": "ABHINAV AGGARWAL",
+            "rollno": "2K21/ME/11",
+            "grades": [
+                "B+",
+                "F",
+                "B+",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 6.0,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "GAURAV MEENA",
+            "rollno": "2K21/ME/110",
+            "grades": [
+                "B+",
+                "B",
+                "A",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.27,
+            "failed_papers": []
+        },
+        {
+            "name": "GAURAV PANGHAL",
+            "rollno": "2K21/ME/111",
+            "grades": [
+                "B",
+                "F",
+                "B",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 5.64,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "GAURAV SHARMA",
+            "rollno": "2K21/ME/112",
+            "grades": [
+                "A",
+                "B+",
+                "B",
+                "A",
+                "B+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "GAUTAM PRAKASH",
+            "rollno": "2K21/ME/113",
+            "grades": [
+                "B+",
+                "B",
+                "B+",
+                "A",
+                "B+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "GOVIND BHARDWAJ",
+            "rollno": "2K21/ME/114",
+            "grades": [
+                "A",
+                "O",
+                "O",
+                "O",
+                "A",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 9.27,
+            "failed_papers": []
+        },
+        {
+            "name": "GYANDEEP SINGH",
+            "rollno": "2K21/ME/115",
+            "grades": [
+                "B+",
+                "F",
+                "B",
+                "A",
+                "C",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 5.45,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "HAPPY CHAUHAN",
+            "rollno": "2K21/ME/116",
+            "grades": [
+                "B+",
+                "P",
+                "B+",
+                "A+",
+                "B",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 6.91,
+            "failed_papers": []
+        },
+        {
+            "name": "HARDIK",
+            "rollno": "2K21/ME/117",
+            "grades": [
+                "B+",
+                "A+",
+                "A",
+                "A",
+                "B+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.73,
+            "failed_papers": []
+        },
+        {
+            "name": "HARDIK KHOBAR",
+            "rollno": "2K21/ME/118",
+            "grades": [
+                "A",
+                "F",
+                "B+",
+                "B+",
+                "B+",
+                "A+"
+            ],
+            "tc": 18,
+            "cgpa": 6.09,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "HARSH",
+            "rollno": "2K21/ME/119",
+            "grades": [
+                "B+",
+                "F",
+                "B",
+                "A+",
+                "B+",
+                "A+"
+            ],
+            "tc": 18,
+            "cgpa": 6.09,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ABHINAV GAUTAM",
+            "rollno": "2K21/ME/12",
+            "grades": [
+                "A",
+                "B+",
+                "B+",
+                "B+",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.36,
+            "failed_papers": []
+        },
+        {
+            "name": "HARSH AGGARWAL",
+            "rollno": "2K21/ME/120",
+            "grades": [
+                "A",
+                "P",
+                "A",
+                "A",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "HARSH ANAND",
+            "rollno": "2K21/ME/121",
+            "grades": [
+                "A+",
+                "A",
+                "O",
+                "A+",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.18,
+            "failed_papers": []
+        },
+        {
+            "name": "HARSH GOYAL",
+            "rollno": "2K21/ME/122",
+            "grades": [
+                "A",
+                "B+",
+                "B+",
+                "A+",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.64,
+            "failed_papers": []
+        },
+        {
+            "name": "HARSH KUMAR",
+            "rollno": "2K21/ME/124",
+            "grades": [
+                "B+",
+                "F",
+                "B+",
+                "A",
+                "B",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 5.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "HARSHIT",
+            "rollno": "2K21/ME/126",
+            "grades": [
+                "B",
+                "A",
+                "B+",
+                "A",
+                "B",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "HIMANSHU GUPTA",
+            "rollno": "2K21/ME/127",
+            "grades": [
+                "C",
+                "F",
+                "P",
+                "A",
+                "C",
+                "C"
+            ],
+            "tc": 18,
+            "cgpa": 4.45,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "HIMANSHU SINGH",
+            "rollno": "2K21/ME/128",
+            "grades": [
+                "B+",
+                "B+",
+                "A+",
+                "B+",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.91,
+            "failed_papers": []
+        },
+        {
+            "name": "HIMANSHU TIWARI",
+            "rollno": "2K21/ME/129",
+            "grades": [
+                "C",
+                "P",
+                "C",
+                "A",
+                "P",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 5.27,
+            "failed_papers": []
+        },
+        {
+            "name": "ABHINAV JHA",
+            "rollno": "2K21/ME/13",
+            "grades": [
+                "A",
+                "P",
+                "B+",
+                "B+",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "HUSAIN SAIFEE",
+            "rollno": "2K21/ME/130",
+            "grades": [
+                "B+",
+                "C",
+                "A+",
+                "A",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.36,
+            "failed_papers": []
+        },
+        {
+            "name": "JAI KUMAR",
+            "rollno": "2K21/ME/131",
+            "grades": [
+                "B",
+                "F",
+                "C",
+                "A",
+                "C",
+                "A+"
+            ],
+            "tc": 18,
+            "cgpa": 5.18,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "JAMAL MOHAMMED ESA",
+            "rollno": "2K21/ME/132",
+            "grades": [
+                "A+",
+                "O",
+                "A",
+                "O",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.36,
+            "failed_papers": []
+        },
+        {
+            "name": "JASPREET SINGH",
+            "rollno": "2K21/ME/133",
+            "grades": [
+                "B+",
+                "F",
+                "A",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 6.18,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "JATIN KUMAR",
+            "rollno": "2K21/ME/134",
+            "grades": [
+                "B",
+                "F",
+                "B+",
+                "A",
+                "B",
+                "O"
+            ],
+            "tc": 18,
+            "cgpa": 5.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "JAYANT RAO",
+            "rollno": "2K21/ME/135",
+            "grades": [
+                "B+",
+                "O",
+                "A",
+                "A+",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.18,
+            "failed_papers": []
+        },
+        {
+            "name": "JUNED",
+            "rollno": "2K21/ME/136",
+            "grades": [
+                "B",
+                "F",
+                "B",
+                "A",
+                "C",
+                "C"
+            ],
+            "tc": 18,
+            "cgpa": 5.0,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "KABIR ANNABHAO HARJASPURIA",
+            "rollno": "2K21/ME/137",
+            "grades": [
+                "F",
+                "F",
+                "F",
+                "B",
+                "F",
+                "C"
+            ],
+            "tc": 6,
+            "cgpa": 1.55,
+            "failed_papers": [
+                "PE251ME201",
+                "ME203",
+                "ME207"
+            ]
+        },
+        {
+            "name": "KAMALDEEP SINGH",
+            "rollno": "2K21/ME/138",
+            "grades": [
+                "B+",
+                "A",
+                "A",
+                "A",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "KARAN",
+            "rollno": "2K21/ME/139",
+            "grades": [
+                "O",
+                "A+",
+                "O",
+                "A+",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.55,
+            "failed_papers": []
+        },
+        {
+            "name": "ABHINAV RANA",
+            "rollno": "2K21/ME/14",
+            "grades": [
+                "B+",
+                "F",
+                "B",
+                "B+",
+                "C",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 5.09,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "KARTIK SINGH",
+            "rollno": "2K21/ME/140",
+            "grades": [
+                "B",
+                "P",
+                "A",
+                "A",
+                "B+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 6.91,
+            "failed_papers": []
+        },
+        {
+            "name": "KAUSTUV RAY",
+            "rollno": "2K21/ME/141",
+            "grades": [
+                "C",
+                "F",
+                "F",
+                "F",
+                "F",
+                "F"
+            ],
+            "tc": 4,
+            "cgpa": 0.91,
+            "failed_papers": [
+                "ME201",
+                "ME203",
+                "ME205",
+                "ME207",
+                "FEC7"
+            ]
+        },
+        {
+            "name": "KETAN KHARE",
+            "rollno": "2K21/ME/142",
+            "grades": [
+                "A+",
+                "P",
+                "B+",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.09,
+            "failed_papers": []
+        },
+        {
+            "name": "KHUSHAL MAHAJAN",
+            "rollno": "2K21/ME/143",
+            "grades": [
+                "B+",
+                "P",
+                "B",
+                "A",
+                "B",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.18,
+            "failed_papers": []
+        },
+        {
+            "name": "KRISHNA SAINI",
+            "rollno": "2K21/ME/144",
+            "grades": [
+                "F",
+                "F",
+                "C",
+                "B",
+                "B",
+                "B"
+            ],
+            "tc": 14,
+            "cgpa": 3.64,
+            "failed_papers": [
+                "PE251ME201"
+            ]
+        },
+        {
+            "name": "KSHITIJ AGRAWAL",
+            "rollno": "2K21/ME/145",
+            "grades": [
+                "A",
+                "O",
+                "O",
+                "O",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.36,
+            "failed_papers": []
+        },
+        {
+            "name": "KUMAR VAIBHAV",
+            "rollno": "2K21/ME/146",
+            "grades": [
+                "B+",
+                "P",
+                "A",
+                "A+",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.09,
+            "failed_papers": []
+        },
+        {
+            "name": "L.K RONALD MATE",
+            "rollno": "2K21/ME/147",
+            "grades": [
+                "C",
+                "F",
+                "A",
+                "C",
+                "A",
+                "A+"
+            ],
+            "tc": 18,
+            "cgpa": 5.55,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "LAKSHYA KAMBOJ",
+            "rollno": "2K21/ME/148",
+            "grades": [
+                "B",
+                "F",
+                "A+",
+                "A",
+                "A",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 6.18,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "MADHAV BANERJEE",
+            "rollno": "2K21/ME/149",
+            "grades": [
+                "A",
+                "O",
+                "A",
+                "A+",
+                "B",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.18,
+            "failed_papers": []
+        },
+        {
+            "name": "ABHISHEK",
+            "rollno": "2K21/ME/15",
+            "grades": [
+                "A",
+                "F",
+                "A",
+                "B+",
+                "A",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 6.36,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "MADHAV PANDEY",
+            "rollno": "2K21/ME/150",
+            "grades": [
+                "O",
+                "O",
+                "A+",
+                "A+",
+                "A+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 9.45,
+            "failed_papers": []
+        },
+        {
+            "name": "MANISH",
+            "rollno": "2K21/ME/151",
+            "grades": [
+                "C",
+                "F",
+                "C",
+                "A",
+                "B",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 5.0,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "MANISH KUMAR",
+            "rollno": "2K21/ME/152",
+            "grades": [
+                "C",
+                "F",
+                "P",
+                "A",
+                "C",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 4.55,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "MANISH RAI",
+            "rollno": "2K21/ME/153",
+            "grades": [
+                "A",
+                "A+",
+                "A+",
+                "A+",
+                "A",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 8.73,
+            "failed_papers": []
+        },
+        {
+            "name": "MANISHA MEENA",
+            "rollno": "2K21/ME/154",
+            "grades": [
+                "C",
+                "F",
+                "B",
+                "B+",
+                "A",
+                "C"
+            ],
+            "tc": 18,
+            "cgpa": 5.18,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "MAYANK MISHRA",
+            "rollno": "2K21/ME/156",
+            "grades": [
+                "O",
+                "A+",
+                "O",
+                "O",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.73,
+            "failed_papers": []
+        },
+        {
+            "name": "MD ADNAN ALI KHAN",
+            "rollno": "2K21/ME/157",
+            "grades": [
+                "B+",
+                "B",
+                "B",
+                "A",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.27,
+            "failed_papers": []
+        },
+        {
+            "name": "MK LENOS HAOKIP",
+            "rollno": "2K21/ME/158",
+            "grades": [
+                "C",
+                "C",
+                "C",
+                "A+",
+                "B",
+                "C"
+            ],
+            "tc": 22,
+            "cgpa": 5.91,
+            "failed_papers": []
+        },
+        {
+            "name": "MOHD OMAR",
+            "rollno": "2K21/ME/159",
+            "grades": [
+                "A+",
+                "B",
+                "A",
+                "A+",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.18,
+            "failed_papers": []
+        },
+        {
+            "name": "ABHISHEK CHOUDHARY",
+            "rollno": "2K21/ME/16",
+            "grades": [
+                "A",
+                "B",
+                "B",
+                "B+",
+                "B+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.0,
+            "failed_papers": []
+        },
+        {
+            "name": "MONISH VIJ",
+            "rollno": "2K21/ME/160",
+            "grades": [
+                "C",
+                "P",
+                "P",
+                "F",
+                "B",
+                ""
+            ],
+            "tc": 16,
+            "cgpa": 3.8,
+            "failed_papers": [
+                "ME205"
+            ]
+        },
+        {
+            "name": "MUSKAN YADUVANSHI",
+            "rollno": "2K21/ME/161",
+            "grades": [
+                "A",
+                "B",
+                "B+",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.64,
+            "failed_papers": []
+        },
+        {
+            "name": "NAMAN GUPTA",
+            "rollno": "2K21/ME/162",
+            "grades": [
+                "B",
+                "B",
+                "B+",
+                "A+",
+                "B+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "NAMAN KEDIA",
+            "rollno": "2K21/ME/163",
+            "grades": [
+                "A",
+                "B",
+                "A",
+                "A",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.73,
+            "failed_papers": []
+        },
+        {
+            "name": "NAVNEET KUMAR",
+            "rollno": "2K21/ME/164",
+            "grades": [
+                "C",
+                "P",
+                "B",
+                "A+",
+                "C",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 5.91,
+            "failed_papers": []
+        },
+        {
+            "name": "NEERAJ",
+            "rollno": "2K21/ME/165",
+            "grades": [
+                "A",
+                "B",
+                "B+",
+                "A",
+                "B",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "NETAVYA KAPOOR",
+            "rollno": "2K21/ME/166",
+            "grades": [
+                "B",
+                "B",
+                "B",
+                "O",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.36,
+            "failed_papers": []
+        },
+        {
+            "name": "NIHAR MITTAL",
+            "rollno": "2K21/ME/167",
+            "grades": [
+                "A+",
+                "A+",
+                "O",
+                "O",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.55,
+            "failed_papers": []
+        },
+        {
+            "name": "NIKHIL CHAURASIA",
+            "rollno": "2K21/ME/168",
+            "grades": [
+                "B+",
+                "B",
+                "B",
+                "B+",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.73,
+            "failed_papers": []
+        },
+        {
+            "name": "NIKHIL YADAV",
+            "rollno": "2K21/ME/169",
+            "grades": [
+                "B+",
+                "B+",
+                "A",
+                "A+",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "ABHISHEK KUSHWAHA",
+            "rollno": "2K21/ME/17",
+            "grades": [
+                "A",
+                "P",
+                "B+",
+                "A+",
+                "B+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 7.27,
+            "failed_papers": []
+        },
+        {
+            "name": "NIKHIL YADAV",
+            "rollno": "2K21/ME/170",
+            "grades": [
+                "B+",
+                "B",
+                "C",
+                "O",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.09,
+            "failed_papers": []
+        },
+        {
+            "name": "NIKHILESH RATNA",
+            "rollno": "2K21/ME/171",
+            "grades": [
+                "C",
+                "B",
+                "A",
+                "B+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.91,
+            "failed_papers": []
+        },
+        {
+            "name": "NILESH BIHANA",
+            "rollno": "2K21/ME/172",
+            "grades": [
+                "B",
+                "B+",
+                "A",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.64,
+            "failed_papers": []
+        },
+        {
+            "name": "NIRMIT KHANDELWAL",
+            "rollno": "2K21/ME/173",
+            "grades": [
+                "B",
+                "B",
+                "O",
+                "O",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.27,
+            "failed_papers": []
+        },
+        {
+            "name": "NISHANT YADAV",
+            "rollno": "2K21/ME/174",
+            "grades": [
+                "B",
+                "C",
+                "B+",
+                "B+",
+                "B",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 6.55,
+            "failed_papers": []
+        },
+        {
+            "name": "NITIN",
+            "rollno": "2K21/ME/175",
+            "grades": [
+                "C",
+                "C",
+                "P",
+                "B+",
+                "C",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 5.27,
+            "failed_papers": []
+        },
+        {
+            "name": "NITISH KUMAR",
+            "rollno": "2K21/ME/176",
+            "grades": [
+                "B+",
+                "B+",
+                "A+",
+                "A",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": []
+        },
+        {
+            "name": "OJAS VINAYAK",
+            "rollno": "2K21/ME/177",
+            "grades": [
+                "A",
+                "B",
+                "A",
+                "O",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": []
+        },
+        {
+            "name": "OJASWA KUMAR",
+            "rollno": "2K21/ME/178",
+            "grades": [
+                "B",
+                "B",
+                "B+",
+                "A+",
+                "B+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 7.27,
+            "failed_papers": []
+        },
+        {
+            "name": "OM JHA",
+            "rollno": "2K21/ME/179",
+            "grades": [
+                "O",
+                "A",
+                "A+",
+                "A",
+                "O",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.91,
+            "failed_papers": []
+        },
+        {
+            "name": "ABID AHMED",
+            "rollno": "2K21/ME/18",
+            "grades": [
+                "A+",
+                "P",
+                "A",
+                "A+",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.09,
+            "failed_papers": []
+        },
+        {
+            "name": "OM S OMANWAR",
+            "rollno": "2K21/ME/180",
+            "grades": [
+                "B",
+                "B",
+                "B+",
+                "O",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "OM SHAHI",
+            "rollno": "2K21/ME/181",
+            "grades": [
+                "B+",
+                "O",
+                "O",
+                "A+",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.18,
+            "failed_papers": []
+        },
+        {
+            "name": "OM SHANKER SAHAY",
+            "rollno": "2K21/ME/182",
+            "grades": [
+                "A",
+                "A+",
+                "O",
+                "O",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.0,
+            "failed_papers": []
+        },
+        {
+            "name": "OSHO MURGOD",
+            "rollno": "2K21/ME/183",
+            "grades": [
+                "B+",
+                "B",
+                "B+",
+                "B+",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.91,
+            "failed_papers": []
+        },
+        {
+            "name": "PALASH DUBEY",
+            "rollno": "2K21/ME/184",
+            "grades": [
+                "A+",
+                "A",
+                "A+",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.55,
+            "failed_papers": []
+        },
+        {
+            "name": "PANNUN KAUL",
+            "rollno": "2K21/ME/185",
+            "grades": [
+                "A",
+                "B",
+                "A+",
+                "A",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.91,
+            "failed_papers": []
+        },
+        {
+            "name": "PARAAG",
+            "rollno": "2K21/ME/186",
+            "grades": [
+                "B",
+                "B",
+                "C",
+                "O",
+                "B",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 6.64,
+            "failed_papers": []
+        },
+        {
+            "name": "PARV JAIN",
+            "rollno": "2K21/ME/187",
+            "grades": [
+                "A",
+                "A",
+                "O",
+                "O",
+                "A+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 9.09,
+            "failed_papers": []
+        },
+        {
+            "name": "PARV SAHNI",
+            "rollno": "2K21/ME/188",
+            "grades": [
+                "O",
+                "A",
+                "O",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.91,
+            "failed_papers": []
+        },
+        {
+            "name": "PIYUSH VISHVAKARMA",
+            "rollno": "2K21/ME/189",
+            "grades": [
+                "B",
+                "P",
+                "C",
+                "A",
+                "C",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 5.64,
+            "failed_papers": []
+        },
+        {
+            "name": "ADITYA CHOUBEY",
+            "rollno": "2K21/ME/19",
+            "grades": [
+                "O",
+                "C",
+                "O",
+                "O",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.0,
+            "failed_papers": []
+        },
+        {
+            "name": "PRABHAV SAXENA",
+            "rollno": "2K21/ME/190",
+            "grades": [
+                "A+",
+                "A",
+                "A",
+                "A+",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.82,
+            "failed_papers": []
+        },
+        {
+            "name": "PRAKHAR MISHRA",
+            "rollno": "2K21/ME/191",
+            "grades": [
+                "A",
+                "A+",
+                "A",
+                "B+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.09,
+            "failed_papers": []
+        },
+        {
+            "name": "PRANJALI VASHISHT",
+            "rollno": "2K21/ME/192",
+            "grades": [
+                "A+",
+                "B+",
+                "A+",
+                "B+",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.27,
+            "failed_papers": []
+        },
+        {
+            "name": "PRASANN VERMA",
+            "rollno": "2K21/ME/193",
+            "grades": [
+                "B+",
+                "B",
+                "B+",
+                "B+",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.36,
+            "failed_papers": []
+        },
+        {
+            "name": "PRASHANT ROY",
+            "rollno": "2K21/ME/194",
+            "grades": [
+                "B",
+                "P",
+                "B",
+                "A",
+                "C",
+                "C"
+            ],
+            "tc": 22,
+            "cgpa": 5.73,
+            "failed_papers": []
+        },
+        {
+            "name": "PRASHANT SINGH",
+            "rollno": "2K21/ME/195",
+            "grades": [
+                "A",
+                "B+",
+                "B+",
+                "A",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.73,
+            "failed_papers": []
+        },
+        {
+            "name": "PRASHANT TIWARI",
+            "rollno": "2K21/ME/196",
+            "grades": [
+                "B",
+                "B",
+                "A",
+                "B",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.55,
+            "failed_papers": []
+        },
+        {
+            "name": "PRATEEK KUMAR",
+            "rollno": "2K21/ME/197",
+            "grades": [
+                "B",
+                "C",
+                "A",
+                "A",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.73,
+            "failed_papers": []
+        },
+        {
+            "name": "PRATHAM",
+            "rollno": "2K21/ME/198",
+            "grades": [
+                "B+",
+                "C",
+                "B",
+                "B",
+                "B",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.18,
+            "failed_papers": []
+        },
+        {
+            "name": "PRATHAM DIKSHIT",
+            "rollno": "2K21/ME/199",
+            "grades": [
+                "A",
+                "B+",
+                "B+",
+                "B",
+                "A",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "ADITYA JAIN",
+            "rollno": "2K21/ME/20",
+            "grades": [
+                "A+",
+                "A",
+                "A+",
+                "O",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.0,
+            "failed_papers": []
+        },
+        {
+            "name": "PRATHAM JAIN",
+            "rollno": "2K21/ME/200",
+            "grades": [
+                "A+",
+                "B+",
+                "A+",
+                "A",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.36,
+            "failed_papers": []
+        },
+        {
+            "name": "PRATHAM KHURANA",
+            "rollno": "2K21/ME/201",
+            "grades": [
+                "B",
+                "C",
+                "C",
+                "B",
+                "B+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 5.91,
+            "failed_papers": []
+        },
+        {
+            "name": "PRATIK",
+            "rollno": "2K21/ME/202",
+            "grades": [
+                "P",
+                "F",
+                "F",
+                "B+",
+                "C",
+                "P"
+            ],
+            "tc": 14,
+            "cgpa": 3.27,
+            "failed_papers": [
+                "ME201",
+                "ME203"
+            ]
+        },
+        {
+            "name": "PREMPAL KUMAR",
+            "rollno": "2K21/ME/203",
+            "grades": [
+                "B+",
+                "B+",
+                "B",
+                "A",
+                "A+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.36,
+            "failed_papers": []
+        },
+        {
+            "name": "PRIYANSHU GUPTA",
+            "rollno": "2K21/ME/205",
+            "grades": [
+                "C",
+                "B",
+                "C",
+                "B+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.36,
+            "failed_papers": []
+        },
+        {
+            "name": "PRIYANSHU KUMAR",
+            "rollno": "2K21/ME/206",
+            "grades": [
+                "B+",
+                "B+",
+                "B+",
+                "O",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.27,
+            "failed_papers": []
+        },
+        {
+            "name": "PRIYANSHU SAHU",
+            "rollno": "2K21/ME/207",
+            "grades": [
+                "A+",
+                "B+",
+                "B+",
+                "A",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "RAHUL GUPTA",
+            "rollno": "2K21/ME/208",
+            "grades": [
+                "F",
+                "F",
+                "F",
+                "F",
+                "F",
+                ""
+            ],
+            "tc": 0,
+            "cgpa": 0.0,
+            "failed_papers": [
+                "PE251ME201",
+                "ME203",
+                "ME205",
+                "ME207"
+            ]
+        },
+        {
+            "name": "RAJ KUMAR",
+            "rollno": "2K21/ME/209",
+            "grades": [
+                "C",
+                "C",
+                "P",
+                "A",
+                "B+",
+                "C"
+            ],
+            "tc": 22,
+            "cgpa": 5.73,
+            "failed_papers": []
+        },
+        {
+            "name": "ADITYA KUMAR",
+            "rollno": "2K21/ME/21",
+            "grades": [
+                "A+",
+                "A",
+                "A+",
+                "A+",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.0,
+            "failed_papers": []
+        },
+        {
+            "name": "RAJAN",
+            "rollno": "2K21/ME/210",
+            "grades": [
+                "F",
+                "P",
+                "C",
+                "C",
+                "P",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 3.91,
+            "failed_papers": [
+                "PE251"
+            ]
+        },
+        {
+            "name": "RAJAT CHANDRA",
+            "rollno": "2K21/ME/211",
+            "grades": [
+                "A+",
+                "A+",
+                "B+",
+                "O",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.45,
+            "failed_papers": []
+        },
+        {
+            "name": "RAJEEV LOCHAN MUDULI",
+            "rollno": "2K21/ME/212",
+            "grades": [
+                "C",
+                "C",
+                "P",
+                "A+",
+                "B+",
+                "C"
+            ],
+            "tc": 22,
+            "cgpa": 5.91,
+            "failed_papers": []
+        },
+        {
+            "name": "RAM CHOUDHARY",
+            "rollno": "2K21/ME/213",
+            "grades": [
+                "B",
+                "C",
+                "B",
+                "A+",
+                "B+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 6.82,
+            "failed_papers": []
+        },
+        {
+            "name": "RAVI PAL",
+            "rollno": "2K21/ME/214",
+            "grades": [
+                "A",
+                "B+",
+                "B+",
+                "A+",
+                "B+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.73,
+            "failed_papers": []
+        },
+        {
+            "name": "RISHAB DANDRIYAL",
+            "rollno": "2K21/ME/215",
+            "grades": [
+                "O",
+                "A",
+                "O",
+                "O",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.36,
+            "failed_papers": []
+        },
+        {
+            "name": "RISHAB KUMAR",
+            "rollno": "2K21/ME/216",
+            "grades": [
+                "F",
+                "F",
+                "F",
+                "F",
+                "F",
+                "F"
+            ],
+            "tc": 0,
+            "cgpa": 0.0,
+            "failed_papers": [
+                "PE251ME201",
+                "ME203",
+                "ME205",
+                "ME207",
+                "FEC7"
+            ]
+        },
+        {
+            "name": "RISHABH BHARDWAJ",
+            "rollno": "2K21/ME/217",
+            "grades": [
+                "O",
+                "A+",
+                "A+",
+                "O",
+                "O",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 9.36,
+            "failed_papers": []
+        },
+        {
+            "name": "RISHABH YADAV",
+            "rollno": "2K21/ME/218",
+            "grades": [
+                "F",
+                "F",
+                "F",
+                "A+",
+                "F",
+                "A+"
+            ],
+            "tc": 6,
+            "cgpa": 2.45,
+            "failed_papers": [
+                "PE251ME201",
+                "ME203",
+                "ME207"
+            ]
+        },
+        {
+            "name": "RISHI KAUSHIK",
+            "rollno": "2K21/ME/219",
+            "grades": [
+                "O",
+                "B+",
+                "B+",
+                "A+",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.36,
+            "failed_papers": []
+        },
+        {
+            "name": "ADITYA KUMAR JHA",
+            "rollno": "2K21/ME/22",
+            "grades": [
+                "A",
+                "P",
+                "B",
+                "B+",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 6.64,
+            "failed_papers": []
+        },
+        {
+            "name": "RISHI VAID",
+            "rollno": "2K21/ME/220",
+            "grades": [
+                "O",
+                "A+",
+                "B+",
+                "A+",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.82,
+            "failed_papers": []
+        },
+        {
+            "name": "RISHIKESH KOTHIYAL",
+            "rollno": "2K21/ME/221",
+            "grades": [
+                "B+",
+                "C",
+                "C",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.55,
+            "failed_papers": []
+        },
+        {
+            "name": "RISHIT SAINI",
+            "rollno": "2K21/ME/222",
+            "grades": [
+                "A",
+                "B",
+                "B",
+                "A",
+                "B+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.0,
+            "failed_papers": []
+        },
+        {
+            "name": "RISHU PRAKASH PAL",
+            "rollno": "2K21/ME/223",
+            "grades": [
+                "A",
+                "B+",
+                "A",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "RITESH KUMAR SINHA",
+            "rollno": "2K21/ME/224",
+            "grades": [
+                "A+",
+                "B+",
+                "B+",
+                "O",
+                "B+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 8.18,
+            "failed_papers": []
+        },
+        {
+            "name": "RITIK GUPTA",
+            "rollno": "2K21/ME/225",
+            "grades": [
+                "O",
+                "O",
+                "O",
+                "O",
+                "O",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 10.0,
+            "failed_papers": []
+        },
+        {
+            "name": "RITIK SINGH",
+            "rollno": "2K21/ME/226",
+            "grades": [
+                "B+",
+                "B",
+                "P",
+                "A",
+                "B",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.36,
+            "failed_papers": []
+        },
+        {
+            "name": "ROHIT KUMAR",
+            "rollno": "2K21/ME/227",
+            "grades": [
+                "B+",
+                "C",
+                "B",
+                "F",
+                "F",
+                "F"
+            ],
+            "tc": 12,
+            "cgpa": 3.27,
+            "failed_papers": [
+                "ME205",
+                "ME207",
+                "FEC3"
+            ]
+        },
+        {
+            "name": "RUBYANSH YADAV",
+            "rollno": "2K21/ME/228",
+            "grades": [
+                "B+",
+                "C",
+                "B",
+                "A",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.55,
+            "failed_papers": []
+        },
+        {
+            "name": "RUSHI KISHORBHAI SAVALIYA",
+            "rollno": "2K21/ME/229",
+            "grades": [
+                "B+",
+                "A",
+                "B",
+                "A+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.73,
+            "failed_papers": []
+        },
+        {
+            "name": "SAATVIK DABRAL",
+            "rollno": "2K21/ME/230",
+            "grades": [
+                "B+",
+                "B",
+                "B",
+                "A+",
+                "B+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "SACHIN",
+            "rollno": "2K21/ME/231",
+            "grades": [
+                "A",
+                "B+",
+                "B+",
+                "A+",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.73,
+            "failed_papers": []
+        },
+        {
+            "name": "SACHIN BHATT",
+            "rollno": "2K21/ME/232",
+            "grades": [
+                "A+",
+                "A",
+                "A+",
+                "A+",
+                "O",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 9.09,
+            "failed_papers": []
+        },
+        {
+            "name": "SACHIN KUMAR",
+            "rollno": "2K21/ME/233",
+            "grades": [
+                "O",
+                "A",
+                "A",
+                "A+",
+                "A",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 8.73,
+            "failed_papers": []
+        },
+        {
+            "name": "SAHIL CHOUHAN",
+            "rollno": "2K21/ME/234",
+            "grades": [
+                "O",
+                "A+",
+                "A+",
+                "A+",
+                "O",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 9.27,
+            "failed_papers": []
+        },
+        {
+            "name": "SAHIL JAIN",
+            "rollno": "2K21/ME/235",
+            "grades": [
+                "B+",
+                "B+",
+                "A",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": []
+        },
+        {
+            "name": "SAHIL SHARMA",
+            "rollno": "2K21/ME/236",
+            "grades": [
+                "A",
+                "A+",
+                "B+",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": []
+        },
+        {
+            "name": "SAJJAN KUMAR",
+            "rollno": "2K21/ME/237",
+            "grades": [
+                "B",
+                "B",
+                "B",
+                "A",
+                "P",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 6.27,
+            "failed_papers": []
+        },
+        {
+            "name": "SAKET AGRAWAL",
+            "rollno": "2K21/ME/238",
+            "grades": [
+                "A",
+                "A+",
+                "B+",
+                "A",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "SAKSHAM",
+            "rollno": "2K21/ME/239",
+            "grades": [
+                "A+",
+                "A",
+                "A+",
+                "A",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.64,
+            "failed_papers": []
+        },
+        {
+            "name": "ADITYA KUMAR SINGH",
+            "rollno": "2K21/ME/24",
+            "grades": [
+                "O",
+                "B+",
+                "O",
+                "O",
+                "A+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 9.27,
+            "failed_papers": []
+        },
+        {
+            "name": "SAKSHAM MISHRA",
+            "rollno": "2K21/ME/240",
+            "grades": [
+                "A",
+                "A",
+                "A+",
+                "A+",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.55,
+            "failed_papers": []
+        },
+        {
+            "name": "SAMRIDDHI KEJRIWAL",
+            "rollno": "2K21/ME/241",
+            "grades": [
+                "O",
+                "A+",
+                "O",
+                "A+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.18,
+            "failed_papers": []
+        },
+        {
+            "name": "SANTOSH KUMAR YADAV",
+            "rollno": "2K21/ME/243",
+            "grades": [
+                "A",
+                "O",
+                "A+",
+                "O",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.18,
+            "failed_papers": []
+        },
+        {
+            "name": "SARANSH MALHOTRA",
+            "rollno": "2K21/ME/244",
+            "grades": [
+                "A+",
+                "A",
+                "A",
+                "A+",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.27,
+            "failed_papers": []
+        },
+        {
+            "name": "SARANSH VERMA",
+            "rollno": "2K21/ME/245",
+            "grades": [
+                "B+",
+                "A",
+                "A+",
+                "O",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.36,
+            "failed_papers": []
+        },
+        {
+            "name": "SARTHAK",
+            "rollno": "2K21/ME/246",
+            "grades": [
+                "B+",
+                "C",
+                "A",
+                "B+",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.91,
+            "failed_papers": []
+        },
+        {
+            "name": "SARTHAK SACHDEV",
+            "rollno": "2K21/ME/247",
+            "grades": [
+                "A",
+                "B+",
+                "B",
+                "O",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": []
+        },
+        {
+            "name": "SATYAM CHAURASIYA",
+            "rollno": "2K21/ME/248",
+            "grades": [
+                "F",
+                "F",
+                "F",
+                "P",
+                "F",
+                "F"
+            ],
+            "tc": 4,
+            "cgpa": 0.73,
+            "failed_papers": [
+                "PE251ME201",
+                "ME203",
+                "ME207",
+                "FEC14"
+            ]
+        },
+        {
+            "name": "SATYAM JHA",
+            "rollno": "2K21/ME/249",
+            "grades": [
+                "A+",
+                "A+",
+                "A",
+                "A+",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.73,
+            "failed_papers": []
+        },
+        {
+            "name": "ADITYA MINZ",
+            "rollno": "2K21/ME/25",
+            "grades": [
+                "A+",
+                "P",
+                "A+",
+                "O",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.18,
+            "failed_papers": []
+        },
+        {
+            "name": "SATYAM SOURABH",
+            "rollno": "2K21/ME/250",
+            "grades": [
+                "A",
+                "A+",
+                "A+",
+                "A+",
+                "A+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.64,
+            "failed_papers": []
+        },
+        {
+            "name": "SAURABH",
+            "rollno": "2K21/ME/252",
+            "grades": [
+                "A+",
+                "B+",
+                "B+",
+                "A",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "SHEKHAR PANWAR",
+            "rollno": "2K21/ME/254",
+            "grades": [
+                "A+",
+                "B+",
+                "A+",
+                "A",
+                "A+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 8.55,
+            "failed_papers": []
+        },
+        {
+            "name": "SHIV PRAKASH GUPTA",
+            "rollno": "2K21/ME/255",
+            "grades": [
+                "A",
+                "B+",
+                "A",
+                "A",
+                "A",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 7.64,
+            "failed_papers": []
+        },
+        {
+            "name": "SHIVAM RAJORIYA",
+            "rollno": "2K21/ME/256",
+            "grades": [
+                "B",
+                "C",
+                "B",
+                "A",
+                "C",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.18,
+            "failed_papers": []
+        },
+        {
+            "name": "SHIVANSH AWASTHI",
+            "rollno": "2K21/ME/257",
+            "grades": [
+                "A+",
+                "O",
+                "O",
+                "A",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.0,
+            "failed_papers": []
+        },
+        {
+            "name": "SHIVANSH CHADHA",
+            "rollno": "2K21/ME/258",
+            "grades": [
+                "P",
+                "A",
+                "A",
+                "A+",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.36,
+            "failed_papers": []
+        },
+        {
+            "name": "ADITYA RANJAN",
+            "rollno": "2K21/ME/26",
+            "grades": [
+                "B+",
+                "F",
+                "B",
+                "A+",
+                "B",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 5.73,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "SHREY PANTHRI",
+            "rollno": "2K21/ME/260",
+            "grades": [
+                "A+",
+                "A+",
+                "A",
+                "A+",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.45,
+            "failed_papers": []
+        },
+        {
+            "name": "SHRIYANSH RAJ AWADHIYA",
+            "rollno": "2K21/ME/261",
+            "grades": [
+                "O",
+                "O",
+                "A+",
+                "A+",
+                "O",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 9.45,
+            "failed_papers": []
+        },
+        {
+            "name": "SHUBH YADAV",
+            "rollno": "2K21/ME/262",
+            "grades": [
+                "A",
+                "B+",
+                "A",
+                "A+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.09,
+            "failed_papers": []
+        },
+        {
+            "name": "SHUBHANSHU RAO",
+            "rollno": "2K21/ME/263",
+            "grades": [
+                "O",
+                "O",
+                "O",
+                "O",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.91,
+            "failed_papers": []
+        },
+        {
+            "name": "SHWETAB SHANDILYA",
+            "rollno": "2K21/ME/264",
+            "grades": [
+                "B",
+                "B+",
+                "B",
+                "O",
+                "B+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "SIDDHANT SINGH",
+            "rollno": "2K21/ME/265",
+            "grades": [
+                "B+",
+                "C",
+                "B+",
+                "A",
+                "B",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.73,
+            "failed_papers": []
+        },
+        {
+            "name": "SIDDHARTH JOSHI",
+            "rollno": "2K21/ME/266",
+            "grades": [
+                "A+",
+                "A",
+                "A",
+                "A+",
+                "A+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.45,
+            "failed_papers": []
+        },
+        {
+            "name": "SIDHARTH NAIR",
+            "rollno": "2K21/ME/267",
+            "grades": [
+                "B+",
+                "B+",
+                "B",
+                "A",
+                "B+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "SONU KUMAR",
+            "rollno": "2K21/ME/268",
+            "grades": [
+                "B",
+                "C",
+                "A",
+                "O",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.27,
+            "failed_papers": []
+        },
+        {
+            "name": "SOUMYA ANAND JAIN",
+            "rollno": "2K21/ME/269",
+            "grades": [
+                "B+",
+                "B+",
+                "B",
+                "A+",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 7.09,
+            "failed_papers": []
+        },
+        {
+            "name": "ADITYA SINGH",
+            "rollno": "2K21/ME/27",
+            "grades": [
+                "A+",
+                "P",
+                "A+",
+                "O",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.91,
+            "failed_papers": []
+        },
+        {
+            "name": "SOURAB PRASAD",
+            "rollno": "2K21/ME/270",
+            "grades": [
+                "C",
+                "B",
+                "B+",
+                "A+",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.91,
+            "failed_papers": []
+        },
+        {
+            "name": "SOURABH VERMA",
+            "rollno": "2K21/ME/271",
+            "grades": [
+                "B",
+                "C",
+                "C",
+                "A",
+                "B",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 6.09,
+            "failed_papers": []
+        },
+        {
+            "name": "SPARSH KUMAR TANWAR",
+            "rollno": "2K21/ME/272",
+            "grades": [
+                "B",
+                "C",
+                "C",
+                "B",
+                "C",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 5.55,
+            "failed_papers": []
+        },
+        {
+            "name": "SSENTEZA HUSEIN LATIFU",
+            "rollno": "2K21/ME/273",
+            "grades": [
+                "B",
+                "B",
+                "A",
+                "A",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.91,
+            "failed_papers": []
+        },
+        {
+            "name": "SUBHRAJIT ROY",
+            "rollno": "2K21/ME/274",
+            "grades": [
+                "A+",
+                "O",
+                "A+",
+                "O",
+                "O",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 9.36,
+            "failed_papers": []
+        },
+        {
+            "name": "SUMRIT KUMAR",
+            "rollno": "2K21/ME/275",
+            "grades": [
+                "A+",
+                "B",
+                "B+",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "SURAJ KUMAR SAINI",
+            "rollno": "2K21/ME/276",
+            "grades": [
+                "B+",
+                "B+",
+                "B",
+                "C",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.36,
+            "failed_papers": []
+        },
+        {
+            "name": "TANAY KUMAR PRASAD",
+            "rollno": "2K21/ME/278",
+            "grades": [
+                "A",
+                "B+",
+                "B",
+                "A+",
+                "A",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "TANISHQ RASTOGI",
+            "rollno": "2K21/ME/279",
+            "grades": [
+                "B+",
+                "A",
+                "B",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.27,
+            "failed_papers": []
+        },
+        {
+            "name": "ADITYA YADAV",
+            "rollno": "2K21/ME/28",
+            "grades": [
+                "B",
+                "F",
+                "B+",
+                "F",
+                "B+",
+                "B+"
+            ],
+            "tc": 14,
+            "cgpa": 4.27,
+            "failed_papers": [
+                "ME201",
+                "ME205"
+            ]
+        },
+        {
+            "name": "TARUN",
+            "rollno": "2K21/ME/280",
+            "grades": [
+                "B+",
+                "B",
+                "B+",
+                "O",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 7.27,
+            "failed_papers": []
+        },
+        {
+            "name": "TEJAAS RAAJ SINGH",
+            "rollno": "2K21/ME/281",
+            "grades": [
+                "B+",
+                "B",
+                "B+",
+                "A+",
+                "B",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.0,
+            "failed_papers": []
+        },
+        {
+            "name": "TUHIN BASU",
+            "rollno": "2K21/ME/282",
+            "grades": [
+                "B+",
+                "O",
+                "A",
+                "O",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.45,
+            "failed_papers": []
+        },
+        {
+            "name": "TUSHAL KUMAR",
+            "rollno": "2K21/ME/283",
+            "grades": [
+                "A+",
+                "B+",
+                "A",
+                "A+",
+                "A",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 8.36,
+            "failed_papers": []
+        },
+        {
+            "name": "TUSHAR",
+            "rollno": "2K21/ME/284",
+            "grades": [
+                "B",
+                "C",
+                "C",
+                "B+",
+                "B",
+                "C"
+            ],
+            "tc": 22,
+            "cgpa": 5.73,
+            "failed_papers": []
+        },
+        {
+            "name": "TUSHAR GAUTAM",
+            "rollno": "2K21/ME/285",
+            "grades": [
+                "B+",
+                "P",
+                "C",
+                "O",
+                "B",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 6.64,
+            "failed_papers": []
+        },
+        {
+            "name": "TUSHAR RAI",
+            "rollno": "2K21/ME/286",
+            "grades": [
+                "A",
+                "B",
+                "B",
+                "A",
+                "B+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "UJJWAL TOMAR",
+            "rollno": "2K21/ME/287",
+            "grades": [
+                "C",
+                "B",
+                "B",
+                "A",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.36,
+            "failed_papers": []
+        },
+        {
+            "name": "UTKARSH KUMAR UMANG",
+            "rollno": "2K21/ME/288",
+            "grades": [
+                "A",
+                "A",
+                "B+",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "UTKARSH ROY",
+            "rollno": "2K21/ME/289",
+            "grades": [
+                "A+",
+                "B+",
+                "O",
+                "O",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.18,
+            "failed_papers": []
+        },
+        {
+            "name": "AGRIM NAUTIYAL",
+            "rollno": "2K21/ME/29",
+            "grades": [
+                "B+",
+                "O",
+                "B",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "UTKARSH SHARMA",
+            "rollno": "2K21/ME/290",
+            "grades": [
+                "A",
+                "B+",
+                "O",
+                "A+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.45,
+            "failed_papers": []
+        },
+        {
+            "name": "UTKARSH SINGH",
+            "rollno": "2K21/ME/291",
+            "grades": [
+                "A",
+                "B+",
+                "C",
+                "O",
+                "B",
+                "F"
+            ],
+            "tc": 20,
+            "cgpa": 6.55,
+            "failed_papers": [
+                "FEC7"
+            ]
+        },
+        {
+            "name": "VAIBHAV",
+            "rollno": "2K21/ME/292",
+            "grades": [
+                "B+",
+                "C",
+                "A",
+                "B+",
+                "C",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 6.45,
+            "failed_papers": []
+        },
+        {
+            "name": "VAIBHAV CHAUBEY",
+            "rollno": "2K21/ME/293",
+            "grades": [
+                "A",
+                "A+",
+                "A+",
+                "A",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.36,
+            "failed_papers": []
+        },
+        {
+            "name": "VAIBHAV KUMAR",
+            "rollno": "2K21/ME/294",
+            "grades": [
+                "B+",
+                "B",
+                "B",
+                "A",
+                "B+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 6.82,
+            "failed_papers": []
+        },
+        {
+            "name": "VAIBHAV PANWAR",
+            "rollno": "2K21/ME/295",
+            "grades": [
+                "A+",
+                "B",
+                "B",
+                "C",
+                "B",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.36,
+            "failed_papers": []
+        },
+        {
+            "name": "VANSH CHOUDHARY",
+            "rollno": "2K21/ME/296",
+            "grades": [
+                "B+",
+                "C",
+                "B+",
+                "B",
+                "C",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.0,
+            "failed_papers": []
+        },
+        {
+            "name": "VIDHAN GARG",
+            "rollno": "2K21/ME/298",
+            "grades": [
+                "A+",
+                "A+",
+                "A+",
+                "A+",
+                "A+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.82,
+            "failed_papers": []
+        },
+        {
+            "name": "VISHAL JAISWAL",
+            "rollno": "2K21/ME/299",
+            "grades": [
+                "O",
+                "O",
+                "A+",
+                "A+",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 9.27,
+            "failed_papers": []
+        },
+        {
+            "name": "AJAY",
+            "rollno": "2K21/ME/30",
+            "grades": [
+                "A",
+                "F",
+                "A",
+                "A",
+                "A",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 6.45,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "VISHAL KUMAR ROY",
+            "rollno": "2K21/ME/300",
+            "grades": [
+                "A+",
+                "A",
+                "A+",
+                "O",
+                "A",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 8.91,
+            "failed_papers": []
+        },
+        {
+            "name": "VISHAL SINGH",
+            "rollno": "2K21/ME/301",
+            "grades": [
+                "A",
+                "A",
+                "A",
+                "B",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": []
+        },
+        {
+            "name": "VISHAL YADAV",
+            "rollno": "2K21/ME/302",
+            "grades": [
+                "A",
+                "B+",
+                "A",
+                "A+",
+                "B+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.91,
+            "failed_papers": []
+        },
+        {
+            "name": "VISHWAS DHANDA",
+            "rollno": "2K21/ME/303",
+            "grades": [
+                "A",
+                "A+",
+                "A",
+                "O",
+                "A+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.64,
+            "failed_papers": []
+        },
+        {
+            "name": "VIVEK VASHISHTA",
+            "rollno": "2K21/ME/304",
+            "grades": [
+                "B+",
+                "A",
+                "A",
+                "A",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "YAMIR SETH",
+            "rollno": "2K21/ME/306",
+            "grades": [
+                "B+",
+                "B",
+                "A+",
+                "A",
+                "B",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.27,
+            "failed_papers": []
+        },
+        {
+            "name": "YASH",
+            "rollno": "2K21/ME/307",
+            "grades": [
+                "B",
+                "B",
+                "B+",
+                "B+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.0,
+            "failed_papers": []
+        },
+        {
+            "name": "YASH KUMAR",
+            "rollno": "2K21/ME/308",
+            "grades": [
+                "A",
+                "B",
+                "B+",
+                "B+",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "YOGENDER",
+            "rollno": "2K21/ME/309",
+            "grades": [
+                "A+",
+                "A+",
+                "O",
+                "A+",
+                "O",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 9.18,
+            "failed_papers": []
+        },
+        {
+            "name": "AKASH MISHRA",
+            "rollno": "2K21/ME/31",
+            "grades": [
+                "O",
+                "A",
+                "A+",
+                "A+",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.0,
+            "failed_papers": []
+        },
+        {
+            "name": "YUGAL RATHI",
+            "rollno": "2K21/ME/310",
+            "grades": [
+                "F",
+                "B",
+                "B",
+                "A+",
+                "B",
+                "C"
+            ],
+            "tc": 18,
+            "cgpa": 5.36,
+            "failed_papers": [
+                "PE251"
+            ]
+        },
+        {
+            "name": "YUVRAJ JAYAN SINGH",
+            "rollno": "2K21/ME/311",
+            "grades": [
+                "A",
+                "B+",
+                "B+",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "SARTHAK SINGH",
+            "rollno": "2K21/ME/312",
+            "grades": [
+                "A",
+                "C",
+                "B+",
+                "B+",
+                "B+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 6.73,
+            "failed_papers": []
+        },
+        {
+            "name": "AKASH SHARMA",
+            "rollno": "2K21/ME/32",
+            "grades": [
+                "O",
+                "O",
+                "A+",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 9.09,
+            "failed_papers": []
+        },
+        {
+            "name": "AKASH SINGH",
+            "rollno": "2K21/ME/33",
+            "grades": [
+                "A",
+                "P",
+                "B",
+                "A",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 6.82,
+            "failed_papers": []
+        },
+        {
+            "name": "AKSHIT SANTOSHI",
+            "rollno": "2K21/ME/35",
+            "grades": [
+                "B+",
+                "F",
+                "B",
+                "A",
+                "B",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 5.55,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ALOK BADESRA",
+            "rollno": "2K21/ME/36",
+            "grades": [
+                "A+",
+                "B+",
+                "A",
+                "A+",
+                "A+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 8.27,
+            "failed_papers": []
+        },
+        {
+            "name": "AMAN GUPTA",
+            "rollno": "2K21/ME/37",
+            "grades": [
+                "A",
+                "F",
+                "B",
+                "A+",
+                "B",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 5.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "AMAN KUMAR",
+            "rollno": "2K21/ME/38",
+            "grades": [
+                "A+",
+                "A",
+                "O",
+                "O",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 9.09,
+            "failed_papers": []
+        },
+        {
+            "name": "AMAN PAHADIA",
+            "rollno": "2K21/ME/39",
+            "grades": [
+                "A",
+                "F",
+                "B",
+                "A+",
+                "B+",
+                "O"
+            ],
+            "tc": 18,
+            "cgpa": 6.36,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "AMAN ROHILLA",
+            "rollno": "2K21/ME/41",
+            "grades": [
+                "A",
+                "F",
+                "B+",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 6.55,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "AMAN SINGH CHAUHAN",
+            "rollno": "2K21/ME/42",
+            "grades": [
+                "A",
+                "A+",
+                "A",
+                "O",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.73,
+            "failed_papers": []
+        },
+        {
+            "name": "AMAN YADAV",
+            "rollno": "2K21/ME/43",
+            "grades": [
+                "A+",
+                "B",
+                "A",
+                "A+",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.27,
+            "failed_papers": []
+        },
+        {
+            "name": "AMIT KUMAR",
+            "rollno": "2K21/ME/44",
+            "grades": [
+                "B+",
+                "P",
+                "A",
+                "A+",
+                "B+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.0,
+            "failed_papers": []
+        },
+        {
+            "name": "AMRITANSHU SINGH",
+            "rollno": "2K21/ME/45",
+            "grades": [
+                "B+",
+                "F",
+                "C",
+                "A",
+                "B",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 5.45,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ANIRUDH SHARMA",
+            "rollno": "2K21/ME/46",
+            "grades": [
+                "A+",
+                "P",
+                "A",
+                "A+",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.55,
+            "failed_papers": []
+        },
+        {
+            "name": "ANKAN MANDAL",
+            "rollno": "2K21/ME/47",
+            "grades": [
+                "B+",
+                "F",
+                "B",
+                "A",
+                "B",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 5.45,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ANKIT GOYAL",
+            "rollno": "2K21/ME/48",
+            "grades": [
+                "A",
+                "P",
+                "B+",
+                "O",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "ANMOL SHARMA",
+            "rollno": "2K21/ME/49",
+            "grades": [
+                "A",
+                "P",
+                "B+",
+                "A+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 7.36,
+            "failed_papers": []
+        },
+        {
+            "name": "ANMOL SHRIVASTAVA",
+            "rollno": "2K21/ME/50",
+            "grades": [
+                "A+",
+                "C",
+                "A+",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "ANSH AGGARWAL",
+            "rollno": "2K21/ME/52",
+            "grades": [
+                "A",
+                "F",
+                "B",
+                "A+",
+                "B+",
+                ""
+            ],
+            "tc": 16,
+            "cgpa": 5.45,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ANSH ARAYA DHAMA",
+            "rollno": "2K21/ME/53",
+            "grades": [
+                "B+",
+                "F",
+                "B",
+                "A+",
+                "B+",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 5.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ANSH CHAURASIYA",
+            "rollno": "2K21/ME/54",
+            "grades": [
+                "A",
+                "F",
+                "A",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 6.73,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ANSHU KATIYAR",
+            "rollno": "2K21/ME/55",
+            "grades": [
+                "B",
+                "F",
+                "B",
+                "A+",
+                "B",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 5.55,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ANSHUL KHANDELWAL",
+            "rollno": "2K21/ME/56",
+            "grades": [
+                "A+",
+                "F",
+                "B+",
+                "O",
+                "A",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 6.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ANUGRAH YADAV",
+            "rollno": "2K21/ME/57",
+            "grades": [
+                "A+",
+                "O",
+                "A",
+                "O",
+                "A+",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 9.0,
+            "failed_papers": []
+        },
+        {
+            "name": "ANUJ",
+            "rollno": "2K21/ME/58",
+            "grades": [
+                "O",
+                "A",
+                "A",
+                "O",
+                "O",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 9.27,
+            "failed_papers": []
+        },
+        {
+            "name": "ANUJ KUMAR CHOUDHARY",
+            "rollno": "2K21/ME/59",
+            "grades": [
+                "A+",
+                "P",
+                "B+",
+                "O",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.64,
+            "failed_papers": []
+        },
+        {
+            "name": "ANUJ SHARMA",
+            "rollno": "2K21/ME/60",
+            "grades": [
+                "O",
+                "A+",
+                "A+",
+                "O",
+                "O",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 9.64,
+            "failed_papers": []
+        },
+        {
+            "name": "ANURAG",
+            "rollno": "2K21/ME/61",
+            "grades": [
+                "B+",
+                "F",
+                "B",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 5.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ANURAG SINGH",
+            "rollno": "2K21/ME/62",
+            "grades": [
+                "A+",
+                "A+",
+                "A+",
+                "A+",
+                "A",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 8.91,
+            "failed_papers": []
+        },
+        {
+            "name": "ARANAV JOSHI",
+            "rollno": "2K21/ME/63",
+            "grades": [
+                "B",
+                "F",
+                "B",
+                "A",
+                "C",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 5.18,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ARCHISHA PATNAIK",
+            "rollno": "2K21/ME/64",
+            "grades": [
+                "A+",
+                "B+",
+                "A",
+                "O",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.55,
+            "failed_papers": []
+        },
+        {
+            "name": "ARJUN ANAND",
+            "rollno": "2K21/ME/65",
+            "grades": [
+                "B+",
+                "F",
+                "A",
+                "A",
+                "A+",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 6.55,
+            "failed_papers": []
+        },
+        {
+            "name": "ARNAV GUPTA",
+            "rollno": "2K21/ME/67",
+            "grades": [
+                "O",
+                "O",
+                "O",
+                "O",
+                "O",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 10.0,
+            "failed_papers": []
+        },
+        {
+            "name": "ARUN",
+            "rollno": "2K21/ME/68",
+            "grades": [
+                "A",
+                "F",
+                "B+",
+                "O",
+                "B+",
+                "C"
+            ],
+            "tc": 18,
+            "cgpa": 6.27,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ARUN KUMAR CHAHAR",
+            "rollno": "2K21/ME/69",
+            "grades": [
+                "A",
+                "A",
+                "B+",
+                "O",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.18,
+            "failed_papers": []
+        },
+        {
+            "name": "ARYAN AGGARWAL",
+            "rollno": "2K21/ME/70",
+            "grades": [
+                "A+",
+                "B+",
+                "A+",
+                "A+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.45,
+            "failed_papers": []
+        },
+        {
+            "name": "ARYAN JAIN",
+            "rollno": "2K21/ME/71",
+            "grades": [
+                "A",
+                "A",
+                "B+",
+                "A",
+                "A+",
+                "B"
+            ],
+            "tc": 22,
+            "cgpa": 7.82,
+            "failed_papers": []
+        },
+        {
+            "name": "ARYAN RAJ",
+            "rollno": "2K21/ME/72",
+            "grades": [
+                "B",
+                "F",
+                "B",
+                "B+",
+                "C",
+                ""
+            ],
+            "tc": 16,
+            "cgpa": 4.36,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ASHIRWAD",
+            "rollno": "2K21/ME/73",
+            "grades": [
+                "B+",
+                "F",
+                "B+",
+                "A",
+                "B+",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 6.0,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "ASHISH",
+            "rollno": "2K21/ME/74",
+            "grades": [
+                "A",
+                "P",
+                "B+",
+                "A",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.0,
+            "failed_papers": []
+        },
+        {
+            "name": "ASHISH KUMAR YADAV",
+            "rollno": "2K21/ME/75",
+            "grades": [
+                "A+",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.27,
+            "failed_papers": []
+        },
+        {
+            "name": "ASHUTOSH DUBEY",
+            "rollno": "2K21/ME/76",
+            "grades": [
+                "A",
+                "A",
+                "B+",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        },
+        {
+            "name": "ASHWANI",
+            "rollno": "2K21/ME/77",
+            "grades": [
+                "A",
+                "P",
+                "A",
+                "A",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.18,
+            "failed_papers": []
+        },
+        {
+            "name": "ASHWANI KUMAR RATHORE",
+            "rollno": "2K21/ME/78",
+            "grades": [
+                "B+",
+                "B",
+                "B",
+                "A",
+                "B+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 7.09,
+            "failed_papers": []
+        },
+        {
+            "name": "ATUL KUMAR VERMA",
+            "rollno": "2K21/ME/80",
+            "grades": [
+                "A",
+                "P",
+                "B+",
+                "A+",
+                "A+",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "AYUSH GUPTA",
+            "rollno": "2K21/ME/81",
+            "grades": [
+                "A",
+                "F",
+                "B+",
+                "O",
+                "A+",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 6.82,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "AYUSH KUMAR",
+            "rollno": "2K21/ME/82",
+            "grades": [
+                "B",
+                "F",
+                "P",
+                "O",
+                "B+",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 5.64,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "AYUSH KUMAR GUPTA",
+            "rollno": "2K21/ME/83",
+            "grades": [
+                "C",
+                "F",
+                "P",
+                "B+",
+                "B+",
+                "F"
+            ],
+            "tc": 16,
+            "cgpa": 4.18,
+            "failed_papers": [
+                "ME201",
+                "FEC7"
+            ]
+        },
+        {
+            "name": "AYUSH MOHAN",
+            "rollno": "2K21/ME/84",
+            "grades": [
+                "A",
+                "F",
+                "B+",
+                "O",
+                "B+",
+                "B+"
+            ],
+            "tc": 18,
+            "cgpa": 6.45,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "AYUSH YADU",
+            "rollno": "2K21/ME/85",
+            "grades": [
+                "A",
+                "F",
+                "A",
+                "O",
+                "A",
+                "A"
+            ],
+            "tc": 18,
+            "cgpa": 6.91,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "BANSOD PARTH ASHOK",
+            "rollno": "2K21/ME/86",
+            "grades": [
+                "A+",
+                "A",
+                "O",
+                "O",
+                "A+",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.18,
+            "failed_papers": []
+        },
+        {
+            "name": "BHAVYA GOEL",
+            "rollno": "2K21/ME/87",
+            "grades": [
+                "O",
+                "A+",
+                "A+",
+                "O",
+                "O",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 9.55,
+            "failed_papers": []
+        },
+        {
+            "name": "BHUPENDER KUMAR",
+            "rollno": "2K21/ME/88",
+            "grades": [
+                "B",
+                "F",
+                "B",
+                "A+",
+                "B",
+                "P"
+            ],
+            "tc": 18,
+            "cgpa": 5.27,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "CHAYANK",
+            "rollno": "2K21/ME/89",
+            "grades": [
+                "P",
+                "F",
+                "F",
+                "F",
+                "P",
+                "C"
+            ],
+            "tc": 10,
+            "cgpa": 1.91,
+            "failed_papers": [
+                "ME201",
+                "ME203",
+                "ME205"
+            ]
+        },
+        {
+            "name": "CHETAN KHATRI",
+            "rollno": "2K21/ME/90",
+            "grades": [
+                "B",
+                "P",
+                "B+",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 6.91,
+            "failed_papers": []
+        },
+        {
+            "name": "DAKSH",
+            "rollno": "2K21/ME/91",
+            "grades": [
+                "A",
+                "A+",
+                "A+",
+                "A+",
+                "A",
+                "A+"
+            ],
+            "tc": 22,
+            "cgpa": 8.64,
+            "failed_papers": []
+        },
+        {
+            "name": "DEEPANSHU GODARA",
+            "rollno": "2K21/ME/92",
+            "grades": [
+                "A+",
+                "A+",
+                "O",
+                "O",
+                "O",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 9.64,
+            "failed_papers": []
+        },
+        {
+            "name": "DESAM CHANDRA KIRAN",
+            "rollno": "2K21/ME/93",
+            "grades": [
+                "B",
+                "F",
+                "B",
+                "B",
+                "A",
+                "C"
+            ],
+            "tc": 18,
+            "cgpa": 5.18,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "DEVANSH GUPTA",
+            "rollno": "2K21/ME/94",
+            "grades": [
+                "A",
+                "A+",
+                "A+",
+                "O",
+                "A+",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 9.09,
+            "failed_papers": []
+        },
+        {
+            "name": "DEVANSH PANWAR",
+            "rollno": "2K21/ME/95",
+            "grades": [
+                "C",
+                "F",
+                "P",
+                "A",
+                "P",
+                "B"
+            ],
+            "tc": 18,
+            "cgpa": 4.36,
+            "failed_papers": [
+                "ME201"
+            ]
+        },
+        {
+            "name": "DEVENDRA KUMAR",
+            "rollno": "2K21/ME/96",
+            "grades": [
+                "A+",
+                "P",
+                "B+",
+                "A+",
+                "A",
+                "A"
+            ],
+            "tc": 22,
+            "cgpa": 7.45,
+            "failed_papers": []
+        },
+        {
+            "name": "DEVESH SINGH",
+            "rollno": "2K21/ME/97",
+            "grades": [
+                "A+",
+                "P",
+                "A",
+                "O",
+                "A",
+                "B+"
+            ],
+            "tc": 22,
+            "cgpa": 7.73,
+            "failed_papers": []
+        },
+        {
+            "name": "DHRUV AGRAWAL",
+            "rollno": "2K21/ME/99",
+            "grades": [
+                "B+",
+                "B+",
+                "B+",
+                "O",
+                "A",
+                "O"
+            ],
+            "tc": 22,
+            "cgpa": 8.0,
+            "failed_papers": []
+        }
+    ]
+}
