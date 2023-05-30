@@ -1,9 +1,20 @@
 import { getBatches } from "@/lib/data"
 import Link from "next/link";
 
-
-export default async function Page() {
+export const getStaticProps = async () => {
   const batches = await getBatches();
+  return {
+    props: {
+      batches: batches
+    }
+  }
+}
+
+type Props = {
+  batches: string[]
+}
+
+export default function Page({ batches } : Props) {
   return (
     <div>
       <h1>Result</h1>
@@ -11,7 +22,7 @@ export default async function Page() {
       <ul>
         {
           batches.map((batch) => (
-            <li>
+            <li key='{batch}'>
               <Link href={`/result/${batch}`}>Batch {batch}</Link>
             </li>
           ))

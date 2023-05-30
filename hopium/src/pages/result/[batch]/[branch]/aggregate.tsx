@@ -1,11 +1,10 @@
 import Custom404 from "@/components/Custom404"
-import { getAggregateResult } from "@/lib/data"
+import { getAggregateResult, getBatches, getBranches } from "@/lib/data"
 
 type Props = {
-    params: {
         batch: string
         branch: string
-      }
+        result: AggregateResult | null
   }
 
 function ineedhelp(n_semesters: number) {
@@ -13,19 +12,46 @@ function ineedhelp(n_semesters: number) {
   for (let i = 1; i <= n_semesters; i++)
     semesters.push(`Sem ${i}`)
   return semesters
+}
+
+
+export const getStaticProps = async ({ params }: any) => {
+  const { batch, branch } = params
+  const result = await getAggregateResult(batch, branch)
+  return {
+    props: {
+        batch: batch,
+        branch: branch,
+        result: result
+      }
+  }
+}
+
+export const getStaticPaths = async () => {
+  const paths = []
+  const batches = await getBatches()
+  for (const batch of batches) {
+    const branches = await getBranches(batch)
+    if (!branches) continue
+    for (const branch of branches) {
+      paths.push({ params: { batch: batch, branch: branch } })
+    }
   }
 
+  return { paths: paths, fallback: false }
+}
 
-export default async function Page(props: Props) {
+export default function Page(props: Props) {
 
-    const result = await getAggregateResult(props.params.batch, props.params.branch)
+    const { batch, branch, result } = props
+
     if (!result) return Custom404()
 
     return (
       <div>
         <div>
-          <h1>Batch {props.params.batch}</h1>
-          <h1>Branch {props.params.branch}</h1>
+          <h1>Batch {batch}</h1>
+          <h1>Branch {branch}</h1>
           <h1>Aggregate Result</h1>
         </div>
 
@@ -37,9 +63,7 @@ export default async function Page(props: Props) {
               {
                 ineedhelp(result.n_semesters).map((semester) => ( <th>{semester}</th> ) )
               }
-              <th>TC</th>
               <th>CGPA</th>
-              <th>Failed Papers</th>
             </tr>
           </thead>
           <tbody>
@@ -49,7 +73,7 @@ export default async function Page(props: Props) {
                   <td>{student.rollno}</td>
                   <td>{student.name}</td>
                   { student.cgpas.map((cgpa) => ( <td>{cgpa}</td> ) ) }
-                  <td>{student.aggregate}</td>
+                  <td>{student.aggregate.toFixed(3)}</td>
                 </tr>
               ))
             }

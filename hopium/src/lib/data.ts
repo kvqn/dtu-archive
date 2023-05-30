@@ -65,7 +65,7 @@ export async function getAggregateResult(
   branch: string
 ): Promise<AggregateResult|null> {
   if (!await isValidBranch(batch, branch)) return null
-  const text = await readFile(`${DATA_DIR}/${batch}/${branch}/aggregate.json`, "utf-8")
+  const text = await readFile(`${DATA_DIR}/${batch}/${branch}/aggregate-result.json`, "utf-8")
   const result = JSON.parse(text)
   return result
 }
