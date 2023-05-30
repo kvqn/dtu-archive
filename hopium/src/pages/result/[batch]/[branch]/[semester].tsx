@@ -1,5 +1,4 @@
 import Custom404 from "@/components/Custom404"
-import SemesterResultTable from "@/components/SemesterResultTable"
 import {
   getBatches,
   getBranches,
@@ -98,7 +97,7 @@ export default function Page(props: Props) {
       </div>
 
       <div>
-        <label htmlFor="subject-select">Subject Select</label>
+        <label>Subject Select</label>
         { result.subjects.map((subject) => (
               <div>
                 <input
@@ -114,6 +113,39 @@ export default function Page(props: Props) {
                 /> {subject}
               </div>
         ))}
+      </div>
+
+      <div>
+        <label htmlFor="sort-select">Sort By</label>
+        <select
+          id="sort-select"
+          onChange={(e) => {
+            const sort_by = e.target.value
+            switch (sort_by) {
+              case "cgpa-ascending":
+                sort_cmp = (a: SemesterStudent, b: SemesterStudent) => { return b.cgpa - a.cgpa }
+                break
+              case "cgpa-descending":
+                sort_cmp = (a: SemesterStudent, b: SemesterStudent) => { return a.cgpa - b.cgpa }
+                break
+              case "rollno-ascending":
+                sort_cmp = (a: SemesterStudent, b: SemesterStudent) => { return a.rollno.localeCompare(b.rollno) }
+                break
+              case "rollno-ascending":
+                sort_cmp = (a: SemesterStudent, b: SemesterStudent) => { return b.rollno.localeCompare(a.rollno) }
+                break
+              }
+              refreshResult()
+          }
+          }
+          >
+          <option value="cgpa-ascending">CGPA (Ascending)</option>
+          <option value="cgpa-descending">CGPA (Descending)</option>
+          <option value="rollno-ascending">Roll No. (Ascending)</option>
+          <option value="rollno-descending">Roll No. (Descending)</option>
+          </select>
+
+
       </div>
 
       <table>
