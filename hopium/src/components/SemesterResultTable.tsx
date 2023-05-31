@@ -2,8 +2,8 @@ import {
   Column,
   ColumnDef,
   ColumnFiltersState,
-  HeaderContext,
   SortingState,
+  VisibilityState,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
@@ -22,11 +22,13 @@ import {
 import { useState } from "react"
 import { Button } from "./ui/button"
 import { ArrowUpDown } from "lucide-react"
-import { Input } from "postcss"
-
-type SemesterResultTableProps = {
-  result: SemesterResult
-}
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger
+} from "./ui/dropdown-menu"
+import { Input } from "./ui/input"
 
 const sortingHeader = (
   columnName: string
@@ -52,6 +54,10 @@ const gradeValues: Map<string, number> = new Map([
   ["P", 4],
   ["F", 0]
 ])
+
+type SemesterResultTableProps = {
+  result: SemesterResult
+}
 
 export default function SemesterResultTable(props: SemesterResultTableProps) {
   const { result } = props
@@ -102,6 +108,7 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
 
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
 
   const table = useReactTable({
     data,
@@ -111,16 +118,45 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
+    onColumnVisibilityChange: setColumnVisibility,
     state: {
       sorting,
       columnFilters,
+      columnVisibility
     }
   })
 
   return (
     <div className="rounded-md border">
       <div>
-        <input
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline">Columns</Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {table
+              .getAllColumns()
+              .filter((column) => column.getCanHide())
+              .map((column) => {
+                return (
+                  <DropdownMenuCheckboxItem
+                    key={column.id}
+                    className="capitalize"
+                    checked={column.getIsVisible()}
+                    onCheckedChange={(value) =>
+                      column.toggleVisibility(!!value)
+                    }
+                  >
+                    {column.id}
+                  </DropdownMenuCheckboxItem>
+                )
+              })}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+
+      <div>
+        <Input
           type="text"
           placeholder="Filter names..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
@@ -130,6 +166,7 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
           className="max-w-sm"
         />
       </div>
+
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
