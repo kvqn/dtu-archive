@@ -1,11 +1,13 @@
 import {
   Column,
   ColumnDef,
+  ColumnFiltersState,
   HeaderContext,
   SortingState,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getSortedRowModel,
   useReactTable
 } from "@tanstack/react-table"
@@ -20,6 +22,7 @@ import {
 import { useState } from "react"
 import { Button } from "./ui/button"
 import { ArrowUpDown } from "lucide-react"
+import { Input } from "postcss"
 
 type SemesterResultTableProps = {
   result: SemesterResult
@@ -61,6 +64,7 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
       header: sortingHeader("Roll No")
     },
     {
+      id: "name",
       header: "Name",
       accessorKey: "name"
     },
@@ -71,8 +75,8 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
           id: subject,
           header: sortingHeader(subject),
           sortingFn: (rowA, rowB, columnId) => {
-            const gradeA = gradeValues.get( rowA.getValue(columnId))
-            const gradeB = gradeValues.get( rowB.getValue(columnId))
+            const gradeA = gradeValues.get(rowA.getValue(columnId))
+            const gradeB = gradeValues.get(rowB.getValue(columnId))
             if (gradeA && gradeB) return gradeA - gradeB
             return 0
           }
@@ -97,6 +101,7 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
   const data = result.students
 
   const [sorting, setSorting] = useState<SortingState>([])
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
 
   const table = useReactTable({
     data,
@@ -104,13 +109,27 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
-      sorting
+      sorting,
+      columnFilters,
     }
   })
 
   return (
     <div className="rounded-md border">
+      <div>
+        <input
+          type="text"
+          placeholder="Filter names..."
+          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+          onChange={(event) =>
+            table.getColumn("name")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm"
+        />
+      </div>
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
