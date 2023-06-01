@@ -1,10 +1,11 @@
 import Custom404 from "@/components/Custom404"
-import { getBranches, getBatches} from "@/lib/data"
-import Link from "next/link"
+import GradientLink from "@/components/GradientLink/GradientLink"
+import Navbar from "@/components/Navbar"
+import { getBatches, getBranches } from "@/lib/data"
 
 type Props = {
   branches: string[]
-  batch : string
+  batch: string
 }
 
 export const getStaticProps = async ({ params }: any) => {
@@ -19,28 +20,27 @@ export const getStaticPaths = async () => {
   return { paths: paths, fallback: false }
 }
 
-export default function Page(props : Props) {
-
+export default function Page(props: Props) {
   const batch = props.batch
   const branches = props.branches
 
   if (!branches) return Custom404()
 
   return (
-    <div>
-      <h1>Batch {batch}</h1>
+    <>
+      <Navbar batch={ batch }/>
 
-      <h2>Branches</h2>
-      <ul>
-        {
-          branches.map((branch) => (
-            <li key='{branch}'>
-              <Link href={`/result/${batch}/${branch}`}>Branch {branch}</Link>
+      <div>
+
+        <h1 className="heading-select">Select your branch</h1>
+        <ul>
+          {branches.map((branch) => (
+            <li key="{branch}">
+              <GradientLink href={`/result/${batch}/${branch}`} name={branch} />
             </li>
-          ))
-        }
-      </ul>
-    </div>
+          ))}
+        </ul>
+      </div>
+    </>
   )
 }
-

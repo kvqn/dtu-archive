@@ -1,4 +1,5 @@
 import Custom404 from "@/components/Custom404"
+import Navbar from "@/components/Navbar"
 import { getAggregateResult, getBatches, getBranches } from "@/lib/data"
 
 type Props = {
@@ -48,37 +49,40 @@ export default function Page(props: Props) {
     if (!result) return Custom404()
 
     return (
-      <div>
+        <>
+        <Navbar batch={batch} branch={branch} semester={'AGGREGATE'} />
         <div>
-          <h1>Batch {batch}</h1>
-          <h1>Branch {branch}</h1>
-          <h1>Aggregate Result</h1>
+        <div>
+        <h1>Batch {batch}</h1>
+        <h1>Branch {branch}</h1>
+        <h1>Aggregate Result</h1>
         </div>
 
         <table>
-          <thead>
-            <tr>
-              <th>Roll No.</th>
-              <th>Name</th>
-              {
-                ineedhelp(result.n_semesters).map((semester) => ( <th>{semester}</th> ) )
-              }
-              <th>CGPA</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              result.students.map((student) => (
+        <thead>
+        <tr>
+        <th>Roll No.</th>
+        <th>Name</th>
+        {
+        ineedhelp(result.n_semesters).map((semester) => ( <th>{semester}</th> ) )
+        }
+        <th>CGPA</th>
+        </tr>
+        </thead>
+        <tbody>
+        {
+          result.students.map((student) => (
                 <tr>
-                  <td>{student.rollno}</td>
-                  <td>{student.name}</td>
-                  { student.cgpas.map((cgpa) => ( <td>{cgpa}</td> ) ) }
-                  <td>{student.aggregate.toFixed(3)}</td>
+                <td>{student.rollno}</td>
+                <td>{student.name}</td>
+                { student.cgpas.map((cgpa) => ( <td>{cgpa}</td> ) ) }
+                <td>{student.aggregate.toFixed(3)}</td>
                 </tr>
-              ))
-            }
-          </tbody>
-        </table>
+                ))
+        }
+    </tbody>
+      </table>
       </div>
+      </>
     )
 }

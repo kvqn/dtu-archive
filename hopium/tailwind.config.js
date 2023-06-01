@@ -15,6 +15,12 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+        'oswald': ['Oswald', 'sans-serif'],
+        'geologica': ['Geologica', 'sans-serif'],
+        'bowlby': ['Bowlby One'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

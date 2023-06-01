@@ -1,0 +1,60 @@
+.link {
+  --border-color: var(--foreground);
+  --color: var(--foreground);
+  --hover-color: var(--shade-1);
+  --mouse-x: 0%;
+  --shade-1: #8cfda7;
+  --shade-2: yellow;
+  --time-fill: 300ms;
+  --time-empty: 150ms;
+
+  text-align: left;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: -1px;
+  color: var(--color);
+  display: block;
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(2em, 8vmin, 7em);
+  padding: clamp(0.25em, 1vmin, 1em) clamp(1em, 4vmin, 4em);
+  position: relative;
+  text-decoration: none;
+  transition: color var(--time-empty) ease;
+  transition: --mouse-x var(--time-empty) ease;
+}
+
+
+.link:before {
+  transition: width var(--time-empty) ease;
+}
+
+.link:hover {
+  color: var(--hover-color);
+  transition: color var(--time-fill) ease;
+}
+
+.link:hover:before {
+  transition: width var(--time-fill) ease;
+  width: 100%;
+}
+
+.link:before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--shade-1) calc(50% + var(--mouse-x)/4),
+    /* green calc(var(--mouse-x)/2 + 50%), */
+    var(--shade-2)
+  );
+  content: "";
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 0%;
+  position: absolute;
+  z-index: -1;
+}
+
+.link:nth-child(3) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
