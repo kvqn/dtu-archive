@@ -19,13 +19,9 @@ export default function Page({ batches }: Props) {
         <h1 className="heading-select">
         Select your batch
         </h1>
-        <ul className="text-center text-3xl mt-10">
           {batches.map((batch) => (
-            <li key="{batch}">
               <GradientLink href={`/result/${batch}`} name={batch} />
-            </li>
           ))}
-        </ul>
       </div>
     </>
   )

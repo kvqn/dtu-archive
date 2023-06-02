@@ -1,17 +1,19 @@
 .link {
   --border-color: var(--foreground);
   --color: var(--foreground);
-  --hover-color: var(--shade-1);
+  /* --hover-color: var(--shade-1); */
+  /* --hover-color: white; */
   --mouse-x: 0%;
+  /* --shade-1: #3500d4; */
   --shade-1: #8cfda7;
   --shade-2: yellow;
   --time-fill: 300ms;
   --time-empty: 150ms;
 
   text-align: left;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border: 1px solid var(--border-color);
   margin-bottom: -1px;
+  margin-left: -1px;
   color: var(--color);
   display: block;
   font-family: 'Permanent Marker', cursive;
@@ -21,6 +23,7 @@
   text-decoration: none;
   transition: color var(--time-empty) ease;
   transition: --mouse-x var(--time-empty) ease;
+  /* width: 100%; */
 }
 
 
@@ -30,6 +33,7 @@
 
 .link:hover {
   color: var(--hover-color);
+  /* color: black; */
   transition: color var(--time-fill) ease;
 }
 
@@ -46,6 +50,7 @@
     /* green calc(var(--mouse-x)/2 + 50%), */
     var(--shade-2)
   );
+  /* background: white; */
   content: "";
   left: 0px;
   top: 0px;
