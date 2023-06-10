@@ -18,9 +18,7 @@
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
   "tailwindConfig": "./tailwind.config.js",
-  "tailwindAttributes": [
-    "className"
-  ],
+  "tailwindAttributes": ["className"],
   "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

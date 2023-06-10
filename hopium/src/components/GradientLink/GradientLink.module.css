@@ -19,7 +19,7 @@
   color: var(--color);
   display: flex;
   align-items: center;
-  font-family: 'Permanent Marker', cursive;
+  font-family: "Permanent Marker", cursive;
   font-size: clamp(2em, 8vmin, 7em);
   padding: clamp(0.25em, 1vmin, 1em) clamp(1em, 4vmin, 4em);
   position: relative;
@@ -28,7 +28,6 @@
   transition: --mouse-x var(--time-empty) ease;
   /* width: 100%; */
 }
-
 
 .link:before {
   transition: width var(--time-empty) ease;
@@ -49,9 +48,8 @@
   background: linear-gradient(
     to right,
     transparent,
-    var(--shade-1) calc(50% + var(--mouse-x)/4),
-    /* green calc(var(--mouse-x)/2 + 50%), */
-    var(--shade-2)
+    var(--shade-1) calc(50% + var(--mouse-x) / 4),
+    /* green calc(var(--mouse-x)/2 + 50%), */ var(--shade-2)
   );
   /* background: white; */
   content: "";

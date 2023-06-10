@@ -1,4 +1,3 @@
-
 type AggregateStudent = {
   rollno: string
   name: string

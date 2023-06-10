@@ -1,4 +1,5 @@
 import Link from "next/link"
+
 import styles from "./BigCard.module.css"
 
 type BigCardProps = {
@@ -10,11 +11,11 @@ type BigCardProps = {
 }
 
 export default function BigCard(props: BigCardProps) {
-  let { title, description, image, href, className} = props
+  let { title, description, image, href, className } = props
   if (!className) className = ""
   if (!href) href = "#"
   return (
-    <Link className={styles.bigcard+' '+className} href={href}>
+    <Link className={styles.bigcard + " " + className} href={href}>
       <div className={styles.nothover}>
         <p>{title}</p>
       </div>

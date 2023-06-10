@@ -130,7 +130,9 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-table-dropdown-button-bg text-table-dropdown-button-fg hover:bg-table-dropdown-button-hover-bg hover:text-table-dropdown-button-hover-fg">Columns</Button>
+            <Button className="bg-table-dropdown-button-bg text-table-dropdown-button-fg hover:bg-table-dropdown-button-hover-bg hover:text-table-dropdown-button-hover-fg">
+              Columns
+            </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-table-dropdown-bg text-table-dropdown-fg">
             {table
@@ -145,9 +147,7 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
                     onCheckedChange={(value) => column.toggleVisibility(!!value)}
                     onClick={(e) => {}}
                   >
-                  <p className="uppercase">
-                  {column.id}
-                  </p>
+                    <p className="uppercase">{column.id}</p>
                   </DropdownMenuCheckboxItem>
                 )
               })}
@@ -173,7 +173,11 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"} className="bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg">
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                  className="bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
+                >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
@@ -188,7 +192,10 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={columns.length} className="h-24 text-center bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg">
+                <TableCell
+                  colSpan={columns.length}
+                  className="h-24 text-center bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
+                >
                   No results.
                 </TableCell>
               </TableRow>

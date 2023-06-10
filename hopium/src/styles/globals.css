@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@800&family=Inter:wght@800;900&family=Oswald:wght@700&family=Permanent+Marker&family=Roboto:wght@100;300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@800&family=Inter:wght@800;900&family=Oswald:wght@700&family=Permanent+Marker&family=Roboto:wght@100;300;400&display=swap");
 @import url(https://fonts.bunny.net/css?family=bowlby-one:400);
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,6 @@
 
 @layer base {
   :root {
-
     /* --pallet-1: #282828; */
     /* --pallet-2: #3500d4; */
     /* --pallet-3: #0c0032; */
@@ -97,7 +96,7 @@ body {
 
 .heading-select {
   text-align: center;
-  font-family: 'Geologica', sans-serif;
+  font-family: "Geologica", sans-serif;
   font-size: clamp(1.5em, 8vmin, 3em);
   font-weight: 800;
   font-variation-settings: "wdth" 200;

@@ -44,21 +44,21 @@ export default function Page(props: Props) {
   return (
     <>
       <Navbar
-        center = {<NavbarItem name="Result" href="/result" />}
-        right = {
-        <>
-        <NavbarItem name={batch} href={`/result/${batch}`} />
-        <NavbarItem name={branch} href={`/result/${batch}/${branch}`} />
-        </>
-          }
-        />
+        center={<NavbarItem name="Result" href="/result" />}
+        right={
+          <>
+            <NavbarItem name={batch} href={`/result/${batch}`} />
+            <NavbarItem name={branch} href={`/result/${batch}/${branch}`} />
+          </>
+        }
+      />
 
       <div>
         <h1 className="heading-select">Select semester</h1>
         <GradientLink href={`/result/${batch}/${branch}/aggregate`} name="Aggregate" />
         <ul>
           {[...Array(semesters)].map((_, index) => (
-            <GradientLink href={`/result/${batch}/${branch}/${index + 1}`} name={`Sem ${index + 1}`} key={branch}/>
+            <GradientLink href={`/result/${batch}/${branch}/${index + 1}`} name={`Sem ${index + 1}`} key={branch} />
           ))}
         </ul>
       </div>

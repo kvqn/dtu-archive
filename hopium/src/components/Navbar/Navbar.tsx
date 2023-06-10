@@ -9,9 +9,12 @@ function NavbarHopium() {
 function NavbarLeft(props: { children: React.ReactNode; className?: string }) {
   let { children, className } = props
   if (!className) className = ""
-  return <div className={styles.navbarleft + " " + className}>
-        <NavbarHopium />
-  {children}</div>
+  return (
+    <div className={styles.navbarleft + " " + className}>
+      <NavbarHopium />
+      {children}
+    </div>
+  )
 }
 
 function NavbarRight(props: { children: React.ReactNode; className?: string }) {
@@ -26,16 +29,26 @@ function NavbarCenter(props: { children: React.ReactNode; className?: string }) 
   return <div className={styles.navbarcenter + " " + className}>{children}</div>
 }
 
-export function NavbarItem(props: { name: string; className?: string, active?: boolean, href?: string}) {
+export function NavbarItem(props: { name: string; className?: string; active?: boolean; href?: string }) {
   let { name, className, active, href } = props
   if (!className) className = ""
   if (!active) active = false
   if (active) className = className + " " + styles.active
   if (!href) return <div className={styles.navbaritem + " " + className}>{name}</div>
-  else return <Link href={href} className={styles.navbaritem + " " + className}>{name}</Link>
+  else
+    return (
+      <Link href={href} className={styles.navbaritem + " " + className}>
+        {name}
+      </Link>
+    )
 }
 
-export function Navbar(props: { left?: React.ReactNode, center?: React.ReactNode, right?: React.ReactNode, className?: string }) {
+export function Navbar(props: {
+  left?: React.ReactNode
+  center?: React.ReactNode
+  right?: React.ReactNode
+  className?: string
+}) {
   let { left, right, center, className } = props
 
   console.log(props)

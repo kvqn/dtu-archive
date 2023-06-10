@@ -1,11 +1,10 @@
 import BigCard from "@/components/BigCard/BigCard"
-import { Navbar, NavbarLeft} from "@/components/Navbar/Navbar"
+import { Navbar, NavbarLeft } from "@/components/Navbar/Navbar"
 
 export default function Page() {
   return (
     <>
-
-      <Navbar/>
+      <Navbar />
 
       <div className="flex flex-col items-center justify-around w-auto pt-20 h-4/6">
         <BigCard
@@ -13,7 +12,7 @@ export default function Page() {
           description="View semester and aggregate results for your batch and branch."
           href="/result"
         />
-        <BigCard title="ARCHIVE" description="Filter notices scraped from the DTU website." href="#"/>
+        <BigCard title="ARCHIVE" description="Filter notices scraped from the DTU website." href="#" />
       </div>
     </>
   )

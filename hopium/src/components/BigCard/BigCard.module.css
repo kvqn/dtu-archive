@@ -1,4 +1,3 @@
-
 .bigcard {
   display: flex;
   align-items: center;
@@ -20,4 +19,3 @@
 .bigcard:hover .nothover {
   display: none;
 }
-
