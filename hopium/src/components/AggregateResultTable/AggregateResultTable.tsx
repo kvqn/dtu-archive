@@ -15,8 +15,8 @@ import {
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
 
-const sortingHeader = (columnName: string): React.FC<{ column: Column<SemesterStudent, unknown> }> => {
-  const header = ({ column }: { column: Column<SemesterStudent> }) => (
+const sortingHeader = (columnName: string): React.FC<{ column: Column<AggregateStudent, unknown> }> => {
+  const header = ({ column }: { column: Column<AggregateStudent> }) => (
     <Button
       variant="ghost"
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
@@ -30,27 +30,22 @@ const sortingHeader = (columnName: string): React.FC<{ column: Column<SemesterSt
   return header
 }
 
-const gradeValues: Map<string, number> = new Map([
-  ["O", 10],
-  ["A+", 9],
-  ["A", 8],
-  ["B+", 7],
-  ["B", 6],
-  ["C", 5],
-  ["P", 4],
-  ["F", 0]
-])
-
-type SemesterResultTableProps = {
-  result: SemesterResult
+type AggregateResultTableProps = {
+  result: AggregateResult
 }
 
-export default function SemesterResultTable(props: SemesterResultTableProps) {
+function ineedhelp(n_semesters: number){
+  let semesters: string[] = []
+  for (let i = 1; i <= n_semesters; i++) semesters.push(`Sem ${i}`)
+  return semesters
+}
+
+export default function AggregateResultTable(props: AggregateResultTableProps) {
   const { result } = props
 
-  const columnHelper = createColumnHelper<SemesterStudent>()
+  const columnHelper = createColumnHelper<AggregateStudent>()
 
-  const columns: ColumnDef<SemesterStudent, string>[] = [
+  const columns: ColumnDef<AggregateStudent, string>[] = [
     {
       accessorKey: "rollno",
       header: sortingHeader("Roll No")
@@ -60,31 +55,21 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
       header: "Name",
       accessorKey: "name"
     },
-    ...result.subjects.map((subject, index) =>
-      columnHelper.accessor((student: SemesterStudent) => student.grades[index], {
-        id: subject,
-        header: sortingHeader(subject),
-        sortingFn: (rowA, rowB, columnId) => {
-          const gradeA = gradeValues.get(rowA.getValue(columnId))
-          const gradeB = gradeValues.get(rowB.getValue(columnId))
-          if (gradeA && gradeB) return gradeA - gradeB
-          return 0
-        }
+    ...ineedhelp(result.n_semesters).map((semester, index) =>
+      columnHelper.accessor((student: AggregateStudent) => student.cgpas[index], {
+        id: semester,
+        header: sortingHeader(semester),
       })
     ),
 
     {
-      header: sortingHeader("CGPA"),
-      accessorKey: "cgpa"
+      header: sortingHeader("Aggregate"),
+      accessorKey: "aggregate"
     },
-    {
-      header: sortingHeader("Total Credits"),
-      accessorKey: "tc"
-    },
-    {
-      header: "Failed Papers",
-      accessorKey: "failed_papers"
-    }
+    // {
+    //   header: sortingHeader("Total Credits"),
+    //   accessorKey: "tc"
+    // }
   ]
 
   const data = result.students
