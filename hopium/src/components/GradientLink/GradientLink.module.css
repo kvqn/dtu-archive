@@ -1,21 +1,24 @@
 .link {
   --border-color: var(--foreground);
-  --color: var(--foreground);
+  /* --color: var(--foreground); */
+  --color: black;
   /* --hover-color: var(--shade-1); */
-  /* --hover-color: white; */
+  --hover-color: black;
   --mouse-x: 0%;
   /* --shade-1: #3500d4; */
   --shade-1: #8cfda7;
   --shade-2: yellow;
   --time-fill: 300ms;
   --time-empty: 150ms;
+  --border-color: black;
 
   text-align: left;
   border: 1px solid var(--border-color);
   margin-bottom: -1px;
   margin-left: -1px;
   color: var(--color);
-  display: block;
+  display: flex;
+  align-items: center;
   font-family: 'Permanent Marker', cursive;
   font-size: clamp(2em, 8vmin, 7em);
   padding: clamp(0.25em, 1vmin, 1em) clamp(1em, 4vmin, 4em);
@@ -60,6 +63,6 @@
   z-index: -1;
 }
 
-.link:nth-child(3) {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
+/* .link:nth-child(3) Vjj */
+/*   border-bottom: 1px solid var(--border-color); */
+/* } */

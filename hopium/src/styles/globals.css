@@ -7,16 +7,16 @@
 @layer base {
   :root {
 
-    --pallet-1: #282828;
-    --pallet-2: #3500d4;
-    --pallet-3: #0c0032;
-    --pallet-4: #230090;
+    /* --pallet-1: #282828; */
+    /* --pallet-2: #3500d4; */
+    /* --pallet-3: #0c0032; */
+    /* --pallet-4: #230090; */
 
     /* --pallet-1: yellow; */
     /* --pallet-2: #8cfda7; */
 
-    --background: black;
-    --foreground: white;
+    --background: Black;
+    --foreground: White;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -37,7 +37,7 @@
     --secondary-foreground: white;
     /* --secondary-background: #282828; */
 
-    --accent: #3500d4;
+    /* --accent: #3500d4; */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 100% 50%;
@@ -93,8 +93,6 @@
 }
 
 body {
-  background: black;
-  color: white;
 }
 
 .heading-select {

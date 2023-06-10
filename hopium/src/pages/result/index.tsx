@@ -15,12 +15,12 @@ export default function Page({ batches }: Props) {
   return (
     <>
       <Navbar />
-      <div className="mt-20">
+      <div className="m-20">
         <h1 className="heading-select">
         Select your batch
         </h1>
           {batches.map((batch) => (
-              <GradientLink href={`/result/${batch}`} name={batch} />
+              <GradientLink href={`/result/${batch}`} name={batch} key={batch}/>
           ))}
       </div>
     </>

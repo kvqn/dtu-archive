@@ -1,0 +1,23 @@
+
+.bigcard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 200px;
+  border-width: 2px;
+  text-align: center;
+}
+
+.hover {
+  display: none;
+}
+
+.bigcard:hover .hover {
+  display: block;
+}
+
+.bigcard:hover .nothover {
+  display: none;
+}
+

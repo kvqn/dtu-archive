@@ -1,3 +1,12 @@
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu"
+import { Input } from "@/components/ui/input"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import {
   Column,
   ColumnDef,
@@ -14,18 +23,19 @@ import {
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
 
-import { Button } from "./ui/button"
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from "./ui/dropdown-menu"
-import { Input } from "./ui/input"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table"
-
 const sortingHeader = (columnName: string): React.FC<{ column: Column<SemesterStudent, unknown> }> => {
-  return ({ column }) => (
-    <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")} className="w-auto h-auto" style={{'whiteSpace': 'nowrap'}}>
+  const header = ({ column }: { column: Column<SemesterStudent> }) => (
+    <Button
+      variant="ghost"
+      onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      className="w-auto h-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
+      style={{ whiteSpace: "nowrap" }}
+    >
       {columnName}
       <ArrowUpDown className="ml-2 h-4 w-4" />
     </Button>
   )
+  return header
 }
 
 const gradeValues: Map<string, number> = new Map([
@@ -109,7 +119,6 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
 
   return (
     <>
-
       <div className="flex justify-between m-10">
         <Input
           type="text"
@@ -121,9 +130,9 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-pallet-1 hover:bg-pallet-2">Columns</Button>
+            <Button className="bg-table-dropdown-button-bg text-table-dropdown-button-fg hover:bg-table-dropdown-button-hover-bg hover:text-table-dropdown-button-hover-fg">Columns</Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-pallet-1">
+          <DropdownMenuContent align="end" className="bg-table-dropdown-bg text-table-dropdown-fg">
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
@@ -131,12 +140,14 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="capitalize bg-pallet-1 hover:bg-pallet-2 text-white hover:text-white"
+                    className="focus:bg-table-dropdown-hover-bg focus:text-table-dropdown-hover-fg"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) => column.toggleVisibility(!!value)}
-                    onClick={(e) => {;}}
+                    onClick={(e) => {}}
                   >
-                    {column.id}
+                  <p className="uppercase">
+                  {column.id}
+                  </p>
                   </DropdownMenuCheckboxItem>
                 )
               })}
@@ -144,15 +155,14 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
         </DropdownMenu>
       </div>
 
-
       <div className="overflow-hidden rounded-lg border-2 m-10 bg-zinc-900">
         <Table>
-          <TableHeader className="bg-pallet-2">
+          <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="hover:bg-pallet-4">
+              <TableRow key={headerGroup.id} className="bg-table-header-bg hover:bg-table-header-hover-bg">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className="text-white">
+                    <TableHead key={header.id} className="text-table-header-fg hover:text-table-header-hover-fg">
                       {flexRender(header.column.columnDef.header, header.getContext())}
                     </TableHead>
                   )
@@ -163,9 +173,14 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"} className="hover:bg-pallet-3">
+                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"} className="bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg">
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className={ "uppercase font-roboto font-regular"+(cell.column.id != 'name' ? " text-center": "") }>
+                    <TableCell
+                      key={cell.id}
+                      className={
+                        "uppercase font-roboto font-regular" + (cell.column.id != "name" ? " text-center" : "")
+                      }
+                    >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}

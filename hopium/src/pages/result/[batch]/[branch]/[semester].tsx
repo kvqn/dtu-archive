@@ -1,13 +1,12 @@
 import Custom404 from "@/components/Custom404"
 import Navbar from "@/components/Navbar"
-import SemesterResultTable from "@/components/SemesterResultTable"
+import SemesterResultTable from "@/components/SemesterResultTable/SemesterResultTable"
 import {
   getBatches,
   getBranches,
   getSemesterResult,
   getSemesters
 } from "@/lib/data"
-import { useState } from "react"
 
 type Props = {
   batch: string

@@ -5,10 +5,13 @@ import styles from "./GradientLink.module.css"
 type Props = {
   href: string
   name: string
+  className?: string
 }
 
 export default function GradientLink(props: Props) {
-  const { href, name } = props
+  let { href, name, className } = props
+
+  if (!className) className = ""
 
   const onMouseMove = (e: any) => {
     let x = ((e.clientX / innerWidth) * 100).toString()
@@ -16,7 +19,7 @@ export default function GradientLink(props: Props) {
   }
 
   return (
-    <Link className={styles.link} onMouseMove={onMouseMove} href={href}>
+    <Link className={styles.link+' '+className} onMouseMove={onMouseMove} href={href}>
       {name}
     </Link>
   )
