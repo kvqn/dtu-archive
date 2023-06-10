@@ -1,5 +1,5 @@
 import Custom404 from "@/components/Custom404"
-import Navbar from "@/components/Navbar"
+import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import SemesterResultTable from "@/components/SemesterResultTable/SemesterResultTable"
 import {
   getBatches,
@@ -56,7 +56,16 @@ export default function Page(props: Props) {
   return (
 
       <>
-      <Navbar batch={batch} branch={branch} semester={semester} />
+      <Navbar
+        center={<NavbarItem name="Result" href="/result" />}
+        right= {
+          <>
+          <NavbarItem name={batch} href={`/result/${batch}`} />
+          <NavbarItem name={branch} href={`/result/${batch}/${branch}`} />
+          <NavbarItem name={'Sem '+semester} href={`/result/${batch}/${branch}/${semester}`} />
+          </>
+          }
+        />
       <SemesterResultTable result={result} />
       </>
   )

@@ -1,5 +1,5 @@
 import Custom404 from "@/components/Custom404"
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/Navbar/Navbar"
 import { getAggregateResult, getBatches, getBranches } from "@/lib/data"
 
 type Props = {

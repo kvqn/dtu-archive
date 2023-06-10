@@ -1,7 +1,6 @@
 import Custom404 from "@/components/Custom404"
 import GradientLink from "@/components/GradientLink/GradientLink"
-import Navbar from "@/components/Navbar"
-import SmallCard from "@/components/SmallCard/SmallCard"
+import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { getBatches, getBranches } from "@/lib/data"
 
 type Props = {
@@ -29,16 +28,17 @@ export default function Page(props: Props) {
 
   return (
     <>
-      <Navbar batch={ batch }/>
+      <Navbar
+        center={<NavbarItem name="Result" href="/result" active={true} />}
+        right={<NavbarItem name={batch} href={`/result/${batch}`} />}
+      />
 
       <div>
-
         <h1 className="heading-select">Select your branch</h1>
         <div className="grid grid-cols-3">
-        {branches.map((branch) => (
-              // <GradientLink href={`/result/${batch}/${branch}`} name={branch} />
-              <GradientLink name={branch} href={`/result/${batch}/${branch}`} key={branch} className="h-32"/>
-              ))}
+          {branches.map((branch) => (
+            <GradientLink name={branch} href={`/result/${batch}/${branch}`} key={branch} className="h-32" />
+          ))}
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
 import GradientLink from "@/components/GradientLink/GradientLink"
-import Navbar from "@/components/Navbar"
+import { Navbar, NavbarCenter, NavbarItem, NavbarLeft } from "@/components/Navbar/Navbar"
 import { getBatches } from "@/lib/data"
 
 export const getStaticProps = async () => {
@@ -14,7 +14,9 @@ type Props = {
 export default function Page({ batches }: Props) {
   return (
     <>
-      <Navbar />
+
+      <Navbar center={<NavbarItem name="Result" href="/result" active={true} />} />
+
       <div className="m-20">
         <h1 className="heading-select">
         Select your batch

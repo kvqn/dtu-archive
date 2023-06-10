@@ -1,6 +1,6 @@
 import Custom404 from "@/components/Custom404"
 import GradientLink from "@/components/GradientLink/GradientLink"
-import Navbar from "@/components/Navbar"
+import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { getBatches, getBranches, getSemesters } from "@/lib/data"
 
 type Props = {
@@ -43,16 +43,22 @@ export default function Page(props: Props) {
 
   return (
     <>
-      <Navbar batch={batch} branch={branch} />
+      <Navbar
+        center = {<NavbarItem name="Result" href="/result" />}
+        right = {
+        <>
+        <NavbarItem name={batch} href={`/result/${batch}`} />
+        <NavbarItem name={branch} href={`/result/${batch}/${branch}`} />
+        </>
+          }
+        />
 
       <div>
         <h1 className="heading-select">Select semester</h1>
         <GradientLink href={`/result/${batch}/${branch}/aggregate`} name="Aggregate" />
         <ul>
           {[...Array(semesters)].map((_, index) => (
-            <li>
-              <GradientLink href={`/result/${batch}/${branch}/${index + 1}`} name={`Sem ${index + 1}`} />
-            </li>
+            <GradientLink href={`/result/${batch}/${branch}/${index + 1}`} name={`Sem ${index + 1}`} key={branch}/>
           ))}
         </ul>
       </div>

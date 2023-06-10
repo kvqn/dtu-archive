@@ -188,7 +188,7 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={columns.length} className="h-24 text-center">
+                <TableCell colSpan={columns.length} className="h-24 text-center bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg">
                   No results.
                 </TableCell>
               </TableRow>
