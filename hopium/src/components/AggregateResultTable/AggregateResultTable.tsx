@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
 import ResultTable from "@/components/ResultTable/ResultTable"
+import { Button } from "@/components/ui/button"
 import {
   Column,
   ColumnDef,
@@ -34,7 +34,7 @@ type AggregateResultTableProps = {
   result: AggregateResult
 }
 
-function ineedhelp(n_semesters: number){
+function ineedhelp(n_semesters: number) {
   let semesters: string[] = []
   for (let i = 1; i <= n_semesters; i++) semesters.push(`Sem ${i}`)
   return semesters
@@ -58,14 +58,14 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
     ...ineedhelp(result.n_semesters).map((semester, index) =>
       columnHelper.accessor((student: AggregateStudent) => student.cgpas[index], {
         id: semester,
-        header: sortingHeader(semester),
+        header: sortingHeader(semester)
       })
     ),
 
     {
       header: sortingHeader("Aggregate"),
       accessorKey: "aggregate"
-    },
+    }
     // {
     //   header: sortingHeader("Total Credits"),
     //   accessorKey: "tc"
@@ -94,7 +94,5 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
     }
   })
 
-  return (
-    <ResultTable table={table} />
-  )
+  return <ResultTable table={table} />
 }

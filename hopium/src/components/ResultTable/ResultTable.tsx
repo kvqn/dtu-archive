@@ -7,18 +7,13 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import {
-  flexRender,
-} from "@tanstack/react-table"
+import { flexRender } from "@tanstack/react-table"
 
 type ResultTableProps = {
   table: import("@tanstack/table-core").Table<AggregateStudent> | import("@tanstack/table-core").Table<SemesterStudent>
 }
 
-export default function ResultTable(
-  props: ResultTableProps
-) {
-
+export default function ResultTable(props: ResultTableProps) {
   const { table } = props
 
   return (
@@ -41,8 +36,9 @@ export default function ResultTable(
           <DropdownMenuContent align="end" className="bg-table-dropdown-bg text-table-dropdown-fg">
             {table
               .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
+              // @ts-ignore
+              .filter((column: any) => column.getCanHide())
+              .map((column: any) => {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
@@ -95,7 +91,10 @@ export default function ResultTable(
                         "uppercase font-roboto font-regular" + (cell.column.id != "name" ? " text-center" : "")
                       }
                     >
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      {
+                        // @ts-ignore
+                        flexRender(cell.column.columnDef.cell, cell.getContext())
+                      }
                     </TableCell>
                   ))}
                 </TableRow>

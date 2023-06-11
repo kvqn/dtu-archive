@@ -45,13 +45,13 @@ export default function Page(props: Props) {
       <Navbar
         center={<NavbarItem name="Result" href="/result" />}
         right={
-        <>
-        <NavbarItem name={batch} href={`/result/${batch}`} />
-        <NavbarItem name={branch} href={`/result/${batch}/${branch}`} />
-        <NavbarItem name="Aggregate" href={`/result/${batch}/${branch}/aggregate`} />
-        </>
-          }
-        />
+          <>
+            <NavbarItem name={batch} href={`/result/${batch}`} />
+            <NavbarItem name={branch} href={`/result/${batch}/${branch}`} />
+            <NavbarItem name="Aggregate" href={`/result/${batch}/${branch}/aggregate`} />
+          </>
+        }
+      />
       <AggregateResultTable result={result} />
     </>
   )

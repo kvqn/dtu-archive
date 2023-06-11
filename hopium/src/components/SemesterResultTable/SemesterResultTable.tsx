@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
 import ResultTable from "@/components/ResultTable/ResultTable"
+import { Button } from "@/components/ui/button"
 import {
   Column,
   ColumnDef,
@@ -109,7 +109,5 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
     }
   })
 
-  return (
-    <ResultTable table={table} />
-  )
+  return <ResultTable table={table} />
 }

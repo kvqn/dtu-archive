@@ -51,8 +51,6 @@ export function Navbar(props: {
 }) {
   let { left, right, center, className } = props
 
-  console.log(props)
-
   if (!className) className = ""
   return (
     <>

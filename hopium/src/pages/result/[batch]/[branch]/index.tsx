@@ -58,7 +58,7 @@ export default function Page(props: Props) {
         <GradientLink href={`/result/${batch}/${branch}/aggregate`} name="Aggregate" />
         <ul>
           {[...Array(semesters)].map((_, index) => (
-            <GradientLink href={`/result/${batch}/${branch}/${index + 1}`} name={`Sem ${index + 1}`} key={branch} />
+            <GradientLink href={`/result/${batch}/${branch}/${index + 1}`} name={`Sem ${index + 1}`} key={index + 1} />
           ))}
         </ul>
       </div>

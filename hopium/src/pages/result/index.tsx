@@ -1,5 +1,5 @@
 import GradientLink from "@/components/GradientLink/GradientLink"
-import { Navbar, NavbarCenter, NavbarItem, NavbarLeft } from "@/components/Navbar/Navbar"
+import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { getBatches } from "@/lib/data"
 
 export const getStaticProps = async () => {
