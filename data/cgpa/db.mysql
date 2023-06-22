@@ -1,0 +1,42 @@
+show tables;
+
+create table rollnos(
+  old char(16) primary key,
+  new char(16) unique not null
+);
+describe rollnos;
+select * from rollnos;
+
+create table result_heirarchy(
+  result char(100) primary key,
+  heirarchy int auto_increment unique not null
+);
+describe result_heirarchy;
+select * from result_heirarchy;
+
+create table result_student_details(
+  result char(100),
+  rollno char(20),
+  name char(100),
+  tc smallint,
+  cgpa float,
+  failed_subjects varchar(100),
+  primary key(result, rollno),
+  foreign key(result) references result_heirarchy(result)
+);
+describe result_student_details;
+select * from result_student_details;
+
+create table result_grades(
+  result char(100),
+  rollno char(16),
+  subject char(10),
+  grade char(2),
+  primary key(result, rollno, subject),
+  foreign key(result, rollno) references result_student_details(result, rollno)
+);
+select * from result_grades;
+
+select max(heirarchy) from result_heirarchy;
+
+drop table ;

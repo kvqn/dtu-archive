@@ -9,6 +9,7 @@ class Student:
         self.rollno = None
         self.tc = None
         self.cgpa = None
+        self.bad = False
 
     def __str__(self):
         return f"(Student: {self.sno}, {self.name}, {self.rollno}, {self.grades}, {self.tc}, {self.cgpa}, {self.failed_papers})\n"
