@@ -29,10 +29,12 @@ commands["to-excel"].add_argument("--output", "-o", help="The file to write the 
 
 commands["complete"] = subparsers.add_parser("complete", help="Complete the process in one go")
 commands["complete"].add_argument("pdf", help="The PDF file to extract text from")
+commands["complete"].add_argument("semester", help="Which semester is this", type=int)
 commands["complete"].add_argument("--output", "-o", help="The file to write the Excel to", required=False)
 commands["complete"].add_argument("--y-density", "-y", help="The y-density of the PDF. This adjusts how many white pixels make up a space or newline character. Default is 10", type=int, required=False, default=12)
 commands["complete"].add_argument("--make-intermediate-files", help="Make intermediate files", action="store_true", default=False)
 commands["complete"].add_argument("--text", help="the file provided is a text file", action="store_true", default=False)
+commands["complete"].add_argument("--heirarchy", help="The heirarchy of the students", choices=["latest", "oldest"], default="latest")
 
 # This is better to do with a config file because there will a lot of options
 commands["create-sem-result"] = subparsers.add_parser("create-sem-result", help="Create a result according to the specified config file.")
@@ -86,7 +88,7 @@ def cli_main():
             if args.output is None:
                 args.output = args.pdf.replace(".pdf", ".xlsx")
             from .complete import complete_conversion
-            complete_conversion(args.pdf, args.output, args.y_density, args.make_intermediate_files, args.text)
+            complete_conversion(args.pdf, args.output, args.y_density, args.make_intermediate_files, args.text, args.semester, args.heirarchy)
 
         case "create-sem-result":
             from .create_sem_result import create_sem_result

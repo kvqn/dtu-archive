@@ -2,12 +2,7 @@ import Custom404 from "@/components/Custom404"
 import GradientLink from "@/components/GradientLink/GradientLink"
 import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { getBatches, getBranches, getSemesters } from "@/lib/data"
-
-type Props = {
-  batch: string
-  branch: string
-  semesters: number
-}
+import { InferGetStaticPropsType } from "next"
 
 export const getStaticProps = async ({ params }: any) => {
   const batch = params.batch as string
@@ -36,7 +31,7 @@ export const getStaticPaths = async () => {
   return { paths: paths, fallback: false }
 }
 
-export default function Page(props: Props) {
+export default function Page(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const { batch, branch, semesters } = props
 
   if (!semesters) return Custom404()
@@ -57,8 +52,8 @@ export default function Page(props: Props) {
         <h1 className="heading-select">Select semester</h1>
         <GradientLink href={`/result/${batch}/${branch}/aggregate`} name="Aggregate" />
         <ul>
-          {[...Array(semesters)].map((_, index) => (
-            <GradientLink href={`/result/${batch}/${branch}/${index + 1}`} name={`Sem ${index + 1}`} key={index + 1} />
+          {[semesters].map((semester) => (
+            <GradientLink href={`/result/${batch}/${branch}/${semester}`} name={`Sem ${semester}`} key={semester} />
           ))}
         </ul>
       </div>

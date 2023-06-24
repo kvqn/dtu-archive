@@ -3,10 +3,10 @@ import mariadb
 import os
 from . import Student
 import traceback
+import sys
 
 
-def push_to_db(result_name : str, students : list[Student], heirarchy: str = 'latest'):
-
+def push_to_db(result_name : str, students : list[Student], semester: int, heirarchy: str):
     load_dotenv()
 
     query=""
@@ -53,12 +53,12 @@ def push_to_db(result_name : str, students : list[Student], heirarchy: str = 'la
             else:
                 n_heirarchy = result[0][0] - 1
 
-        cur.execute(f"insert into result_heirarchy values ('{result_name}', {n_heirarchy})")
+        cur.execute(f"insert into result_heirarchy values ('{result_name}', {semester}, {n_heirarchy})")
         print("Inserted into result_heirarchy table.")
 
         values = []
         for student in students:
-            values.append(f"('{result_name}','{student.rollno}', '{student.name}', {student.tc}, {student.cgpa}, '{student.failed_papers}')")
+            values.append(f"('{result_name}','{student.rollno}', '{student.name}', {student.tc}, {student.cgpa}, '{student.failed_papers}', {student.bad})")
         query = "insert into result_student_details values " + ",".join(values)
         cur.execute(query)
 
@@ -68,6 +68,11 @@ def push_to_db(result_name : str, students : list[Student], heirarchy: str = 'la
                 values.append(f"('{result_name}', '{student.rollno}', '{subject}', '{grade}')")
         query = "insert into result_grades values " + ",".join(values)
         cur.execute(query)
+        # for i_value, value in enumerate(values):
+        #     sys.stdout.write(f"\rProcessing grade {i_value+1}/{len(values)}")
+        #     query = "insert into result_grades values " + value
+        #     cur.execute(query)
+        # sys.stdout.write("\n")
 
         conn.commit()
         print("Successfully pushed to database.")
@@ -76,7 +81,7 @@ def push_to_db(result_name : str, students : list[Student], heirarchy: str = 'la
         print("Error in connecting to database.")
         # print traceback
         print(traceback.format_exc())
-        # print("Query,", query)
+        print("Query,", query)
 
 
 

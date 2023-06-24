@@ -34,12 +34,6 @@ type AggregateResultTableProps = {
   result: AggregateResult
 }
 
-function ineedhelp(n_semesters: number) {
-  let semesters: string[] = []
-  for (let i = 1; i <= n_semesters; i++) semesters.push(`Sem ${i}`)
-  return semesters
-}
-
 export default function AggregateResultTable(props: AggregateResultTableProps) {
   const { result } = props
 
@@ -55,7 +49,7 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
       header: "Name",
       accessorKey: "name"
     },
-    ...ineedhelp(result.n_semesters).map((semester, index) =>
+    result.semseters.map((semester, index) =>
       columnHelper.accessor((student: AggregateStudent) => student.cgpas[index], {
         id: semester,
         header: sortingHeader(semester)

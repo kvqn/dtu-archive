@@ -7,14 +7,15 @@ type AggregateStudent = {
 
 type AggregateResult = {
   n_students: number
-  n_semesters: number
+  semesters: number[]
   students: AggregateStudent[]
 }
 
 type SemesterStudent = {
   rollno: string
   name: string
-  grades: string[]
+  grades: (string|null)[]
+  subjects: (string|null)[]
   tc: number
   cgpa: number
   failed_papers: string[]
