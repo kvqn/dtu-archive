@@ -213,3 +213,21 @@ select subject, count(*) as count from view_latest_grades where rollno regexp '2
 
 
 select unique substring(rollno, 1, 4) as batch from result_student_details
+
+
+
+# aggregate result
+select * from view_latest_details;
+select view_latest_details.result, rollno, semester, cgpa, tc, bad
+from view_latest_details inner join result_heirarchy on view_latest_details.result = result_heirarchy.result
+where rollno regexp '2K19\/IT\/'
+
+create view view_latest_aggregate as
+select view_latest_details.result, rollno, semester, cgpa, tc, bad
+from view_latest_details inner join result_heirarchy on view_latest_details.result = result_heirarchy.result;
+
+drop view view_latest_aggregate;
+
+select * from view_latest_aggregate where rollno regexp '2K19\/IT\/';
+
+select rollno, name from result_student_details where rollno regexp '2K19\/IT\/' group by rollno;

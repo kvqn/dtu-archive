@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
     for (const branch of branches) {
       const semesters = await getSemesters(batch, branch)
       if (!semesters) continue
-      for (let sem = 1; sem <= semesters; sem++) {
+      for (const sem of semesters) {
         paths.push({
           params: { batch: batch, branch: branch, semester: sem.toString() }
         })

@@ -1,7 +1,7 @@
 type AggregateStudent = {
   rollno: string
   name: string
-  cgpas: number[]
+  cgpas: (number|null)[]
   aggregate: number
 }
 

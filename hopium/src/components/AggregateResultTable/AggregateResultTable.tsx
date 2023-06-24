@@ -49,10 +49,10 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
       header: "Name",
       accessorKey: "name"
     },
-    result.semseters.map((semester, index) =>
+    ...result.semesters.map((semester, index) =>
       columnHelper.accessor((student: AggregateStudent) => student.cgpas[index], {
-        id: semester,
-        header: sortingHeader(semester)
+        id: `Sem ${semester}`,
+        header: sortingHeader(`Sem ${semester}`)
       })
     ),
 

@@ -52,7 +52,7 @@ export default function Page(props: InferGetStaticPropsType<typeof getStaticProp
         <h1 className="heading-select">Select semester</h1>
         <GradientLink href={`/result/${batch}/${branch}/aggregate`} name="Aggregate" />
         <ul>
-          {[semesters].map((semester) => (
+          {semesters.map((semester) => (
             <GradientLink href={`/result/${batch}/${branch}/${semester}`} name={`Sem ${semester}`} key={semester} />
           ))}
         </ul>

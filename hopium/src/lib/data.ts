@@ -5,6 +5,10 @@ import conn from "./sql"
 
 const DATA_DIR = "public/data"
 
+function round_to_two_places(num: number) {
+  return Math.round( num * 100 + Number.EPSILON ) / 100
+}
+
 export async function isValidBatch(batch: string): Promise<boolean> {
   const batches = await getBatches()
   return batches.includes(batch)
@@ -172,7 +176,98 @@ async function _get_semester_grades(
 
 export async function getAggregateResult(batch: string, branch: string): Promise<AggregateResult | null> {
   if (!(await isValidBranch(batch, branch))) return null
-  const text = await readFile(`${DATA_DIR}/${batch}/${branch}/aggregate-result.json`, "utf-8")
-  const result = JSON.parse(text)
-  return result
+
+  const details = await _get_aggregate_details(batch, branch)
+  const semesters_set = new Set<number>()
+
+  for (const result of details) {
+    semesters_set.add(result.semester)
+  }
+
+  const semesters = Array.from(semesters_set).sort()
+
+  const aggregate_students: AggregateStudent[] = []
+  const names = await _get_aggregate_names(batch, branch)
+
+  for (const name of names) {
+    const results = details.filter((result) => result.rollno === name.rollno)
+    const cgpas = []
+    let total_tc = 0
+    let aggregate = 0
+    for (const semester of semesters) {
+      const result = results.find((result) => result.semester === semester)
+      if (result) {
+        cgpas.push(result.cgpa)
+        total_tc += result.tc
+        aggregate += result.cgpa * result.tc
+      } else {
+        cgpas.push(null)
+      }
+    }
+
+    if (total_tc !== 0) {
+      aggregate /= total_tc
+    }
+
+    const aggregate_student: AggregateStudent = {
+      rollno: name.rollno,
+      name: name.name,
+      cgpas: cgpas,
+      aggregate: round_to_two_places(aggregate),
+    }
+
+    aggregate_students.push(aggregate_student)
+
+    }
+
+  const aggregate_result: AggregateResult = {
+    n_students: aggregate_students.length,
+    semesters: semesters,
+    students: aggregate_students,
+  }
+
+  return aggregate_result
+
+}
+
+type _AggregateDetails = {
+  result: string,
+  rollno: string,
+  semester: number,
+  cgpa: number,
+  tc: number,
+  bad: boolean
+}
+
+async function _get_aggregate_details(
+  batch: string,
+  branch: string
+): Promise<_AggregateDetails[]> {
+  return new Promise((resolve, reject) => {
+    conn.query(
+      `select * from view_latest_aggregate where rollno regexp '${batch}\/${branch}\/'`,
+      (err, result) => {
+        if (err) reject(err)
+        resolve(result)
+      }
+    )
+  })
+}
+
+async function _get_aggregate_names(
+  batch: string,
+  branch: string
+): Promise<{rollno: string, name: string}[]> {
+
+  return new Promise((resolve, reject) => {
+
+    conn.query(
+      `select rollno, name from result_student_details where rollno regexp '${batch}\/${branch}\/' group by rollno`,
+      (err, result) => {
+        if (err) reject(err)
+        resolve(result)
+      }
+    )
+  })
+
 }
