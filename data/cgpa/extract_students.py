@@ -51,11 +51,17 @@ def extract_students(decluttered_text : str):
 
             DONT_READ_LINE = False
 
-            match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]? {,5})*) .*$", line)
+            match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
             if not match:
-                err = f"Expected table header, got something else."
-                logging.error(err)
-                raise ParsingException(err)
+                match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
+                if not match:
+                    line = next(lines)
+                    line_number+=1
+                    match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
+                    if not match:
+                        err = "Expected table header, got something else."
+                        logging.error(err)
+                        raise ParsingException(err)
             subjects = match.group("subjects")
             for repl in STUPID_SUBJECT_NAMES:
                 subjects = subjects.replace(*repl)
@@ -81,7 +87,7 @@ def extract_students(decluttered_text : str):
 
                 student = Student(subjects)
 
-                match = re.match(r"^ {,30}(?P<name>[A-Za-z\.]+(?: {1,3}[A-Za-z\.]+)*)?(?: {10,}(?P<failed_papers>[A-Z]+[0-9]+[a-z]? *,?(?: *[A-Z]+[0-9]+[a-z]?(?: *,)?)*)) *$", line)
+                match = re.match(r"^ {,30}(?P<name>[A-Za-z\.]+(?: {1,3}[A-Za-z\.]+)*)?(?: {10,}(?P<failed_papers>[A-Z]+[ \-]?[0-9]+[a-z]?\*? *,?(?: *[A-Z]+[ \-]?[0-9]+[a-z]?\*?(?: *,)?)*)) *$", line)
                 if match:
                     student.name.extend(force_split(match.group("name")))
                     student.failed_papers.extend(force_split(match.group("failed_papers"), ','))
@@ -90,18 +96,19 @@ def extract_students(decluttered_text : str):
 
                 # https://regex101.com/r/nz1MKW/1
                 match = re.match(
-                    r"^ *(?P<sno>[0-9]+)? +(?P<name>[A-Za-z\.]+(?: +[A-Za-z\.]+)*)? +(?P<rollno>2K[0-9]{2}\/[A-Z0-9]+\/[0-9]+)? +(?P<grades>[A-Z\+]+(?: +[A-Z\+]+)*) +(?P<tc>[0-9]+) +(?P<cgpa>[0-9\.]+)(?: +(?P<failed_papers>[A-Z]+[ \-]?[0-9]+[a-z]? *,?(?: *[A-Z]+[ \-]?[0-9]+[a-z]?(?: *,)?)*))? *$"
+                    r"^ *(?P<sno>[0-9]+)? +(?P<name>[A-Za-z\.]+(?: +[A-Za-z\.]+)*)? +(?P<rollno>2K[0-9]{2}\/[A-Z0-9]+\/[0-9]+)? +(?P<grades>[A-Z\+]+(?: +[A-Z\+]+)*) +(?P<tc>[0-9]+) +(?P<cgpa>[0-9\.]+)(?: +(?P<failed_papers>[A-Z]+[ \-]?[0-9]+[a-z]?\*? *,?(?: *[A-Z]+[ \-]?[0-9]+[a-z]?\*?(?: *,)?)*))? *$"
                     , line
                 )
                 if not match:
-                    match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[0-9]+[a-z]? {,5})*) .*$", line)
+                    match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
                     if not match:
-                        err = "Error: Expected student line or table header, but got something else."
-                        logging.error(err)
-                        raise ParsingException(err)
-                    else:
-                        DONT_READ_LINE = True
-                        break
+                        match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
+                        if not match:
+                            err = "Error: Expected student line or table header, but got something else."
+                            logging.error(err)
+                            raise ParsingException(err)
+                    DONT_READ_LINE = True
+                    break
 
                 if match.group("sno") is None:
                     logging.info(f"Nameless student at line {line_number}")
@@ -126,7 +133,7 @@ def extract_students(decluttered_text : str):
                     blank_lines+=1
                 else:
                     # https://regex101.com/r/SPmjYg/1
-                    match = re.match(r"^ {,30}(?P<name>[A-Za-z]+(?: {1,3}[A-Za-z]+)*)?(?: {10,}(?P<failed_papers>[A-Z]+[ \-]?[0-9]+[a-z]? *,?(?: *[A-Z]+[ \-]?[0-9]+[a-z]?(?: *,)?)*))? *$", line)
+                    match = re.match(r"^ {,30}(?P<name>[A-Za-z]+(?: {1,3}[A-Za-z]+)*)?(?: {10,}(?P<failed_papers>[A-Z]+[ \-]?[0-9]+[a-z]?\*? *,?(?: *[A-Z]+[ \-]?[0-9]+[a-z]?\*?(?: *,)?)*))? *$", line)
                     if match:
                         student.name.extend(force_split(match.group("name")))
                         student.failed_papers.extend(force_split(match.group("failed_papers")))

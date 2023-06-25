@@ -10,7 +10,7 @@ REMOVE_REGEXES = [
     r"^ *Branch.*$",
     # r"^ *[A-Z]+[0-9]* +:.*$",
     # r"^ *[A-Z]+[0-9]*[a-z]? +:.*$",
-    r"^ *[A-Za-z0-9\- ]+ +:.*$",
+    r"^ *[A-Za-z0-9\- ]+\*? +:.*$",
     r"^ *Credits.*$",
     r"^ *Any +discrepancy.*$",
     r"^ *Digitally +Signed.*$",
@@ -53,6 +53,11 @@ REMOVE_REGEXES = [
     r"^ *ARCHITECTURE.*$",
     r"^ *NETWORKS.*$",
     r"^ *CONVERSION.*$",
+    r"^ *Everyday.*$",
+    r"^ *Banking.*$",
+    r"^ *Performance.*$",
+    r"^.*COURSERA.*$",
+
 
 
 ]
