@@ -135,13 +135,17 @@ select details.result, ifnull(rollnos.new, details.rollno) as rollno, details.na
 from result_student_details as details left join rollnos on details.rollno = rollnos.old
 ) as t1 group by rollno
 having
-  (select heirarchy from result_heirarchy where result_heirarchy.result = result)
+  (select heirarchy from result_heirarchy where result_heirarchy.result = t1.result)
     =
   max((select heirarchy from result_heirarchy where result_heirarchy.result = t1.result));
 
+select * from result_heirarchy;
+
 drop view view_latest_details;
+select * from view_latest_details;
 select * from view_latest_details where rollno regexp '2K19\/IT\/';
 select * from view_latest_details where result in (select result from result_heirarchy where semester = 8) and rollno regexp '2K19\/IT\/';
+select * from view_latest_details where result in (select result from result_heirarchy where semester = 6) and rollno regexp '2K21\/';
 
 # select relevant grades
 select * from result_grades where result in (select result from result_heirarchy where semester = 8) and rollno regexp '2k19\/it\/';
@@ -185,7 +189,9 @@ having
     ;
 
 
-create view view_latest_grades as select * from
+drop view view_latest_grades;
+create view view_latest_grades as
+select * from
 (
 select grades.result, ifnull(rollnos.new, grades.rollno) as rollno, grades.subject, grades.grade
 from
@@ -195,7 +201,7 @@ from
 )
 as t1 group by rollno, subject
 having
-  (select heirarchy from result_heirarchy where result_heirarchy.result = result)
+  (select heirarchy from result_heirarchy where result_heirarchy.result = t1.result)
     =
   max((select heirarchy from result_heirarchy where result_heirarchy.result = t1.result))
     ;
