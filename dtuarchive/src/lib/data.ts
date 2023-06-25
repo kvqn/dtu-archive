@@ -6,7 +6,7 @@ import conn from "./sql"
 const DATA_DIR = "public/data"
 
 function round_to_two_places(num: number) {
-  return Math.round( num * 100 + Number.EPSILON ) / 100
+  return Math.round(num * 100 + Number.EPSILON) / 100
 }
 
 export async function isValidBatch(batch: string): Promise<boolean> {
@@ -50,8 +50,8 @@ export async function getSemesters(batch: string, branch: string): Promise<numbe
   if (!(await isValidBranch(batch, branch))) return null
   return new Promise((resolve, reject) => {
     conn.query(
-      `select distinct semester from result_heirarchy where result in (select unique result from result_student_details where substring(rollno, 1, 4) = '${batch}' and regexp_substr(rollno, '(?<=\/)[a-zA-Z]+') = '${branch}')`
-      , (err, result) => {
+      `select distinct semester from result_heirarchy where result in (select unique result from result_student_details where substring(rollno, 1, 4) = '${batch}' and regexp_substr(rollno, '(?<=\/)[a-zA-Z]+') = '${branch}')`,
+      (err, result) => {
         if (err) reject(err)
         resolve(result.map((row: any) => row["semester"]))
       }
@@ -86,7 +86,7 @@ export async function getSemesterResult(
       subjects: [],
       tc: student.tc,
       cgpa: student.cgpa,
-      failed_papers: student.failed_subjects.split(","),
+      failed_papers: student.failed_subjects.split(",")
     }
 
     const student_grades = grades.filter((grade) => grade.rollno === student.rollno)
@@ -106,7 +106,6 @@ export async function getSemesterResult(
     }
 
     semester_students.push(semester_student)
-
   }
 
   const subjects: string[] = []
@@ -117,27 +116,22 @@ export async function getSemesterResult(
   const semester_result: SemesterResult = {
     n_students: details.length,
     subjects: subjects,
-    students: semester_students,
+    students: semester_students
   }
 
   return semester_result
-
 }
 
 type _SemesterDetails = {
-  result: string,
-  rollno: string,
-  name: string,
-  tc: number,
-  cgpa: number,
-  failed_subjects: string,
+  result: string
+  rollno: string
+  name: string
+  tc: number
+  cgpa: number
+  failed_subjects: string
 }
 
-async function _get_semeseter_details(
-  batch: string,
-  branch: string,
-  semester: string
-): Promise<_SemesterDetails[]> {
+async function _get_semeseter_details(batch: string, branch: string, semester: string): Promise<_SemesterDetails[]> {
   // Assumes that the semester is valid
   return new Promise((resolve, reject) => {
     conn.query(
@@ -151,17 +145,13 @@ async function _get_semeseter_details(
 }
 
 type _SemesterGrades = {
-  result: string,
-  rollno: string,
-  subject: string,
-  grade: string,
+  result: string
+  rollno: string
+  subject: string
+  grade: string
 }
 
-async function _get_semester_grades(
-  batch: string,
-  branch: string,
-  semester: string
-): Promise<_SemesterGrades[]> {
+async function _get_semester_grades(batch: string, branch: string, semester: string): Promise<_SemesterGrades[]> {
   // Assumes that the semester is valid
   return new Promise((resolve, reject) => {
     conn.query(
@@ -213,54 +203,41 @@ export async function getAggregateResult(batch: string, branch: string): Promise
       rollno: name.rollno,
       name: name.name,
       cgpas: cgpas,
-      aggregate: round_to_two_places(aggregate),
+      aggregate: round_to_two_places(aggregate)
     }
 
     aggregate_students.push(aggregate_student)
-
-    }
+  }
 
   const aggregate_result: AggregateResult = {
     n_students: aggregate_students.length,
     semesters: semesters,
-    students: aggregate_students,
+    students: aggregate_students
   }
 
   return aggregate_result
-
 }
 
 type _AggregateDetails = {
-  result: string,
-  rollno: string,
-  semester: number,
-  cgpa: number,
-  tc: number,
+  result: string
+  rollno: string
+  semester: number
+  cgpa: number
+  tc: number
   bad: boolean
 }
 
-async function _get_aggregate_details(
-  batch: string,
-  branch: string
-): Promise<_AggregateDetails[]> {
+async function _get_aggregate_details(batch: string, branch: string): Promise<_AggregateDetails[]> {
   return new Promise((resolve, reject) => {
-    conn.query(
-      `select * from view_latest_aggregate where rollno regexp '${batch}\/${branch}\/'`,
-      (err, result) => {
-        if (err) reject(err)
-        resolve(result)
-      }
-    )
+    conn.query(`select * from view_latest_aggregate where rollno regexp '${batch}\/${branch}\/'`, (err, result) => {
+      if (err) reject(err)
+      resolve(result)
+    })
   })
 }
 
-async function _get_aggregate_names(
-  batch: string,
-  branch: string
-): Promise<{rollno: string, name: string}[]> {
-
+async function _get_aggregate_names(batch: string, branch: string): Promise<{ rollno: string; name: string }[]> {
   return new Promise((resolve, reject) => {
-
     conn.query(
       `select rollno, name from result_student_details where rollno regexp '${batch}\/${branch}\/' group by rollno`,
       (err, result) => {
@@ -269,5 +246,4 @@ async function _get_aggregate_names(
       }
     )
   })
-
 }

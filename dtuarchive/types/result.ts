@@ -1,7 +1,7 @@
 type AggregateStudent = {
   rollno: string
   name: string
-  cgpas: (number|null)[]
+  cgpas: (number | null)[]
   aggregate: number
 }
 
@@ -14,8 +14,8 @@ type AggregateResult = {
 type SemesterStudent = {
   rollno: string
   name: string
-  grades: (string|null)[]
-  subjects: (string|null)[]
+  grades: (string | null)[]
+  subjects: (string | null)[]
   tc: number
   cgpa: number
   failed_papers: string[]

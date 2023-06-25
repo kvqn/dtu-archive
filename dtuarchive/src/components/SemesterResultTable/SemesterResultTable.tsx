@@ -14,6 +14,7 @@ import {
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
+
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip"
 
 const sortingHeader = (columnName: string): React.FC<{ column: Column<SemesterStudent, unknown> }> => {
@@ -71,23 +72,16 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
           if (gradeA && gradeB) return gradeA - gradeB
           return 0
         },
-        cell: ({row}) => {
+        cell: ({ row }) => {
           if (row.original.grades[index] == null) return <></>
           return (
             <TooltipProvider>
-            <Tooltip>
-<TooltipTrigger>
-
-            <div className="w-full h-full">
-            {row.original.grades[index]}
-            </div>
-</TooltipTrigger>
-<TooltipContent>
-  {row.original.subjects[index]}
-</TooltipContent>
-
-            </Tooltip>
-
+              <Tooltip>
+                <TooltipTrigger>
+                  <div className="w-full h-full">{row.original.grades[index]}</div>
+                </TooltipTrigger>
+                <TooltipContent>{row.original.subjects[index]}</TooltipContent>
+              </Tooltip>
             </TooltipProvider>
           )
         }
