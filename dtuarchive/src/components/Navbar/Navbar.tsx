@@ -2,8 +2,8 @@ import Link from "next/link"
 
 import styles from "./Navbar.module.css"
 
-function NavbarHopium() {
-  return NavbarItem({ name: "Hopium", href: "/" })
+function NavbarDtuarchive() {
+  return NavbarItem({ name: "DTU Achive", href: "/" })
 }
 
 function NavbarLeft(props: { children: React.ReactNode; className?: string }) {
@@ -11,7 +11,7 @@ function NavbarLeft(props: { children: React.ReactNode; className?: string }) {
   if (!className) className = ""
   return (
     <div className={styles.navbarleft + " " + className}>
-      <NavbarHopium />
+      <NavbarDtuarchive />
       {children}
     </div>
   )
