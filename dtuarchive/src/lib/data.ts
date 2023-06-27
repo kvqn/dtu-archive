@@ -294,22 +294,71 @@ export async function getAggregateResult(batch: string, branch: string): Promise
   return aggregate_result
 }
 
-type _AggregateDetails = {
-  result: string
-  rollno: string
+
+type _AggregateDetails = ResultStudentDetails & {
   semester: number
-  cgpa: number
-  tc: number
-  bad: boolean
 }
 
+
 async function _get_aggregate_details(batch: string, branch: string): Promise<_AggregateDetails[]> {
-  return new Promise((resolve, reject) => {
-    conn.query(`select * from view_latest_aggregate where rollno regexp '${batch}\/${branch}\/'`, (err, result) => {
+  const details : _AggregateDetails[] = await new Promise((resolve, reject) => {
+    conn.query(
+      `select details.result, rollno, name, semester, cgpa, tc, bad from (select * from result_student_details where rollno regexp '${batch}\/${branch}\/') as details inner join result_heirarchy on details.result = result_heirarchy.result`,
+      (err, result) => {
       if (err) reject(err)
-      resolve(result)
+      resolve(result.map((row : any) => {
+        return {
+          result: row["result"],
+          rollno: row["rollno"],
+          name: row["name"],
+          semester: row["semester"],
+          cgpa: row["cgpa"],
+          tc: row["tc"]
+        }
+      }))
     })
   })
+
+  const results : ResultHeirarchy[] = await new Promise((resolve, reject) => {
+    conn.query(
+      `select result, heirarchy, semester from result_heirarchy`,
+      (err, result) => {
+        if (err) reject(err)
+        resolve(result.map((row : any) => {
+          return {
+            result: row["result"],
+            heirarchy: row["heirarchy"]
+          }
+        }))
+      }
+    )
+  })
+
+  results.sort((a: any, b: any) => b["heirarchy"] - a["heirarchy"])
+
+  const relevant_details: _AggregateDetails[] = []
+
+  const considered_students: Set<{rollno: string, semester: number}> = new Set()
+
+  for (const detail of details) {
+
+    // @ts-ignore
+    if (considered_students.has({rollno: detail.rollno, semester: detail.semester})) continue
+
+    relevant_details.push(
+      details.filter((d) => d.rollno === detail.rollno && d.semester === detail.semester).sort((a, b) => {
+        const a_heirarchy = results.find((r) => r.result === a.result)?.heirarchy
+        const b_heirarchy = results.find((r) => r.result === b.result)?.heirarchy
+        // @ts-ignore
+        return b_heirarchy - a_heirarchy
+      })[0]
+    )
+
+    considered_students.add({rollno: detail.rollno, semester: detail.semester})
+
+  }
+
+  return relevant_details
 }
 
 async function _get_aggregate_names(batch: string, branch: string): Promise<{ rollno: string; name: string }[]> {
