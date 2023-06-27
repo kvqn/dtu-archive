@@ -32,7 +32,7 @@ export async function getBranches(batch: string): Promise<string[] | null> {
   if (!(await isValidBatch(batch))) return null
   return new Promise((resolve, reject) => {
     conn.query(
-      `select unique regexp_substr(rollno, '(?<=\/)[a-zA-Z0-9]+') as branch from result_student_details where substring(rollno, 1, 4) = '${batch}' order by branch asc`,
+      `select unique regexp_substr(rollno, '(?<=\/)[a-zA-Z0-9]+') as branch from ( select ifnull(rollnos.new, t0.rollno) as rollno from ( select rollno from result_student_details where substring(rollno, 1, 4) = '${batch}') as t0 left join rollnos on rollnos.old = t0.rollno) as t1 where rollno regexp '\/[A-Z]+\/' order by branch asc`,
       (err, result) => {
         if (err) reject(err)
         resolve(result.map((row: any) => row["branch"]))
@@ -50,7 +50,7 @@ export async function getSemesters(batch: string, branch: string): Promise<numbe
   if (!(await isValidBranch(batch, branch))) return null
   return new Promise((resolve, reject) => {
     conn.query(
-      `select distinct semester from result_heirarchy where result in (select unique result from result_student_details where substring(rollno, 1, 4) = '${batch}' and regexp_substr(rollno, '(?<=\/)[a-zA-Z0-9]+') = '${branch}')`,
+      `select distinct semester from result_heirarchy where result in ( select distinct result from ( select result, ifnull(rollnos.new, t0.rollno) as rollno from ( select result, rollno from result_student_details where substring(rollno, 1, 4) = '${batch}') as t0 left join rollnos on rollnos.old = t0.rollno) as t1 where rollno regexp '\/${branch}\/') order by semester desc`,
       (err, result) => {
         if (err) reject(err)
         resolve(result.map((row: any) => row["semester"]))
@@ -126,7 +126,7 @@ async function _get_semeseter_details(batch: string, branch: string, semester: s
   // Assumes that the semester is valid
   const details: ResultStudentDetails[] =  await new Promise((resolve, reject) => {
     conn.query(
-      `select * from result_student_details where rollno regexp '${batch}\/${branch}\/' and result in (select result from result_heirarchy where semester = ${semester})`,
+      `select * from ( select result, ifnull(rollnos.new, t0.rollno) as rollno, name, tc, cgpa, failed_subjects, bad from ( select * from result_student_details where result in (select result from result_heirarchy where semester = ${semester})) as t0 left join rollnos on rollnos.old = t0.rollno) as t1 where t1.rollno regexp '${batch}\/${branch}\/'`,
       (err, result) => {
         if (err) reject(err)
         resolve(result.map((row : any) => {
@@ -185,7 +185,7 @@ async function _get_semester_grades(batch: string, branch: string, semester: str
   // Assumes that the semester is valid
   const grades : ResultGrades[] = await new Promise((resolve, reject) => {
     conn.query(
-      `select * from result_grades where rollno regexp '${batch}\/${branch}\/' and result in (select result from result_heirarchy where semester = ${semester})`,
+        `select * from ( select result, ifnull(rollnos.new, result_grades.rollno) as rollno, subject, grade from result_grades left join rollnos on rollnos.old = result_grades.rollno) as t0 where rollno regexp '${batch}\/${branch}\/' and result in (select result from result_heirarchy where semester = ${semester})`,
       (err, result) => {
         if (err) reject(err)
         resolve(result.map((row : any) => {
@@ -303,7 +303,7 @@ type _AggregateDetails = ResultStudentDetails & {
 async function _get_aggregate_details(batch: string, branch: string): Promise<_AggregateDetails[]> {
   const details : _AggregateDetails[] = await new Promise((resolve, reject) => {
     conn.query(
-      `select details.result, rollno, name, semester, cgpa, tc, bad from (select * from result_student_details where rollno regexp '${batch}\/${branch}\/') as details inner join result_heirarchy on details.result = result_heirarchy.result`,
+      `select t1.*, semester from ( select * from ( select result, ifnull(rollnos.new, result_student_details.rollno) as rollno, name, cgpa, tc, bad from result_student_details left join rollnos on rollnos.old = result_student_details.rollno) as t0 where t0.rollno regexp '${batch}\/${branch}\/') as t1 inner join result_heirarchy as details on details.result = t1.result`,
       (err, result) => {
       if (err) reject(err)
       resolve(result.map((row : any) => {
