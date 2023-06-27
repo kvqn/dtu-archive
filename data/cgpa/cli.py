@@ -34,6 +34,7 @@ commands["complete"].add_argument("--output", "-o", help="The file to write the 
 commands["complete"].add_argument("--y-density", "-y", help="The y-density of the PDF. This adjusts how many white pixels make up a space or newline character. Default is 10", type=int, required=False, default=12)
 commands["complete"].add_argument("--make-intermediate-files", help="Make intermediate files", action="store_true", default=False)
 commands["complete"].add_argument("--text", help="the file provided is a text file", action="store_true", default=False)
+commands["complete"].add_argument("--excel", help="Create excel", action="store_true", default=False)
 # commands["complete"].add_argument("--heirarchy", help="The heirarchy of the students", choices=["latest", "oldest"], default="latest")
 commands["complete"].add_argument("--push", help="Push to db", action="store_true", default=False)
 heirarchy = commands["complete"].add_mutually_exclusive_group(required=False)
@@ -95,7 +96,7 @@ def cli_main():
             if args.heirarchy is None:
                 print("Please specify the heirarchy of the students. Use `--latest` or `--oldest`")
                 exit(1)
-            complete_conversion(args.pdf, args.output, args.y_density, args.make_intermediate_files, args.text, args.semester, args.heirarchy, args.push)
+            complete_conversion(args.pdf, args.output, args.y_density, args.make_intermediate_files, args.text, args.semester, args.heirarchy, args.push, args.excel)
 
         case "create-sem-result":
             from .create_sem_result import create_sem_result

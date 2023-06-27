@@ -11,3 +11,26 @@ const conn = createConnection({
 conn.connect()
 
 export default conn
+
+export type ResultHeirarchy = {
+  result: string
+  heirarchy: string
+  semester: number
+}
+
+export type ResultStudentDetails = {
+  result: string
+  rollno: string
+  name: string
+  tc: number
+  cgpa: number
+  failed_subjects: string
+  bad: boolean
+}
+
+export type ResultGrades = {
+  result: string
+  rollno: string
+  subject: string
+  grade: string
+}

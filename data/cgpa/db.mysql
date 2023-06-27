@@ -18,7 +18,7 @@ create table result_heirarchy(
   constraint semester_positive check (semester > 0)
 );
 describe result_heirarchy;
-select * from result_heirarchy;
+select * from result_heirarchy order by heirarchy;
 
 create table result_student_details(
   result char(100) not null,
@@ -139,6 +139,32 @@ having
     =
   max((select heirarchy from result_heirarchy where result_heirarchy.result = t1.result));
 
+
+
+create view view_result_student_detials_with_latest_rollno as
+select details.result, ifnull(rollnos.new, details.rollno) as rollno, details.name, details.tc, details.cgpa, details.failed_subjects, details.bad
+from result_student_details as details left join rollnos on details.rollno = rollnos.old
+
+
+create view view_latest_details as
+select result, rollno, name, sum(tc) as tc, round(sum(tc * cgpa) / sum(tc), 2) as cgpa, failed_subjects, max(bad) as bad
+from
+(
+  select * from view_result_student_detials_with_latest_rollno as t0
+  where t0.result = (
+    select result from result_heirarchy where heirarchy = max(
+      select heirarchy from result_heirarchy inner join (select * from view_result_student_detials_with_latest_rollno where rollno = t0.rollno)))
+  (
+    select t0.result, rollno, name, tc, cgpa, failed_subjects, bad, result_heirarchy.semester, result_heirarchy.heirarchy
+    from view_result_student_detials_with_latest_rollno as t0 inner join result_heirarchy on result_heirarchy.result = t0.result
+  ) as t1 where t1.heirarchy = (select max(heirarchy) from t1 as t2 where t1.rollno = t2.rollno and t1.semester = t2.semester)
+)
+as t1 group by rollno
+having
+  (select heirarchy from result_heirarchy where result_heirarchy.result = t1.result)
+    =
+  max((select heirarchy from result_heirarchy where result_heirarchy.result = t1.result));
+
 select * from result_heirarchy;
 
 drop view view_latest_details;
@@ -146,6 +172,7 @@ select * from view_latest_details;
 select * from view_latest_details where rollno regexp '2K19\/IT\/';
 select * from view_latest_details where result in (select result from result_heirarchy where semester = 8) and rollno regexp '2K19\/IT\/';
 select * from view_latest_details where result in (select result from result_heirarchy where semester = 6) and rollno regexp '2K21\/';
+select * from view_latest_details;
 
 # select relevant grades
 select * from result_grades where result in (select result from result_heirarchy where semester = 8) and rollno regexp '2k19\/it\/';
@@ -218,7 +245,8 @@ select subject, count(*) as count from view_latest_grades where rollno regexp '2
 # nvm do this in ts
 
 
-select unique substring(rollno, 1, 4) as batch from result_student_details
+select unique substring(rollno, 1, 4) as batch from view_latest_details;
+select * from view_latest_details;
 
 
 
@@ -237,3 +265,34 @@ drop view view_latest_aggregate;
 select * from view_latest_aggregate where rollno regexp '2K19\/IT\/';
 
 select rollno, name from result_student_details where rollno regexp '2K19\/IT\/' group by rollno;
+
+---
+
+describe result_student_details;
+
+
+select * from result_heirarchy;
+
+select * from result_student_details where rollno regexp '2K22';
+
+select * from
+(
+select result, ifnull(new, rollno) as rollno, name, tc, cgpa, failed_subjects, bad
+from
+  result_student_details left join rollnos
+  on rollnos.old = result_student_details.rollno
+where
+  rollno regexp '2K22\/A1\/' and result in (select result from result_heirarchy where semester = 1)
+) as t0
+group by rollno
+having
+  (select heirarchy from result_heirarchy where result_heirarchy.result = t0.result limit 1)
+    =
+  max((select heirarchy from result_heirarchy where result_heirarchy.result in (select result from result_student_details where t0.rollno = rollno and semester = 1)))
+    ;
+
+
+
+
+
+

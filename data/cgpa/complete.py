@@ -7,7 +7,7 @@ from .push_to_db import push_to_db
 import os.path as path
 
 
-def complete_conversion(pdf_path : str, output_path : str, y_density, make_intermediate_files : bool, text: bool, semsester: int, heirarchy: str, push: bool):
+def complete_conversion(pdf_path : str, output_path : str, y_density, make_intermediate_files : bool, text: bool, semsester: int, heirarchy: str, push: bool, excel: bool):
     result_name = path.basename(pdf_path).replace(".pdf", "").replace(".txt", "")
     if text:
         with open(pdf_path, "r") as file:
@@ -19,7 +19,9 @@ def complete_conversion(pdf_path : str, output_path : str, y_density, make_inter
     if make_intermediate_files:
         json_output_path = result_name + '.json'
         save_students(*students, json_output_path)
-    # to_excel(*students, output_path)
+    if excel:
+        excel_output_path = result_name + '.xlsx'
+        to_excel(*students, excel_output_path)
 
     if push:
         push_to_db(result_name, students[0], semsester, heirarchy)

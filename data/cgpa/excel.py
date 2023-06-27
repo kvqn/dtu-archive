@@ -75,7 +75,7 @@ def to_excel(students : List[Student], N_SUBJECT_COLUMNS_REQUIRED, output_path :
     WORKSHEETS = {}
 
     for student in students:
-        match = re.match(r"^2K[0-9]{2}/([A-Z][0-9]+)/[0-9]+$", student.rollno)
+        match = re.match(r"^2K[0-9]{2}\/([A-Z0-9]+)\/[0-9]+$", student.rollno)
         if match:
             classname = match.group(1)
             if classname not in WORKSHEETS:
