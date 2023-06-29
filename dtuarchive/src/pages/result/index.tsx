@@ -14,7 +14,9 @@ type Props = {
 export default function Page({ batches }: Props) {
   return (
     <>
-      <Navbar center={<NavbarItem name="Result" href="/result" active={true} />} />
+      <Navbar
+        center={<NavbarItem name="Result" href="/result" active={true} />}
+      />
 
       <div className="m-20">
         <h1 className="heading-select">Select your batch</h1>

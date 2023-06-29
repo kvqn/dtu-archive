@@ -1,7 +1,12 @@
 import Custom404 from "@/components/Custom404"
 import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import SemesterResultTable from "@/components/SemesterResultTable/SemesterResultTable"
-import { getBatches, getBranches, getSemesterResult, getSemesters } from "@/lib/data"
+import {
+  getBatches,
+  getBranches,
+  getSemesterResult,
+  getSemesters
+} from "@/lib/data"
 
 type Props = {
   batch: string
@@ -56,7 +61,10 @@ export default function Page(props: Props) {
           <>
             <NavbarItem name={batch} href={`/result/${batch}`} />
             <NavbarItem name={branch} href={`/result/${batch}/${branch}`} />
-            <NavbarItem name={"Sem " + semester} href={`/result/${batch}/${branch}/${semester}`} />
+            <NavbarItem
+              name={"Sem " + semester}
+              href={`/result/${batch}/${branch}/${semester}`}
+            />
           </>
         }
       />

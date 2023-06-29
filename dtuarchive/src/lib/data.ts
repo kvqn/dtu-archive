@@ -1,7 +1,11 @@
 import { existsSync } from "fs"
 import { readFile, readdir } from "fs/promises"
 
-import conn, { ResultGrades, ResultHeirarchy, ResultStudentDetails } from "./sql"
+import conn, {
+  ResultGrades,
+  ResultHeirarchy,
+  ResultStudentDetails
+} from "./sql"
 
 const DATA_DIR = "public/data"
 
@@ -16,14 +20,20 @@ export async function isValidBatch(batch: string): Promise<boolean> {
 
 export async function getBatches(): Promise<string[]> {
   return new Promise((resolve, reject) => {
-    conn.query("select unique substring(rollno, 1, 4) as batch from result_student_details order by batch desc", (err, result) => {
-      if (err) reject(err)
-      resolve(result.map((row: any) => row["batch"]))
-    })
+    conn.query(
+      "select unique substring(rollno, 1, 4) as batch from result_student_details order by batch desc",
+      (err, result) => {
+        if (err) reject(err)
+        resolve(result.map((row: any) => row["batch"]))
+      }
+    )
   })
 }
 
-export async function isValidBranch(batch: string, branch: string): Promise<boolean> {
+export async function isValidBranch(
+  batch: string,
+  branch: string
+): Promise<boolean> {
   const branches = await getBranches(batch)
   return branches?.includes(branch) ?? false
 }
@@ -41,12 +51,19 @@ export async function getBranches(batch: string): Promise<string[] | null> {
   })
 }
 
-export async function isValidSemester(batch: string, branch: string, semester: string): Promise<boolean> {
+export async function isValidSemester(
+  batch: string,
+  branch: string,
+  semester: string
+): Promise<boolean> {
   const semesters = await getSemesters(batch, branch)
   return semesters?.includes(parseInt(semester)) ?? false
 }
 
-export async function getSemesters(batch: string, branch: string): Promise<number[] | null> {
+export async function getSemesters(
+  batch: string,
+  branch: string
+): Promise<number[] | null> {
   if (!(await isValidBranch(batch, branch))) return null
   return new Promise((resolve, reject) => {
     conn.query(
@@ -71,7 +88,9 @@ export async function getSemesterResult(
 
   let subject_columns = 0
   for (const student of details) {
-    const student_grades = grades.filter((grade) => grade.rollno === student.rollno)
+    const student_grades = grades.filter(
+      (grade) => grade.rollno === student.rollno
+    )
     if (student_grades.length > subject_columns) {
       subject_columns = student_grades.length
     }
@@ -89,7 +108,9 @@ export async function getSemesterResult(
       failed_papers: student.failed_subjects.split(",")
     }
 
-    const student_grades = grades.filter((grade) => grade.rollno === student.rollno)
+    const student_grades = grades.filter(
+      (grade) => grade.rollno === student.rollno
+    )
 
     semester_student.subjects = student_grades.map((grade) => grade.subject)
     if (semester_student.subjects.length < subject_columns) {
@@ -122,38 +143,48 @@ export async function getSemesterResult(
   return semester_result
 }
 
-async function _get_semeseter_details(batch: string, branch: string, semester: string): Promise<ResultStudentDetails[]> {
+async function _get_semeseter_details(
+  batch: string,
+  branch: string,
+  semester: string
+): Promise<ResultStudentDetails[]> {
   // Assumes that the semester is valid
-  const details: ResultStudentDetails[] =  await new Promise((resolve, reject) => {
-    conn.query(
-      `select * from ( select result, ifnull(rollnos.new, t0.rollno) as rollno, name, tc, cgpa, failed_subjects, bad from ( select * from result_student_details where result in (select result from result_heirarchy where semester = ${semester})) as t0 left join rollnos on rollnos.old = t0.rollno) as t1 where t1.rollno regexp '${batch}\/${branch}\/'`,
-      (err, result) => {
-        if (err) reject(err)
-        resolve(result.map((row : any) => {
-          return {
-            result: row["result"],
-            rollno: row["rollno"],
-            name: row["name"],
-            tc: row["tc"],
-            cgpa: row["cgpa"],
-            failed_subjects: row["failed_subjects"]
-          }
-        }))
-      }
-    )
-  })
+  const details: ResultStudentDetails[] = await new Promise(
+    (resolve, reject) => {
+      conn.query(
+        `select * from ( select result, ifnull(rollnos.new, t0.rollno) as rollno, name, tc, cgpa, failed_subjects, bad from ( select * from result_student_details where result in (select result from result_heirarchy where semester = ${semester})) as t0 left join rollnos on rollnos.old = t0.rollno) as t1 where t1.rollno regexp '${batch}\/${branch}\/'`,
+        (err, result) => {
+          if (err) reject(err)
+          resolve(
+            result.map((row: any) => {
+              return {
+                result: row["result"],
+                rollno: row["rollno"],
+                name: row["name"],
+                tc: row["tc"],
+                cgpa: row["cgpa"],
+                failed_subjects: row["failed_subjects"]
+              }
+            })
+          )
+        }
+      )
+    }
+  )
 
-  const results : ResultHeirarchy[] = await new Promise((resolve, reject) => {
+  const results: ResultHeirarchy[] = await new Promise((resolve, reject) => {
     conn.query(
       `select result, heirarchy from result_heirarchy where semester = ${semester}`,
       (err, result) => {
         if (err) reject(err)
-        resolve(result.map((row : any) => {
-          return {
-            result: row["result"],
-            heirarchy: row["heirarchy"]
-          }
-        }))
+        resolve(
+          result.map((row: any) => {
+            return {
+              result: row["result"],
+              heirarchy: row["heirarchy"]
+            }
+          })
+        )
       }
     )
   })
@@ -167,50 +198,65 @@ async function _get_semeseter_details(batch: string, branch: string, semester: s
   for (const detail of details) {
     if (considered_students.has(detail.rollno)) continue
 
-    relevant_details.push(details.filter((d) => d.rollno === detail.rollno).sort((a, b) => {
-      const a_heirarchy = results.find((r) => r.result === a.result)?.heirarchy
-      const b_heirarchy = results.find((r) => r.result === b.result)?.heirarchy
-      // @ts-ignore
-      return b_heirarchy - a_heirarchy
-    })[0])
+    relevant_details.push(
+      details
+        .filter((d) => d.rollno === detail.rollno)
+        .sort((a, b) => {
+          const a_heirarchy = results.find(
+            (r) => r.result === a.result
+          )?.heirarchy
+          const b_heirarchy = results.find(
+            (r) => r.result === b.result
+          )?.heirarchy
+          // @ts-ignore
+          return b_heirarchy - a_heirarchy
+        })[0]
+    )
 
     considered_students.add(detail.rollno)
   }
 
   return relevant_details
-
 }
 
-async function _get_semester_grades(batch: string, branch: string, semester: string): Promise<ResultGrades[]> {
+async function _get_semester_grades(
+  batch: string,
+  branch: string,
+  semester: string
+): Promise<ResultGrades[]> {
   // Assumes that the semester is valid
-  const grades : ResultGrades[] = await new Promise((resolve, reject) => {
+  const grades: ResultGrades[] = await new Promise((resolve, reject) => {
     conn.query(
-        `select * from ( select result, ifnull(rollnos.new, result_grades.rollno) as rollno, subject, grade from result_grades left join rollnos on rollnos.old = result_grades.rollno) as t0 where rollno regexp '${batch}\/${branch}\/' and result in (select result from result_heirarchy where semester = ${semester})`,
+      `select * from ( select result, ifnull(rollnos.new, result_grades.rollno) as rollno, subject, grade from result_grades left join rollnos on rollnos.old = result_grades.rollno) as t0 where rollno regexp '${batch}\/${branch}\/' and result in (select result from result_heirarchy where semester = ${semester})`,
       (err, result) => {
         if (err) reject(err)
-        resolve(result.map((row : any) => {
-          return {
-            result: row["result"],
-            rollno: row["rollno"],
-            subject: row["subject"],
-            grade: row["grade"]
-          }
-        }))
+        resolve(
+          result.map((row: any) => {
+            return {
+              result: row["result"],
+              rollno: row["rollno"],
+              subject: row["subject"],
+              grade: row["grade"]
+            }
+          })
+        )
       }
     )
   })
 
-  const results : ResultHeirarchy[] = await new Promise((resolve, reject) => {
+  const results: ResultHeirarchy[] = await new Promise((resolve, reject) => {
     conn.query(
       `select result, heirarchy from result_heirarchy where semester = ${semester}`,
       (err, result) => {
         if (err) reject(err)
-        resolve(result.map((row : any) => {
-          return {
-            result: row["result"],
-            heirarchy: row["heirarchy"]
-          }
-        }))
+        resolve(
+          result.map((row: any) => {
+            return {
+              result: row["result"],
+              heirarchy: row["heirarchy"]
+            }
+          })
+        )
       }
     )
   })
@@ -219,28 +265,40 @@ async function _get_semester_grades(batch: string, branch: string, semester: str
 
   const relevant_grades: ResultGrades[] = []
 
-  const considered_students: Set<{rollno: string, subject: string}> = new Set()
+  const considered_students: Set<{ rollno: string; subject: string }> =
+    new Set()
 
   for (const grade of grades) {
-    if (considered_students.has({rollno: grade.rollno, subject: grade.subject})) continue
+    if (
+      considered_students.has({ rollno: grade.rollno, subject: grade.subject })
+    )
+      continue
 
     relevant_grades.push(
-      grades.filter((g) => g.rollno === grade.rollno && g.subject === grade.subject).sort((a, b) => {
-        const a_heirarchy = results.find((r) => r.result === a.result)?.heirarchy
-        const b_heirarchy = results.find((r) => r.result === b.result)?.heirarchy
-        // @ts-ignore
-        return b_heirarchy - a_heirarchy
-      })[0]
+      grades
+        .filter((g) => g.rollno === grade.rollno && g.subject === grade.subject)
+        .sort((a, b) => {
+          const a_heirarchy = results.find(
+            (r) => r.result === a.result
+          )?.heirarchy
+          const b_heirarchy = results.find(
+            (r) => r.result === b.result
+          )?.heirarchy
+          // @ts-ignore
+          return b_heirarchy - a_heirarchy
+        })[0]
     )
 
-    considered_students.add({rollno: grade.rollno, subject: grade.subject})
+    considered_students.add({ rollno: grade.rollno, subject: grade.subject })
   }
 
   return relevant_grades
-
 }
 
-export async function getAggregateResult(batch: string, branch: string): Promise<AggregateResult | null> {
+export async function getAggregateResult(
+  batch: string,
+  branch: string
+): Promise<AggregateResult | null> {
   if (!(await isValidBranch(batch, branch))) return null
 
   const details = await _get_aggregate_details(batch, branch)
@@ -294,42 +352,48 @@ export async function getAggregateResult(batch: string, branch: string): Promise
   return aggregate_result
 }
 
-
 type _AggregateDetails = ResultStudentDetails & {
   semester: number
 }
 
-
-async function _get_aggregate_details(batch: string, branch: string): Promise<_AggregateDetails[]> {
-  const details : _AggregateDetails[] = await new Promise((resolve, reject) => {
+async function _get_aggregate_details(
+  batch: string,
+  branch: string
+): Promise<_AggregateDetails[]> {
+  const details: _AggregateDetails[] = await new Promise((resolve, reject) => {
     conn.query(
       `select t1.*, semester from ( select * from ( select result, ifnull(rollnos.new, result_student_details.rollno) as rollno, name, cgpa, tc, bad from result_student_details left join rollnos on rollnos.old = result_student_details.rollno) as t0 where t0.rollno regexp '${batch}\/${branch}\/') as t1 inner join result_heirarchy as details on details.result = t1.result`,
       (err, result) => {
-      if (err) reject(err)
-      resolve(result.map((row : any) => {
-        return {
-          result: row["result"],
-          rollno: row["rollno"],
-          name: row["name"],
-          semester: row["semester"],
-          cgpa: row["cgpa"],
-          tc: row["tc"]
-        }
-      }))
-    })
+        if (err) reject(err)
+        resolve(
+          result.map((row: any) => {
+            return {
+              result: row["result"],
+              rollno: row["rollno"],
+              name: row["name"],
+              semester: row["semester"],
+              cgpa: row["cgpa"],
+              tc: row["tc"]
+            }
+          })
+        )
+      }
+    )
   })
 
-  const results : ResultHeirarchy[] = await new Promise((resolve, reject) => {
+  const results: ResultHeirarchy[] = await new Promise((resolve, reject) => {
     conn.query(
       `select result, heirarchy, semester from result_heirarchy`,
       (err, result) => {
         if (err) reject(err)
-        resolve(result.map((row : any) => {
-          return {
-            result: row["result"],
-            heirarchy: row["heirarchy"]
-          }
-        }))
+        resolve(
+          result.map((row: any) => {
+            return {
+              result: row["result"],
+              heirarchy: row["heirarchy"]
+            }
+          })
+        )
       }
     )
   })
@@ -338,30 +402,49 @@ async function _get_aggregate_details(batch: string, branch: string): Promise<_A
 
   const relevant_details: _AggregateDetails[] = []
 
-  const considered_students: Set<{rollno: string, semester: number}> = new Set()
+  const considered_students: Set<{ rollno: string; semester: number }> =
+    new Set()
 
   for (const detail of details) {
-
     // @ts-ignore
-    if (considered_students.has({rollno: detail.rollno, semester: detail.semester})) continue
+    if (
+      considered_students.has({
+        rollno: detail.rollno,
+        semester: detail.semester
+      })
+    )
+      continue
 
     relevant_details.push(
-      details.filter((d) => d.rollno === detail.rollno && d.semester === detail.semester).sort((a, b) => {
-        const a_heirarchy = results.find((r) => r.result === a.result)?.heirarchy
-        const b_heirarchy = results.find((r) => r.result === b.result)?.heirarchy
-        // @ts-ignore
-        return b_heirarchy - a_heirarchy
-      })[0]
+      details
+        .filter(
+          (d) => d.rollno === detail.rollno && d.semester === detail.semester
+        )
+        .sort((a, b) => {
+          const a_heirarchy = results.find(
+            (r) => r.result === a.result
+          )?.heirarchy
+          const b_heirarchy = results.find(
+            (r) => r.result === b.result
+          )?.heirarchy
+          // @ts-ignore
+          return b_heirarchy - a_heirarchy
+        })[0]
     )
 
-    considered_students.add({rollno: detail.rollno, semester: detail.semester})
-
+    considered_students.add({
+      rollno: detail.rollno,
+      semester: detail.semester
+    })
   }
 
   return relevant_details
 }
 
-async function _get_aggregate_names(batch: string, branch: string): Promise<{ rollno: string; name: string }[]> {
+async function _get_aggregate_names(
+  batch: string,
+  branch: string
+): Promise<{ rollno: string; name: string }[]> {
   return new Promise((resolve, reject) => {
     conn.query(
       `select rollno, name from result_student_details where rollno regexp '${batch}\/${branch}\/' group by rollno`,

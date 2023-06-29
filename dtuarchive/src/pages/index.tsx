@@ -12,7 +12,11 @@ export default function Page() {
           description="View semester and aggregate results for your batch and branch."
           href="/result"
         />
-        <BigCard title="ARCHIVE" description="Filter notices scraped from the DTU website." href="#" />
+        <BigCard
+          title="ARCHIVE"
+          description="Filter notices scraped from the DTU website."
+          href="#"
+        />
       </div>
     </>
   )

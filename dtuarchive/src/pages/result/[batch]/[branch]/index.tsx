@@ -31,7 +31,9 @@ export const getStaticPaths = async () => {
   return { paths: paths, fallback: false }
 }
 
-export default function Page(props: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Page(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
   const { batch, branch, semesters } = props
 
   if (!semesters) return Custom404()
@@ -50,10 +52,17 @@ export default function Page(props: InferGetStaticPropsType<typeof getStaticProp
 
       <div>
         <h1 className="heading-select">Select semester</h1>
-        <GradientLink href={`/result/${batch}/${branch}/aggregate`} name="Aggregate" />
+        <GradientLink
+          href={`/result/${batch}/${branch}/aggregate`}
+          name="Aggregate"
+        />
         <ul>
           {semesters.map((semester) => (
-            <GradientLink href={`/result/${batch}/${branch}/${semester}`} name={`Sem ${semester}`} key={semester} />
+            <GradientLink
+              href={`/result/${batch}/${branch}/${semester}`}
+              name={`Sem ${semester}`}
+              key={semester}
+            />
           ))}
         </ul>
       </div>

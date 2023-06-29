@@ -37,7 +37,12 @@ export default function Page(props: Props) {
         <h1 className="heading-select">Select your branch</h1>
         <div className="grid grid-cols-3">
           {branches.map((branch) => (
-            <GradientLink name={branch} href={`/result/${batch}/${branch}`} key={branch} className="h-32" />
+            <GradientLink
+              name={branch}
+              href={`/result/${batch}/${branch}`}
+              key={branch}
+              className="h-32"
+            />
           ))}
         </div>
       </div>
