@@ -78,7 +78,7 @@ export default function ResultTable(props: ResultTableProps) {
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map((row, row_index) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
@@ -92,6 +92,7 @@ export default function ResultTable(props: ResultTableProps) {
                       }
                     >
                       {
+                        cell.column.id == "index" ? row_index + 1 :
                         // @ts-ignore
                         flexRender(cell.column.columnDef.cell, cell.getContext())
                       }

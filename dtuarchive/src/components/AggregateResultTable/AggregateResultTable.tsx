@@ -41,6 +41,11 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
 
   const columns: ColumnDef<AggregateStudent, string>[] = [
     {
+      id: "index",
+      header: "Index",
+      size: 10,
+    },
+    {
       accessorKey: "rollno",
       header: sortingHeader("Roll No")
     },

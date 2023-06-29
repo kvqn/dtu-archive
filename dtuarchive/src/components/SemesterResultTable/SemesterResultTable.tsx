@@ -54,6 +54,10 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
 
   const columns: ColumnDef<SemesterStudent, string>[] = [
     {
+        header: "Index",
+        id: "index"
+    },
+    {
       accessorKey: "rollno",
       header: sortingHeader("Roll No")
     },
