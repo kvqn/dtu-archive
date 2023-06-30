@@ -21,7 +21,8 @@ module.exports = {
         geologica: ["Geologica", "sans-serif"],
         bowlby: ["Bowlby One"],
         roboto: ["Roboto", "sans-serif"],
-        "permanent-marker": ["Permanent Marker", "cursive"]
+        "permanent-marker": ["Permanent Marker", "cursive"],
+        rowdies: ["Rowdies", "cursive"]
       },
       colors: {
         border: "hsl(var(--border))",
