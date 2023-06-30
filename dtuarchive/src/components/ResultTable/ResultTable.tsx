@@ -18,8 +18,8 @@ import { flexRender } from "@tanstack/react-table"
 
 type ResultTableProps = {
   table:
-    | import("@tanstack/table-core").Table<AggregateStudent> &
-        import("@tanstack/table-core").Table<SemesterStudent>
+    | import("@tanstack/table-core").Table<AggregateStudent>
+    | import("@tanstack/table-core").Table<SemesterStudent>
 }
 
 export default function ResultTable(props: ResultTableProps) {
@@ -117,6 +117,7 @@ export default function ResultTable(props: ResultTableProps) {
                       {cell.column.id == "index"
                         ? row_index + 1
                         : flexRender(
+                            // @ts-ignore
                             cell.column.columnDef.cell,
                             cell.getContext()
                           )}
