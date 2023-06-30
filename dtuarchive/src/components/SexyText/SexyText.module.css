@@ -7,7 +7,7 @@
   }
 }
 
-.sexy-text {
+.sexytext {
   animation: background-pan 3s linear infinite;
   position: relative;
   background: linear-gradient(to right, purple, violet, pink, purple);

@@ -26,7 +26,7 @@
     "lucide-react": "^0.224.0",
     "mini-css-extract-plugin": "^2.7.6",
     "mysql": "^2.18.1",
-    "next": "13.4.4",
+    "next": "^13.4.7",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-devtools": "^4.27.8",
