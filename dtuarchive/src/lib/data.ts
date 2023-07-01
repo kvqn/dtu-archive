@@ -346,7 +346,9 @@ export async function getAggregateResult(
   const aggregate_result: AggregateResult = {
     n_students: aggregate_students.length,
     semesters: semesters,
-    students: aggregate_students
+    students: aggregate_students,
+    average_cgpa: round_to_two_places(aggregate_students.reduce((acc, curr) => acc + curr.aggregate, 0)/aggregate_students.length),
+    median_cgpa: aggregate_students.map((student) => student.aggregate).sort()[Math.floor(aggregate_students.length/2)]
   }
 
   return aggregate_result

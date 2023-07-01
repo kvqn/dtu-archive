@@ -9,6 +9,8 @@ type AggregateResult = {
   n_students: number
   semesters: number[]
   students: AggregateStudent[]
+  average_cgpa: number
+  median_cgpa: number
 }
 
 type SemesterStudent = {

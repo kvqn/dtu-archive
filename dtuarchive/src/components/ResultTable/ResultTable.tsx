@@ -27,7 +27,7 @@ export default function ResultTable(props: ResultTableProps) {
 
   return (
     <>
-      <div className="flex justify-between m-10">
+      <div className="flex justify-between mx-10 mt-4">
         <Input
           type="text"
           placeholder="Filter names..."
