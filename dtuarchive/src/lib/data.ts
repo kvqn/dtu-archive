@@ -134,6 +134,8 @@ export async function getSemesterResult(
     subjects.push(`Subject ${i + 1}`)
   }
 
+  semester_students.sort((a, b) => { return a.cgpa > b.cgpa ? -1 : 1 })
+
   const semester_result: SemesterResult = {
     n_students: details.length,
     subjects: subjects,
@@ -342,6 +344,8 @@ export async function getAggregateResult(
 
     aggregate_students.push(aggregate_student)
   }
+
+  aggregate_students.sort((a, b) => { return a.aggregate > b.aggregate ? -1 : 1 })
 
   const aggregate_result: AggregateResult = {
     n_students: aggregate_students.length,
