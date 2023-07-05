@@ -3,11 +3,12 @@ from .extract_text import extract_text
 from .declutter import declutter
 from .extract_students import extract_students, save_students
 from .excel import to_excel
-from .push_to_db import push_to_db
+# from .push_to_db import push_to_db
+from .make_migration import make_migration
 import os.path as path
 
 
-def complete_conversion(pdf_path : str, output_path : str, y_density, make_intermediate_files : bool, text: bool, semsester: int, heirarchy: str, push: bool, excel: bool):
+def complete_conversion(pdf_path : str, y_density, make_intermediate_files : bool, text: bool):
     result_name = path.basename(pdf_path).replace(".pdf", "").replace(".txt", "")
     if text:
         with open(pdf_path, "r") as file:
@@ -19,10 +20,6 @@ def complete_conversion(pdf_path : str, output_path : str, y_density, make_inter
     if make_intermediate_files:
         json_output_path = result_name + '.json'
         save_students(*students, json_output_path)
-    if excel:
-        excel_output_path = result_name + '.xlsx'
-        to_excel(*students, excel_output_path)
 
-    if push:
-        push_to_db(result_name, students[0], semsester, heirarchy)
+    return students
 
