@@ -4,7 +4,7 @@
 
 def migration(cur):
 
-    cur.execute("select max(heirarchy) from result_heirarchy")
+    cur.execute("select min(heirarchy) from result_heirarchy")
     result = cur.fetchall()
     if (result[0][0] is None):
         n_heirarchy = 1

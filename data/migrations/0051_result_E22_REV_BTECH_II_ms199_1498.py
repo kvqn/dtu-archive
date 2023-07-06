@@ -1,0 +1,97 @@
+
+# This migration file was made by the scraper utility.
+# Result PDF : E22_REV_BTECH_II_ms199_1498
+
+def migration(cur):
+
+    cur.execute("select min(heirarchy) from result_heirarchy")
+    result = cur.fetchall()
+    if (result[0][0] is None):
+        n_heirarchy = 1
+    else:
+        n_heirarchy = result[0][0] - 1
+
+    cur.execute(f"insert into result_heirarchy values ('E22_REV_BTECH_II_ms199_1498', 2, {n_heirarchy})")
+
+    query = """insert into result_student_details values
+('E22_REV_BTECH_II_ms199_1498','2K21/B9/03', 'PRIYANSHU LAKRA', 22, 6.36, '', False),
+('E22_REV_BTECH_II_ms199_1498','2K21/B9/04', 'PRIYANSHU SATTAVAN', 22, 5.82, '', False),
+('E22_REV_BTECH_II_ms199_1498','2K21/B9/07', 'PULKIT DABAS', 22, 8.09, '', False),
+('E22_REV_BTECH_II_ms199_1498','2K21/B9/21', 'SABYASACHI BISWAL', 22, 8.55, '', False),
+('E22_REV_BTECH_II_ms199_1498','2K21/B9/27', 'SAHIL KUMAR', 18, 4.27, 'ME104,', False),
+('E22_REV_BTECH_II_ms199_1498','2K21/B9/50', 'SHUBHAM VASHISHT', 22, 8.91, '', False),
+('E22_REV_BTECH_II_ms199_1498','2K21/B9/71', 'SIDDHARTH HUDDA', 22, 8.45, '', False),
+('E22_REV_BTECH_II_ms199_1498','2K21/B16/77', 'YASH SHARMA', 22, 7.91, '', False),
+('E22_REV_BTECH_II_ms199_1498','2K21/B17/63', 'UTKARSH SINGH', 22, 6.73, '', False)
+;
+"""
+    cur.execute(query)
+
+    query = """insert into result_grades values
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/03', 'MA102', 'B'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/03', 'AP102', 'B+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/03', 'AC102', 'B'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/03', 'ME104', 'C'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/03', 'ME106', 'B+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/03', 'MS199', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/03', 'FEC2', 'B'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/04', 'MA102', 'C'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/04', 'AP102', 'B'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/04', 'AC102', 'P'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/04', 'ME104', 'C'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/04', 'ME106', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/04', 'MS199', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/04', 'FEC9', 'B'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/07', 'MA102', 'B+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/07', 'AP102', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/07', 'AC102', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/07', 'ME104', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/07', 'ME106', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/07', 'MS199', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/07', 'FEC7', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/21', 'MA102', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/21', 'AP102', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/21', 'AC102', 'O'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/21', 'ME104', 'B+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/21', 'ME106', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/21', 'MS199', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/21', 'FEC7', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/27', 'MA102', 'C'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/27', 'AP102', 'P'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/27', 'AC102', 'P'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/27', 'ME104', 'F'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/27', 'ME106', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/27', 'MS199', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/27', 'FEC7', 'P'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/50', 'MA102', 'O'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/50', 'AP102', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/50', 'AC102', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/50', 'ME104', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/50', 'ME106', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/50', 'MS199', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/50', 'FEC7', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/71', 'MA102', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/71', 'AP102', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/71', 'AC102', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/71', 'ME104', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/71', 'ME106', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/71', 'MS199', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B9/71', 'FEC46', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B16/77', 'MA102', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B16/77', 'AP102', 'B'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B16/77', 'AC102', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B16/77', 'ME104', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B16/77', 'ME106', 'A'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B16/77', 'MS199', 'O'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B16/77', 'FEC7', 'C'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B17/63', 'MA102', 'P'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B17/63', 'AP102', 'C'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B17/63', 'AC102', 'B+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B17/63', 'ME104', 'B+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B17/63', 'ME106', 'A+'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B17/63', 'MS199', 'O'),
+('E22_REV_BTECH_II_ms199_1498', '2K21/B17/63', 'FEC28', 'A+')
+;
+"""
+    cur.execute(query)
+

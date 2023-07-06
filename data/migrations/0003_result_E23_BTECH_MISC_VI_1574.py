@@ -1,0 +1,87 @@
+
+# This migration file was made by the scraper utility.
+# Result PDF : E23_BTECH_MISC_VI_1574
+
+def migration(cur):
+
+    cur.execute("select min(heirarchy) from result_heirarchy")
+    result = cur.fetchall()
+    if (result[0][0] is None):
+        n_heirarchy = 1
+    else:
+        n_heirarchy = result[0][0] - 1
+
+    cur.execute(f"insert into result_heirarchy values ('E23_BTECH_MISC_VI_1574', 6, {n_heirarchy})")
+
+    query = """insert into result_student_details values
+('E23_BTECH_MISC_VI_1574','2K20/EE/295', 'VAIBHAV SHARMA', 31, 8.1, '', False),
+('E23_BTECH_MISC_VI_1574','2K20/EE/276', 'SWABHANU KHOSLA', 27, 5.11, '', False),
+('E23_BTECH_MISC_VI_1574','2K20/IT/31', 'ARYAN KARKRA', 31, 9.74, '', False),
+('E23_BTECH_MISC_VI_1574','2K20/IT/111', 'RAAVI SINGH', 31, 8.74, '', False),
+('E23_BTECH_MISC_VI_1574','2K20/ME/33', 'ANANYA SARIN', 27, 7.7, '', False),
+('E23_BTECH_MISC_VI_1574','2K20/AE/11', 'ALPHAUS NKANDU', 27, 7.19, '', False),
+('E23_BTECH_MISC_VI_1574','2K20/PE/06', 'ADITYA JAIN', 31, 9.23, '', False)
+;
+"""
+    cur.execute(query)
+
+    query = """insert into result_grades values
+('E23_BTECH_MISC_VI_1574', '2K20/EE/295', 'CO306', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/295', 'EE395', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/295', 'EE450', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/295', 'EE302', 'C'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/295', 'EE304', 'B+'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/295', 'EE306', 'A'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/295', 'MOOC302', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/295', 'MOOC304', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/295', 'MG302', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/276', 'EE316', 'C'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/276', 'EE324', 'P'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/276', 'EE395', 'A'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/276', 'EE302', 'P'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/276', 'EE304', 'P'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/276', 'EE306', 'C'),
+('E23_BTECH_MISC_VI_1574', '2K20/EE/276', 'MG302', 'B'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/31', 'IT328', 'O'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/31', 'IT391', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/31', 'IT420', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/31', 'IT430', 'O'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/31', 'IT302', 'O'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/31', 'IT304', 'O'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/31', 'IT306', 'O'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/31', 'MG302', 'O'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/111', 'IT328', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/111', 'IT391', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/111', 'IT420', 'A'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/111', 'IT430', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/111', 'IT302', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/111', 'IT304', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/111', 'IT306', 'A'),
+('E23_BTECH_MISC_VI_1574', '2K20/IT/111', 'MG302', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/ME/33', 'ME304a', 'B+'),
+('E23_BTECH_MISC_VI_1574', '2K20/ME/33', 'ME308', 'B+'),
+('E23_BTECH_MISC_VI_1574', '2K20/ME/33', 'ME316', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/ME/33', 'ME393', 'O'),
+('E23_BTECH_MISC_VI_1574', '2K20/ME/33', 'ME302', 'B+'),
+('E23_BTECH_MISC_VI_1574', '2K20/ME/33', 'ME306a', 'B'),
+('E23_BTECH_MISC_VI_1574', '2K20/ME/33', 'HU302a', 'A'),
+('E23_BTECH_MISC_VI_1574', '2K20/AE/11', 'AE395', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/AE/11', 'CO206', 'C'),
+('E23_BTECH_MISC_VI_1574', '2K20/AE/11', 'CO304', 'B+'),
+('E23_BTECH_MISC_VI_1574', '2K20/AE/11', 'AE302', 'B'),
+('E23_BTECH_MISC_VI_1574', '2K20/AE/11', 'AE304', 'A'),
+('E23_BTECH_MISC_VI_1574', '2K20/AE/11', 'AE306', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/AE/11', 'HU302a', 'B'),
+('E23_BTECH_MISC_VI_1574', '2K20/PE/06', 'PE308', 'A'),
+('E23_BTECH_MISC_VI_1574', '2K20/PE/06', 'PE312', 'O'),
+('E23_BTECH_MISC_VI_1574', '2K20/PE/06', 'PE395', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/PE/06', 'PE302', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/PE/06', 'PE304', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/PE/06', 'PE306', 'O'),
+('E23_BTECH_MISC_VI_1574', '2K20/PE/06', 'MOOC302', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/PE/06', 'MOOC304', 'A+'),
+('E23_BTECH_MISC_VI_1574', '2K20/PE/06', 'HU302a', 'O')
+;
+"""
+    cur.execute(query)
+

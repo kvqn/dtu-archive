@@ -1,0 +1,87 @@
+
+# This migration file was made by the scraper utility.
+# Result PDF : O22_REV_RE_BTECH_R1_1531
+
+def migration(cur):
+
+    cur.execute("select min(heirarchy) from result_heirarchy")
+    result = cur.fetchall()
+    if (result[0][0] is None):
+        n_heirarchy = 1
+    else:
+        n_heirarchy = result[0][0] - 1
+
+    cur.execute(f"insert into result_heirarchy values ('O22_REV_RE_BTECH_R1_1531', 5, {n_heirarchy})")
+
+    query = """insert into result_student_details values
+('O22_REV_RE_BTECH_R1_1531','2K21/AE/501', 'anil kumar meena', 15, 4.35, 'AE301 EE407,', False),
+('O22_REV_RE_BTECH_R1_1531','2K21/CO/298', 'NAMAN PATHAK', 22, 9.18, '', False),
+('O22_REV_RE_BTECH_R1_1531','2K21/CO/421', 'SARTHAK GARG', 22, 9.36, '', False),
+('O22_REV_RE_BTECH_R1_1531','2K21/CO/241', 'KINZANG TOBGAY', 22, 8.64, '', False),
+('O22_REV_RE_BTECH_R1_1531','2K21/CO/259', 'LAKSHYA VERMA', 22, 9.64, '', False),
+('O22_REV_RE_BTECH_R1_1531','2K19/EN/002', 'ABHAY KUMAR', 4, NULL, '', True),
+('O22_REV_RE_BTECH_R1_1531','2K19/MC/011', 'ADITYA SINGH', 30, 7.87, '', False),
+('O22_REV_RE_BTECH_R1_1531','2K18/EP/068', 'RUDRA PRATAP SINGH', 15, 4.37, 'MOOC302*, MOOC304*,', False),
+('O22_REV_RE_BTECH_R1_1531','2K21/A2/55', 'ANJALI MEENA', 20, 8.7, '', False)
+;
+"""
+    cur.execute(query)
+
+    query = """insert into result_grades values
+('O22_REV_RE_BTECH_R1_1531', '2K21/AE/501', 'AE301', 'F'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/AE/501', 'AE303', 'B'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/AE/501', 'MG301', 'A'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/AE/501', 'AE307', 'A'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/AE/501', 'AE309', 'C'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/AE/501', 'EE407', 'F'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/298', 'EC261', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/298', 'CO201', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/298', 'CO203', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/298', 'CO205', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/298', 'CO207', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/298', 'FEC24', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/421', 'EC261', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/421', 'CO201', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/421', 'CO203', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/421', 'CO205', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/421', 'CO207', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/421', 'FEC46', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/241', 'EC261', 'A'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/241', 'CO201', 'B+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/241', 'CO203', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/241', 'CO205', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/241', 'CO207', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/241', 'FEC7', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/259', 'EC261', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/259', 'CO201', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/259', 'CO203', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/259', 'CO205', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/259', 'CO207', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/CO/259', 'FEC9', 'A'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/EN/002', 'EN409', 'P'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'MC401', 'A'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'MC403', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'MS499', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'CH323', 'B+'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'CH417', 'A'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'HU403', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'HU409', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'MC405', 'P'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'MOOC401*', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K19/MC/011', 'MOOC403*', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K18/EP/068', 'EP302', 'B'),
+('O22_REV_RE_BTECH_R1_1531', '2K18/EP/068', 'EP304', 'P'),
+('O22_REV_RE_BTECH_R1_1531', '2K18/EP/068', 'EP306', 'B+'),
+('O22_REV_RE_BTECH_R1_1531', '2K18/EP/068', 'MOOC302*', 'F'),
+('O22_REV_RE_BTECH_R1_1531', '2K18/EP/068', 'MOOC304*', 'F'),
+('O22_REV_RE_BTECH_R1_1531', '2K18/EP/068', 'HU302a', 'C'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/A2/55', 'MA101', 'B+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/A2/55', 'AP101', 'O'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/A2/55', 'AC101', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/A2/55', 'ME101', 'A'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/A2/55', 'ME103', 'A+'),
+('O22_REV_RE_BTECH_R1_1531', '2K21/A2/55', 'FEC7', 'O')
+;
+"""
+    cur.execute(query)
+
