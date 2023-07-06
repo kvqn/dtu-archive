@@ -273,12 +273,12 @@ select *
 from
     (
         select result, ifnull(rollnos.new, result_grades.rollno) as rollno, subject, grade
-        from result_grades
+        from result_grades 
         left join rollnos on rollnos.old = result_grades.rollno
+        where result in (select result from result_heirarchy where semester = '${semester}')
     ) as t0
 where
     rollno regexp '${batch}\/${branch}\/'
-    and result in (select result from result_heirarchy where semester = '${semester}')
       `,
       (err, result) => {
         if (err) reject(err)
@@ -319,12 +319,12 @@ where
 
   const relevant_grades: ResultGrades[] = []
 
-  const considered_students: Set<{ rollno: string; subject: string }> =
+  const considered_students: Set<string> =
     new Set()
 
   for (const grade of grades) {
     if (
-      considered_students.has({ rollno: grade.rollno, subject: grade.subject })
+      considered_students.has(JSON.stringify({ rollno: grade.rollno, subject: grade.subject })) // Illegal trick
     )
       continue
 
@@ -343,7 +343,7 @@ where
         })[0]
     )
 
-    considered_students.add({ rollno: grade.rollno, subject: grade.subject })
+    considered_students.add(JSON.stringify({ rollno: grade.rollno, subject: grade.subject }))
   }
 
   return relevant_grades
