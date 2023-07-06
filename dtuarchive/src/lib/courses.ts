@@ -165,11 +165,11 @@ export async function getCoursesTableData(): Promise<CourseTableData[]> {
 
     let median = course_grades[Math.floor(course_grades.length / 2)].grade
     let ninety_percentile =
-      course_grades[Math.floor(course_grades.length * 0.1)].grade
+      course_grades[Math.floor(course_grades.length * 0.9)].grade
     let ninety_five_percentile =
-      course_grades[Math.floor(course_grades.length * 0.05)].grade
+      course_grades[Math.floor(course_grades.length * 0.95)].grade
     let ninety_nine_percentile =
-      course_grades[Math.floor(course_grades.length * 0.01)].grade
+      course_grades[Math.floor(course_grades.length * 0.99)].grade
 
     course_data.push({
       course: course,
