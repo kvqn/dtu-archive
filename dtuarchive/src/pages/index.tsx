@@ -4,7 +4,6 @@ import SexyText from "@/components/SexyText/SexyText"
 import conn from "@/lib/sql"
 import { InferGetStaticPropsType } from "next"
 
-
 async function studentCount(): Promise<number> {
   return new Promise((resolve, reject) => {
     conn.query(
@@ -26,19 +25,21 @@ async function gradeCount(): Promise<number> {
   })
 }
 
-export async function getStaticProps () {
+export async function getStaticProps() {
   const student_count = await studentCount()
   const grade_count = await gradeCount()
   return {
     props: {
       student_count,
-      grade_count,
+      grade_count
     }
   }
 }
 
-export default function Page({student_count, grade_count} : InferGetStaticPropsType<typeof getStaticProps>) {
-
+export default function Page({
+  student_count,
+  grade_count
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Navbar />

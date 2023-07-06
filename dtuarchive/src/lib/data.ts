@@ -39,7 +39,7 @@ export async function getBranches(batch: string): Promise<string[] | null> {
   if (!(await isValidBatch(batch))) return null
   return new Promise((resolve, reject) => {
     conn.query(
-        `
+      `
 select unique regexp_substr(rollno, '(?<=\/)[a-zA-Z0-9]+') as branch
 from
     (
@@ -157,7 +157,9 @@ export async function getSemesterResult(
     subjects.push(`Subject ${i + 1}`)
   }
 
-  semester_students.sort((a, b) => { return a.cgpa > b.cgpa ? -1 : 1 })
+  semester_students.sort((a, b) => {
+    return a.cgpa > b.cgpa ? -1 : 1
+  })
 
   const semester_result: SemesterResult = {
     n_students: details.length,
@@ -281,12 +283,13 @@ where
 
   const relevant_grades: ResultGrades[] = []
 
-  const considered_students: Set<string> =
-    new Set()
+  const considered_students: Set<string> = new Set()
 
   for (const grade of grades) {
     if (
-      considered_students.has(JSON.stringify({ rollno: grade.rollno, subject: grade.subject })) // Illegal trick
+      considered_students.has(
+        JSON.stringify({ rollno: grade.rollno, subject: grade.subject })
+      ) // Illegal trick
     )
       continue
 
@@ -305,7 +308,9 @@ where
         })[0]
     )
 
-    considered_students.add(JSON.stringify({ rollno: grade.rollno, subject: grade.subject }))
+    considered_students.add(
+      JSON.stringify({ rollno: grade.rollno, subject: grade.subject })
+    )
   }
 
   return relevant_grades
@@ -359,14 +364,21 @@ export async function getAggregateResult(
     aggregate_students.push(aggregate_student)
   }
 
-  aggregate_students.sort((a, b) => { return a.aggregate > b.aggregate ? -1 : 1 })
+  aggregate_students.sort((a, b) => {
+    return a.aggregate > b.aggregate ? -1 : 1
+  })
 
   const aggregate_result: AggregateResult = {
     n_students: aggregate_students.length,
     semesters: semesters,
     students: aggregate_students,
-    average_cgpa: round_to_two_places(aggregate_students.reduce((acc, curr) => acc + curr.aggregate, 0)/aggregate_students.length),
-    median_cgpa: aggregate_students.map((student) => student.aggregate).sort()[Math.floor(aggregate_students.length/2)]
+    average_cgpa: round_to_two_places(
+      aggregate_students.reduce((acc, curr) => acc + curr.aggregate, 0) /
+        aggregate_students.length
+    ),
+    median_cgpa: aggregate_students.map((student) => student.aggregate).sort()[
+      Math.floor(aggregate_students.length / 2)
+    ]
   }
 
   return aggregate_result
@@ -475,11 +487,15 @@ async function _get_aggregate_names(
   })
 }
 
-export async function get_result_heirarchy(semester : string | number | undefined = undefined) : Promise<ResultHeirarchy[]>{
+export async function get_result_heirarchy(
+  semester: string | number | undefined = undefined
+): Promise<ResultHeirarchy[]> {
   const results: ResultHeirarchy[] = await new Promise((resolve, reject) => {
     conn.query(
       `
-      select result, heirarchy, semester from result_heirarchy ${semester ? `where semester = ${semester}` : ``}
+      select result, heirarchy, semester from result_heirarchy ${
+        semester ? `where semester = ${semester}` : ``
+      }
       `,
       (err, result) => {
         if (err) reject(err)

@@ -14,8 +14,8 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/table"
-import { flexRender } from "@tanstack/react-table"
 import { CourseTableData } from "@/lib/courses"
+import { flexRender } from "@tanstack/react-table"
 import {
   Column,
   ColumnDef,
@@ -198,9 +198,7 @@ export default function CourseTable(props: CourseTableProps) {
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={
-                        "uppercase font-roboto font-regular"
-                      }
+                      className={"uppercase font-roboto font-regular"}
                     >
                       {cell.column.id == "index"
                         ? row_index + 1
@@ -227,6 +225,5 @@ export default function CourseTable(props: CourseTableProps) {
         </Table>
       </div>
     </>
-    )
+  )
 }
-

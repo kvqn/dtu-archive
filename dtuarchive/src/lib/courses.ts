@@ -91,18 +91,16 @@ export async function getCourseGrades(course: string): Promise<CourseGrade[]> {
 }
 
 export type CourseTableData = {
-    course: string,
-    n_students: number,
-    average: string,
-    median: string,
-    ninety_percentile: string,
-    ninety_five_percentile: string,
-    ninety_nine_percentile: string,
+  course: string
+  n_students: number
+  average: string
+  median: string
+  ninety_percentile: string
+  ninety_five_percentile: string
+  ninety_nine_percentile: string
 }
 
-
-export async function getCoursesTableData() : Promise<CourseTableData[]>{
-
+export async function getCoursesTableData(): Promise<CourseTableData[]> {
   const grades: {
     result: string
     rollno: string
@@ -154,7 +152,9 @@ export async function getCoursesTableData() : Promise<CourseTableData[]>{
   const course_data: CourseTableData[] = []
 
   for (const course of courses) {
-    const course_grades = relevant_grades.filter((grade) => grade.subject == course)
+    const course_grades = relevant_grades.filter(
+      (grade) => grade.subject == course
+    )
     if (course_grades.length == 0) continue
 
     let average = 0
@@ -164,9 +164,12 @@ export async function getCoursesTableData() : Promise<CourseTableData[]>{
     average /= course_grades.length
 
     let median = course_grades[Math.floor(course_grades.length / 2)].grade
-    let ninety_percentile = course_grades[Math.floor(course_grades.length * 0.1)].grade
-    let ninety_five_percentile = course_grades[Math.floor(course_grades.length * 0.05)].grade
-    let ninety_nine_percentile = course_grades[Math.floor(course_grades.length * 0.01)].grade
+    let ninety_percentile =
+      course_grades[Math.floor(course_grades.length * 0.1)].grade
+    let ninety_five_percentile =
+      course_grades[Math.floor(course_grades.length * 0.05)].grade
+    let ninety_nine_percentile =
+      course_grades[Math.floor(course_grades.length * 0.01)].grade
 
     course_data.push({
       course: course,
