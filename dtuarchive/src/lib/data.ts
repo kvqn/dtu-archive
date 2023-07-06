@@ -211,26 +211,7 @@ where t1.rollno regexp '${batch}\/${branch}\/'
     }
   )
 
-  const results: ResultHeirarchy[] = await new Promise((resolve, reject) => {
-    conn.query(
-      `
-      select result, heirarchy from result_heirarchy where semester = ${semester}
-      `,
-      (err, result) => {
-        if (err) reject(err)
-        resolve(
-          result.map((row: any) => {
-            return {
-              result: row["result"],
-              heirarchy: row["heirarchy"]
-            }
-          })
-        )
-      }
-    )
-  })
-
-  results.sort((a: any, b: any) => b["heirarchy"] - a["heirarchy"])
+  const results = await get_result_heirarchy()
 
   const relevant_details: ResultStudentDetails[] = []
 
@@ -273,7 +254,7 @@ select *
 from
     (
         select result, ifnull(rollnos.new, result_grades.rollno) as rollno, subject, grade
-        from result_grades 
+        from result_grades
         left join rollnos on rollnos.old = result_grades.rollno
         where result in (select result from result_heirarchy where semester = '${semester}')
     ) as t0
@@ -296,26 +277,7 @@ where
     )
   })
 
-  const results: ResultHeirarchy[] = await new Promise((resolve, reject) => {
-    conn.query(
-      `
-      select result, heirarchy from result_heirarchy where semester = ${semester}
-      `,
-      (err, result) => {
-        if (err) reject(err)
-        resolve(
-          result.map((row: any) => {
-            return {
-              result: row["result"],
-              heirarchy: row["heirarchy"]
-            }
-          })
-        )
-      }
-    )
-  })
-
-  results.sort((a: any, b: any) => b["heirarchy"] - a["heirarchy"])
+  const results = await get_result_heirarchy(semester)
 
   const relevant_grades: ResultGrades[] = []
 
@@ -453,26 +415,7 @@ inner join result_heirarchy as details on details.result = t1.result
     )
   })
 
-  const results: ResultHeirarchy[] = await new Promise((resolve, reject) => {
-    conn.query(
-      `
-      select result, heirarchy, semester from result_heirarchy
-      `,
-      (err, result) => {
-        if (err) reject(err)
-        resolve(
-          result.map((row: any) => {
-            return {
-              result: row["result"],
-              heirarchy: row["heirarchy"]
-            }
-          })
-        )
-      }
-    )
-  })
-
-  results.sort((a: any, b: any) => b["heirarchy"] - a["heirarchy"])
+  const results = await get_result_heirarchy()
 
   const relevant_details: _AggregateDetails[] = []
 
@@ -530,4 +473,28 @@ async function _get_aggregate_names(
       }
     )
   })
+}
+
+export async function get_result_heirarchy(semester : string | number | undefined = undefined) : Promise<ResultHeirarchy[]>{
+  const results: ResultHeirarchy[] = await new Promise((resolve, reject) => {
+    conn.query(
+      `
+      select result, heirarchy, semester from result_heirarchy ${semester ? `where semester = ${semester}` : ``}
+      `,
+      (err, result) => {
+        if (err) reject(err)
+        resolve(
+          result.map((row: any) => {
+            return {
+              result: row["result"],
+              heirarchy: row["heirarchy"]
+            }
+          })
+        )
+      }
+    )
+  })
+
+  results.sort((a: any, b: any) => b["heirarchy"] - a["heirarchy"])
+  return results
 }

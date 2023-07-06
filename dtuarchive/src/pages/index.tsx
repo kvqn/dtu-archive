@@ -61,6 +61,11 @@ export default function Page({student_count, grade_count} : InferGetStaticPropsT
           href="/result"
         />
         <BigCard
+          title="COURSES"
+          description="View details and grades for each course in your curriculum."
+          href="/courses"
+        />
+        <BigCard
           title="ARCHIVE"
           description="Filter notices scraped from the DTU website."
           href="#"
