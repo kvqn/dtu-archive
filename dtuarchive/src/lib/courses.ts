@@ -147,6 +147,13 @@ export async function getCoursesTableData(): Promise<CourseTableData[]> {
   //   )
   // }
 
+  relevant_grades.sort((a, b) => {
+    const gradeA = gradeValues.get(a.grade)
+    const gradeB = gradeValues.get(b.grade)
+    if (gradeA && gradeB) return gradeB - gradeA
+    return 0
+  })
+
   const courses = await getAllCourses()
 
   const course_data: CourseTableData[] = []
