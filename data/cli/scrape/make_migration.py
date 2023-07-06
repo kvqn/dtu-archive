@@ -14,13 +14,13 @@ def make_migration(result_name : str, students : list[Student], semester: int, h
     result_student_details_values = []
     for student in students:
         result_student_details_values.append(f"('{result_name}','{student.rollno}', '{student.name}', {student.tc}, {student.cgpa}, '{student.failed_papers}', {student.bad})")
-    result_student_details_values = '\n'.join(result_student_details_values)
+    result_student_details_values = ',\n'.join(result_student_details_values)
 
     result_grades_values = []
     for student in students:
         for subject, grade in student.grades.items():
             result_grades_values.append(f"('{result_name}', '{student.rollno}', '{subject}', '{grade}')")
-    result_grades_values = '\n'.join(result_grades_values)
+    result_grades_values = ',\n'.join(result_grades_values)
 
     migration = f"""
 # This migration file was made by the scraper utility.
@@ -43,7 +43,6 @@ def migration(cur):
 \"""
     cur.execute(query)
 
-
     query = \"""insert into result_grades values
 {result_grades_values}
 ;
@@ -60,7 +59,7 @@ def migration(cur):
                 n+=1
 
     # n to 4 digit string
-    n = str(n).zfill(4)
+    n = str(n + 1).zfill(4)
 
     migration_file_path = os.path.join(MIGRATIONS_FOLDER, f"{n}_result_{result_name}.py")
 

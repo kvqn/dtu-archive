@@ -51,13 +51,13 @@ def extract_students(decluttered_text : str):
 
             DONT_READ_LINE = False
 
-            match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
+            match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})+) .*$", line)
             if not match:
-                match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
+                match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})+) .*$", line)
                 if not match:
                     line = next(lines)
                     line_number+=1
-                    match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
+                    match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})+) .*$", line)
                     if not match:
                         err = "Expected table header, got something else."
                         logging.error(err)
@@ -87,7 +87,7 @@ def extract_students(decluttered_text : str):
 
                 student = Student(subjects)
 
-                match = re.match(r"^ {,30}(?P<name>[A-Za-z\.]+(?: {1,3}[A-Za-z\.]+)*)?(?: {10,}(?P<failed_papers>[A-Z]+[ \-]?[0-9]+[a-z]?\*? *,?(?: *[A-Z]+[ \-]?[0-9]+[a-z]?\*?(?: *,)?)*)) *$", line)
+                match = re.match(r"^ {,30}(?P<name>[A-Za-z\.]+(?: {1,3}[A-Za-z\.]+)*)?(?: {10,}(?P<failed_papers>[A-Z]+[ \-]?[0-9]+[a-z]?\*? *,?(?: *[A-Z]+[ \-]?[0-9]+[a-z]?\*?(?: *,)?)*))? *$", line)
                 if match:
                     student.name.extend(force_split(match.group("name")))
                     student.failed_papers.extend(force_split(match.group("failed_papers"), ','))
@@ -100,9 +100,9 @@ def extract_students(decluttered_text : str):
                     , line
                 )
                 if not match:
-                    match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
+                    match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})+) .*$", line)
                     if not match:
-                        match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
+                        match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})+) .*$", line)
                         if not match:
                             err = "Error: Expected student line or table header, but got something else."
                             logging.error(err)
@@ -122,10 +122,6 @@ def extract_students(decluttered_text : str):
 
                 # QOL checks
 
-                if len(student.grades) != len(subjects):
-                    err = f"Warning (line {line_number}): Number of grades ({len(student.grades)}) does not match number of subjects ({len(subjects)})."
-                    logging.warning(err)
-                    student.bad = True
 
                 line = next(lines)
                 line_number+=1
@@ -142,9 +138,17 @@ def extract_students(decluttered_text : str):
 
                 if student.sno is None:
                     n_skipped_students += 1
-                else:
-                    # print(student.failed_papers)
-                    STUDENTS.append(student)
+                    err = f"Warning (line {line_number}): Skipped student with no serial number."
+                    logging.warning(err)
+                    continue
+
+                if len(student.grades) != len(subjects):
+                    err = f"Warning (line {line_number}): Number of grades ({len(student.grades)}) does not match number of subjects ({len(subjects)})."
+                    logging.warning(err)
+                    student.bad = True
+
+                STUDENTS.append(student)
+
     except StopIteration:
         pass
     except Exception as e:

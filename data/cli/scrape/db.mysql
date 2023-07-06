@@ -362,3 +362,7 @@ select result, ifnull(rollnos.new, result_grades.rollno) as rollno, subject, gra
 left join rollnos on rollnos.old = result_grades.rollno
 ) as t0
 where rollno regexp '2K21\/IT\/' and result in (select result from result_heirarchy where semester = 2)
+
+show tables;
+create table migrations (name varchar(255) primary key)
+
