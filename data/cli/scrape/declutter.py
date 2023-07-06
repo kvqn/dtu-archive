@@ -10,7 +10,7 @@ REMOVE_REGEXES = [
     r"^ *Branch.*$",
     # r"^ *[A-Z]+[0-9]* +:.*$",
     # r"^ *[A-Z]+[0-9]*[a-z]? +:.*$",
-    r"^ *[A-Za-z0-9\- ]+\*? +:.*$",
+    r"^ *[A-Za-z0-9\- ]+\*?( +:.*)?$",
     r"^ *Credits.*$",
     r"^ *Any +discrepancy.*$",
     r"^ *Digitally +Signed.*$",
@@ -57,6 +57,19 @@ REMOVE_REGEXES = [
     r"^ *Banking.*$",
     r"^ *Performance.*$",
     r"^.*COURSERA.*$",
+    r"^ *MACHINES.*$",
+    r"^ *SENSING.*$",
+    r"^ *RESEARCH.*$",
+    r"^ *Maker&amp.*$",  # idk what this is
+    r"^ *NANOSTRUCTURES.*$",
+    r"^ *MANUFACTURING.*$",
+    r"^ *Re-Appear Result.*$",
+    r"^ *CONTROL.*$",
+    r"^ *WARFARE.*$",
+    r"^ *PROPAGATION.*$",
+    r"^.*Improving Deep Neural Networks.*$",
+    r"^.*Machine Learning.*$",
+    r"^ *SMtOudOeCn.*$",  # why does this exist on pdf to text
 
 
 
@@ -66,6 +79,7 @@ REMOVE_REGEXES_NON_MULTILINE = [
     r"(?<=\n) *Credits *\n *\d.*(?=\n)"
 ]
 
+
 def declutter(text : str, save_path : str | None = None):
     print("Decluttering")
     for regex in REMOVE_REGEXES_NON_MULTILINE:
@@ -73,6 +87,10 @@ def declutter(text : str, save_path : str | None = None):
     for regex in REMOVE_REGEXES:
         text = re.sub(regex, "", text, flags=re.MULTILINE)
     print("Decluttered")
+    lines = text.split("\n")
+    for i in range(len(lines)):
+        lines[i] = lines[i].rstrip() + "     "
+    text = "\n".join(lines)
     if save_path:
         with open(save_path, "w") as file:
             file.write(text)

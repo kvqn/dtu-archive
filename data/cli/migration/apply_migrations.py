@@ -10,9 +10,9 @@ def apply_migrations():
     local_migrations.sort()
 
     for migration in local_migrations:
-        print(migration, end=' ')
         if migration in remote_migrations:
             continue
+        print(migration, end=' ')
         try:
             module = importlib.import_module("migrations." + migration)
             if "migration" not in dir(module):

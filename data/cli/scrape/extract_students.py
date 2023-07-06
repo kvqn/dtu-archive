@@ -51,7 +51,7 @@ def extract_students(decluttered_text : str):
 
             DONT_READ_LINE = False
 
-            match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})+) .*$", line)
+            match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
             if not match:
                 match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})+) .*$", line)
                 if not match:
@@ -91,16 +91,20 @@ def extract_students(decluttered_text : str):
                 if match:
                     student.name.extend(force_split(match.group("name")))
                     student.failed_papers.extend(force_split(match.group("failed_papers"), ','))
-                    line = next(lines)
-                    line_number+=1
+                    while True:
+                        line = next(lines)
+                        line_number+=1
+                        if not (line.strip() == ""):
+                            break
+
 
                 # https://regex101.com/r/nz1MKW/1
                 match = re.match(
-                    r"^ *(?P<sno>[0-9]+)? +(?P<name>[A-Za-z\.]+(?: +[A-Za-z\.]+)*)? +(?P<rollno>2K[0-9]{2}\/[A-Z0-9]+\/[0-9]+)? +(?P<grades>[A-Z\+]+(?: +[A-Z\+]+)*) +(?P<tc>[0-9]+) +(?P<cgpa>[0-9\.]+)(?: +(?P<failed_papers>[A-Z]+[ \-]?[0-9]+[a-z]?\*? *,?(?: *[A-Z]+[ \-]?[0-9]+[a-z]?\*?(?: *,)?)*))? *$"
+                    r"^ *(?P<sno>[0-9]+)? +(?P<name>[A-Za-z\.]+(?: +[A-Za-z\.]+)*)? +(?P<rollno>2K[0-9]{2}\/[A-Z0-9]+\/[0-9]+)? +(?P<grades>(?:[A-Z\+]+ +?)*) +(?P<tc>[0-9]+) +(?P<cgpa>[0-9\.]+)?(?: +(?P<failed_papers>[A-Z]+[ \-]?[0-9]+[a-z]?\*? *,?(?: *[A-Z]+[ \-]?[0-9]+[a-z]?\*?(?: *,)?)*))? *$"
                     , line
                 )
                 if not match:
-                    match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})+) .*$", line)
+                    match = re.match(r"^ *Sr\.No +Name +Roll +No\. +(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})*) .*$", line)
                     if not match:
                         match = re.match(r"^ *(?P<subjects>(?:[A-Za-z]+[ \-]?[0-9]+[a-z]?\*? {,5})+) .*$", line)
                         if not match:
@@ -144,6 +148,16 @@ def extract_students(decluttered_text : str):
 
                 if len(student.grades) != len(subjects):
                     err = f"Warning (line {line_number}): Number of grades ({len(student.grades)}) does not match number of subjects ({len(subjects)})."
+                    logging.warning(err)
+                    student.bad = True
+
+                if student.cgpa is None:
+                    err = f"Warning (line {line_number}): Student has no CGPA."
+                    logging.warning(err)
+                    student.bad = True
+
+                if student.tc is None:
+                    err = f"Warning (line {line_number}): Student has no TC."
                     logging.warning(err)
                     student.bad = True
 

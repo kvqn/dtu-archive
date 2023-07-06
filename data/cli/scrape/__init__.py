@@ -20,8 +20,8 @@ class Student:
         self.name = " ".join(self.name)
         self.failed_papers = " ".join(self.failed_papers)
         self.grades = {subject: grade for subject, grade in zip(self.subjects, self.grades)}
-        self.cgpa = float(self.cgpa)
-        self.tc = int(self.tc)
+        self.cgpa = float(self.cgpa) if self.cgpa is not None else None
+        self.tc = int(self.tc) if self.tc is not None else None
 
     def to_dict(self):
         return {

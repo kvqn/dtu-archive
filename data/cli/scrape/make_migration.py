@@ -13,7 +13,7 @@ def make_migration(result_name : str, students : list[Student], semester: int, h
 
     result_student_details_values = []
     for student in students:
-        result_student_details_values.append(f"('{result_name}','{student.rollno}', '{student.name}', {student.tc}, {student.cgpa}, '{student.failed_papers}', {student.bad})")
+        result_student_details_values.append(f"('{result_name}','{student.rollno}', '{student.name}', {student.tc if student.tc is not None else 'NULL'}, {student.cgpa if student.cgpa is not None else 'NULL'}, '{student.failed_papers}', {student.bad})")
     result_student_details_values = ',\n'.join(result_student_details_values)
 
     result_grades_values = []
@@ -28,7 +28,7 @@ def make_migration(result_name : str, students : list[Student], semester: int, h
 
 def migration(cur):
 
-    cur.execute("select max(heirarchy) from result_heirarchy")
+    cur.execute("select {'max' if heirarchy == "latest" else 'min'}(heirarchy) from result_heirarchy")
     result = cur.fetchall()
     if (result[0][0] is None):
         n_heirarchy = 1

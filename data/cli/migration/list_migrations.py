@@ -27,6 +27,7 @@ def list_migrations():
     remote_migrations = _list_remote_migrations()
 
     local_migrations.sort()
+    # print(local_migrations)
 
     for i in remote_migrations:
         if i not in local_migrations:

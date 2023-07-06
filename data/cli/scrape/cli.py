@@ -33,7 +33,7 @@ def cli_main(args):
         students = complete_conversion(args.pdf, args.y_density, args.make_intermediate_files, args.text)
         semsester = args.semester
         heirarchy = args.heirarchy
-        result_name = os.path.basename(args.pdf).replace(".pdf", "")
+        result_name = os.path.basename(args.pdf).replace(".pdf", "").replace(".txt", "")
         make_migration(result_name, students[0], semsester, heirarchy)
 
 
