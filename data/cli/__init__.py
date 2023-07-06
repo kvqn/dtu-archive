@@ -6,6 +6,7 @@ subparsers = parser.add_subparsers(dest="command", help="The command to run.", r
 
 from .scrape import cli_main as scrape_main
 from .migration.cli import main as migration_main
+from .rollnos.cli import main as rollnos_main
 
 def main():
     args = parser.parse_args()
@@ -13,5 +14,7 @@ def main():
         scrape_main(args)
     elif args.command == "migrations" or args.command == "migration":
         migration_main(args)
+    elif args.command == "rollnos":
+        rollnos_main(args)
     else:
         parser.print_help()
