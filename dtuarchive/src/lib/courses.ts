@@ -90,7 +90,7 @@ export async function getCourseGrades(course: string): Promise<CourseGrade[]> {
   return relevant_grades
 }
 
-export type CourseTableData = {
+export type CourseTableDataPercentiles = {
   course: string
   n_students: number
   average: string
@@ -100,7 +100,7 @@ export type CourseTableData = {
   ninety_nine_percentile: string
 }
 
-export async function getCoursesTableData(): Promise<CourseTableData[]> {
+export async function getCoursesTableDataPercentiles(): Promise<CourseTableDataPercentiles[]> {
   const grades: {
     result: string
     rollno: string
@@ -124,7 +124,7 @@ export async function getCoursesTableData(): Promise<CourseTableData[]> {
 
   const courses = await getAllCourses()
 
-  const course_data: CourseTableData[] = []
+  const course_data: CourseTableDataPercentiles[] = []
 
   for (const course of courses) {
     const course_grades = relevant_grades.filter(
@@ -161,6 +161,127 @@ export async function getCoursesTableData(): Promise<CourseTableData[]> {
       ninety_percentile: ninety_percentile,
       ninety_five_percentile: ninety_five_percentile,
       ninety_nine_percentile: ninety_nine_percentile
+    })
+  }
+
+  return course_data
+}
+
+
+export type CourseTableDataCount = {
+  course: string
+  n_students: number
+  average: string
+  o: string
+  a_plus: string
+  a: string
+  b_plus: string
+  b: string
+  c: string
+  p: string
+  f: string
+}
+
+export async function getCoursesTableDataCount(): Promise<CourseTableDataCount[]> {
+  const grades: {
+    result: string
+    rollno: string
+    subject: string
+    grade: string
+  }[] = (
+    await query_result(`
+  select result, ifnull(rollnos.new, result_grades.rollno) as rollno, subject, grade from result_grades
+  left join rollnos on rollnos.old = result_grades.rollno
+                        `)
+  ).map((result: any) => {
+    return {
+      result: result["result"],
+      subject: result["subject"],
+      rollno: result["rollno"],
+      grade: result["grade"]
+    }
+  })
+
+  const relevant_grades: typeof grades = grades
+
+  const courses = await getAllCourses()
+
+  const course_data: CourseTableDataCount[] = []
+
+  for (const course of courses) {
+    const course_grades = relevant_grades.filter(
+      (grade) => grade.subject == course
+    )
+
+    if (course_grades.length == 0) continue
+
+    let average = 0
+    for (const grade of course_grades) {
+      average += grade_value(grade.grade)
+    }
+    average /= course_grades.length
+
+    let o = 0
+    let a_plus = 0
+    let a = 0
+    let b_plus = 0
+    let b = 0
+    let c = 0
+    let p = 0
+    let f = 0
+
+    for (const grade of course_grades) {
+      switch (grade.grade) {
+        case "O":
+          o++
+          break
+        case "A+":
+          a_plus++
+          break
+        case "A":
+          a++
+          break
+        case "B+":
+          b_plus++
+          break
+        case "B":
+          b++
+          break
+        case "C":
+          c++
+          break
+        case "P":
+          p++
+          break
+        default:
+          f++
+          break
+      }
+    }
+
+    o = (o / course_grades.length) * 100
+    a_plus = (a_plus / course_grades.length) * 100
+    a = (a / course_grades.length) * 100
+    b_plus = (b_plus / course_grades.length) * 100
+    b = (b / course_grades.length) * 100
+    c = (c / course_grades.length) * 100
+    p = (p / course_grades.length) * 100
+    f = (f / course_grades.length) * 100
+
+
+
+    course_data.push({
+      course: course,
+      n_students: course_grades.length,
+      average: average.toFixed(2),
+      o: o.toFixed(2)+" %",
+      a_plus: a_plus.toFixed(2)+" %",
+      a: a.toFixed(2)+" %",
+      b_plus: b_plus.toFixed(2)+" %",
+      b: b.toFixed(2)+" %",
+      c: c.toFixed(2)+" %",
+      p: p.toFixed(2)+" %",
+      f: f.toFixed(2)+" %"
     })
   }
 

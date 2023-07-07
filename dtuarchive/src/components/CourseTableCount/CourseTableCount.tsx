@@ -14,7 +14,7 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/table"
-import { CourseTableDataPercentiles } from "@/lib/courses"
+import { CourseTableDataCount } from "@/lib/courses"
 import { flexRender } from "@tanstack/react-table"
 import {
   Column,
@@ -33,8 +33,8 @@ import { useState } from "react"
 
 const sortingHeader = (
   columnName: string
-): React.FC<{ column: Column<CourseTableDataPercentiles, unknown> }> => {
-  const header = ({ column }: { column: Column<CourseTableDataPercentiles> }) => (
+): React.FC<{ column: Column<CourseTableDataCount, unknown> }> => {
+  const header = ({ column }: { column: Column<CourseTableDataCount> }) => (
     <Button
       variant="ghost"
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
@@ -49,15 +49,15 @@ const sortingHeader = (
 }
 
 type CourseTableProps = {
-  courses: CourseTableDataPercentiles[]
+  courses: CourseTableDataCount[]
 }
 
-export default function CourseTable(props: CourseTableProps) {
+export default function CourseTableCount(props: CourseTableProps) {
   const { courses } = props
 
-  const columnHelper = createColumnHelper<CourseTableDataPercentiles>()
+  const columnHelper = createColumnHelper<CourseTableDataCount>()
 
-  const columns: ColumnDef<CourseTableDataPercentiles, string>[] = [
+  const columns: ColumnDef<CourseTableDataCount, string>[] = [
     {
       id: "index",
       header: "Index",
@@ -76,21 +76,37 @@ export default function CourseTable(props: CourseTableProps) {
       accessorKey: "average"
     },
     {
-      header: sortingHeader("Median"),
-      accessorKey: "median"
+      header: sortingHeader("O"),
+      accessorKey: "o"
     },
     {
-      header: sortingHeader("90th Percentile"),
-      accessorKey: "ninety_percentile"
+      header: sortingHeader("A+"),
+      accessorKey: "a_plus"
     },
     {
-      header: sortingHeader("95th Percentile"),
-      accessorKey: "ninety_five_percentile"
+      header: sortingHeader("A"),
+      accessorKey: "a"
     },
     {
-      header: sortingHeader("99th Percentile"),
-      accessorKey: "ninety_nine_percentile"
-    }
+      header: sortingHeader("B+"),
+      accessorKey: "b_plus"
+    },
+    {
+      header: sortingHeader("B"),
+      accessorKey: "b"
+    },
+    {
+      header: sortingHeader("C"),
+      accessorKey: "c"
+    },
+    {
+      header: sortingHeader("P"),
+      accessorKey: "p"
+    },
+    {
+      header: sortingHeader("F"),
+      accessorKey: "f"
+    },
   ]
 
   const data = courses
