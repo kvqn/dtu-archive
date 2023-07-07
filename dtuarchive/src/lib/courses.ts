@@ -120,39 +120,7 @@ export async function getCoursesTableData(): Promise<CourseTableData[]> {
     }
   })
 
-  const results = await get_result_heirarchy()
-
   const relevant_grades: typeof grades = grades
-
-  // const considered_grades: Set<string> = new Set()
-
-  // for (const grade of grades) {
-  //   if (considered_grades.has(JSON.stringify({rollno: grade.rollno, subject: grade.subject}))) continue
-
-  //   considered_grades.add(JSON.stringify({rollno: grade.rollno, subject: grade.subject}))
-
-  //   relevant_grades.push(
-  //     grades
-  //       .filter((g) => g.rollno === grade.rollno && g.subject === grade.subject)
-  //       .sort((a, b) => {
-  //         const a_heirarchy = results.find(
-  //           (r) => r.result === a.result
-  //         )?.heirarchy
-  //         const b_heirarchy = results.find(
-  //           (r) => r.result === b.result
-  //         )?.heirarchy
-  //         // @ts-ignore
-  //         return b_heirarchy - a_heirarchy
-  //       })[0]
-  //   )
-  // }
-
-  relevant_grades.sort((a, b) => {
-    const gradeA = gradeValues.get(a.grade)
-    const gradeB = gradeValues.get(b.grade)
-    if (gradeA && gradeB) return gradeB - gradeA
-    return 0
-  })
 
   const courses = await getAllCourses()
 
@@ -162,6 +130,13 @@ export async function getCoursesTableData(): Promise<CourseTableData[]> {
     const course_grades = relevant_grades.filter(
       (grade) => grade.subject == course
     )
+    course_grades.sort((a, b) => {
+      const gradeA = gradeValues.get(a.grade)
+      const gradeB = gradeValues.get(b.grade)
+      if (gradeA != undefined && gradeB != undefined) return gradeA - gradeB
+      return 0
+    })
+
     if (course_grades.length == 0) continue
 
     let average = 0
