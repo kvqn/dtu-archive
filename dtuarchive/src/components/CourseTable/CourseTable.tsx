@@ -80,17 +80,17 @@ export default function CourseTable(props: CourseTableProps) {
       accessorKey: "median"
     },
     {
+      header: sortingHeader("70th Percentile"),
+      accessorKey: "seventy_percentile"
+    },
+    {
+      header: sortingHeader("80th Percentile"),
+      accessorKey: "eighty_percentile"
+    },
+    {
       header: sortingHeader("90th Percentile"),
       accessorKey: "ninety_percentile"
     },
-    {
-      header: sortingHeader("95th Percentile"),
-      accessorKey: "ninety_five_percentile"
-    },
-    {
-      header: sortingHeader("99th Percentile"),
-      accessorKey: "ninety_nine_percentile"
-    }
   ]
 
   const data = courses

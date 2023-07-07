@@ -95,9 +95,9 @@ export type CourseTableDataPercentiles = {
   n_students: number
   average: string
   median: string
+  seventy_percentile: string
+  eighty_percentile: string
   ninety_percentile: string
-  ninety_five_percentile: string
-  ninety_nine_percentile: string
 }
 
 export async function getCoursesTableDataPercentiles(): Promise<CourseTableDataPercentiles[]> {
@@ -146,21 +146,21 @@ export async function getCoursesTableDataPercentiles(): Promise<CourseTableDataP
     average /= course_grades.length
 
     let median = course_grades[Math.floor(course_grades.length / 2)].grade
+    let seventy_percentile =
+      course_grades[Math.floor(course_grades.length * 0.7)].grade
+    let eighty_percentile =
+      course_grades[Math.floor(course_grades.length * 0.8)].grade
     let ninety_percentile =
       course_grades[Math.floor(course_grades.length * 0.9)].grade
-    let ninety_five_percentile =
-      course_grades[Math.floor(course_grades.length * 0.95)].grade
-    let ninety_nine_percentile =
-      course_grades[Math.floor(course_grades.length * 0.99)].grade
 
     course_data.push({
       course: course,
       n_students: course_grades.length,
       average: average.toFixed(2),
       median: median,
+      seventy_percentile: seventy_percentile,
+      eighty_percentile: eighty_percentile,
       ninety_percentile: ninety_percentile,
-      ninety_five_percentile: ninety_five_percentile,
-      ninety_nine_percentile: ninety_nine_percentile
     })
   }
 
