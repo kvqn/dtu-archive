@@ -158,7 +158,8 @@ export async function getSemesterResult(
   }
 
   semester_students.sort((a, b) => {
-    return a.cgpa > b.cgpa ? -1 : 1
+    if (a.cgpa != b.cgpa) return b.cgpa - a.cgpa
+    return a.name.localeCompare(b.name)
   })
 
   const semester_result: SemesterResult = {
@@ -365,7 +366,8 @@ export async function getAggregateResult(
   }
 
   aggregate_students.sort((a, b) => {
-    return a.aggregate > b.aggregate ? -1 : 1
+    if (a.aggregate != b.aggregate) return b.aggregate - a.aggregate
+    return a.name.localeCompare(b.name)
   })
 
   const aggregate_result: AggregateResult = {
