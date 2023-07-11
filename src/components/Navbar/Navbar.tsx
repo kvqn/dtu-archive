@@ -3,7 +3,7 @@ import Link from "next/link"
 import styles from "./Navbar.module.css"
 
 function NavbarDtuarchive() {
-  return NavbarItem({ name: "DTU Achive", href: "/" })
+  return NavbarItem({ name: "DTU Archive", href: "/" })
 }
 
 function NavbarLeft(props: { children: React.ReactNode; className?: string }) {
