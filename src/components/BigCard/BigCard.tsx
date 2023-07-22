@@ -16,14 +16,8 @@ export default function BigCard(props: BigCardProps) {
   if (!href) href = "#"
   return (
     <Link className={styles.bigcard + " " + className} href={href}>
-      <div className={styles.nothover}>
-        <p>{title}</p>
-      </div>
-
-      <div className={styles.hover}>
-        <p>{title}</p>
-        <p>{description}</p>
-      </div>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.description}>{description}</div>
     </Link>
   )
 }

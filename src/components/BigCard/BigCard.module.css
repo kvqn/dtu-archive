@@ -1,5 +1,6 @@
 .bigcard {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
@@ -8,14 +9,23 @@
   text-align: center;
 }
 
-.hover {
-  display: none;
-}
-
-.bigcard:hover .hover {
+.title {
+  font-family: "Rowdies", cursive;
+  font-size: 2rem;
   display: block;
 }
 
-.bigcard:hover .nothover {
-  display: none;
+.description {
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+  font-size: 1.5rem;
+  font-style: normal;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
+
+.bigcard:hover .description {
+  opacity: 1;
+}
+

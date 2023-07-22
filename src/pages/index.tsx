@@ -44,10 +44,10 @@ export default function Page({
     <>
       <Navbar />
 
-      <div className="text-black text-center mt-16 text-5xl font-inter">
+      <div className="text-black text-center mt-16 text-5xl font-inter font-extrabold">
         I scraped results for {student_count} students,
       </div>
-      <div className="text-black text-center mt-8 text-4xl font-inter">
+      <div className="text-black text-center mt-8 text-4xl font-inter font-extrabold">
         providing you{" "}
         <span className="text-6xl">
           <SexyText text={grade_count} />
@@ -65,11 +65,6 @@ export default function Page({
           title="COURSES"
           description="View details and grades for each course in your curriculum."
           href="/courses"
-        />
-        <BigCard
-          title="ARCHIVE"
-          description="Filter notices scraped from the DTU website."
-          href="#"
         />
       </div>
     </>

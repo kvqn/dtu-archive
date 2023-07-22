@@ -56,7 +56,7 @@ export default function Page(props: Props) {
         }
       />
 
-      <div className="w-auto flex space-x-20 mx-40 mt-4 font-inter text-2xl">
+      <div className="w-auto flex space-x-20 mx-40 mt-4 font-inter font-extrabold text-2xl">
         <span className="grow text-center">
           Average : {result.average_cgpa}
         </span>
