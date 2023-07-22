@@ -1,4 +1,3 @@
-
 # DTU Archive
 
 A web application to easily access past result information for Delhi Technological University.
@@ -20,8 +19,3 @@ See [here](https://github.com/kvqn/dtu-archive-migrations#creating-an-issue)
 ### \# There's a feature I want to see added
 
 Create an Issue.
-
-
-
-
-

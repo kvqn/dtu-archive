@@ -106,7 +106,7 @@ export default function CourseTableCount(props: CourseTableProps) {
     {
       header: sortingHeader("F"),
       accessorKey: "f"
-    },
+    }
   ]
 
   const data = courses

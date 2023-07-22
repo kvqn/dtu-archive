@@ -100,7 +100,9 @@ export type CourseTableDataPercentiles = {
   ninety_percentile: string
 }
 
-export async function getCoursesTableDataPercentiles(): Promise<CourseTableDataPercentiles[]> {
+export async function getCoursesTableDataPercentiles(): Promise<
+  CourseTableDataPercentiles[]
+> {
   const grades: {
     result: string
     rollno: string
@@ -160,13 +162,12 @@ export async function getCoursesTableDataPercentiles(): Promise<CourseTableDataP
       median: median,
       seventy_percentile: seventy_percentile,
       eighty_percentile: eighty_percentile,
-      ninety_percentile: ninety_percentile,
+      ninety_percentile: ninety_percentile
     })
   }
 
   return course_data
 }
-
 
 export type CourseTableDataCount = {
   course: string
@@ -182,7 +183,9 @@ export type CourseTableDataCount = {
   f: string
 }
 
-export async function getCoursesTableDataCount(): Promise<CourseTableDataCount[]> {
+export async function getCoursesTableDataCount(): Promise<
+  CourseTableDataCount[]
+> {
   const grades: {
     result: string
     rollno: string
@@ -268,20 +271,18 @@ export async function getCoursesTableDataCount(): Promise<CourseTableDataCount[]
     p = (p / course_grades.length) * 100
     f = (f / course_grades.length) * 100
 
-
-
     course_data.push({
       course: course,
       n_students: course_grades.length,
       average: average.toFixed(2),
-      o: o.toFixed(2)+" %",
-      a_plus: a_plus.toFixed(2)+" %",
-      a: a.toFixed(2)+" %",
-      b_plus: b_plus.toFixed(2)+" %",
-      b: b.toFixed(2)+" %",
-      c: c.toFixed(2)+" %",
-      p: p.toFixed(2)+" %",
-      f: f.toFixed(2)+" %"
+      o: o.toFixed(2) + " %",
+      a_plus: a_plus.toFixed(2) + " %",
+      a: a.toFixed(2) + " %",
+      b_plus: b_plus.toFixed(2) + " %",
+      b: b.toFixed(2) + " %",
+      c: c.toFixed(2) + " %",
+      p: p.toFixed(2) + " %",
+      f: f.toFixed(2) + " %"
     })
   }
 

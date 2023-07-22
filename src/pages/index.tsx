@@ -43,7 +43,6 @@ export default function Page({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-
       <Head>
         <title>DTU Archive</title>
       </Head>

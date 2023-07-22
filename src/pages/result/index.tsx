@@ -15,7 +15,6 @@ type Props = {
 export default function Page({ batches }: Props) {
   return (
     <>
-
       <Head>
         <title>Result | Batch Selection</title>
       </Head>

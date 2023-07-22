@@ -15,12 +15,17 @@ export default function Page({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-
       <Head>
         <title>Courses | DTU Archive</title>
       </Head>
       <Navbar
-        center={<NavbarItem name="Courses (Percentile)" href="/courses" active={true}/>}
+        center={
+          <NavbarItem
+            name="Courses (Percentile)"
+            href="/courses"
+            active={true}
+          />
+        }
         right={<NavbarItem name="Courses (Count)" href="/courses/count" />}
       />
       <CourseTable courses={courses_table_data} />

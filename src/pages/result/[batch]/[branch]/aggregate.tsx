@@ -45,7 +45,6 @@ export default function Page(props: Props) {
 
   return (
     <>
-
       <Head>
         <title>{title}</title>
       </Head>

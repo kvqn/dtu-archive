@@ -34,7 +34,11 @@ import { useState } from "react"
 const sortingHeader = (
   columnName: string
 ): React.FC<{ column: Column<CourseTableDataPercentiles, unknown> }> => {
-  const header = ({ column }: { column: Column<CourseTableDataPercentiles> }) => (
+  const header = ({
+    column
+  }: {
+    column: Column<CourseTableDataPercentiles>
+  }) => (
     <Button
       variant="ghost"
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
@@ -90,7 +94,7 @@ export default function CourseTable(props: CourseTableProps) {
     {
       header: sortingHeader("90th Percentile"),
       accessorKey: "ninety_percentile"
-    },
+    }
   ]
 
   const data = courses
