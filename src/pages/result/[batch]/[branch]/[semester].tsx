@@ -7,6 +7,7 @@ import {
   getSemesterResult,
   getSemesters
 } from "@/lib/data"
+import Head from "next/head"
 
 type Props = {
   batch: string
@@ -53,8 +54,14 @@ export default function Page(props: Props) {
 
   if (!result) return Custom404()
 
+  const title = `Sem ${semester} ${branch} ${batch}`
+
   return (
     <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+
       <Navbar
         center={<NavbarItem name="Result" href="/result" />}
         right={

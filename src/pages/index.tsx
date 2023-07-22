@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar/Navbar"
 import SexyText from "@/components/SexyText/SexyText"
 import conn from "@/lib/sql"
 import { InferGetStaticPropsType } from "next"
+import Head from "next/head"
 
 async function studentCount(): Promise<number> {
   return new Promise((resolve, reject) => {
@@ -42,6 +43,11 @@ export default function Page({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
+
+      <Head>
+        <title>DTU Archive</title>
+      </Head>
+
       <Navbar />
 
       <div className="text-black text-center mt-16 text-5xl font-inter font-extrabold">

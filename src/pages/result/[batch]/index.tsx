@@ -2,6 +2,7 @@ import Custom404 from "@/components/Custom404"
 import GradientLink from "@/components/GradientLink/GradientLink"
 import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { getBatches, getBranches } from "@/lib/data"
+import Head from "next/head"
 
 type Props = {
   branches: string[]
@@ -26,8 +27,15 @@ export default function Page(props: Props) {
 
   if (!branches) return Custom404()
 
+  const title = `Batch of ${batch}`
+
   return (
     <>
+
+      <Head>
+        <title>{title}branch</title>
+      </Head>
+
       <Navbar
         center={<NavbarItem name="Result" href="/result" active={true} />}
         right={<NavbarItem name={batch} href={`/result/${batch}`} />}

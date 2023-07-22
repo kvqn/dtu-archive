@@ -2,6 +2,7 @@ import AggregateResultTable from "@/components/AggregateResultTable/AggregateRes
 import Custom404 from "@/components/Custom404"
 import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { getAggregateResult, getBatches, getBranches } from "@/lib/data"
+import Head from "next/head"
 
 type Props = {
   batch: string
@@ -40,8 +41,14 @@ export default function Page(props: Props) {
 
   if (!result) return Custom404()
 
+  const title = `Aggregate ${branch} ${batch}`
+
   return (
     <>
+
+      <Head>
+        <title>{title}</title>
+      </Head>
       <Navbar
         center={<NavbarItem name="Result" href="/result" />}
         right={

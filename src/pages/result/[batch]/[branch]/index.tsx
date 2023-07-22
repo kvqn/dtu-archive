@@ -3,6 +3,7 @@ import GradientLink from "@/components/GradientLink/GradientLink"
 import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { getBatches, getBranches, getSemesters } from "@/lib/data"
 import { InferGetStaticPropsType } from "next"
+import Head from "next/head"
 
 export const getStaticProps = async ({ params }: any) => {
   const batch = params.batch as string
@@ -38,8 +39,14 @@ export default function Page(
 
   if (!semesters) return Custom404()
 
+  const title = `${branch} ${batch}`
+
   return (
     <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+
       <Navbar
         center={<NavbarItem name="Result" href="/result" />}
         right={
