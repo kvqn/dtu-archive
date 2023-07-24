@@ -32,7 +32,7 @@ export default function Page(props: Props) {
   return (
     <>
       <Head>
-        <title>{title}branch</title>
+        <title>{title}</title>
       </Head>
 
       <Navbar

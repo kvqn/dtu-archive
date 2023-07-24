@@ -5,6 +5,7 @@ import Head from "next/head"
 
 export const getStaticProps = async () => {
   const batches = await getBatches()
+  batches.splice(batches.indexOf("2K22"), 1)
   return { props: { batches: batches } }
 }
 
