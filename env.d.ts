@@ -6,6 +6,7 @@ declare global {
       DTUARCHIVE_MARIADB_PASS: string
       DTUARCHIVE_MARIADB_PORT: string
       DTUARCHIVE_MARIADB_DB: string
+      NEXT_PUBLIC_GA_MEASUREMENT_ID: string
     }
   }
 }

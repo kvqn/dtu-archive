@@ -26,7 +26,6 @@
     "mini-css-extract-plugin": "^2.7.6",
     "mysql": "^2.18.1",
     "next": "^13.4.7",
-    "nextjs-google-analytics": "^2.3.3",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
