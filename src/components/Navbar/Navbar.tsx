@@ -1,3 +1,5 @@
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 
 import styles from "./Navbar.module.css"
@@ -29,7 +31,14 @@ function NavbarLeft(props: { children: React.ReactNode[]; className?: string }) 
 function NavbarRight(props: { children: React.ReactNode; className?: string }) {
   let { children, className } = props
   if (!className) className = ""
-  return <div className={styles.navbarright + " " + className}>{children}</div>
+  return (
+    <div className={styles.navbarright + " " + className}>
+      {children}
+      <Link href="https://github.com/kvqn/dtu-archive" className="hover:scale-125 transition-transform">
+        <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: "#000000" }} />
+      </Link>
+    </div>
+  )
 }
 
 function NavbarCenter(props: { children: React.ReactNode; className?: string }) {
