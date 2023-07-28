@@ -37,7 +37,7 @@ export default function Page(props: Props) {
 
       <Navbar
         left={[
-          <NavbarItem name="Result" href="/result" active={true} key="result" />,
+          <NavbarItem name="Result" href="/result" key="result" />,
           <NavbarItem name={batch} href={`/result/${batch}`} key="batch" />
         ]}
       />

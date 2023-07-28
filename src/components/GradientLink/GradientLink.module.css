@@ -10,13 +10,13 @@
   --shade-2: yellow;
   --time-fill: 300ms;
   --time-empty: 150ms;
-  --border-color: black;
+  /* --border-color: black; */
 
   text-align: left;
-  border: 1px solid var(--border-color);
+  border: 1px solid;
   margin-bottom: -1px;
   margin-left: -1px;
-  color: var(--color);
+  /* color: var(--color); */
   display: flex;
   align-items: center;
   font-family: "Permanent Marker", cursive;
@@ -34,7 +34,7 @@
 }
 
 .link:hover {
-  color: var(--hover-color);
+  /* color: var(--hover-color); */
   /* color: black; */
   transition: color var(--time-fill) ease;
 }

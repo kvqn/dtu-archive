@@ -46,10 +46,10 @@ export default function Page({ student_count, grade_count }: InferGetStaticProps
 
       <Navbar />
 
-      <div className="text-black text-center mt-16 text-5xl font-inter font-extrabold">
+      <div className="text-center mt-16 text-5xl font-inter font-extrabold">
         I scraped results for {student_count} students,
       </div>
-      <div className="text-black text-center mt-8 text-4xl font-inter font-extrabold">
+      <div className="text-center mt-8 text-4xl font-inter font-extrabold">
         providing you{" "}
         <span className="text-6xl">
           <SexyText text={grade_count} />
