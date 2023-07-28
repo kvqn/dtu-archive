@@ -7,7 +7,7 @@ function NavbarDtuarchive() {
 }
 
 function NavbarDivider() {
-  return <>/</>
+  return <div className={styles.navbardivider}> / </div>
 }
 
 function NavbarLeft(props: { children: React.ReactNode[]; className?: string }) {

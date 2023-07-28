@@ -61,3 +61,9 @@
 .navbaritem:hover:before {
   width: 65%;
 }
+
+.navbardivider {
+  height: 100%;
+  display: inline-block;
+  margin-right: 15px;
+}
