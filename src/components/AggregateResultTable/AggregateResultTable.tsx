@@ -15,9 +15,7 @@ import {
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
 
-const sortingHeader = (
-  columnName: string
-): React.FC<{ column: Column<AggregateStudent, unknown> }> => {
+const sortingHeader = (columnName: string): React.FC<{ column: Column<AggregateStudent, unknown> }> => {
   const header = ({ column }: { column: Column<AggregateStudent> }) => (
     <Button
       variant="ghost"
@@ -57,13 +55,10 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
       accessorKey: "name"
     },
     ...result.semesters.map((semester, index) =>
-      columnHelper.accessor(
-        (student: AggregateStudent) => student.cgpas[index],
-        {
-          id: `Sem ${semester}`,
-          header: sortingHeader(`Sem ${semester}`)
-        }
-      )
+      columnHelper.accessor((student: AggregateStudent) => student.cgpas[index], {
+        id: `Sem ${semester}`,
+        header: sortingHeader(`Sem ${semester}`)
+      })
     ),
 
     {

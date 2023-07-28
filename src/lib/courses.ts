@@ -18,9 +18,7 @@ export function grade_value(grade: string): number {
 }
 
 export async function getAllCourses(): Promise<string[]> {
-  const courses = await query_result(
-    `select unique(subject) as course from result_grades`
-  )
+  const courses = await query_result(`select unique(subject) as course from result_grades`)
   return courses.map((course: any) => course["course"])
 }
 
@@ -68,12 +66,8 @@ export async function getCourseGrades(course: string): Promise<CourseGrade[]> {
       grades
         .filter((g) => g.rollno === grade.rollno)
         .sort((a, b) => {
-          const a_heirarchy = results.find(
-            (r) => r.result === a.result
-          )?.heirarchy
-          const b_heirarchy = results.find(
-            (r) => r.result === b.result
-          )?.heirarchy
+          const a_heirarchy = results.find((r) => r.result === a.result)?.heirarchy
+          const b_heirarchy = results.find((r) => r.result === b.result)?.heirarchy
           // @ts-ignore
           return b_heirarchy - a_heirarchy
         })[0]
@@ -100,9 +94,7 @@ export type CourseTableDataPercentiles = {
   ninety_percentile: string
 }
 
-export async function getCoursesTableDataPercentiles(): Promise<
-  CourseTableDataPercentiles[]
-> {
+export async function getCoursesTableDataPercentiles(): Promise<CourseTableDataPercentiles[]> {
   const grades: {
     result: string
     rollno: string
@@ -129,9 +121,7 @@ export async function getCoursesTableDataPercentiles(): Promise<
   const course_data: CourseTableDataPercentiles[] = []
 
   for (const course of courses) {
-    const course_grades = relevant_grades.filter(
-      (grade) => grade.subject == course
-    )
+    const course_grades = relevant_grades.filter((grade) => grade.subject == course)
     course_grades.sort((a, b) => {
       const gradeA = gradeValues.get(a.grade)
       const gradeB = gradeValues.get(b.grade)
@@ -148,12 +138,9 @@ export async function getCoursesTableDataPercentiles(): Promise<
     average /= course_grades.length
 
     let median = course_grades[Math.floor(course_grades.length / 2)].grade
-    let seventy_percentile =
-      course_grades[Math.floor(course_grades.length * 0.7)].grade
-    let eighty_percentile =
-      course_grades[Math.floor(course_grades.length * 0.8)].grade
-    let ninety_percentile =
-      course_grades[Math.floor(course_grades.length * 0.9)].grade
+    let seventy_percentile = course_grades[Math.floor(course_grades.length * 0.7)].grade
+    let eighty_percentile = course_grades[Math.floor(course_grades.length * 0.8)].grade
+    let ninety_percentile = course_grades[Math.floor(course_grades.length * 0.9)].grade
 
     course_data.push({
       course: course,
@@ -183,9 +170,7 @@ export type CourseTableDataCount = {
   f: string
 }
 
-export async function getCoursesTableDataCount(): Promise<
-  CourseTableDataCount[]
-> {
+export async function getCoursesTableDataCount(): Promise<CourseTableDataCount[]> {
   const grades: {
     result: string
     rollno: string
@@ -212,9 +197,7 @@ export async function getCoursesTableDataCount(): Promise<
   const course_data: CourseTableDataCount[] = []
 
   for (const course of courses) {
-    const course_grades = relevant_grades.filter(
-      (grade) => grade.subject == course
-    )
+    const course_grades = relevant_grades.filter((grade) => grade.subject == course)
 
     if (course_grades.length == 0) continue
 

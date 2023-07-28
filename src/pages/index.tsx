@@ -37,10 +37,7 @@ export async function getStaticProps() {
   }
 }
 
-export default function Page({
-  student_count,
-  grade_count
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Page({ student_count, grade_count }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>

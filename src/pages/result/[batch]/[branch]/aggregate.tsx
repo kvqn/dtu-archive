@@ -54,18 +54,13 @@ export default function Page(props: Props) {
           <>
             <NavbarItem name={batch} href={`/result/${batch}`} />
             <NavbarItem name={branch} href={`/result/${batch}/${branch}`} />
-            <NavbarItem
-              name="Aggregate"
-              href={`/result/${batch}/${branch}/aggregate`}
-            />
+            <NavbarItem name="Aggregate" href={`/result/${batch}/${branch}/aggregate`} />
           </>
         }
       />
 
       <div className="w-auto flex space-x-20 mx-40 mt-4 font-inter font-extrabold text-2xl">
-        <span className="grow text-center">
-          Average : {result.average_cgpa}
-        </span>
+        <span className="grow text-center">Average : {result.average_cgpa}</span>
         <span className="grow text-center">Median : {result.median_cgpa}</span>
       </div>
 
