@@ -20,12 +20,15 @@ export default function Page({
       </Head>
 
       <Navbar
-        center={
-          <NavbarItem
-            name="Courses (Count)"
-            href="/courses/count"
-            active={true}
-          />
+        left={
+        [
+        <NavbarItem
+        name="Courses (Count)"
+        href="/courses/count"
+        active={true}
+        key="courses"
+        />
+        ]
         }
         right={<NavbarItem name="Courses (Percentile)" href="/courses" />}
       />

@@ -20,9 +20,7 @@ export default function Page({ batches }: Props) {
         <title>Result | Batch Selection</title>
       </Head>
 
-      <Navbar
-        center={<NavbarItem name="Result" href="/result" active={true} />}
-      />
+      <Navbar left={[<NavbarItem name="Result" href="/result" active={true} key="result" />]} />
 
       <div className="m-20">
         <h1 className="heading-select">Select your batch</h1>
