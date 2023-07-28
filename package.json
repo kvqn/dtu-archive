@@ -43,6 +43,6 @@
     "prettier-plugin-tailwindcss": "^0.3.0"
   },
   "lint-staged": {
-    "*.{json,tsx,ts,jsx,css,md}": "prettier --write"
+    "*.{json,tsx,ts,js,jsx,css,md}": "prettier --write"
   }
 }
