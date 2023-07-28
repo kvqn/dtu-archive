@@ -18,7 +18,7 @@ export default function Page({ courses_table_data }: InferGetStaticPropsType<typ
       </Head>
 
       <Navbar
-        left={[<NavbarItem name="Courses (Count)" href="/courses/count" active={true} key="courses" />]}
+        left={[<NavbarItem name="Courses (Count)" href="/courses/count" key="courses" />]}
         right={<NavbarItem name="Courses (Percentile)" href="/courses" />}
       />
       <CourseTableCount courses={courses_table_data} />
