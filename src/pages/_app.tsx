@@ -10,7 +10,7 @@ config.autoAddCss = false
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="h-screen">
-      <ThemeProvider>
+      <ThemeProvider defaultTheme={"light"}>
         <Component {...pageProps} />
       </ThemeProvider>
     </div>
