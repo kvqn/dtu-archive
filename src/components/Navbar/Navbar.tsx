@@ -6,13 +6,22 @@ function NavbarDtuarchive() {
   return NavbarItem({ name: "DTU Archive", href: "/" })
 }
 
-function NavbarLeft(props: { children: React.ReactNode; className?: string }) {
+function NavbarDivider() {
+  return <>/</>
+}
+
+function NavbarLeft(props: { children: React.ReactNode[]; className?: string }) {
   let { children, className } = props
   if (!className) className = ""
   return (
     <div className={styles.navbarleft + " " + className}>
       <NavbarDtuarchive />
-      {children}
+      {children.map((child) => (
+        <>
+          <NavbarDivider />
+          {child}
+        </>
+      ))}
     </div>
   )
 }
@@ -23,27 +32,18 @@ function NavbarRight(props: { children: React.ReactNode; className?: string }) {
   return <div className={styles.navbarright + " " + className}>{children}</div>
 }
 
-function NavbarCenter(props: {
-  children: React.ReactNode
-  className?: string
-}) {
+function NavbarCenter(props: { children: React.ReactNode; className?: string }) {
   let { children, className } = props
   if (!className) className = ""
   return <div className={styles.navbarcenter + " " + className}>{children}</div>
 }
 
-export function NavbarItem(props: {
-  name: string
-  className?: string
-  active?: boolean
-  href?: string
-}) {
+export function NavbarItem(props: { name: string; className?: string; active?: boolean; href?: string }) {
   let { name, className, active, href } = props
   if (!className) className = ""
   if (!active) active = false
   if (active) className = className + " " + styles.active
-  if (!href)
-    return <div className={styles.navbaritem + " " + className}>{name}</div>
+  if (!href) return <div className={styles.navbaritem + " " + className}>{name}</div>
   else
     return (
       <Link href={href} className={styles.navbaritem + " " + className}>
@@ -53,12 +53,13 @@ export function NavbarItem(props: {
 }
 
 export function Navbar(props: {
-  left?: React.ReactNode
+  left?: React.ReactNode[]
   center?: React.ReactNode
   right?: React.ReactNode
   className?: string
 }) {
   let { left, right, center, className } = props
+  if (!left) left = []
 
   if (!className) className = ""
   return (

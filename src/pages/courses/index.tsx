@@ -19,12 +19,15 @@ export default function Page({
         <title>Courses | DTU Archive</title>
       </Head>
       <Navbar
-        center={
-          <NavbarItem
-            name="Courses (Percentile)"
-            href="/courses"
-            active={true}
-          />
+        left={
+        [
+        <NavbarItem
+        name="Courses (Percentile)"
+        href="/courses"
+        active={true}
+        key="courses"
+        />
+        ]
         }
         right={<NavbarItem name="Courses (Count)" href="/courses/count" />}
       />
