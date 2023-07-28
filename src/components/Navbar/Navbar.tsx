@@ -54,16 +54,16 @@ function ThemeToggle() {
 function GithubIcon() {
   const { theme } = useTheme()
 
-  if (theme === "light")
+  if (theme === "dark")
     return (
       <Link href="https://github.com/kvqn/dtu-archive" className="hover:scale-125 transition-transform">
-        <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: "#000000" }} />
+        <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: "#FFFFFF" }} />
       </Link>
     )
   else
     return (
       <Link href="https://github.com/kvqn/dtu-archive" className="hover:scale-125 transition-transform">
-        <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: "#FFFFFF" }} />
+        <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: "#000000" }} />
       </Link>
     )
 }
