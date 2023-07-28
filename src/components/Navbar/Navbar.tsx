@@ -16,11 +16,11 @@ function NavbarLeft(props: { children: React.ReactNode[]; className?: string }) 
   return (
     <div className={styles.navbarleft + " " + className}>
       <NavbarDtuarchive />
-      {children.map((child) => (
-        <>
+      {children.map((child, index) => (
+        <div key={index}>
           <NavbarDivider />
           {child}
-        </>
+        </div>
       ))}
     </div>
   )
