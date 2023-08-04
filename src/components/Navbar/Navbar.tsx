@@ -1,3 +1,4 @@
+import { ClientSideOnly } from "@/lib/utils"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Around } from "@theme-toggles/react"
@@ -75,7 +76,9 @@ function NavbarRight(props: { children: React.ReactNode; className?: string }) {
     <div className={styles.navbarright + " " + className}>
       {children}
       <ThemeToggle />
-      <GithubIcon />
+      <ClientSideOnly>
+        <GithubIcon />
+      </ClientSideOnly>
     </div>
   )
 }
