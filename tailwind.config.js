@@ -81,7 +81,8 @@ module.exports = {
           "dropdown-bg": "var(--table-dropdown-bg)",
           "dropdown-fg": "var(--table-dropdown-fg)",
           "dropdown-hover-bg": "var(--table-dropdown-hover-bg)",
-          "dropdown-hover-fg": "var(--table-dropdown-hover-fg)"
+          "dropdown-hover-fg": "var(--table-dropdown-hover-fg)",
+          "border-color": "var(--table-border-color)"
         }
       },
       borderRadius: {

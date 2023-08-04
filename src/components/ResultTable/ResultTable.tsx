@@ -55,7 +55,7 @@ export default function ResultTable(props: ResultTableProps) {
         </DropdownMenu>
       </div>
 
-      <div className="overflow-hidden rounded-lg border-2 m-10 bg-zinc-900">
+      <div className="overflow-hidden rounded-lg border-2 m-10 bg-zinc-900 border-table-border-color">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

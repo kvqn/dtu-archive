@@ -114,6 +114,7 @@
   --table-dropdown-fg: "";
   --table-dropdown-hover-bg: #2c35ac;
   --table-dropdown-hover-fg: "";
+  --table-border-color: White;
 }
 
 [data-theme="light"] {
@@ -137,4 +138,5 @@
   --table-dropdown-fg: "";
   --table-dropdown-hover-bg: #cfdff7;
   --table-dropdown-hover-fg: "";
+  --table-border-color: #e5e7eb;
 }
