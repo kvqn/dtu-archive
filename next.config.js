@@ -7,6 +7,7 @@ const nextConfig = {
   //   config.infrastructureLogging = { debug: /PackFileCache/ }
   //   return config;
   // }
+  reactStrictMode: true,
   staticPageGenerationTimeout: 120
 }
 

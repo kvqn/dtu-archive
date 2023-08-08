@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { twMerge } from "tailwind-merge"
 
 import styles from "./BigCard.module.css"
 
@@ -15,7 +16,7 @@ export default function BigCard(props: BigCardProps) {
   if (!className) className = ""
   if (!href) href = "#"
   return (
-    <Link className={styles.bigcard + " " + className} href={href}>
+    <Link className={twMerge(styles.bigcard, className)} href={href}>
       <div className={styles.title}>{title}</div>
       <div className={styles.description}>{description}</div>
     </Link>

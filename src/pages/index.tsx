@@ -57,7 +57,7 @@ export default function Page({ student_count, grade_count }: InferGetStaticProps
         data points ready for analysis.
       </div>
 
-      <div className="flex flex-col items-center justify-around w-auto pt-20 h-1/2">
+      <div className="flex flex-row items-center justify-around w-auto pt-20 h-1/2 mx-32">
         <BigCard
           title="RESULTS"
           description="View semester and aggregate results for your batch and branch."
@@ -67,6 +67,11 @@ export default function Page({ student_count, grade_count }: InferGetStaticProps
           title="COURSES"
           description="View details and grades for each course in your curriculum."
           href="/courses"
+        />
+        <BigCard
+          title="STUDENTS"
+          description="View details and grades for each course in your curriculum."
+          href="/students"
         />
       </div>
     </>
