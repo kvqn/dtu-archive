@@ -1,4 +1,6 @@
-import conn, { ResultGrades, ResultHeirarchy, ResultStudentDetails } from "./sql"
+import prisma from "@/prisma"
+
+import conn, { ResultGrades, ResultHeirarchy, ResultStudentDetails, query_result } from "./sql"
 
 function round_to_two_places(num: number) {
   return Math.round(num * 100 + Number.EPSILON) / 100
@@ -10,17 +12,10 @@ export async function isValidBatch(batch: string): Promise<boolean> {
 }
 
 export async function getBatches(): Promise<string[]> {
-  return new Promise((resolve, reject) => {
-    conn.query(
-      `
-      select unique substring(rollno, 1, 4) as batch from result_student_details order by batch desc
-      `,
-      (err, result) => {
-        if (err) reject(err)
-        resolve(result.map((row: any) => row["batch"]))
-      }
-    )
-  })
+  const result = await query_result(
+    `select unique substring(rollno, 1, 4) as batch from result_student_details order by batch desc`
+  )
+  return result.map((row: any) => row["batch"])
 }
 
 export async function isValidBranch(batch: string, branch: string): Promise<boolean> {
@@ -30,9 +25,8 @@ export async function isValidBranch(batch: string, branch: string): Promise<bool
 
 export async function getBranches(batch: string): Promise<string[] | null> {
   if (!(await isValidBatch(batch))) return null
-  return new Promise((resolve, reject) => {
-    conn.query(
-      `
+  const result = await query_result(
+    `
 select unique regexp_substr(rollno, '(?<=\/)[a-zA-Z0-9]+') as branch
 from
     (
@@ -42,13 +36,9 @@ from
     ) as t1
 where rollno regexp '\/[A-Z]+\/'
 order by branch asc
-      `,
-      (err, result) => {
-        if (err) reject(err)
-        resolve(result.map((row: any) => row["branch"]))
-      }
-    )
-  })
+      `
+  )
+  return result.map((row: any) => row["branch"])
 }
 
 export async function isValidSemester(batch: string, branch: string, semester: string): Promise<boolean> {
@@ -58,9 +48,8 @@ export async function isValidSemester(batch: string, branch: string, semester: s
 
 export async function getSemesters(batch: string, branch: string): Promise<number[] | null> {
   if (!(await isValidBranch(batch, branch))) return null
-  return new Promise((resolve, reject) => {
-    conn.query(
-      `
+  const result = await query_result(
+    `
 select distinct semester
 from result_heirarchy
 where
@@ -76,13 +65,9 @@ where
         where rollno regexp '\/${branch}\/'
     )
 order by semester desc
-      `,
-      (err, result) => {
-        if (err) reject(err)
-        resolve(result.map((row: any) => row["semester"]))
-      }
-    )
-  })
+      `
+  )
+  return result.map((row: any) => row["semester"])
 }
 
 export async function getSemesterResult(
@@ -159,8 +144,8 @@ async function _get_semeseter_details(
   semester: string
 ): Promise<ResultStudentDetails[]> {
   // Assumes that the semester is valid
-  const details: ResultStudentDetails[] = await new Promise((resolve, reject) => {
-    conn.query(
+  const details: ResultStudentDetails[] = (
+    await query_result(
       `
 select *
 from
@@ -175,23 +160,17 @@ from
         left join rollnos on rollnos.old = t0.rollno
     ) as t1
 where t1.rollno regexp '${batch}\/${branch}\/'
-        `,
-      (err, result) => {
-        if (err) reject(err)
-        resolve(
-          result.map((row: any) => {
-            return {
-              result: row["result"],
-              rollno: row["rollno"],
-              name: row["name"],
-              tc: row["tc"],
-              cgpa: row["cgpa"],
-              failed_subjects: row["failed_subjects"]
-            }
-          })
-        )
-      }
+        `
     )
+  ).map((row: any) => {
+    return {
+      result: row["result"],
+      rollno: row["rollno"],
+      name: row["name"],
+      tc: row["tc"],
+      cgpa: row["cgpa"],
+      failed_subjects: row["failed_subjects"]
+    }
   })
 
   const results = await get_result_heirarchy()
