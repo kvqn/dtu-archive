@@ -10,7 +10,17 @@ const nextConfig = {
   //   return config;
   // }
   reactStrictMode: true,
-  staticPageGenerationTimeout: 120
+  staticPageGenerationTimeout: 120,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.discordapp.com",
+        port: "",
+        pathname: "/avatars/**"
+      }
+    ]
+  }
 }
 
 export default nextConfig

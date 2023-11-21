@@ -1,15 +1,15 @@
 "use client"
 
-import { ClientSideOnly } from "@/lib/utils"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Around } from "@theme-toggles/react"
 import "@theme-toggles/react/css/Around.css"
-import { useTheme } from "next-themes"
+import { signIn, useSession } from "next-auth/react"
+import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
 
+import { ClientSideOnly } from "../ClientSideOnly"
+import GithubIcon from "./GithubIcon"
+import LoggedInStatus from "./LoggedInStatus"
 import styles from "./Navbar.module.css"
+import ThemeToggle from "./ThemeToggle"
 
 function NavbarDtuarchive() {
   return NavbarItem({ name: "DTU Archive", href: "/" })
@@ -38,62 +38,13 @@ function NavbarLeft(props: {
   )
 }
 
-function ThemeToggle() {
-  let [isToggled, setIsToggled] = useState(false)
-  let { setTheme } = useTheme()
-
-  const onToggle = () => {
-    if (isToggled) setTheme("light")
-    else setTheme("dark")
-  }
-  return (
-    <Around
-      duration={750}
-      style={{ transform: "scale(2)" }}
-      toggled={isToggled}
-      toggle={setIsToggled}
-      onToggle={onToggle}
-    />
-  )
-}
-
-function GithubIcon() {
-  const { theme } = useTheme()
-
-  if (theme === "dark")
-    return (
-      <Link
-        href="https://github.com/kvqn/dtu-archive"
-        className="hover:scale-125 transition-transform"
-      >
-        <FontAwesomeIcon
-          icon={faGithub}
-          size="2xl"
-          style={{ color: "#FFFFFF" }}
-        />
-      </Link>
-    )
-  else
-    return (
-      <Link
-        href="https://github.com/kvqn/dtu-archive"
-        className="hover:scale-125 transition-transform"
-      >
-        <FontAwesomeIcon
-          icon={faGithub}
-          size="2xl"
-          style={{ color: "#000000" }}
-        />
-      </Link>
-    )
-}
-
 function NavbarRight(props: { children: React.ReactNode; className?: string }) {
   let { children, className } = props
   if (!className) className = ""
   return (
     <div className={styles.navbarright + " " + className}>
       {children}
+      <LoggedInStatus />
       <ThemeToggle />
       <ClientSideOnly>
         <GithubIcon />
