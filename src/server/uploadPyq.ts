@@ -9,6 +9,13 @@ export default async function uploadPYQ(data: FormData) {
   if (user_email != "guneetaggarwal@gmail.com")
     return { error: "You are not authorized to upload PYQs." }
 
+  const user = await prisma.user.findUnique({
+    where: {
+      email: user_email
+    }
+  })
+  if (!user) return { error: "Invalid user" }
+
   const file: File | null = data.get("file") as File
   if (file.size === 0) return { error: "You must provide a PDF file." }
 
@@ -52,7 +59,8 @@ export default async function uploadPYQ(data: FormData) {
       subject_code,
       subject_name,
       year,
-      type
+      type,
+      uploadedBy_id: user.id
     }
   })
 

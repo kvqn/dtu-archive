@@ -67,12 +67,14 @@ enum PyqType {
 }
 
 model pyq {
-  subject_code String
-  subject_name String
-  year         Int
-  type         PyqType
-  fileId       Int     @id
-  file         file    @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "pyq_ibfk_1")
+  subject_code  String
+  subject_name  String
+  year          Int
+  type          PyqType
+  uploadedBy_id String
+  uploadedBy    User    @relation(fields: [uploadedBy_id], references: [id], onUpdate: Restrict, map: "pyq_ibfk_2")
+  fileId        Int     @id
+  file          file    @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "pyq_ibfk_1")
 }
 
 model Account {
@@ -110,6 +112,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  pyq           pyq[]
 }
 
 model VerificationToken {
