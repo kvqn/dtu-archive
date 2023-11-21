@@ -46,3 +46,19 @@ model rollnos {
   old String @id @db.Char(16)
   new String @unique(map: "new") @db.Char(16)
 }
+
+model file {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(255)
+  path      String   @db.VarChar(255)
+  createdAt DateTime @default(now()) @db.DateTime(6)
+  pyq       pyq[]
+}
+
+model pyq {
+  subject_code String
+  subject_name String
+  year         Int
+  fileId       Int    @id
+  file         file   @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "pyq_ibfk_1")
+}
