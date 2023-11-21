@@ -1,3 +1,5 @@
+import "./src/env.mjs"
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
@@ -11,4 +13,4 @@ const nextConfig = {
   staticPageGenerationTimeout: 120
 }
 
-module.exports = nextConfig
+export default nextConfig
