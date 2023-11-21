@@ -1,6 +1,13 @@
 "use server"
 
+import prisma from "@/prisma"
+import { getServerSession } from "next-auth"
+
 export default async function uploadPYQ(data: FormData) {
+  const user_email = data.get("user_email") as string
+  if (!user_email) return { error: "Invalid user" }
+  if (user_email != "guneetaggarwal@gmail.com") return { error: "You are not authorized to upload PYQs." }
+
   const file: File | null = data.get("file") as File
   if (file.size === 0) return { error: "You must provide a PDF file." }
 

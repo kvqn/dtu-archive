@@ -12,32 +12,18 @@ export default function Page() {
     if (result?.error) toast.error(result.error)
   }
 
-  if (session) {
-    return (
-      <>
-        Signed in as {session.user?.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    )
-  }
-  return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
-  )
+  if (!session || !session.user) return <>You have to be logged in to do this</>
 
-  if (session.status === "authenticated")
-    return (
-      <div>
-        PYQs Upload
-        <form action={upload}>
-          <input type="file" name="file" />
-          <input type="text" name="subject_code" placeholder="Subject Code" />
-          <input type="text" name="subject_name" placeholder="Subject Name" />
-          <input type="number" name="year" placeholder="Year" />
-          <button type="submit">Upload</button>
-        </form>
-      </div>
-    )
+  return (
+    <div>
+      PYQs Upload
+      <form action={upload}>
+        <input type="file" name="file" />
+        <input type="text" name="subject_code" placeholder="Subject Code" />
+        <input type="text" name="subject_name" placeholder="Subject Name" />
+        <input type="number" name="year" placeholder="Year" />
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+  )
 }
