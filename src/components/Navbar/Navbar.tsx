@@ -1,3 +1,5 @@
+"use client"
+
 import { ClientSideOnly } from "@/lib/utils"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -17,7 +19,10 @@ function NavbarDivider() {
   return <div className={styles.navbardivider}> / </div>
 }
 
-function NavbarLeft(props: { children: React.ReactNode[]; className?: string }) {
+function NavbarLeft(props: {
+  children: React.ReactNode[]
+  className?: string
+}) {
   let { children, className } = props
   if (!className) className = ""
   return (
@@ -57,14 +62,28 @@ function GithubIcon() {
 
   if (theme === "dark")
     return (
-      <Link href="https://github.com/kvqn/dtu-archive" className="hover:scale-125 transition-transform">
-        <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: "#FFFFFF" }} />
+      <Link
+        href="https://github.com/kvqn/dtu-archive"
+        className="hover:scale-125 transition-transform"
+      >
+        <FontAwesomeIcon
+          icon={faGithub}
+          size="2xl"
+          style={{ color: "#FFFFFF" }}
+        />
       </Link>
     )
   else
     return (
-      <Link href="https://github.com/kvqn/dtu-archive" className="hover:scale-125 transition-transform">
-        <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: "#000000" }} />
+      <Link
+        href="https://github.com/kvqn/dtu-archive"
+        className="hover:scale-125 transition-transform"
+      >
+        <FontAwesomeIcon
+          icon={faGithub}
+          size="2xl"
+          style={{ color: "#000000" }}
+        />
       </Link>
     )
 }
@@ -83,18 +102,27 @@ function NavbarRight(props: { children: React.ReactNode; className?: string }) {
   )
 }
 
-function NavbarCenter(props: { children: React.ReactNode; className?: string }) {
+function NavbarCenter(props: {
+  children: React.ReactNode
+  className?: string
+}) {
   let { children, className } = props
   if (!className) className = ""
   return <div className={styles.navbarcenter + " " + className}>{children}</div>
 }
 
-export function NavbarItem(props: { name: string; className?: string; active?: boolean; href?: string }) {
+export function NavbarItem(props: {
+  name: string
+  className?: string
+  active?: boolean
+  href?: string
+}) {
   let { name, className, active, href } = props
   if (!className) className = ""
   if (!active) active = false
   if (active) className = className + " " + styles.active
-  if (!href) return <div className={styles.navbaritem + " " + className}>{name}</div>
+  if (!href)
+    return <div className={styles.navbaritem + " " + className}>{name}</div>
   else
     return (
       <Link href={href} className={styles.navbaritem + " " + className}>

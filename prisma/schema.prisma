@@ -47,20 +47,32 @@ model rollnos {
   new String @unique(map: "new") @db.Char(16)
 }
 
+enum FileType {
+  PDF
+}
+
 model file {
   id        Int      @id @default(autoincrement())
-  name      String   @db.VarChar(255)
-  path      String   @db.VarChar(255)
+  blob      Bytes
+  type      FileType
   createdAt DateTime @default(now()) @db.DateTime(6)
   pyq       pyq[]
+}
+
+enum PyqType {
+  MID_TERM_QUESTIONS
+  END_TERM_QUESTIONS
+  MID_TERM_ANSWERS
+  END_TERM_ANSWERS
 }
 
 model pyq {
   subject_code String
   subject_name String
   year         Int
-  fileId       Int    @id
-  file         file   @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "pyq_ibfk_1")
+  type         PyqType
+  fileId       Int     @id
+  file         file    @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "pyq_ibfk_1")
 }
 
 model Account {
