@@ -21,7 +21,11 @@ export default function GradientLink(props: Props) {
   }
 
   return (
-    <Link className={styles.link + " " + className} onMouseMove={onMouseMove} href={href}>
+    <Link
+      className={styles.link + " " + className}
+      onMouseMove={onMouseMove}
+      href={href}
+    >
       {name}
     </Link>
   )

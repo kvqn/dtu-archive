@@ -6,7 +6,14 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from "@/components/ui/table"
 import { CourseTableDataPercentiles } from "@/lib/courses"
 import { flexRender } from "@tanstack/react-table"
 import {
@@ -24,8 +31,14 @@ import {
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
 
-const sortingHeader = (columnName: string): React.FC<{ column: Column<CourseTableDataPercentiles, unknown> }> => {
-  const header = ({ column }: { column: Column<CourseTableDataPercentiles> }) => (
+const sortingHeader = (
+  columnName: string
+): React.FC<{ column: Column<CourseTableDataPercentiles, unknown> }> => {
+  const header = ({
+    column
+  }: {
+    column: Column<CourseTableDataPercentiles>
+  }) => (
     <Button
       variant="ghost"
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
@@ -113,7 +126,9 @@ export default function CourseTable(props: CourseTableProps) {
           type="text"
           placeholder="Filter courses..."
           value={(table.getColumn("course")?.getFilterValue() as string) ?? ""}
-          onChange={(event) => table.getColumn("course")?.setFilterValue(event.target.value)}
+          onChange={(event) =>
+            table.getColumn("course")?.setFilterValue(event.target.value)
+          }
           className="max-w-sm"
         />
 
@@ -123,7 +138,10 @@ export default function CourseTable(props: CourseTableProps) {
               Columns
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-table-dropdown-bg text-table-dropdown-fg">
+          <DropdownMenuContent
+            align="end"
+            className="bg-table-dropdown-bg text-table-dropdown-fg"
+          >
             {table
               .getAllColumns()
               // @ts-ignore
@@ -134,7 +152,9 @@ export default function CourseTable(props: CourseTableProps) {
                     key={column.id}
                     className="focus:bg-table-dropdown-hover-bg focus:text-table-dropdown-hover-fg"
                     checked={column.getIsVisible()}
-                    onCheckedChange={(value) => column.toggleVisibility(!!value)}
+                    onCheckedChange={(value) =>
+                      column.toggleVisibility(!!value)
+                    }
                     onClick={(e) => {}}
                   >
                     <p className="uppercase">{column.id}</p>
@@ -149,11 +169,22 @@ export default function CourseTable(props: CourseTableProps) {
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="bg-table-header-bg hover:bg-table-header-hover-bg">
+              <TableRow
+                key={headerGroup.id}
+                className="bg-table-header-bg hover:bg-table-header-hover-bg"
+              >
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className={"text-table-header-fg hover:text-table-header-hover-fg"}>
-                      {flexRender(header.column.columnDef.header, header.getContext())}
+                    <TableHead
+                      key={header.id}
+                      className={
+                        "text-table-header-fg hover:text-table-header-hover-fg"
+                      }
+                    >
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
                     </TableHead>
                   )
                 })}
@@ -169,7 +200,10 @@ export default function CourseTable(props: CourseTableProps) {
                   className="bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className={"uppercase font-roboto font-regular"}>
+                    <TableCell
+                      key={cell.id}
+                      className={"uppercase font-roboto font-regular"}
+                    >
                       {cell.column.id == "index"
                         ? row_index + 1
                         : flexRender(

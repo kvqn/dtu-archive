@@ -1,7 +1,12 @@
 import Custom404 from "@/components/Custom404"
 import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import SemesterResultTable from "@/components/SemesterResultTable/SemesterResultTable"
-import { getBatches, getBranches, getSemesterResult, getSemesters } from "@/lib/data"
+import {
+  getBatches,
+  getBranches,
+  getSemesterResult,
+  getSemesters
+} from "@/lib/data"
 import Head from "next/head"
 
 type Props = {
@@ -61,8 +66,16 @@ export default function Page(props: Props) {
         left={[
           <NavbarItem name="Result" href="/result" key="result" />,
           <NavbarItem name={batch} href={`/result/${batch}`} key="batch" />,
-          <NavbarItem name={branch} href={`/result/${batch}/${branch}`} key="branch" />,
-          <NavbarItem name={"Sem " + semester} href={`/result/${batch}/${branch}/${semester}`} key="semester" />
+          <NavbarItem
+            name={branch}
+            href={`/result/${batch}/${branch}`}
+            key="branch"
+          />,
+          <NavbarItem
+            name={"Sem " + semester}
+            href={`/result/${batch}/${branch}/${semester}`}
+            key="semester"
+          />
         ]}
       />
 
