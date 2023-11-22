@@ -5,13 +5,8 @@ import { isAllowedToUpload } from "@/server/isAllowedToUpload"
 import { useSession } from "next-auth/react"
 import Link from "next/link"
 
-function displayType(type: string): string {
-  if (type === "MID_TERM_QUESTIONS") return "Mid Term Questions"
-  if (type === "END_TERM_QUESTIONS") return "End Term Questions"
-  if (type === "MID_TERM_ANSWERS") return "Mid Term Answers"
-  if (type === "END_TERM_ANSWERS") return "End Term Answers"
-  else return ""
-}
+import { PDFSelector } from "./PYQSelector"
+
 export default async function Page() {
   const PYQs = await prisma.pyq.findMany({
     include: {
@@ -35,34 +30,7 @@ export default async function Page() {
           </Link>
         )}
       </div>
-      <div
-        style={{
-          marginLeft: "20%",
-          marginRight: "20%"
-        }}
-        className="mt-40"
-      >
-        {PYQs.map((pyq, index) => (
-          <Link
-            href={`/api/pyq/${pyq.fileId}`}
-            target="_blank"
-            key={index}
-            className="border flex justify-between p-4"
-          >
-            <div>
-              <div className="flex gap-4">
-                <div>{pyq.subject_code}</div>
-                <div>{pyq.subject_name}</div>
-              </div>
-              <div>Uploaded by {pyq.uploadedBy.name}</div>
-            </div>
-            <div className="text-right">
-              <div>{pyq.year}</div>
-              <div> {displayType(pyq.type)} </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <PDFSelector PYQs={PYQs} />
     </>
   )
 }
