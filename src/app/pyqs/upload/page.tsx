@@ -1,13 +1,15 @@
 "use client"
 
+import { isAllowedToUpload } from "@/server/isAllowedToUpload"
 import uploadPYQ from "@/server/uploadPyq"
 import { signIn, signOut, useSession } from "next-auth/react"
 import toast from "react-hot-toast"
 
-export default function Page() {
+export default async function Page() {
   const { data: session } = useSession()
 
-  if (!session || !session.user) return <>You have to be logged in to do this</>
+  if (!(await isAllowedToUpload(session)))
+    return <>You are not allowed to do this.</>
 
   async function upload(data: FormData) {
     data.append("user_email", session?.user?.email || "")
