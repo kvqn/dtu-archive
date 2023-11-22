@@ -3,14 +3,25 @@
 import uploadPYQ from "@/server/uploadPyq"
 import { useSession } from "next-auth/react"
 import { useRef, useState } from "react"
+import { FileUploader } from "react-drag-drop-files"
 import toast from "react-hot-toast"
+
+const fileTypes = ["PDF"]
 
 export default function Form() {
   const { data: session } = useSession()
   let formRef = useRef<HTMLFormElement>(null)
 
+  const [file, setFile] = useState<File | null>(null)
+
+  const handleFileChange = (file: File) => {
+    setFile(file)
+  }
+
   async function upload(data: FormData) {
+    console.log(file)
     data.append("user_email", session?.user?.email || "")
+    data.append("file", file as File)
     const resp = await uploadPYQ(data)
     if (resp.error) toast.error(resp.error)
     if (resp.pyq) toast.success(`Uploaded PYQ #${resp.pyq.fileId}`)
@@ -24,11 +35,21 @@ export default function Form() {
         className="flex flex-col items-center gap-2"
         ref={formRef}
       >
-        <input
-          className="border p-4 rounded-xl hover:border-slate-500 transition-all w-full"
-          type="file"
-          name="file"
-        />
+        <FileUploader
+          handleChange={handleFileChange}
+          types={["PDF"]}
+          classes="w-full"
+        >
+          <div className="border w-full h-20 rounded-xl flex justify-center items-center">
+            {file == null ? (
+              <div>
+                <span className="underline">Choose File</span> or Drag and Drop
+              </div>
+            ) : (
+              <div>{file.name}</div>
+            )}
+          </div>
+        </FileUploader>
         <input
           className="border p-4 transition-all hover:border-slate-500 rounded-xl w-full"
           type="text"
@@ -69,6 +90,7 @@ export default function Form() {
           onClick={() => {
             console.log(formRef)
             formRef.current?.reset()
+            setFile(null)
           }}
         >
           Clear
