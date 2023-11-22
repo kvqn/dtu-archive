@@ -17,7 +17,15 @@ export default async function uploadPYQ(data: FormData) {
   if (!user) return { error: "Invalid user" }
 
   const file: File | null = data.get("file") as File
-  if (file.size === 0) return { error: "You must provide a PDF file." }
+  if (file.size === 0) return { error: "You must provide a PYQ file." }
+  const file_extension = file.name.split(".").pop()?.toUpperCase()
+  if (
+    !file_extension ||
+    !(file_extension === "PDF" || file_extension === "JPEG")
+  )
+    return {
+      error: `Invalid file extension. Allowed extensions are PDF, JPEG.`
+    }
 
   const subject_code: string | null = data.get("subject_code") as string
   if (!subject_code) return { error: "You must provide a subject code." }
@@ -71,7 +79,7 @@ export default async function uploadPYQ(data: FormData) {
 
   const createdFile = await prisma.file.create({
     data: {
-      type: "PDF",
+      type: file_extension,
       blob: buffer
     }
   })

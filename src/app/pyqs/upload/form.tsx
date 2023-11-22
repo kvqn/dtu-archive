@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react"
 import { useRef, useState } from "react"
 import { FileUploader } from "react-drag-drop-files"
 import toast from "react-hot-toast"
+import { twMerge } from "tailwind-merge"
 
 const fileTypes = ["PDF"]
 
@@ -14,17 +15,21 @@ export default function Form() {
 
   const [file, setFile] = useState<File | null>(null)
 
+  const [uploading, setUploading] = useState(false)
+
   const handleFileChange = (file: File) => {
     setFile(file)
   }
 
   async function upload(data: FormData) {
+    setUploading(true)
     console.log(file)
     data.append("user_email", session?.user?.email || "")
     data.append("file", file as File)
     const resp = await uploadPYQ(data)
     if (resp.error) toast.error(resp.error)
     if (resp.pyq) toast.success(`Uploaded PYQ #${resp.pyq.fileId}`)
+    setUploading(false)
   }
 
   return (
@@ -37,7 +42,7 @@ export default function Form() {
       >
         <FileUploader
           handleChange={handleFileChange}
-          types={["PDF"]}
+          types={["PDF", "JPEG"]}
           classes="w-full"
         >
           <div className="border w-full h-20 rounded-xl flex justify-center items-center">
@@ -78,10 +83,14 @@ export default function Form() {
           <option value="END_TERM_ANSWERS">End Term Answers</option>
         </select>
         <button
-          className="border py-2 px-4 w-fit rounded-xl bg-blue-200 hover:bg-blue-300 transition-colors"
+          className={twMerge(
+            "border py-2 px-4 w-fit rounded-xl bg-blue-200 hover:bg-blue-300 transition-colors",
+            uploading ? "cursor-not-allowed bg-blue-400" : "cursor-pointer"
+          )}
           type="submit"
+          disabled={uploading}
         >
-          Upload
+          {uploading ? "Uploading..." : "Upload"}
         </button>
       </form>
       <div className="flex justify-center">

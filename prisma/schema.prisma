@@ -49,6 +49,7 @@ model rollnos {
 
 enum FileType {
   PDF
+  JPEG
 }
 
 model file {

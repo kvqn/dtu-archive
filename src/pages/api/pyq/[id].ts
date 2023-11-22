@@ -24,7 +24,14 @@ export default async function handler(
     })
     if (!pyq) return res.status(404).json({ error: "pyq not found" })
     const buffer = Buffer.from(pyq.file.blob)
-    res.setHeader("Content-Type", "application/pdf")
+    // res.setHeader("Content-Type", "application/pdf")
+    console.log(pyq.file.type.toLocaleLowerCase())
+    const file_extension = pyq.file.type.toLocaleLowerCase()
+    const content_type = (() => {
+      if (pyq.file.type === "PDF") return "application/pdf"
+      if (pyq.file.type === "JPEG") return "image/jpeg"
+    })()
+    if (content_type) res.setHeader("Content-Type", content_type)
     // res.setHeader("Content-Length", buffer.length)
     const type = (() => {
       if (pyq.type === "MID_TERM_QUESTIONS") return "MTE"
@@ -32,8 +39,8 @@ export default async function handler(
       if (pyq.type === "END_TERM_ANSWERS") return "ETE ANS"
       if (pyq.type === "MID_TERM_ANSWERS") return "MTE ANS"
     })()
-    const fileName = `${pyq.subject_code}_${type}_${pyq.year}.pdf`
-    res.setHeader("Content-Disposition", `inline; filename="${fileName}"`)
+    const fileName = `${pyq.subject_code}_${type}_${pyq.year}.${file_extension}`
+    // res.setHeader("Content-Disposition", `inline; filename="${fileName}"`)
     res.send(buffer)
   } else {
     res.status(405).json({ message: "Method not allowed" })
