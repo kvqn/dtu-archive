@@ -1,6 +1,5 @@
 "use client"
 
-import { Worker } from "@react-pdf-viewer/core"
 import { useState } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import "react-pdf/dist/Page/AnnotationLayer.css"

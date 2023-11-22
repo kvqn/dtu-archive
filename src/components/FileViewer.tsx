@@ -8,19 +8,38 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 
 export function FileViewer({ id }: { id: number }) {
+  console.log("id", id)
   const [file, setFile] = useState<Prisma.fileGetPayload<{}> | null>()
+  const [loading, setLoading] = useState(true)
+
+  async function fetchFile() {
+    console.log(`id ${id}`)
+    setLoading(true)
+    setFile(await getFile(id))
+    setLoading(false)
+  }
+
   useEffect(() => {
-    async function _() {
-      console.log("bkfdjbjfdb")
-      setFile(await getFile(id))
-    }
-    _()
-  }, [])
+    fetchFile()
+  }, [id])
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center w-full h-full">
+        <p>Loading</p>
+      </div>
+    )
+  }
+
+  console.log("file", file)
 
   if (!file)
     return (
-      <div className="flex justify-center items-center w-full h-full">
-        <p>File not found</p>
+      <div className="flex flex-col justify-center items-center w-full h-full">
+        <div>File not found</div>
+        <button onClick={() => fetchFile()} className="hover:underline">
+          Retry?
+        </button>
       </div>
     )
 
@@ -29,15 +48,13 @@ export function FileViewer({ id }: { id: number }) {
   } else {
     return (
       <div className="w-full h-full flex justify-center items-center">
-        <Image
+        <img
           src={`/api/pyq/${id}`}
           alt="Image"
-          // style={{
-          //   height: "100%",
-          //   width: "100%"
-          // }}
-          layout="fill"
-          objectFit="contain"
+          style={{
+            height: "100%",
+            width: "100%"
+          }}
         />
       </div>
     )
