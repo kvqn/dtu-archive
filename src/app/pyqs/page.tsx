@@ -44,7 +44,8 @@ export default async function Page() {
       >
         {PYQs.map((pyq, index) => (
           <Link
-            href={`/api/pyqs/${pyq.fileId}`}
+            href={`/api/pyq/${pyq.fileId}`}
+            target="_blank"
             key={index}
             className="border flex justify-between p-4"
           >
