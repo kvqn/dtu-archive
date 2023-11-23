@@ -1,0 +1,125 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model migrations {
+  name String @id @db.VarChar(255)
+}
+
+model result_grades {
+  result                 String                 @db.Char(100)
+  rollno                 String                 @db.Char(16)
+  subject                String                 @db.Char(10)
+  grade                  String                 @db.Char(3)
+  result_student_details result_student_details @relation(fields: [result, rollno], references: [result, rollno], onUpdate: Restrict, map: "result_grades_ibfk_1")
+
+  @@id([result, rollno, subject])
+}
+
+model result_heirarchy {
+  result                 String                   @id @db.Char(100)
+  semester               Int                      @db.SmallInt
+  heirarchy              Int                      @unique(map: "heirarchy") @default(autoincrement())
+  result_student_details result_student_details[]
+}
+
+model result_student_details {
+  result           String           @db.Char(100)
+  rollno           String           @db.Char(20)
+  name             String           @db.Char(100)
+  tc               Int?             @db.SmallInt
+  cgpa             Float?           @db.Float
+  failed_subjects  String?          @db.VarChar(100)
+  bad              Boolean
+  result_grades    result_grades[]
+  result_heirarchy result_heirarchy @relation(fields: [result], references: [result], onUpdate: Restrict, map: "result_student_details_ibfk_1")
+
+  @@id([result, rollno])
+}
+
+model rollnos {
+  old String @id @db.Char(16)
+  new String @unique(map: "new") @db.Char(16)
+}
+
+enum FileType {
+  PDF
+  JPEG
+}
+
+model file {
+  id        Int      @id @default(autoincrement())
+  blob      Bytes
+  type      FileType
+  createdAt DateTime @default(now()) @db.DateTime(6)
+  pyq       pyq[]
+}
+
+enum PyqType {
+  MID_TERM_QUESTIONS
+  END_TERM_QUESTIONS
+  MID_TERM_ANSWERS
+  END_TERM_ANSWERS
+}
+
+model pyq {
+  subject_code  String
+  subject_name  String
+  year          Int
+  type          PyqType
+  uploadedBy_id String
+  uploadedBy    User    @relation(fields: [uploadedBy_id], references: [id], onUpdate: Restrict, map: "pyq_ibfk_2")
+  fileId        Int     @id
+  file          file    @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "pyq_ibfk_1")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  pyq           pyq[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

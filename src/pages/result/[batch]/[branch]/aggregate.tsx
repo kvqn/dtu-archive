@@ -52,13 +52,23 @@ export default function Page(props: Props) {
         left={[
           <NavbarItem name="Result" href="/result" key="result" />,
           <NavbarItem name={batch} href={`/result/${batch}`} key="batch" />,
-          <NavbarItem name={branch} href={`/result/${batch}/${branch}`} key="branch" />,
-          <NavbarItem name="Aggregate" href={`/result/${batch}/${branch}/aggregate`} key="aggregate" />
+          <NavbarItem
+            name={branch}
+            href={`/result/${batch}/${branch}`}
+            key="branch"
+          />,
+          <NavbarItem
+            name="Aggregate"
+            href={`/result/${batch}/${branch}/aggregate`}
+            key="aggregate"
+          />
         ]}
       />
 
       <div className="w-auto flex space-x-20 mx-40 mt-4 font-inter font-extrabold text-2xl">
-        <span className="grow text-center">Average : {result.average_cgpa}</span>
+        <span className="grow text-center">
+          Average : {result.average_cgpa}
+        </span>
         <span className="grow text-center">Median : {result.median_cgpa}</span>
       </div>
 

@@ -1,17 +1,12 @@
+import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import { type ClassValue, clsx } from "clsx"
-import { useEffect, useState } from "react"
+import { getServerSession } from "next-auth"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function ClientSideOnly({ children }: any) {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
-  return isClient ? children : null
+export function useServerSession() {
+  return getServerSession(authOptions)
 }

@@ -15,9 +15,16 @@ import {
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
 
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from "../ui/tooltip"
 
-const sortingHeader = (columnName: string): React.FC<{ column: Column<SemesterStudent, unknown> }> => {
+const sortingHeader = (
+  columnName: string
+): React.FC<{ column: Column<SemesterStudent, unknown> }> => {
   const header = ({ column }: { column: Column<SemesterStudent> }) => (
     <Button
       variant="ghost"
@@ -67,29 +74,36 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
       accessorKey: "name"
     },
     ...result.subjects.map((subject, index) =>
-      columnHelper.accessor((student: SemesterStudent) => student.grades[index], {
-        id: subject,
-        header: sortingHeader(subject),
-        sortingFn: (rowA, rowB, columnId) => {
-          const gradeA = gradeValues.get(rowA.getValue(columnId))
-          const gradeB = gradeValues.get(rowB.getValue(columnId))
-          if (gradeA && gradeB) return gradeA - gradeB
-          return 0
-        },
-        cell: ({ row }) => {
-          if (row.original.grades[index] == null) return <></>
-          return (
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <div className="w-full h-full">{row.original.grades[index]}</div>
-                </TooltipTrigger>
-                <TooltipContent>{row.original.subjects[index]}</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          )
+      columnHelper.accessor(
+        (student: SemesterStudent) => student.grades[index],
+        {
+          id: subject,
+          header: sortingHeader(subject),
+          sortingFn: (rowA, rowB, columnId) => {
+            const gradeA = gradeValues.get(rowA.getValue(columnId))
+            const gradeB = gradeValues.get(rowB.getValue(columnId))
+            if (gradeA && gradeB) return gradeA - gradeB
+            return 0
+          },
+          cell: ({ row }) => {
+            if (row.original.grades[index] == null) return <></>
+            return (
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className="w-full h-full">
+                      {row.original.grades[index]}
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    {row.original.subjects[index]}
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            )
+          }
         }
-      })
+      )
     ),
 
     {
