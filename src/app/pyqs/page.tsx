@@ -20,17 +20,7 @@ export default async function Page() {
   return (
     <>
       <Navbar left={[<NavbarItem name="PYQs" href="/pyqs" key="/pyqs" />]} />
-      <div className="flex justify-end">
-        {show_upload && (
-          <Link
-            href="/pyqs/upload"
-            className="mx-8 my-4 px-3 py-2 text-xl border rounded-xl bg-green-300 hover:bg-green-400 transition-colors cursor-pointer"
-          >
-            Upload
-          </Link>
-        )}
-      </div>
-      <PDFSelector PYQs={PYQs} />
+      <PDFSelector PYQs={PYQs} show_upload={show_upload} />
     </>
   )
 }
