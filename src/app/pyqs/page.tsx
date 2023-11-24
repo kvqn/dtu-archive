@@ -10,8 +10,8 @@ import { PDFSelector } from "./PYQSelector"
 export default async function Page() {
   const PYQs = await prisma.pyq.findMany({
     include: {
-      uploadedBy: true
-    }
+      uploadedBy: true,
+    },
   })
 
   const session = await useServerSession()

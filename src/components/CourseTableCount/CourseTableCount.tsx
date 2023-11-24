@@ -3,7 +3,7 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import {
@@ -12,7 +12,7 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow
+  TableRow,
 } from "@/components/ui/table"
 import { CourseTableDataCount } from "@/lib/courses"
 import { flexRender } from "@tanstack/react-table"
@@ -26,7 +26,7 @@ import {
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
-  useReactTable
+  useReactTable,
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
@@ -61,52 +61,52 @@ export default function CourseTableCount(props: CourseTableProps) {
     {
       id: "index",
       header: "Index",
-      size: 10
+      size: 10,
     },
     {
       accessorKey: "course",
-      header: sortingHeader("Course")
+      header: sortingHeader("Course"),
     },
     {
       accessorKey: "n_students",
-      header: sortingHeader("Students")
+      header: sortingHeader("Students"),
     },
     {
       header: sortingHeader("Average"),
-      accessorKey: "average"
+      accessorKey: "average",
     },
     {
       header: sortingHeader("O"),
-      accessorKey: "o"
+      accessorKey: "o",
     },
     {
       header: sortingHeader("A+"),
-      accessorKey: "a_plus"
+      accessorKey: "a_plus",
     },
     {
       header: sortingHeader("A"),
-      accessorKey: "a"
+      accessorKey: "a",
     },
     {
       header: sortingHeader("B+"),
-      accessorKey: "b_plus"
+      accessorKey: "b_plus",
     },
     {
       header: sortingHeader("B"),
-      accessorKey: "b"
+      accessorKey: "b",
     },
     {
       header: sortingHeader("C"),
-      accessorKey: "c"
+      accessorKey: "c",
     },
     {
       header: sortingHeader("P"),
-      accessorKey: "p"
+      accessorKey: "p",
     },
     {
       header: sortingHeader("F"),
-      accessorKey: "f"
-    }
+      accessorKey: "f",
+    },
   ]
 
   const data = courses
@@ -127,8 +127,8 @@ export default function CourseTableCount(props: CourseTableProps) {
     state: {
       sorting,
       columnFilters,
-      columnVisibility
-    }
+      columnVisibility,
+    },
   })
 
   return (

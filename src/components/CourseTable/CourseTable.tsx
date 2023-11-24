@@ -3,7 +3,7 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import {
@@ -12,7 +12,7 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow
+  TableRow,
 } from "@/components/ui/table"
 import { CourseTableDataPercentiles } from "@/lib/courses"
 import { flexRender } from "@tanstack/react-table"
@@ -26,7 +26,7 @@ import {
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
-  useReactTable
+  useReactTable,
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
@@ -35,7 +35,7 @@ const sortingHeader = (
   columnName: string
 ): React.FC<{ column: Column<CourseTableDataPercentiles, unknown> }> => {
   const header = ({
-    column
+    column,
   }: {
     column: Column<CourseTableDataPercentiles>
   }) => (
@@ -65,36 +65,36 @@ export default function CourseTable(props: CourseTableProps) {
     {
       id: "index",
       header: "Index",
-      size: 10
+      size: 10,
     },
     {
       accessorKey: "course",
-      header: sortingHeader("Course")
+      header: sortingHeader("Course"),
     },
     {
       accessorKey: "n_students",
-      header: sortingHeader("Students")
+      header: sortingHeader("Students"),
     },
     {
       header: sortingHeader("Average"),
-      accessorKey: "average"
+      accessorKey: "average",
     },
     {
       header: sortingHeader("Median"),
-      accessorKey: "median"
+      accessorKey: "median",
     },
     {
       header: sortingHeader("70th Percentile"),
-      accessorKey: "seventy_percentile"
+      accessorKey: "seventy_percentile",
     },
     {
       header: sortingHeader("80th Percentile"),
-      accessorKey: "eighty_percentile"
+      accessorKey: "eighty_percentile",
     },
     {
       header: sortingHeader("90th Percentile"),
-      accessorKey: "ninety_percentile"
-    }
+      accessorKey: "ninety_percentile",
+    },
   ]
 
   const data = courses
@@ -115,8 +115,8 @@ export default function CourseTable(props: CourseTableProps) {
     state: {
       sorting,
       columnFilters,
-      columnVisibility
-    }
+      columnVisibility,
+    },
   })
 
   return (

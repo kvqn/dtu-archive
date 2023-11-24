@@ -15,7 +15,7 @@ function displayType(type: string): string {
   else return ""
 }
 export function PDFSelector({
-  PYQs
+  PYQs,
 }: {
   PYQs: Prisma.pyqGetPayload<{ include: { uploadedBy: true } }>[]
 }) {

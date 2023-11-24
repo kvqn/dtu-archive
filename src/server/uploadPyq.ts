@@ -11,8 +11,8 @@ export default async function uploadPYQ(data: FormData) {
 
   const user = await prisma.user.findUnique({
     where: {
-      email: user_email
-    }
+      email: user_email,
+    },
   })
   if (!user) return { error: "Invalid user" }
 
@@ -24,7 +24,7 @@ export default async function uploadPYQ(data: FormData) {
     !(file_extension === "PDF" || file_extension === "JPEG")
   )
     return {
-      error: `Invalid file extension. Allowed extensions are PDF, JPEG.`
+      error: `Invalid file extension. Allowed extensions are PDF, JPEG.`,
     }
 
   const subject_code: string | null = data.get("subject_code") as string
@@ -57,13 +57,13 @@ export default async function uploadPYQ(data: FormData) {
     where: {
       year: year,
       type: type,
-      subject_code: subject_code
-    }
+      subject_code: subject_code,
+    },
   })
 
   if (existingPyq) {
     return {
-      error: `A PYQ with same year, type and subject already exists.`
+      error: `A PYQ with same year, type and subject already exists.`,
     }
   }
 
@@ -73,8 +73,8 @@ export default async function uploadPYQ(data: FormData) {
   const createdFile = await prisma.file.create({
     data: {
       type: file_extension,
-      blob: buffer
-    }
+      blob: buffer,
+    },
   })
 
   const createdPYQ = await prisma.pyq.create({
@@ -84,11 +84,11 @@ export default async function uploadPYQ(data: FormData) {
       subject_name,
       year,
       type,
-      uploadedBy_id: user.id
-    }
+      uploadedBy_id: user.id,
+    },
   })
 
   return {
-    pyq: createdPYQ
+    pyq: createdPYQ,
   }
 }

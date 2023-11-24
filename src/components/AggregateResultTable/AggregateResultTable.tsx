@@ -10,7 +10,7 @@ import {
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
-  useReactTable
+  useReactTable,
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
@@ -45,31 +45,31 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
     {
       id: "index",
       header: "Index",
-      size: 10
+      size: 10,
     },
     {
       accessorKey: "rollno",
-      header: sortingHeader("Roll No")
+      header: sortingHeader("Roll No"),
     },
     {
       id: "name",
       header: "Name",
-      accessorKey: "name"
+      accessorKey: "name",
     },
     ...result.semesters.map((semester, index) =>
       columnHelper.accessor(
         (student: AggregateStudent) => student.cgpas[index],
         {
           id: `Sem ${semester}`,
-          header: sortingHeader(`Sem ${semester}`)
+          header: sortingHeader(`Sem ${semester}`),
         }
       )
     ),
 
     {
       header: sortingHeader("Aggregate"),
-      accessorKey: "aggregate"
-    }
+      accessorKey: "aggregate",
+    },
     // {
     //   header: sortingHeader("Total Credits"),
     //   accessorKey: "tc"
@@ -94,8 +94,8 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
     state: {
       sorting,
       columnFilters,
-      columnVisibility
-    }
+      columnVisibility,
+    },
   })
 
   return <ResultTable table={table} />

@@ -32,14 +32,14 @@ export async function getStaticProps() {
   return {
     props: {
       student_count,
-      grade_count
-    }
+      grade_count,
+    },
   }
 }
 
 export default function Page({
   student_count,
-  grade_count
+  grade_count,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>

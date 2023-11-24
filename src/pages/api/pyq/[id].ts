@@ -20,7 +20,7 @@ export default async function handler(
 
     const pyq = await prisma.pyq.findUnique({
       where: { fileId: fileId },
-      include: { file: true }
+      include: { file: true },
     })
     if (!pyq) return res.status(404).json({ error: "pyq not found" })
     const buffer = Buffer.from(pyq.file.blob)

@@ -23,7 +23,7 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
           alt="Image"
           style={{
             height: "100%",
-            width: "100%"
+            width: "100%",
           }}
         />
       </div>

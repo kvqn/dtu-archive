@@ -13,8 +13,8 @@ export const getStaticProps = async ({ params }: any) => {
     props: {
       batch: batch,
       branch: branch,
-      semesters: semesters
-    }
+      semesters: semesters,
+    },
   }
 }
 
@@ -55,7 +55,7 @@ export default function Page(
             name={branch}
             href={`/result/${batch}/${branch}`}
             key="branch"
-          />
+          />,
         ]}
       />
 

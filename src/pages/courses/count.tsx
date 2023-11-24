@@ -11,7 +11,7 @@ export const getStaticProps = async () => {
 }
 
 export default function Page({
-  courses_table_data
+  courses_table_data,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -25,7 +25,7 @@ export default function Page({
             name="Courses (Count)"
             href="/courses/count"
             key="courses"
-          />
+          />,
         ]}
         right={<NavbarItem name="Courses (Percentile)" href="/courses" />}
       />

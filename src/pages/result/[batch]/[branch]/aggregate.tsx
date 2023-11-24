@@ -17,8 +17,8 @@ export const getStaticProps = async ({ params }: any) => {
     props: {
       batch: batch,
       branch: branch,
-      result: result
-    }
+      result: result,
+    },
   }
 }
 
@@ -61,7 +61,7 @@ export default function Page(props: Props) {
             name="Aggregate"
             href={`/result/${batch}/${branch}/aggregate`}
             key="aggregate"
-          />
+          />,
         ]}
       />
 
