@@ -90,7 +90,11 @@ export default function Form() {
               "border py-2 px-4 w-fit rounded-xl bg-blue-200 hover:bg-blue-300 transition-colors",
               uploading ? "cursor-not-allowed bg-blue-400" : "cursor-pointer"
             )}
-            type="submit"
+            // type="submit"
+            onClick={() => {
+              setUploading(true)
+              formRef.current?.requestSubmit()
+            }}
             disabled={uploading}
           >
             {uploading ? "Uploading..." : "Upload"}

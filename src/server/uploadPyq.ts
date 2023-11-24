@@ -17,7 +17,9 @@ export default async function uploadPYQ(data: FormData) {
   if (!user) return { error: "Invalid user" }
 
   const file: File | null = data.get("file") as File
-  if (file.size === 0) return { error: "You must provide a PYQ file." }
+  if (!(file instanceof File) || file.size === 0)
+    return { error: "You must provide a PYQ file." }
+
   const file_extension = file.name.split(".").pop()?.toUpperCase()
   if (
     !file_extension ||
