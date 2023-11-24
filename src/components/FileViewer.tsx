@@ -7,7 +7,31 @@ import { Prisma } from "@prisma/client"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
-export function FileViewer({ id }: { id: number }) {
+export function FileViewer({ url, type }: { url: string; type: string }) {
+  console.log(type, url)
+  if (type === "PDF") {
+    return (
+      <div className="relative w-full h-full overflow-auto">
+        <PDFViewer url={url} />
+      </div>
+    )
+  } else {
+    return (
+      <div className="w-full h-full flex justify-center items-center">
+        <img
+          src={url}
+          alt="Image"
+          style={{
+            height: "100%",
+            width: "100%"
+          }}
+        />
+      </div>
+    )
+  }
+}
+
+export function FileViewerUsingId({ id }: { id: number }) {
   console.log("id", id)
   const [file, setFile] = useState<Prisma.fileGetPayload<{}> | null>()
   const [loading, setLoading] = useState(true)
@@ -43,20 +67,8 @@ export function FileViewer({ id }: { id: number }) {
       </div>
     )
 
-  if (file.type === "PDF") {
-    return <PDFViewer url={`/api/pyq/${id}`} />
-  } else {
-    return (
-      <div className="w-full h-full flex justify-center items-center">
-        <img
-          src={`/api/pyq/${id}`}
-          alt="Image"
-          style={{
-            height: "100%",
-            width: "100%"
-          }}
-        />
-      </div>
-    )
-  }
+  const url = `/api/pyq/${id}`
+  const type = file.type
+
+  return <FileViewer url={url} type={type} />
 }

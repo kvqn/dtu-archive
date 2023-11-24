@@ -57,14 +57,7 @@ export default async function uploadPYQ(data: FormData) {
     where: {
       year: year,
       type: type,
-      OR: [
-        {
-          subject_code: subject_code
-        },
-        {
-          subject_name: subject_name
-        }
-      ]
+      subject_code: subject_code
     }
   })
 

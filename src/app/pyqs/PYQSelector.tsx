@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { twMerge } from "tailwind-merge"
 
-import { FileViewer } from "../../components/FileViewer"
+import { FileViewerUsingId } from "../../components/FileViewer"
 
 function displayType(type: string): string {
   if (type === "MID_TERM_QUESTIONS") return "Mid Term Questions"
@@ -58,7 +58,7 @@ export function PDFSelector({
       </div>
       <div className="border w-full ml-[5%] mr-[5%] h-[80vh] relative overflow-auto">
         {activeFileId != null ? (
-          <FileViewer id={activeFileId} />
+          <FileViewerUsingId id={activeFileId} />
         ) : (
           <div className="flex justify-center items-center h-full w-full">
             <p>select a PYQ</p>
