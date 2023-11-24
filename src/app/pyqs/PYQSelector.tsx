@@ -89,7 +89,12 @@ export function PDFSelector({
         </div>
         <div className="flex flex-col items-center">
           <div className="text-lg">Type</div>
-          <select className="rounded-lg h-10 text-center">
+          <select
+            className="rounded-lg h-10 text-center"
+            onChange={(e) => {
+              setFilter_type(e.target.value)
+            }}
+          >
             <option value="ALL">All</option>
             <option value="MID_TERM_QUESTIONS">Mid Term Questions</option>
             <option value="END_TERM_QUESTIONS">End Term Questions</option>
