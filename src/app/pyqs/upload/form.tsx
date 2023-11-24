@@ -35,7 +35,7 @@ export default function Form() {
 
   return (
     <div className="flex">
-      <div className="ml-[7.5%] mr-[2.5%] my-40 border pt-8 px-8 pb-4 w-[40%]">
+      <div className="ml-[7.5%] mr-[2.5%] my-40 border pt-8 px-8 pb-4 w-[40%] bg-slate-100 rounded-xl">
         <div className="flex justify-center text-xl p-4">Upload PYQ</div>
         <form
           action={upload}
@@ -47,7 +47,7 @@ export default function Form() {
             types={["PDF", "JPEG"]}
             classes="w-full"
           >
-            <div className="border w-full h-20 rounded-xl flex justify-center items-center">
+            <div className="border w-full h-20 rounded-xl flex justify-center items-center bg-white">
               {file == null ? (
                 <div>
                   <span className="underline">Choose File</span> or Drag and
@@ -84,6 +84,9 @@ export default function Form() {
             <option value="END_TERM_QUESTIONS">End Term Questions</option>
             <option value="MID_TERM_ANSWERS">Mid Term Answers</option>
             <option value="END_TERM_ANSWERS">End Term Answers</option>
+            <option value="SUPPLEMENTARY_QUESTIONS">
+              Supplementary Questions
+            </option>
           </select>
           <button
             className={twMerge(
@@ -102,7 +105,7 @@ export default function Form() {
         </form>
         <div className="flex justify-center">
           <div
-            className="text-white hover:text-black cursor-pointer hover:underline"
+            className="text-slate-100 hover:text-black cursor-pointer hover:underline"
             onClick={() => {
               console.log(formRef)
               formRef.current?.reset()
@@ -116,7 +119,10 @@ export default function Form() {
       <div className="w-[40%] mr-[7.5%] ml-[2.5%]">
         <div className="flex w-full justify-center m-4 font-bold">Preview</div>
         {file == null ? (
-          <div> File preview will show here. </div>
+          <div className="flex w-full h-full justify-center items-center">
+            {" "}
+            File preview will show here.{" "}
+          </div>
         ) : (
           <FileViewer
             url={URL.createObjectURL(file)}

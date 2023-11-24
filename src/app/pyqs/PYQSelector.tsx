@@ -12,6 +12,7 @@ function displayType(type: string): string {
   if (type === "END_TERM_QUESTIONS") return "End Term Questions"
   if (type === "MID_TERM_ANSWERS") return "Mid Term Answers"
   if (type === "END_TERM_ANSWERS") return "End Term Answers"
+  if (type === "SUPPLEMENTARY_QUESTIONS") return "Supplementary Questions"
   else return ""
 }
 export function PDFSelector({
@@ -23,8 +24,8 @@ export function PDFSelector({
   const [activeFileId, setActiveFileId] = useState<number | null>(null)
 
   return (
-    <div className="flex">
-      <div className="mt-40 w-full ml-[5%] mr-[5%] flex flex-col gap-2">
+    <div className="flex w-screen p-4 px-[5%] justify-between gap-[5%]">
+      <div className="w-full flex flex-col gap-2 overflow-y-auto h-[80vh]">
         {PYQs.map((pyq, index) => (
           <div
             // href={`/api/pyq/${pyq.fileId}`}
@@ -56,7 +57,7 @@ export function PDFSelector({
           </div>
         ))}
       </div>
-      <div className="border w-full ml-[5%] mr-[5%] h-[80vh] relative overflow-auto">
+      <div className="border w-full relative overflow-auto">
         {activeFileId != null ? (
           <FileViewerUsingId id={activeFileId} />
         ) : (

@@ -47,7 +47,8 @@ export default async function uploadPYQ(data: FormData) {
     type !== "MID_TERM_QUESTIONS" &&
     type !== "END_TERM_QUESTIONS" &&
     type !== "MID_TERM_ANSWERS" &&
-    type !== "END_TERM_ANSWERS"
+    type !== "END_TERM_ANSWERS" &&
+    type !== "SUPPLEMENTARY_QUESTIONS"
   )
     return { error: "You must provide a valid type." }
 
