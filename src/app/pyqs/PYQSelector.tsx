@@ -105,9 +105,14 @@ export function PDFSelector({
             </option>
           </select>
         </div>
-        <div className="mx-8 my-4 cursor-pointer rounded-xl border bg-green-300 px-3 py-2 text-xl transition-colors hover:bg-green-400">
-          {show_upload && <Link href="/pyqs/upload">Upload</Link>}
-        </div>
+        {show_upload && (
+          <Link
+            href="/pyqs/upload"
+            className="mx-8 my-4 cursor-pointer rounded-xl border bg-green-300 px-3 py-2 text-xl transition-colors hover:bg-green-400"
+          >
+            Upload
+          </Link>
+        )}
       </div>
       <div className="flex justify-between gap-[5%] py-4">
         <div className="flex h-[80vh] w-full flex-col gap-2 overflow-y-auto pr-2">

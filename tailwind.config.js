@@ -23,6 +23,7 @@ module.exports = {
         roboto: ["Roboto", "sans-serif"],
         "permanent-marker": ["Permanent Marker", "cursive"],
         rowdies: ["Rowdies", "cursive"],
+        geist: ["var(--font-geist-sans)"],
       },
       colors: {
         border: "hsl(var(--border))",

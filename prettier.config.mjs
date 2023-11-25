@@ -5,7 +5,7 @@ const config = {
     "prettier-plugin-tailwindcss",
   ],
   semi: false,
-  tailwindConfig: "./tailwind.config.js",
+  // tailwindConfig: "/tailwind.config.js",
   tailwindAttributes: ["className"],
   tailwindFunctions: ["twMerge"],
   importOrder: ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
