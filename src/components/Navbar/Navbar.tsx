@@ -45,7 +45,7 @@ function NavbarRight(props: { children: React.ReactNode; className?: string }) {
     <div className={styles.navbarright + " " + className}>
       {children}
       <LoggedInStatus />
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
       <ClientSideOnly>
         <GithubIcon />
       </ClientSideOnly>
