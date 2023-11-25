@@ -4,6 +4,7 @@ import "@theme-toggles/react/css/Around.css"
 import { signIn, useSession } from "next-auth/react"
 import Image from "next/image"
 import Link from "next/link"
+import { twMerge } from "tailwind-merge"
 
 import { ClientSideOnly } from "../ClientSideOnly"
 import GithubIcon from "./GithubIcon"
@@ -94,7 +95,7 @@ export function Navbar(props: {
   if (!className) className = ""
   return (
     <>
-      <div className={styles.navbar + " " + className}>
+      <div className={twMerge(styles.navbar, className)}>
         <NavbarLeft>{left}</NavbarLeft>
         <NavbarCenter>{center}</NavbarCenter>
         <NavbarRight>{right}</NavbarRight>

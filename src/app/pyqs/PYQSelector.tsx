@@ -2,7 +2,9 @@
 
 import { Prisma } from "@prisma/client"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 import { useEffect, useState } from "react"
+import { isMobile } from "react-device-detect"
 import { twMerge } from "tailwind-merge"
 
 import { FileViewerUsingId } from "../../components/FileViewer"
@@ -122,14 +124,17 @@ export function PDFSelector({
               // target="_blank"
               key={index}
               className={twMerge(
-                "flex cursor-pointer justify-between rounded-xl border bg-[#e9edef] p-4 transition-colors",
+                "flex cursor-pointer justify-between rounded-xl border bg-[#e9edef] p-4 text-xs transition-colors lg:text-base",
                 pyq.fileId === activeFileId
                   ? "border-2 border-black bg-gray-200"
                   : "hover:bg-gray-200"
               )}
               onClick={() => {
-                console.log(index)
-                setActiveFileId(pyq.fileId)
+                if (isMobile) {
+                  window.open(`/api/pyq/${pyq.fileId}`)
+                } else {
+                  setActiveFileId(pyq.fileId)
+                }
               }}
             >
               <div>
