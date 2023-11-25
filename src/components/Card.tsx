@@ -17,7 +17,7 @@ export function Card({
   return (
     <Link
       href={href}
-      className="flex h-36 w-[25%] flex-col items-center justify-center rounded-xl border p-4"
+      className="m-4 flex h-36 w-[50%] flex-col items-center justify-center rounded-xl border p-4 md:w-[25%]"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >

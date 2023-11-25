@@ -55,9 +55,9 @@ export function PDFSelector({
 
   return (
     <div className="px-[5%]">
-      <div className="mt-4 flex items-center justify-between">
+      <div className="mt-4 flex flex-wrap items-center justify-between">
         <div className="flex flex-col items-center">
-          <div className="text-lg">Subject Code</div>
+          <div className="font-geist text-lg font-semibold">Subject Code</div>
           <input
             type="text"
             className="h-10 rounded-lg border text-center hover:border-slate-300"
@@ -67,7 +67,7 @@ export function PDFSelector({
           />
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-lg">Subject Name</div>
+          <div className="font-geist text-lg font-semibold">Subject Name</div>
           <input
             type="text"
             className="h-10 rounded-lg border text-center hover:border-slate-300"
@@ -77,7 +77,7 @@ export function PDFSelector({
           />
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-lg">Year</div>
+          <div className="font-geist text-lg font-semibold">Year</div>
           <input
             type="number"
             className="h-10 rounded-lg border text-center [appearance:textfield] hover:border-slate-300 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
@@ -88,7 +88,7 @@ export function PDFSelector({
           />
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-lg">Type</div>
+          <div className="font-geist text-lg font-semibold">Type</div>
           <select
             className="h-10 rounded-lg text-center"
             onChange={(e) => {
@@ -114,7 +114,7 @@ export function PDFSelector({
           </Link>
         )}
       </div>
-      <div className="flex justify-between gap-[5%] py-4">
+      <div className="flex justify-between gap-[5%] py-4 font-geist">
         <div className="flex h-[80vh] w-full flex-col gap-2 overflow-y-auto pr-2">
           {filteredPYQs.map((pyq, index) => (
             <div
@@ -122,9 +122,9 @@ export function PDFSelector({
               // target="_blank"
               key={index}
               className={twMerge(
-                "flex cursor-pointer justify-between border p-4 transition-colors",
+                "flex cursor-pointer justify-between rounded-xl border bg-[#e9edef] p-4 transition-colors",
                 pyq.fileId === activeFileId
-                  ? "border-black bg-gray-200"
+                  ? "border-2 border-black bg-gray-200"
                   : "hover:bg-gray-200"
               )}
               onClick={() => {
@@ -141,12 +141,14 @@ export function PDFSelector({
               </div>
               <div className="text-right">
                 <div>{pyq.year}</div>
-                <div> {displayType(pyq.type)} </div>
+                <div className="rounded border bg-[#f9f9f9] px-1 shadow-sm">
+                  {displayType(pyq.type)}
+                </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="relative w-full overflow-auto border">
+        <div className="relative hidden w-full overflow-auto border lg:block">
           {activeFileId != null ? (
             <FileViewerUsingId id={activeFileId} />
           ) : (

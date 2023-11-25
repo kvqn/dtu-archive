@@ -17,25 +17,25 @@ export default function Page() {
     <>
       <div className="flex h-screen flex-col">
         {/* <Navbar /> */}
-        <div className="flex flex-grow flex-col justify-evenly">
+        <div className="flex w-full flex-grow flex-col items-center justify-evenly">
           <div
             className={twMerge(
               "flex w-full flex-col items-center justify-center gap-20 text-center"
             )}
           >
             <div
-              className="w-full justify-center text-center font-permanent-marker"
-              style={{
-                fontSize: "7rem",
-              }}
+              className="w-full justify-center text-center font-permanent-marker text-5xl md:text-9xl"
+              // style={{
+              //   fontSize: "7rem",
+              // }}
             >
               DTU ARCHIVE
             </div>
-            <div className="mx-[10%] font-geist text-5xl font-extrabold">
+            <div className="mx-[10%] font-geist text-3xl font-extrabold md:text-5xl">
               A collection of much needed resources for DTU students.
             </div>
           </div>
-          <div className="flex justify-evenly p-4">
+          <div className="flex flex-col items-center justify-evenly md:flex-row">
             <Card
               title="Archive"
               description="A collection of past MTE and ETE papers"
