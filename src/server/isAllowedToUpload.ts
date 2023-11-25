@@ -12,5 +12,6 @@ export async function isAllowedToUpload(session: Session | null) {
   })
   if (!user) return false
   if (user.email === "guneetaggarwal@gmail.com") return true
+  if (user.allowedToUpload) return true
   return false
 }

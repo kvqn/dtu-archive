@@ -109,16 +109,17 @@ model Session {
 }
 
 model User {
-  id            String       @id @default(cuid())
-  name          String?
-  email         String?      @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  pyq           pyq[]
-  hearts        FileHearts[]
-  FileViews     FileViews[]
+  id              String       @id @default(cuid())
+  name            String?
+  email           String?      @unique
+  emailVerified   DateTime?
+  image           String?
+  accounts        Account[]
+  sessions        Session[]
+  pyq             pyq[]
+  hearts          FileHearts[]
+  FileViews       FileViews[]
+  allowedToUpload Boolean?     @default(false)
 }
 
 model VerificationToken {
