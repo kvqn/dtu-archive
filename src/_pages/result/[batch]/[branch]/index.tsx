@@ -1,24 +1,20 @@
-import AggregateResultTable from "@/components/AggregateResultTable/AggregateResultTable"
 import Custom404 from "@/components/Custom404"
+import GradientLink from "@/components/GradientLink/GradientLink"
 import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
-import { getAggregateResult, getBatches, getBranches } from "@/lib/data"
+import { getBatches, getBranches, getSemesters } from "@/lib/data"
+import { InferGetStaticPropsType } from "next"
 import Head from "next/head"
 
-type Props = {
-  batch: string
-  branch: string
-  result: AggregateResult | null
-}
-
 export const getStaticProps = async ({ params }: any) => {
-  const { batch, branch } = params
-  const result = await getAggregateResult(batch, branch)
+  const batch = params.batch as string
+  const branch = params.branch as string
+  const semesters = await getSemesters(batch, branch)
   return {
     props: {
       batch: batch,
       branch: branch,
-      result: result
-    }
+      semesters: semesters,
+    },
   }
 }
 
@@ -36,18 +32,21 @@ export const getStaticPaths = async () => {
   return { paths: paths, fallback: false }
 }
 
-export default function Page(props: Props) {
-  const { batch, branch, result } = props
+export default function Page(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
+  const { batch, branch, semesters } = props
 
-  if (!result) return Custom404()
+  if (!semesters) return Custom404()
 
-  const title = `Aggregate ${branch} ${batch}`
+  const title = `${branch} ${batch}`
 
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
+
       <Navbar
         left={[
           <NavbarItem name="Result" href="/result" key="result" />,
@@ -57,22 +56,25 @@ export default function Page(props: Props) {
             href={`/result/${batch}/${branch}`}
             key="branch"
           />,
-          <NavbarItem
-            name="Aggregate"
-            href={`/result/${batch}/${branch}/aggregate`}
-            key="aggregate"
-          />
         ]}
       />
 
-      <div className="w-auto flex space-x-20 mx-40 mt-4 font-inter font-extrabold text-2xl">
-        <span className="grow text-center">
-          Average : {result.average_cgpa}
-        </span>
-        <span className="grow text-center">Median : {result.median_cgpa}</span>
+      <div>
+        <h1 className="heading-select">Select semester</h1>
+        <GradientLink
+          href={`/result/${batch}/${branch}/aggregate`}
+          name="Aggregate"
+        />
+        <ul>
+          {semesters.map((semester) => (
+            <GradientLink
+              href={`/result/${batch}/${branch}/${semester}`}
+              name={`Sem ${semester}`}
+              key={semester}
+            />
+          ))}
+        </ul>
       </div>
-
-      <AggregateResultTable result={result} />
     </>
   )
 }

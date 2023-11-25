@@ -3,7 +3,7 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import {
@@ -12,7 +12,7 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow
+  TableRow,
 } from "@/components/ui/table"
 import { CourseTableDataPercentiles } from "@/lib/courses"
 import { flexRender } from "@tanstack/react-table"
@@ -26,7 +26,7 @@ import {
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
-  useReactTable
+  useReactTable,
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
@@ -35,14 +35,14 @@ const sortingHeader = (
   columnName: string
 ): React.FC<{ column: Column<CourseTableDataPercentiles, unknown> }> => {
   const header = ({
-    column
+    column,
   }: {
     column: Column<CourseTableDataPercentiles>
   }) => (
     <Button
       variant="ghost"
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      className="w-auto h-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
+      className="h-auto w-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
       style={{ whiteSpace: "nowrap" }}
     >
       {columnName}
@@ -65,36 +65,36 @@ export default function CourseTable(props: CourseTableProps) {
     {
       id: "index",
       header: "Index",
-      size: 10
+      size: 10,
     },
     {
       accessorKey: "course",
-      header: sortingHeader("Course")
+      header: sortingHeader("Course"),
     },
     {
       accessorKey: "n_students",
-      header: sortingHeader("Students")
+      header: sortingHeader("Students"),
     },
     {
       header: sortingHeader("Average"),
-      accessorKey: "average"
+      accessorKey: "average",
     },
     {
       header: sortingHeader("Median"),
-      accessorKey: "median"
+      accessorKey: "median",
     },
     {
       header: sortingHeader("70th Percentile"),
-      accessorKey: "seventy_percentile"
+      accessorKey: "seventy_percentile",
     },
     {
       header: sortingHeader("80th Percentile"),
-      accessorKey: "eighty_percentile"
+      accessorKey: "eighty_percentile",
     },
     {
       header: sortingHeader("90th Percentile"),
-      accessorKey: "ninety_percentile"
-    }
+      accessorKey: "ninety_percentile",
+    },
   ]
 
   const data = courses
@@ -115,13 +115,13 @@ export default function CourseTable(props: CourseTableProps) {
     state: {
       sorting,
       columnFilters,
-      columnVisibility
-    }
+      columnVisibility,
+    },
   })
 
   return (
     <>
-      <div className="flex justify-between mx-10 mt-4">
+      <div className="mx-10 mt-4 flex justify-between">
         <Input
           type="text"
           placeholder="Filter courses..."
@@ -165,7 +165,7 @@ export default function CourseTable(props: CourseTableProps) {
         </DropdownMenu>
       </div>
 
-      <div className="overflow-hidden rounded-lg border-2 m-10 bg-zinc-900">
+      <div className="m-10 overflow-hidden rounded-lg border-2 bg-zinc-900">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -202,7 +202,7 @@ export default function CourseTable(props: CourseTableProps) {
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={"uppercase font-roboto font-regular"}
+                      className={"font-regular font-roboto uppercase"}
                     >
                       {cell.column.id == "index"
                         ? row_index + 1
@@ -219,7 +219,7 @@ export default function CourseTable(props: CourseTableProps) {
               <TableRow>
                 <TableCell
                   colSpan={table.getAllColumns().length}
-                  className="h-24 text-center bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
+                  className="h-24 bg-table-row-bg text-center text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
                 >
                   No results.
                 </TableCell>

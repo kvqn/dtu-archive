@@ -11,20 +11,22 @@ export default async function uploadPYQ(data: FormData) {
 
   const user = await prisma.user.findUnique({
     where: {
-      email: user_email
-    }
+      email: user_email,
+    },
   })
   if (!user) return { error: "Invalid user" }
 
   const file: File | null = data.get("file") as File
-  if (file.size === 0) return { error: "You must provide a PYQ file." }
+  if (!(file instanceof File) || file.size === 0)
+    return { error: "You must provide a PYQ file." }
+
   const file_extension = file.name.split(".").pop()?.toUpperCase()
   if (
     !file_extension ||
     !(file_extension === "PDF" || file_extension === "JPEG")
   )
     return {
-      error: `Invalid file extension. Allowed extensions are PDF, JPEG.`
+      error: `Invalid file extension. Allowed extensions are PDF, JPEG.`,
     }
 
   const subject_code: string | null = data.get("subject_code") as string
@@ -45,7 +47,8 @@ export default async function uploadPYQ(data: FormData) {
     type !== "MID_TERM_QUESTIONS" &&
     type !== "END_TERM_QUESTIONS" &&
     type !== "MID_TERM_ANSWERS" &&
-    type !== "END_TERM_ANSWERS"
+    type !== "END_TERM_ANSWERS" &&
+    type !== "SUPPLEMENTARY_QUESTIONS"
   )
     return { error: "You must provide a valid type." }
 
@@ -57,20 +60,13 @@ export default async function uploadPYQ(data: FormData) {
     where: {
       year: year,
       type: type,
-      OR: [
-        {
-          subject_code: subject_code
-        },
-        {
-          subject_name: subject_name
-        }
-      ]
-    }
+      subject_code: subject_code,
+    },
   })
 
   if (existingPyq) {
     return {
-      error: `A PYQ with same year, type and subject already exists.`
+      error: `A PYQ with same year, type and subject already exists.`,
     }
   }
 
@@ -80,8 +76,8 @@ export default async function uploadPYQ(data: FormData) {
   const createdFile = await prisma.file.create({
     data: {
       type: file_extension,
-      blob: buffer
-    }
+      blob: buffer,
+    },
   })
 
   const createdPYQ = await prisma.pyq.create({
@@ -91,11 +87,11 @@ export default async function uploadPYQ(data: FormData) {
       subject_name,
       year,
       type,
-      uploadedBy_id: user.id
-    }
+      uploadedBy_id: user.id,
+    },
   })
 
   return {
-    pyq: createdPYQ
+    pyq: createdPYQ,
   }
 }

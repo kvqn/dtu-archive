@@ -10,7 +10,7 @@ import {
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
-  useReactTable
+  useReactTable,
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
@@ -22,7 +22,7 @@ const sortingHeader = (
     <Button
       variant="ghost"
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      className="w-auto h-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
+      className="h-auto w-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
       style={{ whiteSpace: "nowrap" }}
     >
       {columnName}
@@ -45,31 +45,31 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
     {
       id: "index",
       header: "Index",
-      size: 10
+      size: 10,
     },
     {
       accessorKey: "rollno",
-      header: sortingHeader("Roll No")
+      header: sortingHeader("Roll No"),
     },
     {
       id: "name",
       header: "Name",
-      accessorKey: "name"
+      accessorKey: "name",
     },
     ...result.semesters.map((semester, index) =>
       columnHelper.accessor(
         (student: AggregateStudent) => student.cgpas[index],
         {
           id: `Sem ${semester}`,
-          header: sortingHeader(`Sem ${semester}`)
+          header: sortingHeader(`Sem ${semester}`),
         }
       )
     ),
 
     {
       header: sortingHeader("Aggregate"),
-      accessorKey: "aggregate"
-    }
+      accessorKey: "aggregate",
+    },
     // {
     //   header: sortingHeader("Total Credits"),
     //   accessorKey: "tc"
@@ -94,8 +94,8 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
     state: {
       sorting,
       columnFilters,
-      columnVisibility
-    }
+      columnVisibility,
+    },
   })
 
   return <ResultTable table={table} />

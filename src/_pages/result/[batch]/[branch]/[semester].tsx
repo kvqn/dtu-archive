@@ -5,7 +5,7 @@ import {
   getBatches,
   getBranches,
   getSemesterResult,
-  getSemesters
+  getSemesters,
 } from "@/lib/data"
 import Head from "next/head"
 
@@ -24,8 +24,8 @@ export const getStaticProps = async ({ params }: any) => {
       batch: batch,
       branch: branch,
       semester: semester,
-      result: result
-    }
+      result: result,
+    },
   }
 }
 
@@ -40,7 +40,7 @@ export const getStaticPaths = async () => {
       if (!semesters) continue
       for (const sem of semesters) {
         paths.push({
-          params: { batch: batch, branch: branch, semester: sem.toString() }
+          params: { batch: batch, branch: branch, semester: sem.toString() },
         })
       }
     }
@@ -75,7 +75,7 @@ export default function Page(props: Props) {
             name={"Sem " + semester}
             href={`/result/${batch}/${branch}/${semester}`}
             key="semester"
-          />
+          />,
         ]}
       />
 

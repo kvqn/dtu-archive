@@ -11,14 +11,14 @@ export const authOptions = {
   providers: [
     GithubProvider({
       clientId: env.GITHUB_ID,
-      clientSecret: env.GITHUB_ID
+      clientSecret: env.GITHUB_ID,
     }),
     DiscordProvider({
       clientId: env.DISCORD_ID,
-      clientSecret: env.DISCORD_SECRET
-    })
+      clientSecret: env.DISCORD_SECRET,
+    }),
     // ...add more providers here
-  ]
+  ],
 }
 
 export default NextAuth(authOptions)

@@ -3,7 +3,7 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import {
@@ -12,7 +12,7 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow
+  TableRow,
 } from "@/components/ui/table"
 import { flexRender } from "@tanstack/react-table"
 
@@ -27,7 +27,7 @@ export default function ResultTable(props: ResultTableProps) {
 
   return (
     <>
-      <div className="flex justify-between mx-10 mt-4">
+      <div className="mx-10 mt-4 flex justify-between">
         <Input
           type="text"
           placeholder="Filter names..."
@@ -71,7 +71,7 @@ export default function ResultTable(props: ResultTableProps) {
         </DropdownMenu>
       </div>
 
-      <div className="overflow-hidden rounded-lg border-2 m-10 bg-zinc-900 border-table-border-color">
+      <div className="m-10 overflow-hidden rounded-lg border-2 border-table-border-color bg-zinc-900">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -110,7 +110,7 @@ export default function ResultTable(props: ResultTableProps) {
                     <TableCell
                       key={cell.id}
                       className={
-                        "uppercase font-roboto font-regular" +
+                        "font-regular font-roboto uppercase" +
                         (cell.column.id != "name" ? " text-center" : "")
                       }
                     >
@@ -129,7 +129,7 @@ export default function ResultTable(props: ResultTableProps) {
               <TableRow>
                 <TableCell
                   colSpan={table.getAllColumns().length}
-                  className="h-24 text-center bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
+                  className="h-24 bg-table-row-bg text-center text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
                 >
                   No results.
                 </TableCell>

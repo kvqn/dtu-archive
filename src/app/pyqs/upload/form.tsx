@@ -1,5 +1,6 @@
 "use client"
 
+import { FileViewer } from "@/components/FileViewer"
 import uploadPYQ from "@/server/uploadPyq"
 import { useSession } from "next-auth/react"
 import { useRef, useState } from "react"
@@ -33,77 +34,101 @@ export default function Form() {
   }
 
   return (
-    <div className="mx-[25%] my-40 border pt-8 px-8 pb-4">
-      <div className="flex justify-center text-xl p-4">Upload PYQ</div>
-      <form
-        action={upload}
-        className="flex flex-col items-center gap-2"
-        ref={formRef}
-      >
-        <FileUploader
-          handleChange={handleFileChange}
-          types={["PDF", "JPEG"]}
-          classes="w-full"
+    <div className="flex">
+      <div className="my-40 ml-[7.5%] mr-[2.5%] w-[40%] rounded-xl border bg-slate-100 px-8 pb-4 pt-8">
+        <div className="flex justify-center p-4 text-xl">Upload PYQ</div>
+        <form
+          action={upload}
+          className="flex flex-col items-center gap-2"
+          ref={formRef}
         >
-          <div className="border w-full h-20 rounded-xl flex justify-center items-center">
-            {file == null ? (
-              <div>
-                <span className="underline">Choose File</span> or Drag and Drop
-              </div>
-            ) : (
-              <div>{file.name}</div>
+          <FileUploader
+            handleChange={handleFileChange}
+            types={["PDF", "JPEG"]}
+            classes="w-full"
+          >
+            <div className="flex h-20 w-full items-center justify-center rounded-xl border bg-white">
+              {file == null ? (
+                <div>
+                  <span className="underline">Choose File</span> or Drag and
+                  Drop
+                </div>
+              ) : (
+                <div>{file.name}</div>
+              )}
+            </div>
+          </FileUploader>
+          <input
+            className="w-full rounded-xl border p-4 transition-all hover:border-slate-500"
+            type="text"
+            name="subject_code"
+            placeholder="Subject Code"
+          />
+          <input
+            className="w-full rounded-xl border p-4 transition-all hover:border-slate-500"
+            type="text"
+            name="subject_name"
+            placeholder="Subject Name"
+          />
+          <input
+            className="w-full rounded-xl border p-4 transition-all hover:border-slate-500"
+            type="number"
+            name="year"
+            placeholder="Year"
+          />
+          <select
+            name="type"
+            className="w-full rounded-xl border p-4 transition-all hover:border-slate-500"
+          >
+            <option value="MID_TERM_QUESTIONS">Mid Term Questions</option>
+            <option value="END_TERM_QUESTIONS">End Term Questions</option>
+            <option value="MID_TERM_ANSWERS">Mid Term Answers</option>
+            <option value="END_TERM_ANSWERS">End Term Answers</option>
+            <option value="SUPPLEMENTARY_QUESTIONS">
+              Supplementary Questions
+            </option>
+          </select>
+          <button
+            className={twMerge(
+              "w-fit rounded-xl border bg-blue-200 px-4 py-2 transition-colors hover:bg-blue-300",
+              uploading ? "cursor-not-allowed bg-blue-400" : "cursor-pointer"
             )}
+            // type="submit"
+            onClick={() => {
+              setUploading(true)
+              formRef.current?.requestSubmit()
+            }}
+            disabled={uploading}
+          >
+            {uploading ? "Uploading..." : "Upload"}
+          </button>
+        </form>
+        <div className="flex justify-center">
+          <div
+            className="cursor-pointer text-slate-100 hover:text-black hover:underline"
+            onClick={() => {
+              console.log(formRef)
+              formRef.current?.reset()
+              setFile(null)
+            }}
+          >
+            Clear
           </div>
-        </FileUploader>
-        <input
-          className="border p-4 transition-all hover:border-slate-500 rounded-xl w-full"
-          type="text"
-          name="subject_code"
-          placeholder="Subject Code"
-        />
-        <input
-          className="border p-4 transition-all hover:border-slate-500 rounded-xl w-full"
-          type="text"
-          name="subject_name"
-          placeholder="Subject Name"
-        />
-        <input
-          className="border p-4 transition-all hover:border-slate-500 rounded-xl w-full"
-          type="number"
-          name="year"
-          placeholder="Year"
-        />
-        <select
-          name="type"
-          className="p-4 rounded-xl border hover:border-slate-500 transition-all w-full"
-        >
-          <option value="MID_TERM_QUESTIONS">Mid Term Questions</option>
-          <option value="END_TERM_QUESTIONS">End Term Questions</option>
-          <option value="MID_TERM_ANSWERS">Mid Term Answers</option>
-          <option value="END_TERM_ANSWERS">End Term Answers</option>
-        </select>
-        <button
-          className={twMerge(
-            "border py-2 px-4 w-fit rounded-xl bg-blue-200 hover:bg-blue-300 transition-colors",
-            uploading ? "cursor-not-allowed bg-blue-400" : "cursor-pointer"
-          )}
-          type="submit"
-          disabled={uploading}
-        >
-          {uploading ? "Uploading..." : "Upload"}
-        </button>
-      </form>
-      <div className="flex justify-center">
-        <div
-          className="text-white hover:text-black cursor-pointer hover:underline"
-          onClick={() => {
-            console.log(formRef)
-            formRef.current?.reset()
-            setFile(null)
-          }}
-        >
-          Clear
         </div>
+      </div>
+      <div className="ml-[2.5%] mr-[7.5%] w-[40%]">
+        <div className="m-4 flex w-full justify-center font-bold">Preview</div>
+        {file == null ? (
+          <div className="flex h-full w-full items-center justify-center">
+            {" "}
+            File preview will show here.{" "}
+          </div>
+        ) : (
+          <FileViewer
+            url={URL.createObjectURL(file)}
+            type={file.type.split("/")[1].toUpperCase()}
+          />
+        )}
       </div>
     </div>
   )

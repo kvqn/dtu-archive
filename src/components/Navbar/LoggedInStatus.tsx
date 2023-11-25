@@ -17,7 +17,7 @@ export default function LoggedInStatus() {
 
   return (
     <div
-      className="border p-2"
+      className="flex w-32 items-center justify-center overflow-hidden rounded-xl border bg-blue-100 p-2 text-center"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -27,7 +27,10 @@ export default function LoggedInStatus() {
           <div className="font-inter text-base">{session.user.name}</div>
         </div>
       ) : (
-        <div onClick={() => signOut()} className="cursor-pointer">
+        <div
+          onClick={() => signOut()}
+          className="w-full cursor-pointer text-center"
+        >
           Sign Out
         </div>
       )}

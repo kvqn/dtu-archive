@@ -10,7 +10,7 @@ const gradeValues: Map<string, number> = new Map([
   ["B", 6],
   ["C", 5],
   ["P", 4],
-  ["F", 0]
+  ["F", 0],
 ])
 
 export function grade_value(grade: string): number {
@@ -50,7 +50,7 @@ export async function getCourseGrades(course: string): Promise<CourseGrade[]> {
     return {
       result: result["result"],
       rollno: result["rollno"],
-      grade: result["grade"]
+      grade: result["grade"],
     }
   })
   const results = await get_result_heirarchy()
@@ -118,7 +118,7 @@ export async function getCoursesTableDataPercentiles(): Promise<
       result: result["result"],
       subject: result["subject"],
       rollno: result["rollno"],
-      grade: result["grade"]
+      grade: result["grade"],
     }
   })
 
@@ -162,7 +162,7 @@ export async function getCoursesTableDataPercentiles(): Promise<
       median: median,
       seventy_percentile: seventy_percentile,
       eighty_percentile: eighty_percentile,
-      ninety_percentile: ninety_percentile
+      ninety_percentile: ninety_percentile,
     })
   }
 
@@ -201,7 +201,7 @@ export async function getCoursesTableDataCount(): Promise<
       result: result["result"],
       subject: result["subject"],
       rollno: result["rollno"],
-      grade: result["grade"]
+      grade: result["grade"],
     }
   })
 
@@ -282,7 +282,7 @@ export async function getCoursesTableDataCount(): Promise<
       b: b.toFixed(2) + " %",
       c: c.toFixed(2) + " %",
       p: p.toFixed(2) + " %",
-      f: f.toFixed(2) + " %"
+      f: f.toFixed(2) + " %",
     })
   }
 

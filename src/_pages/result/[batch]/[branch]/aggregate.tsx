@@ -1,20 +1,24 @@
+import AggregateResultTable from "@/components/AggregateResultTable/AggregateResultTable"
 import Custom404 from "@/components/Custom404"
-import GradientLink from "@/components/GradientLink/GradientLink"
 import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
-import { getBatches, getBranches, getSemesters } from "@/lib/data"
-import { InferGetStaticPropsType } from "next"
+import { getAggregateResult, getBatches, getBranches } from "@/lib/data"
 import Head from "next/head"
 
+type Props = {
+  batch: string
+  branch: string
+  result: AggregateResult | null
+}
+
 export const getStaticProps = async ({ params }: any) => {
-  const batch = params.batch as string
-  const branch = params.branch as string
-  const semesters = await getSemesters(batch, branch)
+  const { batch, branch } = params
+  const result = await getAggregateResult(batch, branch)
   return {
     props: {
       batch: batch,
       branch: branch,
-      semesters: semesters
-    }
+      result: result,
+    },
   }
 }
 
@@ -32,21 +36,18 @@ export const getStaticPaths = async () => {
   return { paths: paths, fallback: false }
 }
 
-export default function Page(
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) {
-  const { batch, branch, semesters } = props
+export default function Page(props: Props) {
+  const { batch, branch, result } = props
 
-  if (!semesters) return Custom404()
+  if (!result) return Custom404()
 
-  const title = `${branch} ${batch}`
+  const title = `Aggregate ${branch} ${batch}`
 
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-
       <Navbar
         left={[
           <NavbarItem name="Result" href="/result" key="result" />,
@@ -55,26 +56,23 @@ export default function Page(
             name={branch}
             href={`/result/${batch}/${branch}`}
             key="branch"
-          />
+          />,
+          <NavbarItem
+            name="Aggregate"
+            href={`/result/${batch}/${branch}/aggregate`}
+            key="aggregate"
+          />,
         ]}
       />
 
-      <div>
-        <h1 className="heading-select">Select semester</h1>
-        <GradientLink
-          href={`/result/${batch}/${branch}/aggregate`}
-          name="Aggregate"
-        />
-        <ul>
-          {semesters.map((semester) => (
-            <GradientLink
-              href={`/result/${batch}/${branch}/${semester}`}
-              name={`Sem ${semester}`}
-              key={semester}
-            />
-          ))}
-        </ul>
+      <div className="mx-40 mt-4 flex w-auto space-x-20 font-inter text-2xl font-extrabold">
+        <span className="grow text-center">
+          Average : {result.average_cgpa}
+        </span>
+        <span className="grow text-center">Median : {result.median_cgpa}</span>
       </div>
+
+      <AggregateResultTable result={result} />
     </>
   )
 }

@@ -10,7 +10,7 @@ import {
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
-  useReactTable
+  useReactTable,
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
@@ -19,7 +19,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger
+  TooltipTrigger,
 } from "../ui/tooltip"
 
 const sortingHeader = (
@@ -29,7 +29,7 @@ const sortingHeader = (
     <Button
       variant="ghost"
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      className="w-auto h-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
+      className="h-auto w-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
       style={{ whiteSpace: "nowrap" }}
     >
       {columnName}
@@ -47,7 +47,7 @@ const gradeValues: Map<string, number> = new Map([
   ["B", 6],
   ["C", 5],
   ["P", 4],
-  ["F", 0]
+  ["F", 0],
 ])
 
 type SemesterResultTableProps = {
@@ -62,16 +62,16 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
   const columns: ColumnDef<SemesterStudent, string>[] = [
     {
       header: "Index",
-      id: "index"
+      id: "index",
     },
     {
       accessorKey: "rollno",
-      header: sortingHeader("Roll No")
+      header: sortingHeader("Roll No"),
     },
     {
       id: "name",
       header: "Name",
-      accessorKey: "name"
+      accessorKey: "name",
     },
     ...result.subjects.map((subject, index) =>
       columnHelper.accessor(
@@ -91,7 +91,7 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                    <div className="w-full h-full">
+                    <div className="h-full w-full">
                       {row.original.grades[index]}
                     </div>
                   </TooltipTrigger>
@@ -101,23 +101,23 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
                 </Tooltip>
               </TooltipProvider>
             )
-          }
+          },
         }
       )
     ),
 
     {
       header: sortingHeader("CGPA"),
-      accessorKey: "cgpa"
+      accessorKey: "cgpa",
     },
     {
       header: sortingHeader("Total Credits"),
-      accessorKey: "tc"
+      accessorKey: "tc",
     },
     {
       header: "Failed Papers",
-      accessorKey: "failed_papers"
-    }
+      accessorKey: "failed_papers",
+    },
   ]
 
   const data = result.students
@@ -138,8 +138,8 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
     state: {
       sorting,
       columnFilters,
-      columnVisibility
-    }
+      columnVisibility,
+    },
   })
 
   return <ResultTable table={table} />

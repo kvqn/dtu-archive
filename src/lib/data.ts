@@ -4,7 +4,7 @@ import conn, {
   ResultGrades,
   ResultHeirarchy,
   ResultStudentDetails,
-  query_result
+  query_result,
 } from "./sql"
 
 function round_to_two_places(num: number) {
@@ -114,7 +114,7 @@ export async function getSemesterResult(
       subjects: [],
       tc: student.tc,
       cgpa: student.cgpa,
-      failed_papers: student.failed_subjects.split(",")
+      failed_papers: student.failed_subjects.split(","),
     }
 
     const student_grades = grades.filter(
@@ -151,7 +151,7 @@ export async function getSemesterResult(
   const semester_result: SemesterResult = {
     n_students: details.length,
     subjects: subjects,
-    students: semester_students
+    students: semester_students,
   }
 
   return semester_result
@@ -188,7 +188,7 @@ where t1.rollno regexp '${batch}\/${branch}\/'
       name: row["name"],
       tc: row["tc"],
       cgpa: row["cgpa"],
-      failed_subjects: row["failed_subjects"]
+      failed_subjects: row["failed_subjects"],
     }
   })
 
@@ -250,7 +250,7 @@ where
               result: row["result"],
               rollno: row["rollno"],
               subject: row["subject"],
-              grade: row["grade"]
+              grade: row["grade"],
             }
           })
         )
@@ -337,7 +337,7 @@ export async function getAggregateResult(
       rollno: name.rollno,
       name: name.name,
       cgpas: cgpas,
-      aggregate: round_to_two_places(aggregate)
+      aggregate: round_to_two_places(aggregate),
     }
 
     aggregate_students.push(aggregate_student)
@@ -358,7 +358,7 @@ export async function getAggregateResult(
     ),
     median_cgpa: aggregate_students.map((student) => student.aggregate).sort()[
       Math.floor(aggregate_students.length / 2)
-    ]
+    ],
   }
 
   return aggregate_result
@@ -399,7 +399,7 @@ inner join result_heirarchy as details on details.result = t1.result
               name: row["name"],
               semester: row["semester"],
               cgpa: row["cgpa"],
-              tc: row["tc"]
+              tc: row["tc"],
             }
           })
         )
@@ -419,7 +419,7 @@ inner join result_heirarchy as details on details.result = t1.result
     if (
       considered_students.has({
         rollno: detail.rollno,
-        semester: detail.semester
+        semester: detail.semester,
       })
     )
       continue
@@ -443,7 +443,7 @@ inner join result_heirarchy as details on details.result = t1.result
 
     considered_students.add({
       rollno: detail.rollno,
-      semester: detail.semester
+      semester: detail.semester,
     })
   }
 
@@ -483,7 +483,7 @@ export async function get_result_heirarchy(
           result.map((row: any) => {
             return {
               result: row["result"],
-              heirarchy: row["heirarchy"]
+              heirarchy: row["heirarchy"],
             }
           })
         )
