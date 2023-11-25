@@ -15,16 +15,55 @@ export default async function Page() {
   const PYQs = await prisma.pyq.findMany({
     include: {
       uploadedBy: true,
+      file: {
+        select: {
+          _count: {
+            select: {
+              FileHearts: true,
+              FileViews: true,
+            },
+          },
+          id: true,
+          createdAt: true,
+          type: true,
+        },
+      },
     },
   })
 
   const session = await useServerSession()
   const show_upload = await isAllowedToUpload(session)
 
+  let userHeartsIds: number[] = []
+  if (session?.user?.email) {
+    const user = await prisma.user.findUnique({
+      where: {
+        email: session.user.email,
+      },
+    })
+
+    if (user) {
+      const userHearts = await prisma.fileHearts.findMany({
+        where: {
+          userId: user.id,
+        },
+        select: {
+          fileId: true,
+        },
+      })
+      console.log("userHearts", userHearts)
+      userHeartsIds = userHearts.map((userHeart) => userHeart.fileId)
+    }
+  }
+
   return (
     <>
       <Navbar left={[<NavbarItem name="PYQs" href="/pyqs" key="/pyqs" />]} />
-      <PDFSelector PYQs={PYQs} show_upload={show_upload} />
+      <PDFSelector
+        PYQs={PYQs}
+        show_upload={show_upload}
+        userHeartsIds={userHeartsIds}
+      />
     </>
   )
 }

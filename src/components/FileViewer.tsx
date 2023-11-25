@@ -4,6 +4,7 @@ import { PDFViewer } from "@/components/PDFViewer"
 import prisma from "@/prisma"
 import { getFile } from "@/server/getFile"
 import { Prisma } from "@prisma/client"
+import { useSession } from "next-auth/react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
@@ -32,6 +33,7 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
 }
 
 export function FileViewerUsingId({ id }: { id: number }) {
+  const { data: session } = useSession()
   console.log("id", id)
   const [file, setFile] = useState<Prisma.fileGetPayload<{}> | null>()
   const [loading, setLoading] = useState(true)
@@ -39,7 +41,7 @@ export function FileViewerUsingId({ id }: { id: number }) {
   async function fetchFile() {
     console.log(`id ${id}`)
     setLoading(true)
-    setFile(await getFile(id))
+    setFile(await getFile(id, session))
     setLoading(false)
   }
 
