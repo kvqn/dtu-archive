@@ -11,7 +11,7 @@ export const authOptions = {
   providers: [
     GithubProvider({
       clientId: env.GITHUB_ID,
-      clientSecret: env.GITHUB_ID,
+      clientSecret: env.GITHUB_SECRET,
     }),
     DiscordProvider({
       clientId: env.DISCORD_ID,
