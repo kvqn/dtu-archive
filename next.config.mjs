@@ -25,6 +25,20 @@ const nextConfig = {
     config.resolve.alias.canvas = false
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: "/result",
+        destination: "/under-construction",
+        permanent: false,
+      },
+      {
+        source: "/courses",
+        destination: "/under-construction",
+        permanent: false,
+      },
+    ]
+  },
 }
 
 export default nextConfig

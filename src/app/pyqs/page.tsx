@@ -2,8 +2,6 @@ import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { useServerSession } from "@/lib/utils"
 import prisma from "@/prisma"
 import { isAllowedToUpload } from "@/server/isAllowedToUpload"
-import { useSession } from "next-auth/react"
-import Link from "next/link"
 
 import { PDFSelector } from "./PYQSelector"
 
