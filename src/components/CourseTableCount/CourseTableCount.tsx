@@ -38,7 +38,7 @@ const sortingHeader = (
     <Button
       variant="ghost"
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      className="w-auto h-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
+      className="h-auto w-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
       style={{ whiteSpace: "nowrap" }}
     >
       {columnName}
@@ -133,7 +133,7 @@ export default function CourseTableCount(props: CourseTableProps) {
 
   return (
     <>
-      <div className="flex justify-between mx-10 mt-4">
+      <div className="mx-10 mt-4 flex justify-between">
         <Input
           type="text"
           placeholder="Filter courses..."
@@ -177,7 +177,7 @@ export default function CourseTableCount(props: CourseTableProps) {
         </DropdownMenu>
       </div>
 
-      <div className="overflow-hidden rounded-lg border-2 m-10 bg-zinc-900">
+      <div className="m-10 overflow-hidden rounded-lg border-2 bg-zinc-900">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -214,7 +214,7 @@ export default function CourseTableCount(props: CourseTableProps) {
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={"uppercase font-roboto font-regular"}
+                      className={"font-regular font-roboto uppercase"}
                     >
                       {cell.column.id == "index"
                         ? row_index + 1
@@ -231,7 +231,7 @@ export default function CourseTableCount(props: CourseTableProps) {
               <TableRow>
                 <TableCell
                   colSpan={table.getAllColumns().length}
-                  className="h-24 text-center bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
+                  className="h-24 bg-table-row-bg text-center text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
                 >
                   No results.
                 </TableCell>

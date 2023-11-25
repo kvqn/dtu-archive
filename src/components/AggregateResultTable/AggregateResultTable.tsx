@@ -22,7 +22,7 @@ const sortingHeader = (
     <Button
       variant="ghost"
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      className="w-auto h-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
+      className="h-auto w-auto bg-table-header-button-bg text-table-header-button-fg hover:bg-table-header-button-hover-bg hover:text-table-header-button-hover-fg"
       style={{ whiteSpace: "nowrap" }}
     >
       {columnName}

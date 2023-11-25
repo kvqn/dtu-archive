@@ -19,11 +19,11 @@ export function PDFViewer(props: { url: string }) {
       <Document
         file={props.url}
         onLoadSuccess={onDocumentLoadSuccess}
-        className="flex justify-center items-center"
+        className="flex items-center justify-center"
       >
-        <div className="absolute top-0 left-0 flex flex-col gap-2 items-center">
+        <div className="absolute left-0 top-0 flex flex-col items-center gap-2">
           {Array.from(new Array(numPages), (el, index) => (
-            <Page pageNumber={index + 1} key={index} className="border w-fit" />
+            <Page pageNumber={index + 1} key={index} className="w-fit border" />
           ))}
         </div>
       </Document>

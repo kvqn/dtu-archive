@@ -11,13 +11,13 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
   console.log(type, url)
   if (type === "PDF") {
     return (
-      <div className="relative w-full h-full overflow-auto">
+      <div className="relative h-full w-full overflow-auto">
         <PDFViewer url={url} />
       </div>
     )
   } else {
     return (
-      <div className="w-full h-full flex justify-center items-center">
+      <div className="flex h-full w-full items-center justify-center">
         <img
           src={url}
           alt="Image"
@@ -49,7 +49,7 @@ export function FileViewerUsingId({ id }: { id: number }) {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center w-full h-full">
+      <div className="flex h-full w-full items-center justify-center">
         <p>Loading</p>
       </div>
     )
@@ -59,7 +59,7 @@ export function FileViewerUsingId({ id }: { id: number }) {
 
   if (!file)
     return (
-      <div className="flex flex-col justify-center items-center w-full h-full">
+      <div className="flex h-full w-full flex-col items-center justify-center">
         <div>File not found</div>
         <button onClick={() => fetchFile()} className="hover:underline">
           Retry?

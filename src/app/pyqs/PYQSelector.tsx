@@ -55,12 +55,12 @@ export function PDFSelector({
 
   return (
     <div className="px-[5%]">
-      <div className="flex justify-between items-center mt-4">
+      <div className="mt-4 flex items-center justify-between">
         <div className="flex flex-col items-center">
           <div className="text-lg">Subject Code</div>
           <input
             type="text"
-            className="border rounded-lg h-10 hover:border-slate-300 text-center"
+            className="h-10 rounded-lg border text-center hover:border-slate-300"
             onChange={(e) => {
               setFilter_subjectCode(e.target.value)
             }}
@@ -70,7 +70,7 @@ export function PDFSelector({
           <div className="text-lg">Subject Name</div>
           <input
             type="text"
-            className="border rounded-lg h-10 hover:border-slate-300 text-center"
+            className="h-10 rounded-lg border text-center hover:border-slate-300"
             onChange={(e) => {
               setFilter_subjectName(e.target.value)
             }}
@@ -80,7 +80,7 @@ export function PDFSelector({
           <div className="text-lg">Year</div>
           <input
             type="number"
-            className="border rounded-lg h-10 hover:border-slate-300 text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            className="h-10 rounded-lg border text-center [appearance:textfield] hover:border-slate-300 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             onChange={(e) => {
               const year = e.target.value ? parseInt(e.target.value) : null
               setFilter_year(year)
@@ -90,7 +90,7 @@ export function PDFSelector({
         <div className="flex flex-col items-center">
           <div className="text-lg">Type</div>
           <select
-            className="rounded-lg h-10 text-center"
+            className="h-10 rounded-lg text-center"
             onChange={(e) => {
               setFilter_type(e.target.value)
             }}
@@ -105,21 +105,21 @@ export function PDFSelector({
             </option>
           </select>
         </div>
-        <div className="mx-8 my-4 px-3 py-2 text-xl border rounded-xl bg-green-300 hover:bg-green-400 transition-colors cursor-pointer">
+        <div className="mx-8 my-4 cursor-pointer rounded-xl border bg-green-300 px-3 py-2 text-xl transition-colors hover:bg-green-400">
           {show_upload && <Link href="/pyqs/upload">Upload</Link>}
         </div>
       </div>
-      <div className="flex py-4 justify-between gap-[5%]">
-        <div className="w-full flex flex-col gap-2 overflow-y-auto h-[80vh] pr-2">
+      <div className="flex justify-between gap-[5%] py-4">
+        <div className="flex h-[80vh] w-full flex-col gap-2 overflow-y-auto pr-2">
           {filteredPYQs.map((pyq, index) => (
             <div
               // href={`/api/pyq/${pyq.fileId}`}
               // target="_blank"
               key={index}
               className={twMerge(
-                "border flex justify-between p-4 cursor-pointer transition-colors",
+                "flex cursor-pointer justify-between border p-4 transition-colors",
                 pyq.fileId === activeFileId
-                  ? "bg-gray-200 border-black"
+                  ? "border-black bg-gray-200"
                   : "hover:bg-gray-200"
               )}
               onClick={() => {
@@ -141,11 +141,11 @@ export function PDFSelector({
             </div>
           ))}
         </div>
-        <div className="border w-full relative overflow-auto">
+        <div className="relative w-full overflow-auto border">
           {activeFileId != null ? (
             <FileViewerUsingId id={activeFileId} />
           ) : (
-            <div className="flex justify-center items-center h-full w-full">
+            <div className="flex h-full w-full items-center justify-center">
               <p>select a PYQ</p>
             </div>
           )}
