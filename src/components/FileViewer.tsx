@@ -9,7 +9,6 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 
 export function FileViewer({ url, type }: { url: string; type: string }) {
-  console.log(type, url)
   if (type === "PDF") {
     return (
       <div className="relative h-full w-full overflow-auto">
@@ -34,12 +33,10 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
 
 export function FileViewerUsingId({ id }: { id: number }) {
   const { data: session } = useSession()
-  console.log("id", id)
   const [file, setFile] = useState<Prisma.fileGetPayload<{}> | null>()
   const [loading, setLoading] = useState(true)
 
   async function fetchFile() {
-    console.log(`id ${id}`)
     setLoading(true)
     setFile(await getFile(id, session))
     setLoading(false)
@@ -56,8 +53,6 @@ export function FileViewerUsingId({ id }: { id: number }) {
       </div>
     )
   }
-
-  console.log("file", file)
 
   if (!file)
     return (

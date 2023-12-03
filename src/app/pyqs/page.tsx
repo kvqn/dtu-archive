@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
-  const PYQs = await prisma.pyq.findMany({
+  let PYQs = await prisma.pyq.findMany({
     include: {
       uploadedBy: true,
       file: {
@@ -30,6 +30,8 @@ export default async function Page() {
       },
     },
   })
+
+  PYQs = PYQs.sort((a, b) => b.file._count.FileViews - a.file._count.FileViews)
 
   const session = await useServerSession()
   const show_upload = await isAllowedToUpload(session)
@@ -51,7 +53,6 @@ export default async function Page() {
           fileId: true,
         },
       })
-      console.log("userHearts", userHearts)
       userHeartsIds = userHearts.map((userHeart) => userHeart.fileId)
     }
   }

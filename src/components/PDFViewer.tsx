@@ -11,7 +11,6 @@ export function PDFViewer(props: { url: string }) {
   const [numPages, setNumPages] = useState<number>()
   const [pageNumber, setPageNumber] = useState<number>(1)
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-    console.log(`numpages ${numPages}`)
     setNumPages(numPages)
   }
   return (

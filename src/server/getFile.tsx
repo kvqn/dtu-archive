@@ -25,6 +25,5 @@ export async function getFile(id: number, session: Session | null) {
       id: id,
     },
   })
-  console.log(file)
   return JSON.parse(JSON.stringify(file))
 }

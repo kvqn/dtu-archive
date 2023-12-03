@@ -52,7 +52,6 @@ export function PDFSelector({
   show_upload: boolean
   userHeartsIds: number[]
 }) {
-  console.log("userHeartIds", userHeartsIds)
   const { data: session } = useSession()
   const [activeFileId, setActiveFileId] = useState<number | null>(null)
 
@@ -66,12 +65,6 @@ export function PDFSelector({
   const [_renderCount, forceRender] = useState(0)
 
   useEffect(() => {
-    console.log(
-      filter_subjectCode,
-      filter_subjectName,
-      filter_year,
-      filter_type
-    )
     const filtered = PYQs.filter((pyq) => {
       return (
         pyq.subject_code
@@ -206,7 +199,6 @@ export function PDFSelector({
                             userHeartsIds.splice(_index, 1)
                             forceRender(_renderCount + 1)
                             const success = await heartFile(pyq.fileId, session)
-                            console.log(success)
                             if (success) {
                               toast.success("PYQ un-hearted")
                             } else {
@@ -218,10 +210,8 @@ export function PDFSelector({
                           } else {
                             pyq.file._count.FileHearts++
                             userHeartsIds.push(pyq.fileId)
-                            console.log("pushed")
                             forceRender(_renderCount + 1)
                             const success = await heartFile(pyq.fileId, session)
-                            console.log(success)
                             if (success) {
                               toast.success("PYQ hearted")
                             } else {
@@ -258,8 +248,9 @@ export function PDFSelector({
           {activeFileId != null ? (
             <FileViewerUsingId id={activeFileId} />
           ) : (
-            <div className="flex h-full w-full items-center justify-center">
-              <p>select a PYQ</p>
+            <div className="flex h-full w-full flex-col items-center justify-center">
+              <p className="font-bold">Select a PYQ</p>
+              <p>Preview will show here</p>
             </div>
           )}
         </div>

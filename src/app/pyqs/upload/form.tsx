@@ -24,7 +24,6 @@ export default function Form() {
 
   async function upload(data: FormData) {
     setUploading(true)
-    console.log(file)
     data.append("user_email", session?.user?.email || "")
     data.append("file", file as File)
     const resp = await uploadPYQ(data)
@@ -107,7 +106,6 @@ export default function Form() {
           <div
             className="cursor-pointer text-slate-100 hover:text-black hover:underline"
             onClick={() => {
-              console.log(formRef)
               formRef.current?.reset()
               setFile(null)
             }}

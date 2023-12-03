@@ -25,7 +25,6 @@ export default async function handler(
     if (!pyq) return res.status(404).json({ error: "pyq not found" })
     const buffer = Buffer.from(pyq.file.blob)
     // res.setHeader("Content-Type", "application/pdf")
-    console.log(pyq.file.type.toLocaleLowerCase())
     const file_extension = pyq.file.type.toLocaleLowerCase()
     const content_type = (() => {
       if (pyq.file.type === "PDF") return "application/pdf"

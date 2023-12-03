@@ -52,8 +52,6 @@ export default async function uploadPYQ(data: FormData) {
   )
     return { error: "You must provide a valid type." }
 
-  console.log(file)
-
   // check if same file exists
 
   const existingPyq = await prisma.pyq.findFirst({
