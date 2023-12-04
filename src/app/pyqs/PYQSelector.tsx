@@ -1,5 +1,6 @@
 "use client"
 
+import { MySplit } from "@/components/MySplit/MySplit"
 import { heartFile } from "@/server/heartFile"
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons"
 import {
@@ -141,7 +142,10 @@ export function PDFSelector({
           </Link>
         )}
       </div>
-      <div className="flex justify-between gap-[5%] py-4 font-geist">
+      <MySplit
+        direction="horizontal"
+        className="flex h-full justify-between gap-[2%] py-4 font-geist"
+      >
         <div className="flex h-[80vh] w-full flex-col gap-2 overflow-y-auto pr-2">
           {filteredPYQs.map((pyq, index) => (
             <div
@@ -254,7 +258,7 @@ export function PDFSelector({
             </div>
           )}
         </div>
-      </div>
+      </MySplit>
     </div>
   )
 }
