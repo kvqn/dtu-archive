@@ -79,7 +79,7 @@ export function PDFSelector({
       )
     })
     setFilteredPYQs(filtered)
-  }, [filter_subjectCode, filter_subjectName, filter_year, filter_type])
+  }, [filter_subjectCode, filter_subjectName, filter_year, filter_type, PYQs])
 
   return (
     <div className="px-[5%]">
@@ -151,7 +151,7 @@ export function PDFSelector({
             <div
               key={index}
               className={twMerge(
-                "flex cursor-pointer justify-between rounded-xl border bg-[#e9edef] p-4 text-xs transition-colors lg:text-base",
+                "flex cursor-pointer justify-between rounded-xl border bg-[#e9edef] text-xs transition-colors lg:text-base",
                 pyq.fileId === activeFileId
                   ? "border-2 border-black bg-gray-200"
                   : "hover:bg-gray-200"
@@ -166,83 +166,80 @@ export function PDFSelector({
                 }
               }}
             >
-              <div>
-                <div className="flex gap-4">
-                  <div>{pyq.subject_code}</div>
-                  <div>{pyq.subject_name}</div>
-                </div>
-                <div>Uploaded by {pyq.uploadedBy.name}</div>
-              </div>
-              <div className="flex">
-                <div className="text-right">
+              <div className="flex w-full flex-col p-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-4">
+                    <p>{pyq.subject_code}</p>
+                    <p>{pyq.subject_name}</p>
+                  </div>
                   <div>{pyq.year}</div>
+                </div>
+                <div className="flex items-center justify-between text-right">
+                  <div>Uploaded by {pyq.uploadedBy.name}</div>
                   <div className="rounded border bg-[#f9f9f9] px-1 shadow-sm">
                     {displayType(pyq.type)}
                   </div>
                 </div>
-                <div className="ml-2 flex flex-col border-l border-gray-400 pl-2">
-                  <div className="flex items-center gap-2">
-                    <FontAwesomeIcon
-                      icon={faEye}
-                      style={{ color: "#000000" }}
-                    />
-                    <div>{pyq.file._count.FileViews}</div>
-                  </div>
-                  <div
-                    className="flex items-center gap-2"
-                    onClick={(e) => {
-                      async function _() {
-                        if (!session)
-                          toast.error("You need to be logged in to heart a PYQ")
-                        else {
-                          if (userHeartsIds.includes(pyq.fileId)) {
+              </div>
+              <div className="ml-2 flex w-20 flex-col overflow-hidden rounded-r-xl border-l border-gray-400 bg-gray-50 p-4">
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faEye} style={{ color: "#000000" }} />
+                  <div>{pyq.file._count.FileViews}</div>
+                </div>
+                <div
+                  className="flex items-center gap-2"
+                  onClick={(e) => {
+                    async function _() {
+                      if (!session)
+                        toast.error("You need to be logged in to heart a PYQ")
+                      else {
+                        if (userHeartsIds.includes(pyq.fileId)) {
+                          pyq.file._count.FileHearts--
+                          const _index = userHeartsIds.findIndex(
+                            (id) => id === pyq.fileId
+                          )
+                          userHeartsIds.splice(_index, 1)
+                          forceRender(_renderCount + 1)
+                          const success = await heartFile(pyq.fileId, session)
+                          if (success) {
+                            toast.success("PYQ un-hearted")
+                          } else {
+                            pyq.file._count.FileHearts++
+                            userHeartsIds.push(pyq.fileId)
+                            forceRender(_renderCount + 1)
+                            toast.error("Error un-hearting PYQ")
+                          }
+                        } else {
+                          pyq.file._count.FileHearts++
+                          userHeartsIds.push(pyq.fileId)
+                          forceRender(_renderCount + 1)
+                          const success = await heartFile(pyq.fileId, session)
+                          if (success) {
+                            toast.success("PYQ hearted")
+                          } else {
                             pyq.file._count.FileHearts--
                             const _index = userHeartsIds.findIndex(
                               (id) => id === pyq.fileId
                             )
                             userHeartsIds.splice(_index, 1)
                             forceRender(_renderCount + 1)
-                            const success = await heartFile(pyq.fileId, session)
-                            if (success) {
-                              toast.success("PYQ un-hearted")
-                            } else {
-                              pyq.file._count.FileHearts++
-                              userHeartsIds.push(pyq.fileId)
-                              forceRender(_renderCount + 1)
-                              toast.error("Error un-hearting PYQ")
-                            }
-                          } else {
-                            pyq.file._count.FileHearts++
-                            userHeartsIds.push(pyq.fileId)
-                            forceRender(_renderCount + 1)
-                            const success = await heartFile(pyq.fileId, session)
-                            if (success) {
-                              toast.success("PYQ hearted")
-                            } else {
-                              pyq.file._count.FileHearts--
-                              const _index = userHeartsIds.findIndex(
-                                (id) => id === pyq.fileId
-                              )
-                              userHeartsIds.splice(_index, 1)
-                              forceRender(_renderCount + 1)
-                              toast.error("Error hearting PYQ")
-                            }
+                            toast.error("Error hearting PYQ")
                           }
                         }
                       }
-                      _()
-                    }}
-                  >
-                    <FontAwesomeIcon
-                      icon={
-                        userHeartsIds.includes(pyq.fileId)
-                          ? faHeartSolid
-                          : faHeartRegular
-                      }
-                      style={{ color: "#000000" }}
-                    />
-                    <div>{pyq.file._count.FileHearts}</div>
-                  </div>
+                    }
+                    _()
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={
+                      userHeartsIds.includes(pyq.fileId)
+                        ? faHeartSolid
+                        : faHeartRegular
+                    }
+                    style={{ color: "#000000" }}
+                  />
+                  <div>{pyq.file._count.FileHearts}</div>
                 </div>
               </div>
             </div>
