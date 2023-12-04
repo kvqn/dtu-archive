@@ -1,4 +1,4 @@
-import prisma from "@/prisma"
+import { prisma } from "@/prisma"
 import type { NextApiRequest, NextApiResponse } from "next"
 import { useRouter } from "next/router"
 

@@ -1,6 +1,6 @@
 "use server"
 
-import prisma from "@/prisma"
+import { prisma } from "@/prisma"
 import { Session } from "next-auth"
 
 export async function getFile(id: number, session: Session | null) {

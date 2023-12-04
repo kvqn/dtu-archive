@@ -1,5 +1,5 @@
 import { env } from "@/env.mjs"
-import prisma from "@/prisma"
+import { prisma } from "@/prisma"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import NextAuth from "next-auth"
 import DiscordProvider from "next-auth/providers/discord"

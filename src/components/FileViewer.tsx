@@ -1,7 +1,7 @@
 "use client"
 
 import { PDFViewer } from "@/components/PDFViewer"
-import prisma from "@/prisma"
+import { prisma } from "@/prisma"
 import { getFile } from "@/server/getFile"
 import { Prisma } from "@prisma/client"
 import { useSession } from "next-auth/react"

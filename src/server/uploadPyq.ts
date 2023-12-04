@@ -1,6 +1,6 @@
 "use server"
 
-import prisma from "@/prisma"
+import { prisma } from "@/prisma"
 import { getServerSession } from "next-auth"
 
 export default async function uploadPYQ(data: FormData) {
