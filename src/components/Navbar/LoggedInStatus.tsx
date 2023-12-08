@@ -17,19 +17,25 @@ export default function LoggedInStatus() {
 
   return (
     <div
-      className="flex w-32 items-center justify-center overflow-hidden rounded-xl border bg-blue-100 p-2 text-center"
+      className="flex h-10 w-32 items-center justify-center overflow-hidden rounded-xl border bg-blue-100 p-2 text-center dark:border-[#363b3d] dark:bg-[#1f272b]"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       {!hover ? (
         <div className="flex items-center gap-2">
-          <Image src={image} alt="provide_pic" width={30} height={30} />
+          <Image
+            src={image}
+            alt="provide_pic"
+            width={30}
+            height={30}
+            className="rounded-xl"
+          />
           <div className="font-inter text-base">{session.user.name}</div>
         </div>
       ) : (
         <div
           onClick={() => signOut()}
-          className="w-full cursor-pointer text-center"
+          className="h-full w-full cursor-pointer text-center"
         >
           Sign Out
         </div>

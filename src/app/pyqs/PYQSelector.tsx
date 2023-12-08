@@ -137,7 +137,7 @@ export function PDFSelector({
         {show_upload && (
           <Link
             href="/pyqs/upload"
-            className="mx-8 my-4 cursor-pointer rounded-xl border bg-green-300 px-3 py-2 text-xl transition-colors hover:bg-green-400"
+            className="mx-8 my-4 cursor-pointer rounded-xl border bg-green-300 px-3 py-2 text-xl transition-colors hover:bg-green-400 dark:bg-[#1c985d]"
           >
             Upload
           </Link>
