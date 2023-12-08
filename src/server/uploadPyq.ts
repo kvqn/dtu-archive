@@ -55,19 +55,19 @@ export default async function uploadPYQ(data: FormData) {
 
   // check if same file exists
 
-  const existingPyq = await prisma.pyq.findFirst({
-    where: {
-      year: year,
-      type: type,
-      subject_code: subject_code,
-    },
-  })
+  // const existingPyq = await prisma.pyq.findFirst({
+  //   where: {
+  //     year: year,
+  //     type: type,
+  //     subject_code: subject_code,
+  //   },
+  // })
 
-  if (existingPyq) {
-    return {
-      error: `A PYQ with same year, type and subject already exists.`,
-    }
-  }
+  // if (existingPyq) {
+  //   return {
+  //     error: `A PYQ with same year, type and subject already exists.`,
+  //   }
+  // }
 
   const bytes = await file.arrayBuffer()
   const buffer = Buffer.from(bytes)
