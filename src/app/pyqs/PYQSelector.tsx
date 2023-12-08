@@ -247,7 +247,7 @@ export function PDFSelector({
             </div>
           ))}
         </div>
-        <div className="relative hidden w-full overflow-auto border dark:border-[#363b3d] lg:block">
+        <div className="relative hidden w-full border dark:border-[#363b3d] lg:block">
           {activeFileId != null ? (
             <FileViewerUsingId id={activeFileId} />
           ) : (

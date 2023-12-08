@@ -14,10 +14,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Prisma } from "@prisma/client"
 import { useSession } from "next-auth/react"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import useDraggableScroll from "use-draggable-scroll"
 
 export function FileViewer({ url, type }: { url: string; type: string }) {
   const [scale, setScale] = useState(1)
+
+  const draggableScroll_ref = useRef(null)
+  const draggableScroll_onMouseDown =
+    useDraggableScroll(draggableScroll_ref).onMouseDown
+
   return (
     <div className="flex h-full w-full flex-col">
       <div className="flex items-center justify-between bg-gray-200 px-4 py-2 dark:bg-[#25282a]">
@@ -74,7 +80,11 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
           />
         </div>
       </div>
-      <div className="relative h-full w-full overflow-auto">
+      <div
+        className="relative h-full w-full overflow-auto"
+        ref={draggableScroll_ref}
+        onMouseDown={draggableScroll_onMouseDown}
+      >
         <div
           style={{
             scale: scale,
