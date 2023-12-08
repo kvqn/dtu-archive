@@ -1,6 +1,7 @@
 "use server"
 
 import { prisma } from "@/prisma"
+import { randomUUID } from "crypto"
 import { getServerSession } from "next-auth"
 
 export default async function uploadPYQ(data: FormData) {
@@ -75,6 +76,7 @@ export default async function uploadPYQ(data: FormData) {
     data: {
       type: file_extension,
       blob: buffer,
+      name: randomUUID(),
     },
   })
 
@@ -86,6 +88,29 @@ export default async function uploadPYQ(data: FormData) {
       year,
       type,
       uploadedBy_id: user.id,
+    },
+  })
+
+  let type_name: string = ""
+  if (type === "MID_TERM_QUESTIONS") type_name = "MID"
+  if (type === "END_TERM_QUESTIONS") type_name = "END"
+  if (type === "SUPPLEMENTARY_QUESTIONS") type_name = "SUPP"
+  if (type === "MID_TERM_ANSWERS") type_name = "MID-ANS"
+  if (type === "END_TERM_ANSWERS") type_name = "END-ANS"
+
+  const lowercase_file_extension = file_extension.toLowerCase()
+
+  const file_name = `${subject_code}_${type_name}_${year}_FILE-${createdFile.id}.${lowercase_file_extension}`
+
+  await prisma.file.update({
+    where: {
+      id: createdFile.id,
+    },
+    data: {
+      name: file_name,
+    },
+    select: {
+      id: true,
     },
   })
 

@@ -54,6 +54,7 @@ enum FileType {
 
 model file {
   id         Int          @id @default(autoincrement())
+  name       String       @unique
   blob       Bytes
   type       FileType
   createdAt  DateTime     @default(now()) @db.DateTime(6)

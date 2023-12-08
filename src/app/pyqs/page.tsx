@@ -26,6 +26,7 @@ export default async function Page() {
           id: true,
           createdAt: true,
           type: true,
+          name: true,
         },
       },
     },

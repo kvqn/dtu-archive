@@ -109,20 +109,20 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
   )
 }
 
-export function FileViewerUsingId({ id }: { id: number }) {
+export function FileViewerUsingName({ name }: { name: string }) {
   const { data: session } = useSession()
   const [file, setFile] = useState<Prisma.fileGetPayload<{}> | null>()
   const [loading, setLoading] = useState(true)
 
   async function fetchFile() {
     setLoading(true)
-    setFile(await getFile(id, session))
+    setFile(await getFile(name, session))
     setLoading(false)
   }
 
   useEffect(() => {
     fetchFile()
-  }, [id])
+  }, [name])
 
   if (loading) {
     return (
@@ -142,7 +142,7 @@ export function FileViewerUsingId({ id }: { id: number }) {
       </div>
     )
 
-  const url = `/api/pyq/${id}`
+  const url = `/api/file/${name}`
   const type = file.type
 
   return <FileViewer url={url} type={type} />

@@ -17,7 +17,7 @@ import { isMobile } from "react-device-detect"
 import toast from "react-hot-toast"
 import { twMerge } from "tailwind-merge"
 
-import { FileViewerUsingId } from "../../components/FileViewer"
+import { FileViewerUsingName } from "../../components/FileViewer"
 
 function displayType(type: string): string {
   if (type === "MID_TERM_QUESTIONS") return "Mid Term Questions"
@@ -46,6 +46,7 @@ export function PDFSelector({
           id: true
           createdAt: true
           type: true
+          name: true
         }
       }
     }
@@ -54,7 +55,7 @@ export function PDFSelector({
   userHeartsIds: number[]
 }) {
   const { data: session } = useSession()
-  const [activeFileId, setActiveFileId] = useState<number | null>(null)
+  const [activeFileName, setActiveFileName] = useState<string | null>(null)
 
   const [filteredPYQs, setFilteredPYQs] = useState(PYQs)
 
@@ -152,7 +153,7 @@ export function PDFSelector({
               key={index}
               className={twMerge(
                 "flex cursor-pointer justify-between rounded-xl border bg-[#e9edef] text-xs transition-colors dark:border-[#363b3d] dark:bg-[#1f272b] lg:text-base",
-                pyq.fileId === activeFileId
+                pyq.file.name === activeFileName
                   ? "border-2 border-black bg-gray-200 dark:bg-[#25282a]"
                   : "hover:bg-gray-200"
               )}
@@ -160,9 +161,9 @@ export function PDFSelector({
                 if (isMobile) {
                   window.open(`/api/pyq/${pyq.fileId}`)
                 } else {
-                  if (pyq.fileId === activeFileId) return
+                  if (pyq.file.name === activeFileName) return
                   pyq.file._count.FileViews++
-                  setActiveFileId(pyq.fileId)
+                  setActiveFileName(pyq.file.name)
                 }
               }}
             >
@@ -248,8 +249,8 @@ export function PDFSelector({
           ))}
         </div>
         <div className="relative hidden w-full border dark:border-[#363b3d] lg:block">
-          {activeFileId != null ? (
-            <FileViewerUsingId id={activeFileId} />
+          {activeFileName != null ? (
+            <FileViewerUsingName name={activeFileName} />
           ) : (
             <div className="flex h-full w-full flex-col items-center justify-center">
               <p className="font-bold">Select a PYQ</p>

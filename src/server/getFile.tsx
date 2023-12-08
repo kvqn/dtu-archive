@@ -3,7 +3,7 @@
 import { prisma } from "@/prisma"
 import { Session } from "next-auth"
 
-export async function getFile(id: number, session: Session | null) {
+export async function getFile(name: string, session: Session | null) {
   let user
   if (session?.user?.email) {
     user = await prisma.user.findUnique({
@@ -13,17 +13,19 @@ export async function getFile(id: number, session: Session | null) {
     })
   }
 
+  const file = await prisma.file.findUnique({
+    where: {
+      name: name,
+    },
+  })
+  if (!file) return null
+
   await prisma.fileViews.create({
     data: {
-      fileId: id,
+      fileId: file.id,
       userId: user?.id ? user.id : null,
     },
   })
 
-  const file = await prisma.file.findUnique({
-    where: {
-      id: id,
-    },
-  })
   return JSON.parse(JSON.stringify(file))
 }
