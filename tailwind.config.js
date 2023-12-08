@@ -52,19 +52,18 @@ module.exports = {
           foreground: "var(--accent-foreground)",
         },
         popover: {
-          DEFAULT: "white",
-          foreground: "black",
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        pallet: {
-          0: "black",
-          1: "var(--pallet-1)",
-          2: "var(--pallet-2)",
-          3: "var(--pallet-3)",
-          4: "var(--pallet-4)",
+        palette: {
+          1: "var(--palette-1)",
+          2: "var(--palette-2)",
+          3: "var(--palette-3)",
+          4: "var(--palette-4)",
         },
         table: {
           "header-bg": "var(--table-header-bg)",

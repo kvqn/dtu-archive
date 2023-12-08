@@ -46,7 +46,7 @@ function NavbarRight(props: { children: React.ReactNode; className?: string }) {
     <div className={styles.navbarright + " " + className}>
       {children}
       <LoggedInStatus />
-      {/* <ThemeToggle /> */}
+      <ThemeToggle />
       <ClientSideOnly>
         <GithubIcon />
       </ClientSideOnly>
@@ -94,12 +94,10 @@ export function Navbar(props: {
 
   if (!className) className = ""
   return (
-    <>
-      <div className={twMerge(styles.navbar, className)}>
-        <NavbarLeft>{left}</NavbarLeft>
-        <NavbarCenter>{center}</NavbarCenter>
-        <NavbarRight>{right}</NavbarRight>
-      </div>
-    </>
+    <div className={twMerge(styles.navbar, className, "dark:border-[#363b3d")}>
+      <NavbarLeft>{left}</NavbarLeft>
+      <NavbarCenter>{center}</NavbarCenter>
+      <NavbarRight>{right}</NavbarRight>
+    </div>
   )
 }

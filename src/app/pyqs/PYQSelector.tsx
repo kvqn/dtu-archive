@@ -88,7 +88,7 @@ export function PDFSelector({
           <div className="font-geist text-lg font-semibold">Subject Code</div>
           <input
             type="text"
-            className="h-10 rounded-lg border text-center hover:border-slate-300"
+            className="h-10 rounded-lg border text-center hover:border-slate-300 dark:border-[#363b3d]"
             onChange={(e) => {
               setFilter_subjectCode(e.target.value)
             }}
@@ -98,7 +98,7 @@ export function PDFSelector({
           <div className="font-geist text-lg font-semibold">Subject Name</div>
           <input
             type="text"
-            className="h-10 rounded-lg border text-center hover:border-slate-300"
+            className="h-10 rounded-lg border text-center hover:border-slate-300 dark:border-[#363b3d]"
             onChange={(e) => {
               setFilter_subjectName(e.target.value)
             }}
@@ -108,7 +108,7 @@ export function PDFSelector({
           <div className="font-geist text-lg font-semibold">Year</div>
           <input
             type="number"
-            className="h-10 rounded-lg border text-center [appearance:textfield] hover:border-slate-300 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="h-10 rounded-lg border text-center [appearance:textfield] hover:border-slate-300 dark:border-[#363b3d] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             onChange={(e) => {
               const year = e.target.value ? parseInt(e.target.value) : null
               setFilter_year(year)
@@ -151,9 +151,9 @@ export function PDFSelector({
             <div
               key={index}
               className={twMerge(
-                "flex cursor-pointer justify-between rounded-xl border bg-[#e9edef] text-xs transition-colors lg:text-base",
+                "flex cursor-pointer justify-between rounded-xl border bg-[#e9edef] text-xs transition-colors dark:border-[#363b3d] dark:bg-[#1f272b] lg:text-base",
                 pyq.fileId === activeFileId
-                  ? "border-2 border-black bg-gray-200"
+                  ? "border-2 border-black bg-gray-200 dark:bg-[#25282a]"
                   : "hover:bg-gray-200"
               )}
               onClick={() => {
@@ -175,14 +175,17 @@ export function PDFSelector({
                 </div>
                 <div className="flex items-center justify-between text-right">
                   <div>{pyq.subject_code}</div>
-                  <div className="rounded border bg-[#f9f9f9] px-1 shadow-sm">
+                  <div className="rounded border bg-[#f9f9f9] px-1 shadow-sm dark:border-[#353a3c] dark:bg-[#1b1e1f]">
                     {displayType(pyq.type)}
                   </div>
                 </div>
               </div>
-              <div className="ml-2 flex w-20 flex-col overflow-hidden rounded-r-xl border-l border-gray-400 bg-gray-50 p-4">
+              <div className="ml-2 flex w-20 flex-col overflow-hidden rounded-r-xl border-l border-gray-400 bg-gray-50 p-4 dark:border-[#363b3d] dark:bg-[#1b1d1e]">
                 <div className="flex items-center gap-2">
-                  <FontAwesomeIcon icon={faEye} style={{ color: "#000000" }} />
+                  <FontAwesomeIcon
+                    icon={faEye}
+                    className="text-black dark:text-white"
+                  />
                   <div>{pyq.file._count.FileViews}</div>
                 </div>
                 <div
@@ -236,7 +239,7 @@ export function PDFSelector({
                         ? faHeartSolid
                         : faHeartRegular
                     }
-                    style={{ color: "#000000" }}
+                    className="text-black dark:text-white"
                   />
                   <div>{pyq.file._count.FileHearts}</div>
                 </div>
@@ -244,7 +247,7 @@ export function PDFSelector({
             </div>
           ))}
         </div>
-        <div className="relative hidden w-full overflow-auto border lg:block">
+        <div className="relative hidden w-full overflow-auto border dark:border-[#363b3d] lg:block">
           {activeFileId != null ? (
             <FileViewerUsingId id={activeFileId} />
           ) : (

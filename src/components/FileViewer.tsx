@@ -20,13 +20,13 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
   const [scale, setScale] = useState(1)
   return (
     <div className="flex h-full w-full flex-col">
-      <div className="flex items-center justify-between bg-gray-200 px-4 py-2">
+      <div className="flex items-center justify-between bg-gray-200 px-4 py-2 dark:bg-[#25282a]">
         <div className="flex items-center gap-4">
           <SimpleTooltip
             trigger={
               <FontAwesomeIcon
                 icon={faMagnifyingGlassPlus}
-                className="cursor-pointer text-neutral-700 transition-colors hover:text-neutral-950"
+                className="cursor-pointer text-neutral-700 transition-colors hover:text-neutral-950 dark:text-[#e2dfdb]"
                 onClick={() => {
                   setScale(scale + 0.1)
                 }}
@@ -39,7 +39,7 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
             trigger={
               <FontAwesomeIcon
                 icon={faMagnifyingGlassMinus}
-                className="cursor-pointer text-neutral-700 transition-colors hover:text-neutral-950"
+                className="cursor-pointer text-neutral-700 transition-colors hover:text-neutral-950 dark:text-[#e2dfdb]"
                 onClick={() => {
                   setScale(scale - 0.1)
                 }}
@@ -54,7 +54,7 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
               <a href={url} target="_blank">
                 <FontAwesomeIcon
                   icon={faLink}
-                  className="text-neutral-700 transition-colors hover:text-neutral-950"
+                  className="text-neutral-700 transition-colors hover:text-neutral-950 dark:text-[#e2dfdb]"
                 />
               </a>
             }
@@ -66,7 +66,7 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
               <a href={url} download>
                 <FontAwesomeIcon
                   icon={faDownload}
-                  className="text-neutral-700 transition-colors hover:text-neutral-950"
+                  className="text-neutral-700 transition-colors hover:text-neutral-950 dark:text-[#e2dfdb]"
                 />
               </a>
             }
