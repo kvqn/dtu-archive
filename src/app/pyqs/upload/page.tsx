@@ -1,4 +1,4 @@
-import { useServerSession } from "@/lib/utils"
+import { useServerSession } from "@/lib/server_utils"
 import { isAllowedToUpload } from "@/server/isAllowedToUpload"
 import uploadPYQ from "@/server/uploadPyq"
 import { Metadata } from "next"

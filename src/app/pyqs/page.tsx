@@ -1,5 +1,5 @@
 import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
-import { useServerSession } from "@/lib/utils"
+import { useServerSession } from "@/lib/server_utils"
 import { prisma } from "@/prisma"
 import { isAllowedToUpload } from "@/server/isAllowedToUpload"
 import { Metadata } from "next"

@@ -1,6 +1,7 @@
 "use client"
 
 import { PDFViewer } from "@/components/PDFViewer"
+import { SimpleTooltip } from "@/components/Tooltip"
 import { prisma } from "@/prisma"
 import { getFile } from "@/server/getFile"
 import {
@@ -21,35 +22,56 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
     <div className="flex h-full w-full flex-col">
       <div className="flex items-center justify-between bg-gray-200 px-4 py-2">
         <div className="flex items-center gap-4">
-          <FontAwesomeIcon
-            icon={faMagnifyingGlassPlus}
-            className="text-neutral-700 transition-colors hover:text-neutral-950"
-            onClick={() => {
-              setScale(scale + 0.1)
-            }}
+          <SimpleTooltip
+            trigger={
+              <FontAwesomeIcon
+                icon={faMagnifyingGlassPlus}
+                className="cursor-pointer text-neutral-700 transition-colors hover:text-neutral-950"
+                onClick={() => {
+                  setScale(scale + 0.1)
+                }}
+              />
+            }
+            content="Zoom In"
           />
           <div className="border-black">{scale.toFixed(2)}</div>
-          <FontAwesomeIcon
-            icon={faMagnifyingGlassMinus}
-            className="text-neutral-700 transition-colors hover:text-neutral-950"
-            onClick={() => {
-              setScale(scale - 0.1)
-            }}
+          <SimpleTooltip
+            trigger={
+              <FontAwesomeIcon
+                icon={faMagnifyingGlassMinus}
+                className="cursor-pointer text-neutral-700 transition-colors hover:text-neutral-950"
+                onClick={() => {
+                  setScale(scale - 0.1)
+                }}
+              />
+            }
+            content="Zoom Out"
           />
         </div>
         <div className="flex items-center gap-4">
-          <a href={url} target="_blank">
-            <FontAwesomeIcon
-              icon={faLink}
-              className="text-neutral-700 transition-colors hover:text-neutral-950"
-            />
-          </a>
-          <a href={url} download>
-            <FontAwesomeIcon
-              icon={faDownload}
-              className="text-neutral-700 transition-colors hover:text-neutral-950"
-            />
-          </a>
+          <SimpleTooltip
+            trigger={
+              <a href={url} target="_blank">
+                <FontAwesomeIcon
+                  icon={faLink}
+                  className="text-neutral-700 transition-colors hover:text-neutral-950"
+                />
+              </a>
+            }
+            content="Open in new tab"
+          />
+
+          <SimpleTooltip
+            trigger={
+              <a href={url} download>
+                <FontAwesomeIcon
+                  icon={faDownload}
+                  className="text-neutral-700 transition-colors hover:text-neutral-950"
+                />
+              </a>
+            }
+            content="Download"
+          />
         </div>
       </div>
       <div className="relative h-full w-full overflow-auto">
@@ -61,6 +83,7 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
           {type === "PDF" ? (
             <PDFViewer url={url} />
           ) : (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={url}
               alt="Image"

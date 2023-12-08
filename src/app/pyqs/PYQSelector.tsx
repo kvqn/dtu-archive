@@ -169,13 +169,12 @@ export function PDFSelector({
               <div className="flex w-full flex-col p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex gap-4">
-                    <p>{pyq.subject_code}</p>
                     <p>{pyq.subject_name}</p>
                   </div>
                   <div>{pyq.year}</div>
                 </div>
                 <div className="flex items-center justify-between text-right">
-                  <div>Uploaded by {pyq.uploadedBy.name}</div>
+                  <div>{pyq.subject_code}</div>
                   <div className="rounded border bg-[#f9f9f9] px-1 shadow-sm">
                     {displayType(pyq.type)}
                   </div>
