@@ -4,7 +4,7 @@ import { GeistSans } from "geist/font/sans"
 import { getServerSession } from "next-auth"
 import { Toaster } from "react-hot-toast"
 
-import ContextProvider from "./ContextProvider"
+import ContextProvider from "./providers"
 
 type LayoutProps = {
   children: React.ReactNode

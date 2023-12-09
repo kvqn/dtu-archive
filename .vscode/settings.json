@@ -6,6 +6,9 @@
     "fortawesome",
     "geologica",
     "NEXTAUTH",
+    "nextjs",
+    "pageview",
+    "POSTHOG",
     "pyqs"
   ]
 }
