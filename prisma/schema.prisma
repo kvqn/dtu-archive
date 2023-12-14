@@ -149,3 +149,19 @@ model FileViews {
   file file  @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "file_views_ibfk_1")
   user User? @relation(fields: [userId], references: [id], onUpdate: Restrict, map: "file_views_ibfk_2")
 }
+
+enum NoticeType {
+  LATEST_NEWS
+  NOTICES
+  TENDERS
+  FORTHCOMING_EVENTS
+  FIRST_YEAR_NOTICES
+}
+
+model Notice {
+  id    Int        @id @default(autoincrement())
+  title String     @db.Text
+  link  String?
+  date  DateTime?  @db.Date
+  type  NoticeType
+}
