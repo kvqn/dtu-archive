@@ -42,6 +42,11 @@ export default function Page() {
               href="/pyqs"
             />
             <Card
+              title="Notices"
+              description="Notices scraped from DTU's website. All in one place."
+              href="/notices"
+            />
+            <Card
               title="Results"
               description="View results published by your university in style"
               href="/under-construction"
