@@ -161,7 +161,7 @@ enum NoticeType {
 model Notice {
   id    Int        @id @default(autoincrement())
   title String     @db.Text
-  link  String?
+  link  String
   date  DateTime?  @db.Date
   type  NoticeType
 }
