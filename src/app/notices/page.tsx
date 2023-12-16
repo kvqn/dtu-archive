@@ -10,6 +10,7 @@ export default async function Page() {
   return (
     <>
       <Navbar />
+      <RefreshButton />
       <ClientSidePage notices={notices} />
     </>
   )

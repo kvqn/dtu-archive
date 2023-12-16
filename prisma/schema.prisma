@@ -153,6 +153,7 @@ model FileViews {
 enum NoticeType {
   LATEST_NEWS
   NOTICES
+  JOBS
   TENDERS
   FORTHCOMING_EVENTS
   FIRST_YEAR_NOTICES
