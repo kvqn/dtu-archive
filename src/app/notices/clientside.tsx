@@ -35,10 +35,18 @@ export function ClientSidePage(props: {
 
   return (
     <div className="mx-[20%] flex flex-col gap-8">
-      <h1 className="m-20 w-full text-center font-extrabold">NOTICES</h1>
+      <h1 className="w-full p-20 text-center font-permanent-marker text-6xl font-extrabold">
+        NOTICES
+      </h1>
       <Input
         placeholder="Search"
         left={<FontAwesomeIcon icon={faMagnifyingGlass} className="h-[30%]" />}
+        right={
+          <div className="w-fit whitespace-nowrap">
+            {filteredNotices.length} notice
+            {filteredNotices.length === 1 ? "" : "s"}
+          </div>
+        }
         className="h-16 text-lg"
         onChange={(e) => {
           setFilter(e.target.value)
@@ -47,7 +55,7 @@ export function ClientSidePage(props: {
       {filteredNotices.map((notice, index) => (
         <a
           key={index}
-          className="rounded-xl border p-4"
+          className="rounded-xl border p-4 hover:border-neutral-500 hover:bg-gray-200"
           href={notice.link}
           target="_blank"
         >

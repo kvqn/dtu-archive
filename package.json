@@ -70,7 +70,7 @@
     "prettier-plugin-tailwindcss": "^0.3.0"
   },
   "lint-staged": {
-    "*.{json,tsx,ts,js,jsx,css,md}": "prettier --write"
+    "*.{json,tsx,ts,js,jsx,css,md}": "bunx prettier --write"
   },
   "fontawesome-svg-core": {
     "license": "free"

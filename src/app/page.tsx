@@ -43,7 +43,7 @@ export default function Page() {
             />
             <Card
               title="Notices"
-              description="Notices scraped from the DTU website. All in one place."
+              description="Notices scraped from DTU's website. All in one place."
               href="/notices"
             />
             <Card
