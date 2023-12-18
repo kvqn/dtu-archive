@@ -32,11 +32,6 @@ const nextConfig = {
         destination: "/under-construction",
         permanent: false,
       },
-      {
-        source: "/courses",
-        destination: "/under-construction",
-        permanent: false,
-      },
     ]
   },
   async rewrites() {

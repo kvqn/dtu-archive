@@ -54,7 +54,7 @@ export default function Page() {
             <Card
               title="Courses"
               description="This helps a lot during course registration"
-              href="/under-construction"
+              href="/courses"
             />
           </div>
         </div>
