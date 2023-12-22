@@ -7,11 +7,14 @@
     "fontawesome",
     "fortawesome",
     "geologica",
+    "heirarchy",
     "inngest",
     "NEXTAUTH",
     "nextjs",
     "pageview",
     "POSTHOG",
-    "pyqs"
+    "pyqs",
+    "rollno",
+    "rollnos"
   ]
 }
