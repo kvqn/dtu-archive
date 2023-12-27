@@ -49,7 +49,7 @@ export default function Page() {
             <Card
               title="Results"
               description="View results published by your university in style"
-              href="/under-construction"
+              href="/result"
             />
             <Card
               title="Courses"

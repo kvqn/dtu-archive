@@ -1,3 +1,5 @@
+"use client"
+
 import ResultTable from "@/components/ResultTable/ResultTable"
 import { Button } from "@/components/ui/button"
 import {

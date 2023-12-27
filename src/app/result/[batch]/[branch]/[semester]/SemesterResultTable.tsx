@@ -1,5 +1,13 @@
+"use client"
+
 import ResultTable from "@/components/ResultTable/ResultTable"
 import { Button } from "@/components/ui/button"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import {
   Column,
   ColumnDef,
@@ -14,13 +22,6 @@ import {
 } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { useState } from "react"
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../ui/tooltip"
 
 const sortingHeader = (
   columnName: string
