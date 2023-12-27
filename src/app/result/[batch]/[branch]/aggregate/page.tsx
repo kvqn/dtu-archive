@@ -39,7 +39,7 @@ export default async function Page({
         ]}
       />
 
-      <div className="mx-40 mt-4 flex w-auto space-x-20 font-inter text-2xl font-extrabold">
+      <div className="mx-40 mt-4 flex w-auto space-x-20 font-geist text-2xl font-extrabold">
         <span className="grow text-center">
           Average : {result.average_cgpa}
         </span>

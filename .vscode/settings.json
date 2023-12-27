@@ -18,6 +18,7 @@
     "POSTHOG",
     "pyqs",
     "rollno",
-    "rollnos"
+    "rollnos",
+    "tanstack"
   ]
 }

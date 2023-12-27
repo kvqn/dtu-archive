@@ -28,14 +28,14 @@ export default function ResultTable(props: ResultTableProps) {
   return (
     <>
       <div className="mx-10 mt-4 flex justify-between">
-        <Input
+        <input
           type="text"
           placeholder="Filter names..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm"
+          className="w-80 max-w-sm rounded-xl border-2 border-neutral-400 p-2 active:border-neutral-800"
         />
 
         <DropdownMenu>
@@ -71,20 +71,20 @@ export default function ResultTable(props: ResultTableProps) {
         </DropdownMenu>
       </div>
 
-      <div className="m-10 overflow-hidden rounded-lg border-2 border-table-border-color bg-zinc-900">
+      <div className="m-10 overflow-hidden rounded-lg border-2 border-table-border-color font-geist dark:bg-zinc-900">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
                 key={headerGroup.id}
-                className="bg-table-header-bg hover:bg-table-header-hover-bg"
+                className="border-neutral-500 bg-table-header-bg hover:bg-table-header-hover-bg dark:border-neutral-300"
               >
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
                       className={
-                        "text-table-header-fg hover:text-table-header-hover-fg" +
+                        "text-lg font-bold text-table-header-fg hover:text-table-header-hover-fg" +
                         (header.id != "name" ? " text-center" : "")
                       }
                     >
@@ -104,13 +104,13 @@ export default function ResultTable(props: ResultTableProps) {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
+                  className="border-neutral-200 bg-table-row-bg text-table-row-fg transition-colors hover:bg-gray-200 hover:text-table-row-hover-fg dark:border-neutral-700 dark:hover:bg-zinc-800"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
                       className={
-                        "font-regular font-roboto uppercase" +
+                        "font-regular uppercase" +
                         (cell.column.id != "name" ? " text-center" : "")
                       }
                     >
