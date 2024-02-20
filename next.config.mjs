@@ -27,11 +27,6 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: "/result",
-        destination: "/under-construction",
-        permanent: false,
-      },
     ]
   },
   async rewrites() {
