@@ -1,19 +1,26 @@
-"use client";
+"use client"
 
-import { signIn, signOut, useSession } from "next-auth/react";
-import Image from "next/image";
-import { useState } from "react";
+import { signIn, signOut, useSession } from "next-auth/react"
+import Image from "next/image"
+import { useState } from "react"
 
 export default function LoggedInStatus() {
-  const { data: session } = useSession();
-  const [hover, setHover] = useState(false);
+  const { data: session } = useSession()
+  const [hover, setHover] = useState(false)
 
   if (!session || !session.user) {
-    return <div onClick={() => signIn()}>Log In</div>;
+    return (
+      <div
+        className="cursor-pointer rounded-lg border bg-slate-200 px-4 py-1 font-geist font-semibold transition-colors hover:border-zinc-500 hover:bg-slate-300"
+        onClick={() => signIn()}
+      >
+        Log In
+      </div>
+    )
   }
 
-  let image = session.user.image;
-  if (!image) image = "";
+  let image = session.user.image
+  if (!image) image = ""
 
   return (
     <div
@@ -41,5 +48,5 @@ export default function LoggedInStatus() {
         </div>
       )}
     </div>
-  );
+  )
 }

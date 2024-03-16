@@ -1,5 +1,5 @@
 /** @type {import("prettier").Config} */
-const config = {
+module.exports = {
   plugins: [
     "@trivago/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
@@ -12,6 +12,4 @@ const config = {
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   trailingComma: "es5",
-};
-
-export default config;
+}
