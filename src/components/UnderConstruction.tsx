@@ -6,5 +6,5 @@ export default function UnderConstruction() {
         This page is under construction. Please check back later.
       </p>
     </div>
-  )
+  );
 }

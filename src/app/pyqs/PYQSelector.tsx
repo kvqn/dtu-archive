@@ -1,31 +1,30 @@
-"use client"
+"use client";
 
-import { MySplit } from "@/components/MySplit/MySplit"
-import { heartFile } from "@/server/heartFile"
-import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons"
+import { FileViewerUsingName } from "../../components/FileViewer";
+import { MySplit } from "@/components/MySplit/MySplit";
+import { heartFile } from "@/server/heartFile";
+import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import {
   faEye,
   faHeart as faHeartSolid,
-} from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Prisma } from "@prisma/client"
-import { useSession } from "next-auth/react"
-import Link from "next/link"
-import { redirect } from "next/navigation"
-import { useEffect, useState } from "react"
-import { isMobile } from "react-device-detect"
-import toast from "react-hot-toast"
-import { twMerge } from "tailwind-merge"
-
-import { FileViewerUsingName } from "../../components/FileViewer"
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Prisma } from "@prisma/client";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
+import toast from "react-hot-toast";
+import { twMerge } from "tailwind-merge";
 
 function displayType(type: string): string {
-  if (type === "MID_TERM_QUESTIONS") return "Mid Term Questions"
-  if (type === "END_TERM_QUESTIONS") return "End Term Questions"
-  if (type === "MID_TERM_ANSWERS") return "Mid Term Answers"
-  if (type === "END_TERM_ANSWERS") return "End Term Answers"
-  if (type === "SUPPLEMENTARY_QUESTIONS") return "Supplementary Questions"
-  else return ""
+  if (type === "MID_TERM_QUESTIONS") return "Mid Term Questions";
+  if (type === "END_TERM_QUESTIONS") return "End Term Questions";
+  if (type === "MID_TERM_ANSWERS") return "Mid Term Answers";
+  if (type === "END_TERM_ANSWERS") return "End Term Answers";
+  if (type === "SUPPLEMENTARY_QUESTIONS") return "Supplementary Questions";
+  else return "";
 }
 export function PDFSelector({
   PYQs,
@@ -34,37 +33,37 @@ export function PDFSelector({
 }: {
   PYQs: Prisma.pyqGetPayload<{
     include: {
-      uploadedBy: true
+      uploadedBy: true;
       file: {
         select: {
           _count: {
             select: {
-              FileHearts: true
-              FileViews: true
-            }
-          }
-          id: true
-          createdAt: true
-          type: true
-          name: true
-        }
-      }
-    }
-  }>[]
-  show_upload: boolean
-  userHeartsIds: number[]
+              FileHearts: true;
+              FileViews: true;
+            };
+          };
+          id: true;
+          createdAt: true;
+          type: true;
+          name: true;
+        };
+      };
+    };
+  }>[];
+  show_upload: boolean;
+  userHeartsIds: number[];
 }) {
-  const { data: session } = useSession()
-  const [activeFileName, setActiveFileName] = useState<string | null>(null)
+  const { data: session } = useSession();
+  const [activeFileName, setActiveFileName] = useState<string | null>(null);
 
-  const [filteredPYQs, setFilteredPYQs] = useState(PYQs)
+  const [filteredPYQs, setFilteredPYQs] = useState(PYQs);
 
-  const [filter_subjectCode, setFilter_subjectCode] = useState<string>("")
-  const [filter_subjectName, setFilter_subjectName] = useState<string>("")
-  const [filter_year, setFilter_year] = useState<number | null>(null)
-  const [filter_type, setFilter_type] = useState<string>("ALL")
+  const [filter_subjectCode, setFilter_subjectCode] = useState<string>("");
+  const [filter_subjectName, setFilter_subjectName] = useState<string>("");
+  const [filter_year, setFilter_year] = useState<number | null>(null);
+  const [filter_type, setFilter_type] = useState<string>("ALL");
 
-  const [_renderCount, forceRender] = useState(0)
+  const [_renderCount, forceRender] = useState(0);
 
   useEffect(() => {
     const filtered = PYQs.filter((pyq) => {
@@ -77,10 +76,10 @@ export function PDFSelector({
           .includes(filter_subjectName.toLowerCase()) &&
         (filter_year === null || pyq.year === filter_year) &&
         (filter_type == "ALL" || pyq.type === filter_type)
-      )
-    })
-    setFilteredPYQs(filtered)
-  }, [filter_subjectCode, filter_subjectName, filter_year, filter_type, PYQs])
+      );
+    });
+    setFilteredPYQs(filtered);
+  }, [filter_subjectCode, filter_subjectName, filter_year, filter_type, PYQs]);
 
   return (
     <div className="px-[5%]">
@@ -91,7 +90,7 @@ export function PDFSelector({
             type="text"
             className="h-10 rounded-lg border text-center hover:border-slate-300 dark:border-[#363b3d]"
             onChange={(e) => {
-              setFilter_subjectCode(e.target.value)
+              setFilter_subjectCode(e.target.value);
             }}
           />
         </div>
@@ -101,7 +100,7 @@ export function PDFSelector({
             type="text"
             className="h-10 rounded-lg border text-center hover:border-slate-300 dark:border-[#363b3d]"
             onChange={(e) => {
-              setFilter_subjectName(e.target.value)
+              setFilter_subjectName(e.target.value);
             }}
           />
         </div>
@@ -111,8 +110,8 @@ export function PDFSelector({
             type="number"
             className="h-10 rounded-lg border text-center [appearance:textfield] hover:border-slate-300 dark:border-[#363b3d] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             onChange={(e) => {
-              const year = e.target.value ? parseInt(e.target.value) : null
-              setFilter_year(year)
+              const year = e.target.value ? parseInt(e.target.value) : null;
+              setFilter_year(year);
             }}
           />
         </div>
@@ -121,7 +120,7 @@ export function PDFSelector({
           <select
             className="h-10 rounded-lg text-center"
             onChange={(e) => {
-              setFilter_type(e.target.value)
+              setFilter_type(e.target.value);
             }}
           >
             <option value="ALL">All</option>
@@ -159,11 +158,11 @@ export function PDFSelector({
               )}
               onClick={() => {
                 if (isMobile) {
-                  window.open(`/api/pyq/${pyq.fileId}`)
+                  window.open(`/api/pyq/${pyq.fileId}`);
                 } else {
-                  if (pyq.file.name === activeFileName) return
-                  pyq.file._count.FileViews++
-                  setActiveFileName(pyq.file.name)
+                  if (pyq.file.name === activeFileName) return;
+                  pyq.file._count.FileViews++;
+                  setActiveFileName(pyq.file.name);
                 }
               }}
             >
@@ -194,44 +193,44 @@ export function PDFSelector({
                   onClick={(e) => {
                     async function _() {
                       if (!session)
-                        toast.error("You need to be logged in to heart a PYQ")
+                        toast.error("You need to be logged in to heart a PYQ");
                       else {
                         if (userHeartsIds.includes(pyq.fileId)) {
-                          pyq.file._count.FileHearts--
+                          pyq.file._count.FileHearts--;
                           const _index = userHeartsIds.findIndex(
                             (id) => id === pyq.fileId
-                          )
-                          userHeartsIds.splice(_index, 1)
-                          forceRender(_renderCount + 1)
-                          const success = await heartFile(pyq.fileId, session)
+                          );
+                          userHeartsIds.splice(_index, 1);
+                          forceRender(_renderCount + 1);
+                          const success = await heartFile(pyq.fileId, session);
                           if (success) {
-                            toast.success("PYQ un-hearted")
+                            toast.success("PYQ un-hearted");
                           } else {
-                            pyq.file._count.FileHearts++
-                            userHeartsIds.push(pyq.fileId)
-                            forceRender(_renderCount + 1)
-                            toast.error("Error un-hearting PYQ")
+                            pyq.file._count.FileHearts++;
+                            userHeartsIds.push(pyq.fileId);
+                            forceRender(_renderCount + 1);
+                            toast.error("Error un-hearting PYQ");
                           }
                         } else {
-                          pyq.file._count.FileHearts++
-                          userHeartsIds.push(pyq.fileId)
-                          forceRender(_renderCount + 1)
-                          const success = await heartFile(pyq.fileId, session)
+                          pyq.file._count.FileHearts++;
+                          userHeartsIds.push(pyq.fileId);
+                          forceRender(_renderCount + 1);
+                          const success = await heartFile(pyq.fileId, session);
                           if (success) {
-                            toast.success("PYQ hearted")
+                            toast.success("PYQ hearted");
                           } else {
-                            pyq.file._count.FileHearts--
+                            pyq.file._count.FileHearts--;
                             const _index = userHeartsIds.findIndex(
                               (id) => id === pyq.fileId
-                            )
-                            userHeartsIds.splice(_index, 1)
-                            forceRender(_renderCount + 1)
-                            toast.error("Error hearting PYQ")
+                            );
+                            userHeartsIds.splice(_index, 1);
+                            forceRender(_renderCount + 1);
+                            toast.error("Error hearting PYQ");
                           }
                         }
                       }
                     }
-                    _()
+                    _();
                   }}
                 >
                   <FontAwesomeIcon
@@ -260,5 +259,5 @@ export function PDFSelector({
         </div>
       </MySplit>
     </div>
-  )
+  );
 }

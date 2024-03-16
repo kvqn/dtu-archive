@@ -1,16 +1,16 @@
-import { Card } from "@/components/Card"
-import { Navbar } from "@/components/Navbar/Navbar"
-import { Metadata } from "next"
-import Head from "next/head"
-import Link from "next/link"
-import { useState } from "react"
-import { twMerge } from "tailwind-merge"
+import { Card } from "@/components/Card";
+import { Navbar } from "@/components/Navbar/Navbar";
+import { Metadata } from "next";
+import Head from "next/head";
+import Link from "next/link";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 // import { GeistMono } from 'geist/font/mono';
 
 export const metadata: Metadata = {
   title: "DTU Archive",
-}
+};
 
 export default function Page() {
   return (
@@ -60,5 +60,5 @@ export default function Page() {
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import { PDFViewer } from "@/components/PDFViewer"
-import { SimpleTooltip } from "@/components/Tooltip"
-import { prisma } from "@/prisma"
-import { getFile } from "@/server/getFile"
+import { PDFViewer } from "@/components/PDFViewer";
+import { SimpleTooltip } from "@/components/Tooltip";
+import { prisma } from "@/prisma";
+import { getFile } from "@/server/getFile";
 import {
   faDownload,
   faLink,
   faMagnifyingGlassMinus,
   faMagnifyingGlassPlus,
-} from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Prisma } from "@prisma/client"
-import { useSession } from "next-auth/react"
-import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
-import useDraggableScroll from "use-draggable-scroll"
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Prisma } from "@prisma/client";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import useDraggableScroll from "use-draggable-scroll";
 
 export function FileViewer({ url, type }: { url: string; type: string }) {
-  const [scale, setScale] = useState(1)
+  const [scale, setScale] = useState(1);
 
-  const draggableScroll_ref = useRef(null)
+  const draggableScroll_ref = useRef(null);
   const draggableScroll_onMouseDown =
-    useDraggableScroll(draggableScroll_ref).onMouseDown
+    useDraggableScroll(draggableScroll_ref).onMouseDown;
 
   return (
     <div className="flex h-full w-full flex-col">
@@ -34,7 +34,7 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
                 icon={faMagnifyingGlassPlus}
                 className="cursor-pointer text-neutral-700 transition-colors hover:text-neutral-950 dark:text-[#e2dfdb]"
                 onClick={() => {
-                  setScale(scale + 0.1)
+                  setScale(scale + 0.1);
                 }}
               />
             }
@@ -47,7 +47,7 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
                 icon={faMagnifyingGlassMinus}
                 className="cursor-pointer text-neutral-700 transition-colors hover:text-neutral-950 dark:text-[#e2dfdb]"
                 onClick={() => {
-                  setScale(scale - 0.1)
+                  setScale(scale - 0.1);
                 }}
               />
             }
@@ -106,30 +106,30 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export function FileViewerUsingName({ name }: { name: string }) {
-  const { data: session } = useSession()
-  const [file, setFile] = useState<Prisma.fileGetPayload<{}> | null>()
-  const [loading, setLoading] = useState(true)
+  const { data: session } = useSession();
+  const [file, setFile] = useState<Prisma.fileGetPayload<{}> | null>();
+  const [loading, setLoading] = useState(true);
 
   async function fetchFile() {
-    setLoading(true)
-    setFile(await getFile(name, session))
-    setLoading(false)
+    setLoading(true);
+    setFile(await getFile(name, session));
+    setLoading(false);
   }
 
   useEffect(() => {
-    fetchFile()
-  }, [name])
+    fetchFile();
+  }, [name]);
 
   if (loading) {
     return (
       <div className="flex h-full w-full items-center justify-center">
         <p>Loading</p>
       </div>
-    )
+    );
   }
 
   if (!file)
@@ -140,10 +140,10 @@ export function FileViewerUsingName({ name }: { name: string }) {
           Retry?
         </button>
       </div>
-    )
+    );
 
-  const url = `/api/file/${name}`
-  const type = file.type
+  const url = `/api/file/${name}`;
+  const type = file.type;
 
-  return <FileViewer url={url} type={type} />
+  return <FileViewer url={url} type={type} />;
 }

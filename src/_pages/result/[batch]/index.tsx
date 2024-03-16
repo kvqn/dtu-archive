@@ -1,33 +1,33 @@
-import Custom404 from "@/components/Custom404"
-import GradientLink from "@/components/GradientLink/GradientLink"
-import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
-import { getBatches, getBranches } from "@/lib/data"
-import Head from "next/head"
+import Custom404 from "@/components/Custom404";
+import GradientLink from "@/components/GradientLink/GradientLink";
+import { Navbar, NavbarItem } from "@/components/Navbar/Navbar";
+import { getBatches, getBranches } from "@/lib/data";
+import Head from "next/head";
 
 type Props = {
-  branches: string[]
-  batch: string
-}
+  branches: string[];
+  batch: string;
+};
 
 export const getStaticProps = async ({ params }: any) => {
-  const batch = params.batch as string
-  const branches = await getBranches(batch)
-  return { props: { branches: branches, batch: batch } }
-}
+  const batch = params.batch as string;
+  const branches = await getBranches(batch);
+  return { props: { branches: branches, batch: batch } };
+};
 
 export const getStaticPaths = async () => {
-  const batches = await getBatches()
-  const paths = batches.map((batch) => ({ params: { batch: batch } }))
-  return { paths: paths, fallback: false }
-}
+  const batches = await getBatches();
+  const paths = batches.map((batch) => ({ params: { batch: batch } }));
+  return { paths: paths, fallback: false };
+};
 
 export default function Page(props: Props) {
-  const batch = props.batch
-  const branches = props.branches
+  const batch = props.batch;
+  const branches = props.branches;
 
-  if (!branches) return Custom404()
+  if (!branches) return Custom404();
 
-  const title = `Batch of ${batch}`
+  const title = `Batch of ${batch}`;
 
   return (
     <>
@@ -56,5 +56,5 @@ export default function Page(props: Props) {
         </div>
       </div>
     </>
-  )
+  );
 }

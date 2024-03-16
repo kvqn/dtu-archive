@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { signIn, signOut, useSession } from "next-auth/react"
-import Image from "next/image"
-import { useState } from "react"
+import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function LoggedInStatus() {
-  const { data: session } = useSession()
-  const [hover, setHover] = useState(false)
+  const { data: session } = useSession();
+  const [hover, setHover] = useState(false);
 
   if (!session || !session.user) {
-    return <div onClick={() => signIn()}>Log In</div>
+    return <div onClick={() => signIn()}>Log In</div>;
   }
 
-  let image = session.user.image
-  if (!image) image = ""
+  let image = session.user.image;
+  if (!image) image = "";
 
   return (
     <div
@@ -41,5 +41,5 @@ export default function LoggedInStatus() {
         </div>
       )}
     </div>
-  )
+  );
 }

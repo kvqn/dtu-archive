@@ -1,12 +1,12 @@
-"use client "
+"use client ";
 
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useTheme } from "next-themes"
-import Link from "next/link"
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from "next-themes";
+import Link from "next/link";
 
 export default function GithubIcon() {
-  const { theme } = useTheme()
+  const { theme } = useTheme();
 
   if (theme === "dark")
     return (
@@ -20,7 +20,7 @@ export default function GithubIcon() {
           style={{ color: "#FFFFFF" }}
         />
       </Link>
-    )
+    );
   else
     return (
       <Link
@@ -33,5 +33,5 @@ export default function GithubIcon() {
           style={{ color: "#000000" }}
         />
       </Link>
-    )
+    );
 }

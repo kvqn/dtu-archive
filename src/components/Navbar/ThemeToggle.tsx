@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { Around } from "@theme-toggles/react"
-import { useTheme } from "next-themes"
-import { useState } from "react"
+import { Around } from "@theme-toggles/react";
+import { useTheme } from "next-themes";
+import { useState } from "react";
 
 export default function ThemeToggle() {
-  let [isToggled, setIsToggled] = useState(false)
-  let { setTheme } = useTheme()
+  let [isToggled, setIsToggled] = useState(false);
+  let { setTheme } = useTheme();
 
   const onToggle = () => {
-    if (isToggled) setTheme("light")
-    else setTheme("dark")
-  }
+    if (isToggled) setTheme("light");
+    else setTheme("dark");
+  };
   return (
     <Around
       duration={750}
@@ -20,5 +20,5 @@ export default function ThemeToggle() {
       toggle={setIsToggled}
       onToggle={onToggle}
     />
-  )
+  );
 }

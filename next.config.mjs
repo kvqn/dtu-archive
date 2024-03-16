@@ -1,4 +1,4 @@
-import "./src/env.mjs"
+import "./src/env.mjs";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -22,12 +22,11 @@ const nextConfig = {
     ],
   },
   webpack: (config) => {
-    config.resolve.alias.canvas = false
-    return config
+    config.resolve.alias.canvas = false;
+    return config;
   },
   async redirects() {
-    return [
-    ]
+    return [];
   },
   async rewrites() {
     return [
@@ -35,8 +34,8 @@ const nextConfig = {
         source: "/ingest/:path*",
         destination: "https://app.posthog.com/:path*",
       },
-    ]
+    ];
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;

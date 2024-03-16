@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { twMerge } from "tailwind-merge"
+import Link from "next/link";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 export function Card({
   title,
   description,
   href,
 }: {
-  title: string
-  description: string
-  href: string
+  title: string;
+  description: string;
+  href: string;
 }) {
-  const [hover, setHover] = useState(false)
+  const [hover, setHover] = useState(false);
   return (
     <Link
       href={href}
@@ -31,5 +31,5 @@ export function Card({
         {description}
       </div>
     </Link>
-  )
+  );
 }

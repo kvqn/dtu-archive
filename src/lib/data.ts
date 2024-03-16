@@ -1,38 +1,37 @@
-import { prisma } from "@/prisma"
-
 import conn, {
   ResultGrades,
   ResultHeirarchy,
   ResultStudentDetails,
   query_result,
-} from "./sql"
+} from "./sql";
+import { prisma } from "@/prisma";
 
 function round_to_two_places(num: number) {
-  return Math.round(num * 100 + Number.EPSILON) / 100
+  return Math.round(num * 100 + Number.EPSILON) / 100;
 }
 
 export async function isValidBatch(batch: string): Promise<boolean> {
-  const batches = await getBatches()
-  return batches.includes(batch)
+  const batches = await getBatches();
+  return batches.includes(batch);
 }
 
 export async function getBatches(): Promise<string[]> {
   const result = await query_result(
     `select unique substring(rollno, 1, 4) as batch from result_student_details order by batch desc`
-  )
-  return result.map((row: any) => row["batch"])
+  );
+  return result.map((row: any) => row["batch"]);
 }
 
 export async function isValidBranch(
   batch: string,
   branch: string
 ): Promise<boolean> {
-  const branches = await getBranches(batch)
-  return branches?.includes(branch) ?? false
+  const branches = await getBranches(batch);
+  return branches?.includes(branch) ?? false;
 }
 
 export async function getBranches(batch: string): Promise<string[] | null> {
-  if (!(await isValidBatch(batch))) return null
+  if (!(await isValidBatch(batch))) return null;
   const result = await query_result(
     `
 select unique regexp_substr(rollno, '(?<=\/)[a-zA-Z0-9]+') as branch
@@ -45,8 +44,8 @@ from
 where rollno regexp '\/[A-Z]+\/'
 order by branch asc
       `
-  )
-  return result.map((row: any) => row["branch"])
+  );
+  return result.map((row: any) => row["branch"]);
 }
 
 export async function isValidSemester(
@@ -54,15 +53,15 @@ export async function isValidSemester(
   branch: string,
   semester: string
 ): Promise<boolean> {
-  const semesters = await getSemesters(batch, branch)
-  return semesters?.includes(parseInt(semester)) ?? false
+  const semesters = await getSemesters(batch, branch);
+  return semesters?.includes(parseInt(semester)) ?? false;
 }
 
 export async function getSemesters(
   batch: string,
   branch: string
 ): Promise<number[] | null> {
-  if (!(await isValidBranch(batch, branch))) return null
+  if (!(await isValidBranch(batch, branch))) return null;
   const result = await query_result(
     `
 select distinct semester
@@ -81,8 +80,8 @@ where
     )
 order by semester desc
       `
-  )
-  return result.map((row: any) => row["semester"])
+  );
+  return result.map((row: any) => row["semester"]);
 }
 
 export async function getSemesterResult(
@@ -90,22 +89,22 @@ export async function getSemesterResult(
   branch: string,
   semester: string
 ): Promise<SemesterResult | null> {
-  if (!(await isValidSemester(batch, branch, semester))) return null
+  if (!(await isValidSemester(batch, branch, semester))) return null;
 
-  const details = await _get_semeseter_details(batch, branch, semester)
-  const grades = await _get_semester_grades(batch, branch, semester)
+  const details = await _get_semeseter_details(batch, branch, semester);
+  const grades = await _get_semester_grades(batch, branch, semester);
 
-  let subject_columns = 0
+  let subject_columns = 0;
   for (const student of details) {
     const student_grades = grades.filter(
       (grade) => grade.rollno === student.rollno
-    )
+    );
     if (student_grades.length > subject_columns) {
-      subject_columns = student_grades.length
+      subject_columns = student_grades.length;
     }
   }
 
-  const semester_students: SemesterStudent[] = []
+  const semester_students: SemesterStudent[] = [];
   for (const student of details) {
     const semester_student: SemesterStudent = {
       rollno: student.rollno,
@@ -115,46 +114,46 @@ export async function getSemesterResult(
       tc: student.tc,
       cgpa: student.cgpa,
       failed_papers: student.failed_subjects.split(","),
-    }
+    };
 
     const student_grades = grades.filter(
       (grade) => grade.rollno === student.rollno
-    )
+    );
 
-    semester_student.subjects = student_grades.map((grade) => grade.subject)
+    semester_student.subjects = student_grades.map((grade) => grade.subject);
     if (semester_student.subjects.length < subject_columns) {
       for (let i = semester_student.subjects.length; i < subject_columns; i++) {
-        semester_student.subjects.push(null)
+        semester_student.subjects.push(null);
       }
     }
 
-    semester_student.grades = student_grades.map((grade) => grade.grade)
+    semester_student.grades = student_grades.map((grade) => grade.grade);
     if (semester_student.grades.length < subject_columns) {
       for (let i = semester_student.grades.length; i < subject_columns; i++) {
-        semester_student.grades.push(null)
+        semester_student.grades.push(null);
       }
     }
 
-    semester_students.push(semester_student)
+    semester_students.push(semester_student);
   }
 
-  const subjects: string[] = []
+  const subjects: string[] = [];
   for (let i = 0; i < subject_columns; i++) {
-    subjects.push(`Subject ${i + 1}`)
+    subjects.push(`Subject ${i + 1}`);
   }
 
   semester_students.sort((a, b) => {
-    if (a.cgpa != b.cgpa) return b.cgpa - a.cgpa
-    return a.name.localeCompare(b.name)
-  })
+    if (a.cgpa != b.cgpa) return b.cgpa - a.cgpa;
+    return a.name.localeCompare(b.name);
+  });
 
   const semester_result: SemesterResult = {
     n_students: details.length,
     subjects: subjects,
     students: semester_students,
-  }
+  };
 
-  return semester_result
+  return semester_result;
 }
 
 async function _get_semeseter_details(
@@ -189,17 +188,17 @@ where t1.rollno regexp '${batch}\/${branch}\/'
       tc: row["tc"],
       cgpa: row["cgpa"],
       failed_subjects: row["failed_subjects"],
-    }
-  })
+    };
+  });
 
-  const results = await get_result_heirarchy()
+  const results = await get_result_heirarchy();
 
-  const relevant_details: ResultStudentDetails[] = []
+  const relevant_details: ResultStudentDetails[] = [];
 
-  const considered_students: Set<string> = new Set()
+  const considered_students: Set<string> = new Set();
 
   for (const detail of details) {
-    if (considered_students.has(detail.rollno)) continue
+    if (considered_students.has(detail.rollno)) continue;
 
     relevant_details.push(
       details
@@ -207,19 +206,19 @@ where t1.rollno regexp '${batch}\/${branch}\/'
         .sort((a, b) => {
           const a_heirarchy = results.find(
             (r) => r.result === a.result
-          )?.heirarchy
+          )?.heirarchy;
           const b_heirarchy = results.find(
             (r) => r.result === b.result
-          )?.heirarchy
+          )?.heirarchy;
           // @ts-ignore
-          return b_heirarchy - a_heirarchy
+          return b_heirarchy - a_heirarchy;
         })[0]
-    )
+    );
 
-    considered_students.add(detail.rollno)
+    considered_students.add(detail.rollno);
   }
 
-  return relevant_details
+  return relevant_details;
 }
 
 async function _get_semester_grades(
@@ -243,7 +242,7 @@ where
     rollno regexp '${batch}\/${branch}\/'
       `,
       (err, result) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(
           result.map((row: any) => {
             return {
@@ -251,18 +250,18 @@ where
               rollno: row["rollno"],
               subject: row["subject"],
               grade: row["grade"],
-            }
+            };
           })
-        )
+        );
       }
-    )
-  })
+    );
+  });
 
-  const results = await get_result_heirarchy(semester)
+  const results = await get_result_heirarchy(semester);
 
-  const relevant_grades: ResultGrades[] = []
+  const relevant_grades: ResultGrades[] = [];
 
-  const considered_students: Set<string> = new Set()
+  const considered_students: Set<string> = new Set();
 
   for (const grade of grades) {
     if (
@@ -270,7 +269,7 @@ where
         JSON.stringify({ rollno: grade.rollno, subject: grade.subject })
       ) // Illegal trick
     )
-      continue
+      continue;
 
     relevant_grades.push(
       grades
@@ -278,59 +277,59 @@ where
         .sort((a, b) => {
           const a_heirarchy = results.find(
             (r) => r.result === a.result
-          )?.heirarchy
+          )?.heirarchy;
           const b_heirarchy = results.find(
             (r) => r.result === b.result
-          )?.heirarchy
+          )?.heirarchy;
           // @ts-ignore
-          return b_heirarchy - a_heirarchy
+          return b_heirarchy - a_heirarchy;
         })[0]
-    )
+    );
 
     considered_students.add(
       JSON.stringify({ rollno: grade.rollno, subject: grade.subject })
-    )
+    );
   }
 
-  return relevant_grades
+  return relevant_grades;
 }
 
 export async function getAggregateResult(
   batch: string,
   branch: string
 ): Promise<AggregateResult | null> {
-  if (!(await isValidBranch(batch, branch))) return null
+  if (!(await isValidBranch(batch, branch))) return null;
 
-  const details = await _get_aggregate_details(batch, branch)
-  const semesters_set = new Set<number>()
+  const details = await _get_aggregate_details(batch, branch);
+  const semesters_set = new Set<number>();
 
   for (const result of details) {
-    semesters_set.add(result.semester)
+    semesters_set.add(result.semester);
   }
 
-  const semesters = Array.from(semesters_set).sort()
+  const semesters = Array.from(semesters_set).sort();
 
-  const aggregate_students: AggregateStudent[] = []
-  const names = await _get_aggregate_names(batch, branch)
+  const aggregate_students: AggregateStudent[] = [];
+  const names = await _get_aggregate_names(batch, branch);
 
   for (const name of names) {
-    const results = details.filter((result) => result.rollno === name.rollno)
-    const cgpas = []
-    let total_tc = 0
-    let aggregate = 0
+    const results = details.filter((result) => result.rollno === name.rollno);
+    const cgpas = [];
+    let total_tc = 0;
+    let aggregate = 0;
     for (const semester of semesters) {
-      const result = results.find((result) => result.semester === semester)
+      const result = results.find((result) => result.semester === semester);
       if (result) {
-        cgpas.push(result.cgpa)
-        total_tc += result.tc
-        aggregate += result.cgpa * result.tc
+        cgpas.push(result.cgpa);
+        total_tc += result.tc;
+        aggregate += result.cgpa * result.tc;
       } else {
-        cgpas.push(null)
+        cgpas.push(null);
       }
     }
 
     if (total_tc !== 0) {
-      aggregate /= total_tc
+      aggregate /= total_tc;
     }
 
     const aggregate_student: AggregateStudent = {
@@ -338,15 +337,15 @@ export async function getAggregateResult(
       name: name.name,
       cgpas: cgpas,
       aggregate: round_to_two_places(aggregate),
-    }
+    };
 
-    aggregate_students.push(aggregate_student)
+    aggregate_students.push(aggregate_student);
   }
 
   aggregate_students.sort((a, b) => {
-    if (a.aggregate != b.aggregate) return b.aggregate - a.aggregate
-    return a.name.localeCompare(b.name)
-  })
+    if (a.aggregate != b.aggregate) return b.aggregate - a.aggregate;
+    return a.name.localeCompare(b.name);
+  });
 
   const aggregate_result: AggregateResult = {
     n_students: aggregate_students.length,
@@ -359,14 +358,14 @@ export async function getAggregateResult(
     median_cgpa: aggregate_students.map((student) => student.aggregate).sort()[
       Math.floor(aggregate_students.length / 2)
     ],
-  }
+  };
 
-  return aggregate_result
+  return aggregate_result;
 }
 
 type _AggregateDetails = ResultStudentDetails & {
-  semester: number
-}
+  semester: number;
+};
 
 async function _get_aggregate_details(
   batch: string,
@@ -390,7 +389,7 @@ from
 inner join result_heirarchy as details on details.result = t1.result
       `,
       (err, result) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(
           result.map((row: any) => {
             return {
@@ -400,19 +399,19 @@ inner join result_heirarchy as details on details.result = t1.result
               semester: row["semester"],
               cgpa: row["cgpa"],
               tc: row["tc"],
-            }
+            };
           })
-        )
+        );
       }
-    )
-  })
+    );
+  });
 
-  const results = await get_result_heirarchy()
+  const results = await get_result_heirarchy();
 
-  const relevant_details: _AggregateDetails[] = []
+  const relevant_details: _AggregateDetails[] = [];
 
   const considered_students: Set<{ rollno: string; semester: number }> =
-    new Set()
+    new Set();
 
   for (const detail of details) {
     // @ts-ignore
@@ -422,7 +421,7 @@ inner join result_heirarchy as details on details.result = t1.result
         semester: detail.semester,
       })
     )
-      continue
+      continue;
 
     relevant_details.push(
       details
@@ -432,22 +431,22 @@ inner join result_heirarchy as details on details.result = t1.result
         .sort((a, b) => {
           const a_heirarchy = results.find(
             (r) => r.result === a.result
-          )?.heirarchy
+          )?.heirarchy;
           const b_heirarchy = results.find(
             (r) => r.result === b.result
-          )?.heirarchy
+          )?.heirarchy;
           // @ts-ignore
-          return b_heirarchy - a_heirarchy
+          return b_heirarchy - a_heirarchy;
         })[0]
-    )
+    );
 
     considered_students.add({
       rollno: detail.rollno,
       semester: detail.semester,
-    })
+    });
   }
 
-  return relevant_details
+  return relevant_details;
 }
 
 async function _get_aggregate_names(
@@ -460,11 +459,11 @@ async function _get_aggregate_names(
       select rollno, name from result_student_details where rollno regexp '${batch}\/${branch}\/' group by rollno
       `,
       (err, result) => {
-        if (err) reject(err)
-        resolve(result)
+        if (err) reject(err);
+        resolve(result);
       }
-    )
-  })
+    );
+  });
 }
 
 export async function get_result_heirarchy(
@@ -478,19 +477,19 @@ export async function get_result_heirarchy(
       }
       `,
       (err, result) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(
           result.map((row: any) => {
             return {
               result: row["result"],
               heirarchy: row["heirarchy"],
-            }
+            };
           })
-        )
+        );
       }
-    )
-  })
+    );
+  });
 
-  results.sort((a: any, b: any) => b["heirarchy"] - a["heirarchy"])
-  return results
+  results.sort((a: any, b: any) => b["heirarchy"] - a["heirarchy"]);
+  return results;
 }

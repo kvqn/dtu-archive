@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
+import { Navbar, NavbarItem } from "@/components/Navbar/Navbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,5 +13,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       />
       {children}
     </>
-  )
+  );
 }

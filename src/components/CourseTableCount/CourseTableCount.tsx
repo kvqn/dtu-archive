@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
 import {
   Table,
   TableBody,
@@ -13,9 +13,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import { CourseTableDataCount } from "@/lib/courses"
-import { flexRender } from "@tanstack/react-table"
+} from "@/components/ui/table";
+import { CourseTableDataCount } from "@/lib/courses";
+import { flexRender } from "@tanstack/react-table";
 import {
   Column,
   ColumnDef,
@@ -27,9 +27,9 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table"
-import { ArrowUpDown } from "lucide-react"
-import { useState } from "react"
+} from "@tanstack/react-table";
+import { ArrowUpDown } from "lucide-react";
+import { useState } from "react";
 
 const sortingHeader = (
   columnName: string
@@ -44,18 +44,18 @@ const sortingHeader = (
       {columnName}
       <ArrowUpDown className="ml-2 h-4 w-4" />
     </Button>
-  )
-  return header
-}
+  );
+  return header;
+};
 
 type CourseTableProps = {
-  courses: CourseTableDataCount[]
-}
+  courses: CourseTableDataCount[];
+};
 
 export default function CourseTableCount(props: CourseTableProps) {
-  const { courses } = props
+  const { courses } = props;
 
-  const columnHelper = createColumnHelper<CourseTableDataCount>()
+  const columnHelper = createColumnHelper<CourseTableDataCount>();
 
   const columns: ColumnDef<CourseTableDataCount, string>[] = [
     {
@@ -107,13 +107,13 @@ export default function CourseTableCount(props: CourseTableProps) {
       header: sortingHeader("F"),
       accessorKey: "f",
     },
-  ]
+  ];
 
-  const data = courses
+  const data = courses;
 
-  const [sorting, setSorting] = useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
 
   const table = useReactTable({
     data,
@@ -129,7 +129,7 @@ export default function CourseTableCount(props: CourseTableProps) {
       columnFilters,
       columnVisibility,
     },
-  })
+  });
 
   return (
     <>
@@ -171,7 +171,7 @@ export default function CourseTableCount(props: CourseTableProps) {
                   >
                     <p className="uppercase">{column.id}</p>
                   </DropdownMenuCheckboxItem>
-                )
+                );
               })}
           </DropdownMenuContent>
         </DropdownMenu>
@@ -198,7 +198,7 @@ export default function CourseTableCount(props: CourseTableProps) {
                         header.getContext()
                       )}
                     </TableHead>
-                  )
+                  );
                 })}
               </TableRow>
             ))}
@@ -241,5 +241,5 @@ export default function CourseTableCount(props: CourseTableProps) {
         </Table>
       </div>
     </>
-  )
+  );
 }

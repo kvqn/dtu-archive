@@ -1,19 +1,19 @@
-"use server"
+"use server";
 
-import { prisma } from "@/prisma"
-import { Session } from "next-auth"
+import { prisma } from "@/prisma";
+import { Session } from "next-auth";
 
 export async function heartFile(fileId: number, session: Session) {
-  if (!session.user?.email) return false
-  if (!fileId) return false
+  if (!session.user?.email) return false;
+  if (!fileId) return false;
 
   const user = await prisma.user.findUnique({
     where: {
       email: session.user.email,
     },
-  })
+  });
 
-  if (!user) return false
+  if (!user) return false;
 
   const isAlreadyHearted = await prisma.fileHearts.findUnique({
     where: {
@@ -22,7 +22,7 @@ export async function heartFile(fileId: number, session: Session) {
         userId: user.id,
       },
     },
-  })
+  });
 
   if (isAlreadyHearted) {
     await prisma.fileHearts.delete({
@@ -32,8 +32,8 @@ export async function heartFile(fileId: number, session: Session) {
           userId: user.id,
         },
       },
-    })
-    return true
+    });
+    return true;
   }
 
   try {
@@ -42,10 +42,10 @@ export async function heartFile(fileId: number, session: Session) {
         userId: user.id,
         fileId: fileId,
       },
-    })
+    });
   } catch (e) {
-    return false
+    return false;
   }
 
-  return true
+  return true;
 }

@@ -12,6 +12,6 @@ const config = {
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   trailingComma: "es5",
-}
+};
 
-export default config
+export default config;
