@@ -4,10 +4,7 @@ import "@theme-toggles/react/css/Around.css"
 import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 
-import { ClientSideOnly } from "../ClientSideOnly"
-import GithubIcon from "./GithubIcon"
 import LoggedInStatus from "./LoggedInStatus"
-import ThemeToggle from "./ThemeToggle"
 
 function NavbarDtuarchive() {
   return NavbarItem({ name: "DTU Archive", href: "/" })
@@ -45,9 +42,6 @@ function NavbarRight(props: { children: React.ReactNode; className?: string }) {
     <div className="flex items-center gap-4">
       {children}
       <LoggedInStatus />
-      <ClientSideOnly>
-        <GithubIcon />
-      </ClientSideOnly>
     </div>
   )
 }
@@ -114,7 +108,7 @@ export function Navbar(props: {
   return (
     <div
       className={twMerge(
-        "md:text-md flex w-full p-1 font-geist text-xs sm:text-sm lg:text-lg",
+        "flex w-full p-1 font-geist text-base sm:text-lg lg:text-xl",
         className
       )}
     >
