@@ -4,10 +4,16 @@ import "@theme-toggles/react/css/Around.css"
 import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 
+import { Logo } from "../Logo"
 import LoggedInStatus from "./LoggedInStatus"
 
 function NavbarDtuarchive() {
-  return NavbarItem({ name: "DTU Archive", href: "/" })
+  // return NavbarItem({ name: "DTU Archive", href: "/" })
+  return (
+    <Link href="/">
+      <Logo />
+    </Link>
+  )
 }
 
 function NavbarDivider() {
