@@ -1,11 +1,5 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../ui/tooltip";
-import ResultTable from "@/components/ResultTable/ResultTable";
-import { Button } from "@/components/ui/button";
+import ResultTable from "@/components/ResultTable/ResultTable"
+import { Button } from "@/components/ui/button"
 import {
   Column,
   ColumnDef,
@@ -17,9 +11,16 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
-import { useState } from "react";
+} from "@tanstack/react-table"
+import { ArrowUpDown } from "lucide-react"
+import { useState } from "react"
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip"
 
 const sortingHeader = (
   columnName: string
@@ -34,9 +35,9 @@ const sortingHeader = (
       {columnName}
       <ArrowUpDown className="ml-2 h-4 w-4" />
     </Button>
-  );
-  return header;
-};
+  )
+  return header
+}
 
 const gradeValues: Map<string, number> = new Map([
   ["O", 10],
@@ -47,16 +48,16 @@ const gradeValues: Map<string, number> = new Map([
   ["C", 5],
   ["P", 4],
   ["F", 0],
-]);
+])
 
 type SemesterResultTableProps = {
-  result: SemesterResult;
-};
+  result: SemesterResult
+}
 
 export default function SemesterResultTable(props: SemesterResultTableProps) {
-  const { result } = props;
+  const { result } = props
 
-  const columnHelper = createColumnHelper<SemesterStudent>();
+  const columnHelper = createColumnHelper<SemesterStudent>()
 
   const columns: ColumnDef<SemesterStudent, string>[] = [
     {
@@ -79,13 +80,13 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
           id: subject,
           header: sortingHeader(subject),
           sortingFn: (rowA, rowB, columnId) => {
-            const gradeA = gradeValues.get(rowA.getValue(columnId));
-            const gradeB = gradeValues.get(rowB.getValue(columnId));
-            if (gradeA && gradeB) return gradeA - gradeB;
-            return 0;
+            const gradeA = gradeValues.get(rowA.getValue(columnId))
+            const gradeB = gradeValues.get(rowB.getValue(columnId))
+            if (gradeA && gradeB) return gradeA - gradeB
+            return 0
           },
           cell: ({ row }) => {
-            if (row.original.grades[index] == null) return <></>;
+            if (row.original.grades[index] == null) return <></>
             return (
               <TooltipProvider>
                 <Tooltip>
@@ -99,7 +100,7 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
-            );
+            )
           },
         }
       )
@@ -117,13 +118,13 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
       header: "Failed Papers",
       accessorKey: "failed_papers",
     },
-  ];
+  ]
 
-  const data = result.students;
+  const data = result.students
 
-  const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [sorting, setSorting] = useState<SortingState>([])
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
 
   const table = useReactTable({
     data,
@@ -139,7 +140,7 @@ export default function SemesterResultTable(props: SemesterResultTableProps) {
       columnFilters,
       columnVisibility,
     },
-  });
+  })
 
-  return <ResultTable table={table} />;
+  return <ResultTable table={table} />
 }

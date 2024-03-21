@@ -1,24 +1,24 @@
-import Custom404 from "@/components/Custom404";
-import { Navbar, NavbarItem } from "@/components/Navbar/Navbar";
-import SemesterResultTable from "@/components/SemesterResultTable/SemesterResultTable";
+import Custom404 from "@/components/Custom404"
+import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
+import SemesterResultTable from "@/components/SemesterResultTable/SemesterResultTable"
 import {
   getBatches,
   getBranches,
   getSemesterResult,
   getSemesters,
-} from "@/lib/data";
-import Head from "next/head";
+} from "@/lib/data"
+import Head from "next/head"
 
 type Props = {
-  batch: string;
-  branch: string;
-  semester: string;
-  result: SemesterResult;
-};
+  batch: string
+  branch: string
+  semester: string
+  result: SemesterResult
+}
 
 export const getStaticProps = async ({ params }: any) => {
-  const { batch, branch, semester } = params;
-  const result = await getSemesterResult(batch, branch, semester);
+  const { batch, branch, semester } = params
+  const result = await getSemesterResult(batch, branch, semester)
   return {
     props: {
       batch: batch,
@@ -26,35 +26,35 @@ export const getStaticProps = async ({ params }: any) => {
       semester: semester,
       result: result,
     },
-  };
-};
+  }
+}
 
 export const getStaticPaths = async () => {
-  const paths = [];
-  const batches = await getBatches();
+  const paths = []
+  const batches = await getBatches()
   for (const batch of batches) {
-    const branches = await getBranches(batch);
-    if (!branches) continue;
+    const branches = await getBranches(batch)
+    if (!branches) continue
     for (const branch of branches) {
-      const semesters = await getSemesters(batch, branch);
-      if (!semesters) continue;
+      const semesters = await getSemesters(batch, branch)
+      if (!semesters) continue
       for (const sem of semesters) {
         paths.push({
           params: { batch: batch, branch: branch, semester: sem.toString() },
-        });
+        })
       }
     }
   }
 
-  return { paths: paths, fallback: false };
-};
+  return { paths: paths, fallback: false }
+}
 
 export default function Page(props: Props) {
-  const { batch, branch, semester, result } = props;
+  const { batch, branch, semester, result } = props
 
-  if (!result) return Custom404();
+  if (!result) return Custom404()
 
-  const title = `Sem ${semester} ${branch} ${batch}`;
+  const title = `Sem ${semester} ${branch} ${batch}`
 
   return (
     <>
@@ -81,5 +81,5 @@ export default function Page(props: Props) {
 
       <SemesterResultTable result={result} />
     </>
-  );
+  )
 }

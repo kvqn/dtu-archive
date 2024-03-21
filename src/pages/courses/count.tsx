@@ -1,14 +1,14 @@
-import CourseTableCount from "@/components/CourseTableCount/CourseTableCount";
-import { NavbarItem } from "@/components/Navbar/Navbar";
-import { Navbar } from "@/components/Navbar/Navbar";
-import { getCoursesTableDataCount } from "@/lib/courses";
-import { InferGetStaticPropsType } from "next";
-import Head from "next/head";
+import CourseTableCount from "@/components/CourseTableCount/CourseTableCount"
+import { NavbarItem } from "@/components/Navbar/Navbar"
+import { Navbar } from "@/components/Navbar/Navbar"
+import { getCoursesTableDataCount } from "@/lib/courses"
+import { InferGetStaticPropsType } from "next"
+import Head from "next/head"
 
 export const getStaticProps = async () => {
-  const courses_table_data = await getCoursesTableDataCount();
-  return { props: { courses_table_data: courses_table_data } };
-};
+  const courses_table_data = await getCoursesTableDataCount()
+  return { props: { courses_table_data: courses_table_data } }
+}
 
 export default function Page({
   courses_table_data,
@@ -31,5 +31,5 @@ export default function Page({
       />
       <CourseTableCount courses={courses_table_data} />
     </>
-  );
+  )
 }

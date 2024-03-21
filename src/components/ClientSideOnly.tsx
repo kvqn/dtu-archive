@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 export function ClientSideOnly({ children }: any) {
-  const [isClient, setIsClient] = useState(false);
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    setIsClient(true);
-  }, []);
+    setIsClient(true)
+  }, [])
 
-  return isClient ? children : null;
+  return isClient ? children : null
 }

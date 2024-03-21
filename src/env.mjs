@@ -1,5 +1,5 @@
-import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod";
+import { createEnv } from "@t3-oss/env-nextjs"
+import { z } from "zod"
 
 export const env = createEnv({
   server: {
@@ -20,7 +20,7 @@ export const env = createEnv({
   },
   // If you're using Next.js < 13.4.4, you'll need to specify the runtimeEnv manually
   runtimeEnv: {
-    DATABASE_URL: `mysql://${process.env.MARIADB_USER}:${process.env.MARIADB_PASS}@${process.env.MARIADB_HOST}:${process.env.MARIADB_PORT}/${process.env.MARIADB_DB}`,
+    DATABASE_URL: process.env.DATABASE_URL,
     OPEN_AI_API_KEY: process.env.OPEN_AI_API_KEY,
     MARIADB_HOST: process.env.MARIADB_HOST,
     MARIADB_USER: process.env.MARIADB_USER,
@@ -38,4 +38,4 @@ export const env = createEnv({
   // experimental__runtimeEnv: {
   //   NEXT_PUBLIC_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_PUBLISHABLE_KEY,
   // }
-});
+})

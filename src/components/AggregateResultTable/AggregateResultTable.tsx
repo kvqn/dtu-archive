@@ -1,5 +1,5 @@
-import ResultTable from "@/components/ResultTable/ResultTable";
-import { Button } from "@/components/ui/button";
+import ResultTable from "@/components/ResultTable/ResultTable"
+import { Button } from "@/components/ui/button"
 import {
   Column,
   ColumnDef,
@@ -11,9 +11,9 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
-import { useState } from "react";
+} from "@tanstack/react-table"
+import { ArrowUpDown } from "lucide-react"
+import { useState } from "react"
 
 const sortingHeader = (
   columnName: string
@@ -28,18 +28,18 @@ const sortingHeader = (
       {columnName}
       <ArrowUpDown className="ml-2 h-4 w-4" />
     </Button>
-  );
-  return header;
-};
+  )
+  return header
+}
 
 type AggregateResultTableProps = {
-  result: AggregateResult;
-};
+  result: AggregateResult
+}
 
 export default function AggregateResultTable(props: AggregateResultTableProps) {
-  const { result } = props;
+  const { result } = props
 
-  const columnHelper = createColumnHelper<AggregateStudent>();
+  const columnHelper = createColumnHelper<AggregateStudent>()
 
   const columns: ColumnDef<AggregateStudent, string>[] = [
     {
@@ -74,13 +74,13 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
     //   header: sortingHeader("Total Credits"),
     //   accessorKey: "tc"
     // }
-  ];
+  ]
 
-  const data = result.students;
+  const data = result.students
 
-  const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [sorting, setSorting] = useState<SortingState>([])
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
 
   const table = useReactTable({
     data,
@@ -96,7 +96,7 @@ export default function AggregateResultTable(props: AggregateResultTableProps) {
       columnFilters,
       columnVisibility,
     },
-  });
+  })
 
-  return <ResultTable table={table} />;
+  return <ResultTable table={table} />
 }

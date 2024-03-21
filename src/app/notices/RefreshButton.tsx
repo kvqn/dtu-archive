@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { scrapeNotices } from "@/server/scrapeNotices";
+import { scrapeNotices } from "@/server/scrapeNotices"
 
 export function RefreshButton() {
   async function _scrapeNotices() {
-    "server only";
-    await scrapeNotices();
+    "server only"
+    await scrapeNotices()
   }
-  return <button onClick={_scrapeNotices}>Scrape Notices</button>;
+  return <button onClick={_scrapeNotices}>Scrape Notices</button>
 }

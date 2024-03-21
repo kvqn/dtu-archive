@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
+} from "@/components/ui/dropdown-menu"
+import { Input } from "@/components/ui/input"
 import {
   Table,
   TableBody,
@@ -13,17 +13,17 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { flexRender } from "@tanstack/react-table";
+} from "@/components/ui/table"
+import { flexRender } from "@tanstack/react-table"
 
 type ResultTableProps = {
   table:
     | import("@tanstack/table-core").Table<AggregateStudent>
-    | import("@tanstack/table-core").Table<SemesterStudent>;
-};
+    | import("@tanstack/table-core").Table<SemesterStudent>
+}
 
 export default function ResultTable(props: ResultTableProps) {
-  const { table } = props;
+  const { table } = props
 
   return (
     <>
@@ -65,7 +65,7 @@ export default function ResultTable(props: ResultTableProps) {
                   >
                     <p className="uppercase">{column.id}</p>
                   </DropdownMenuCheckboxItem>
-                );
+                )
               })}
           </DropdownMenuContent>
         </DropdownMenu>
@@ -93,7 +93,7 @@ export default function ResultTable(props: ResultTableProps) {
                         header.getContext()
                       )}
                     </TableHead>
-                  );
+                  )
                 })}
               </TableRow>
             ))}
@@ -139,5 +139,5 @@ export default function ResultTable(props: ResultTableProps) {
         </Table>
       </div>
     </>
-  );
+  )
 }

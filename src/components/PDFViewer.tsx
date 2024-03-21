@@ -1,17 +1,17 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
+import { useState } from "react"
+import { Document, Page, pdfjs } from "react-pdf"
+import "react-pdf/dist/Page/AnnotationLayer.css"
+import "react-pdf/dist/Page/TextLayer.css"
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`
 
 export function PDFViewer(props: { url: string }) {
-  const [numPages, setNumPages] = useState<number>();
-  const [pageNumber, setPageNumber] = useState<number>(1);
+  const [numPages, setNumPages] = useState<number>()
+  const [pageNumber, setPageNumber] = useState<number>(1)
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-    setNumPages(numPages);
+    setNumPages(numPages)
   }
   return (
     <div>
@@ -27,5 +27,5 @@ export function PDFViewer(props: { url: string }) {
         </div>
       </Document>
     </div>
-  );
+  )
 }

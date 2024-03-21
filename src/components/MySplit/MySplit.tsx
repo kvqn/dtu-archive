@@ -1,10 +1,11 @@
-import "./MySplit.css";
-import Split from "react-split";
+import Split from "react-split"
+
+import "./MySplit.css"
 
 export function MySplit(props: {
-  children: any;
-  direction?: "vertical" | "horizontal";
-  className?: string;
+  children: any
+  direction?: "vertical" | "horizontal"
+  className?: string
 }) {
   return (
     // @ts-ignore
@@ -14,5 +15,5 @@ export function MySplit(props: {
     >
       {props.children}
     </Split>
-  );
+  )
 }

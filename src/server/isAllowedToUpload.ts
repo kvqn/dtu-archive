@@ -1,17 +1,17 @@
-"use server";
+"use server"
 
-import { prisma } from "@/prisma";
-import { Session } from "next-auth";
+import { prisma } from "@/prisma"
+import { Session } from "next-auth"
 
 export async function isAllowedToUpload(session: Session | null) {
-  if (!session || !session.user || !session.user.email) return false;
+  if (!session || !session.user || !session.user.email) return false
   const user = await prisma.user.findUnique({
     where: {
       email: session.user.email,
     },
-  });
-  if (!user) return false;
-  if (user.email === "guneetaggarwal@gmail.com") return true;
-  if (user.allowedToUpload) return true;
-  return false;
+  })
+  if (!user) return false
+  if (user.email === "guneetaggarwal@gmail.com") return true
+  if (user.allowedToUpload) return true
+  return false
 }

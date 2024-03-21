@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
+} from "@/components/ui/dropdown-menu"
+import { Input } from "@/components/ui/input"
 import {
   Table,
   TableBody,
@@ -13,9 +13,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { CourseTableDataPercentiles } from "@/lib/courses";
-import { flexRender } from "@tanstack/react-table";
+} from "@/components/ui/table"
+import { CourseTableDataPercentiles } from "@/lib/courses"
+import { flexRender } from "@tanstack/react-table"
 import {
   Column,
   ColumnDef,
@@ -27,9 +27,9 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
-import { useState } from "react";
+} from "@tanstack/react-table"
+import { ArrowUpDown } from "lucide-react"
+import { useState } from "react"
 
 const sortingHeader = (
   columnName: string
@@ -37,7 +37,7 @@ const sortingHeader = (
   const header = ({
     column,
   }: {
-    column: Column<CourseTableDataPercentiles>;
+    column: Column<CourseTableDataPercentiles>
   }) => (
     <Button
       variant="ghost"
@@ -48,18 +48,18 @@ const sortingHeader = (
       {columnName}
       <ArrowUpDown className="ml-2 h-4 w-4" />
     </Button>
-  );
-  return header;
-};
+  )
+  return header
+}
 
 type CourseTableProps = {
-  courses: CourseTableDataPercentiles[];
-};
+  courses: CourseTableDataPercentiles[]
+}
 
 export default function CourseTable(props: CourseTableProps) {
-  const { courses } = props;
+  const { courses } = props
 
-  const columnHelper = createColumnHelper<CourseTableDataPercentiles>();
+  const columnHelper = createColumnHelper<CourseTableDataPercentiles>()
 
   const columns: ColumnDef<CourseTableDataPercentiles, string>[] = [
     {
@@ -95,13 +95,13 @@ export default function CourseTable(props: CourseTableProps) {
       header: sortingHeader("90th Percentile"),
       accessorKey: "ninety_percentile",
     },
-  ];
+  ]
 
-  const data = courses;
+  const data = courses
 
-  const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [sorting, setSorting] = useState<SortingState>([])
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
 
   const table = useReactTable({
     data,
@@ -117,7 +117,7 @@ export default function CourseTable(props: CourseTableProps) {
       columnFilters,
       columnVisibility,
     },
-  });
+  })
 
   return (
     <>
@@ -159,7 +159,7 @@ export default function CourseTable(props: CourseTableProps) {
                   >
                     <p className="uppercase">{column.id}</p>
                   </DropdownMenuCheckboxItem>
-                );
+                )
               })}
           </DropdownMenuContent>
         </DropdownMenu>
@@ -186,7 +186,7 @@ export default function CourseTable(props: CourseTableProps) {
                         header.getContext()
                       )}
                     </TableHead>
-                  );
+                  )
                 })}
               </TableRow>
             ))}
@@ -229,5 +229,5 @@ export default function CourseTable(props: CourseTableProps) {
         </Table>
       </div>
     </>
-  );
+  )
 }

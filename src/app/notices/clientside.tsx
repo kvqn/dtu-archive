@@ -1,37 +1,37 @@
-"use client";
+"use client"
 
-import { Input } from "@/components/Input";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Prisma } from "@prisma/client";
-import { useEffect, useState } from "react";
+import { Input } from "@/components/Input"
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Prisma } from "@prisma/client"
+import { useEffect, useState } from "react"
 
 function noticeType(type: Prisma.NoticeCreateInput["type"]) {
-  if (type === "LATEST_NEWS") return "Latest News";
-  if (type === "NOTICES") return "Notices";
-  if (type === "TENDERS") return "Tenders";
-  if (type === "FORTHCOMING_EVENTS") return "Forthcoming Events";
-  if (type === "FIRST_YEAR_NOTICES") return "First Year Notices";
+  if (type === "LATEST_NEWS") return "Latest News"
+  if (type === "NOTICES") return "Notices"
+  if (type === "TENDERS") return "Tenders"
+  if (type === "FORTHCOMING_EVENTS") return "Forthcoming Events"
+  if (type === "FIRST_YEAR_NOTICES") return "First Year Notices"
 }
 
 function diffDays(date: Date) {
-  return Math.ceil((Date.now() - date.getTime()) / (1000 * 60 * 60 * 24)) - 1;
+  return Math.ceil((Date.now() - date.getTime()) / (1000 * 60 * 60 * 24)) - 1
 }
 
 export function ClientSidePage(props: {
-  notices: Prisma.NoticeGetPayload<{}>[];
+  notices: Prisma.NoticeGetPayload<{}>[]
 }) {
-  const notices = props.notices;
-  const [filteredNotices, setFilteredNotices] = useState(notices);
-  const [filter, setFilter] = useState("");
+  const notices = props.notices
+  const [filteredNotices, setFilteredNotices] = useState(notices)
+  const [filter, setFilter] = useState("")
 
   useEffect(() => {
     setFilteredNotices(
       notices.filter((notice) =>
         notice.title.toLowerCase().includes(filter.toLowerCase())
       )
-    );
-  }, [filter, notices]);
+    )
+  }, [filter, notices])
 
   return (
     <div className="mx-[20%] flex flex-col gap-8">
@@ -49,7 +49,7 @@ export function ClientSidePage(props: {
         }
         className="h-16 text-lg"
         onChange={(e) => {
-          setFilter(e.target.value);
+          setFilter(e.target.value)
         }}
       />
       {filteredNotices.map((notice, index) => (
@@ -73,5 +73,5 @@ export function ClientSidePage(props: {
         </a>
       ))}
     </div>
-  );
+  )
 }

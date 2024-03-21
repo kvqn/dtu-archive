@@ -1,35 +1,35 @@
-"use client";
+"use client"
 
-import { FileViewer } from "@/components/FileViewer";
-import uploadPYQ from "@/server/uploadPyq";
-import { useSession } from "next-auth/react";
-import { useRef, useState } from "react";
-import { FileUploader } from "react-drag-drop-files";
-import toast from "react-hot-toast";
-import { twMerge } from "tailwind-merge";
+import { FileViewer } from "@/components/FileViewer"
+import uploadPYQ from "@/server/uploadPyq"
+import { useSession } from "next-auth/react"
+import { useRef, useState } from "react"
+import { FileUploader } from "react-drag-drop-files"
+import toast from "react-hot-toast"
+import { twMerge } from "tailwind-merge"
 
-const fileTypes = ["PDF"];
+const fileTypes = ["PDF"]
 
 export default function Form() {
-  const { data: session } = useSession();
-  let formRef = useRef<HTMLFormElement>(null);
+  const { data: session } = useSession()
+  let formRef = useRef<HTMLFormElement>(null)
 
-  const [file, setFile] = useState<File | null>(null);
+  const [file, setFile] = useState<File | null>(null)
 
-  const [uploading, setUploading] = useState(false);
+  const [uploading, setUploading] = useState(false)
 
   const handleFileChange = (file: File) => {
-    setFile(file);
-  };
+    setFile(file)
+  }
 
   async function upload(data: FormData) {
-    setUploading(true);
-    data.append("user_email", session?.user?.email || "");
-    data.append("file", file as File);
-    const resp = await uploadPYQ(data);
-    if (resp.error) toast.error(resp.error);
-    if (resp.pyq) toast.success(`Uploaded PYQ #${resp.pyq.fileId}`);
-    setUploading(false);
+    setUploading(true)
+    data.append("user_email", session?.user?.email || "")
+    data.append("file", file as File)
+    const resp = await uploadPYQ(data)
+    if (resp.error) toast.error(resp.error)
+    if (resp.pyq) toast.success(`Uploaded PYQ #${resp.pyq.fileId}`)
+    setUploading(false)
   }
 
   return (
@@ -94,8 +94,8 @@ export default function Form() {
             )}
             // type="submit"
             onClick={() => {
-              setUploading(true);
-              formRef.current?.requestSubmit();
+              setUploading(true)
+              formRef.current?.requestSubmit()
             }}
             disabled={uploading}
           >
@@ -106,8 +106,8 @@ export default function Form() {
           <div
             className="cursor-pointer text-slate-100 hover:text-black hover:underline"
             onClick={() => {
-              formRef.current?.reset();
-              setFile(null);
+              formRef.current?.reset()
+              setFile(null)
             }}
           >
             Clear
@@ -129,5 +129,5 @@ export default function Form() {
         )}
       </div>
     </div>
-  );
+  )
 }

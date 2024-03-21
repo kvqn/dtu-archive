@@ -1,17 +1,17 @@
-import GradientLink from "@/components/GradientLink/GradientLink";
-import { Navbar, NavbarItem } from "@/components/Navbar/Navbar";
-import { getBatches } from "@/lib/data";
-import Head from "next/head";
+import GradientLink from "@/components/GradientLink/GradientLink"
+import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
+import { getBatches } from "@/lib/data"
+import Head from "next/head"
 
 export const getStaticProps = async () => {
-  const batches = await getBatches();
-  batches.splice(batches.indexOf("2K22"), 1);
-  return { props: { batches: batches } };
-};
+  const batches = await getBatches()
+  batches.splice(batches.indexOf("2K22"), 1)
+  return { props: { batches: batches } }
+}
 
 type Props = {
-  batches: string[];
-};
+  batches: string[]
+}
 
 export default function Page({ batches }: Props) {
   return (
@@ -31,5 +31,5 @@ export default function Page({ batches }: Props) {
         ))}
       </div>
     </>
-  );
+  )
 }
