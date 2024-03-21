@@ -1,16 +1,17 @@
-import { Card } from "@/components/Card";
-import { Navbar } from "@/components/Navbar/Navbar";
-import { Metadata } from "next";
-import Head from "next/head";
-import Link from "next/link";
-import { useState } from "react";
-import { twMerge } from "tailwind-merge";
+import { Card } from "@/components/Card"
+import { Logo } from "@/components/Logo"
+import { Navbar } from "@/components/Navbar/Navbar"
+import { Metadata } from "next"
+import Head from "next/head"
+import Link from "next/link"
+import { useState } from "react"
+import { twMerge } from "tailwind-merge"
 
 // import { GeistMono } from 'geist/font/mono';
 
 export const metadata: Metadata = {
   title: "DTU Archive",
-};
+}
 
 export default function Page() {
   return (
@@ -23,13 +24,13 @@ export default function Page() {
               "flex w-full flex-col items-center justify-center gap-20 text-center"
             )}
           >
-            <div
-              className="w-full justify-center text-center font-permanent-marker text-5xl md:text-9xl"
-              // style={{
-              //   fontSize: "7rem",
-              // }}
-            >
-              DTU ARCHIVE
+            <div className="flex items-center">
+              <div className="lg:h-[200] lg:w-[200]">
+                <Logo />
+              </div>
+              <div className="w-full justify-center text-center font-permanent-marker text-5xl md:text-9xl">
+                DTU ARCHIVE
+              </div>
             </div>
             <div className="mx-[10%] font-geist text-3xl font-extrabold md:text-5xl">
               A collection of much needed resources for DTU students.
@@ -60,5 +61,5 @@ export default function Page() {
         </div>
       </div>
     </>
-  );
+  )
 }

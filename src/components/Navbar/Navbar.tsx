@@ -29,7 +29,7 @@ function NavbarLeft(props: {
   return (
     <div className="flex items-center gap-1 lg:gap-4">
       <NavbarDtuarchive />
-      <div className="hidden items-center gap-1 sm:flex">
+      <div className="flex items-center">
         {children.map((child, index) => (
           <>
             <NavbarDivider />
@@ -45,7 +45,7 @@ function NavbarRight(props: { children: React.ReactNode; className?: string }) {
   let { children, className } = props
   if (!className) className = ""
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 px-2">
       {children}
       <LoggedInStatus />
     </div>
@@ -114,7 +114,7 @@ export function Navbar(props: {
   return (
     <div
       className={twMerge(
-        "flex w-full p-1 font-geist text-base sm:text-lg lg:text-xl",
+        "flex w-full font-geologica text-base sm:text-lg lg:text-xl",
         className
       )}
     >
