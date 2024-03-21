@@ -16,19 +16,9 @@
     y="0"
     width="100%"
     height="100%"
-    fill="#ffffff"
+    fill="none"
     fill-opacity="1"
     class="background"
-  ></rect>
-  <rect
-    data-v-0dd9719b=""
-    x="0"
-    y="0"
-    width="100%"
-    height="100%"
-    fill="url(#watermark)"
-    fill-opacity="1"
-    class="watermarklayer"
   ></rect>
   <g
     data-v-0dd9719b=""
