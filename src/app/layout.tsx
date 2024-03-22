@@ -1,3 +1,4 @@
+import { SmallGridBackground } from "@/components/GridBackground"
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import "@/styles/globals.css"
 import { GeistSans } from "geist/font/sans"
@@ -17,7 +18,9 @@ export default async function Layout({ children }: LayoutProps) {
       <head />
       <body>
         <ContextProvider session={session}>
-          <main>{children}</main>
+          <SmallGridBackground>
+            <main>{children}</main>
+          </SmallGridBackground>
         </ContextProvider>
         <Toaster />
       </body>

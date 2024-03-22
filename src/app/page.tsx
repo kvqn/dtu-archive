@@ -15,28 +15,26 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <>
-      <div className="flex h-screen flex-col">
-        {/* <Navbar /> */}
-        <div className="flex w-full flex-grow flex-col items-center justify-evenly">
-          <div
-            className={twMerge(
-              "flex w-full flex-col items-center justify-center gap-20 text-center"
-            )}
-          >
-            <div className="flex items-center">
-              <div className="lg:h-[200] lg:w-[200]">
-                <Logo />
-              </div>
-              <div className="w-full justify-center text-center font-permanent-marker text-5xl md:text-9xl">
-                DTU ARCHIVE
-              </div>
-            </div>
-            <div className="mx-[10%] font-geist text-3xl font-extrabold md:text-5xl">
-              A collection of much needed resources for DTU students.
+    <div className="flex h-screen flex-col">
+      {/* <Navbar /> */}
+      <div className="flex w-full flex-grow flex-col items-center justify-evenly">
+        <div
+          className={twMerge(
+            "flex w-full flex-col items-center justify-center gap-20 text-center"
+          )}
+        >
+          <div className="flex items-center justify-evenly">
+            <Logo className="lg:h-[200px] lg:w-[200px]" />
+            <div className="w-full justify-center text-center font-permanent-marker text-5xl lg:text-9xl">
+              DTU ARCHIVE
             </div>
           </div>
-          <div className="flex flex-col items-center justify-evenly md:flex-row">
+          <div className="mx-[10%] font-geist text-3xl font-extrabold md:text-5xl">
+            A collection of much needed resources for DTU students.
+          </div>
+        </div>
+        <div className="flex flex-wrap items-center justify-evenly gap-4 py-20 md:flex-row">
+          <div className="flex gap-4">
             <Card
               title="Archive"
               description="A collection of past MTE and ETE papers"
@@ -47,6 +45,8 @@ export default function Page() {
               description="Notices scraped from DTU's website. All in one place."
               href="/notices"
             />
+          </div>
+          <div className="flex gap-4">
             <Card
               title="Results"
               description="View results published by your university in style"
@@ -60,6 +60,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
