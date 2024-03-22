@@ -10,7 +10,7 @@ export function Footer() {
   const [hover, setHover] = useState(false)
   return (
     <Link
-      className="group absolute bottom-0 flex w-full cursor-pointer items-center justify-center gap-1 bg-gray-50 py-1 text-base hover:font-bold"
+      className="group fixed bottom-0 flex w-full cursor-pointer items-center justify-center gap-1 bg-gray-50 py-1 text-base hover:font-bold"
       href="https://github.com/kvqn/dtu-archive"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

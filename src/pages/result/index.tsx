@@ -31,7 +31,7 @@ export default function Page({ batches }: Props) {
         ]}
       />
 
-      <div className="m-20">
+      <div className="lg:m-20">
         <h1 className="heading-select">Select your batch</h1>
         {batches.map((batch) => (
           <GradientLink href={`/result/${batch}`} name={batch} key={batch} />
