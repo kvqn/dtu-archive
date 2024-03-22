@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex flex-grow flex-col">
       {/* <Navbar /> */}
       <div className="flex w-full flex-grow flex-col items-center justify-evenly">
         <div
@@ -33,7 +33,7 @@ export default function Page() {
             A collection of much needed resources for DTU students.
           </div>
         </div>
-        <div className="flex flex-wrap items-center justify-evenly gap-4 py-20 md:flex-row">
+        <div className="flex flex-wrap items-center justify-evenly gap-4 py-10 md:flex-row">
           <div className="flex gap-4">
             <Card
               title="Archive"

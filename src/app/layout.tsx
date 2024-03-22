@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer"
 import { SmallGridBackground } from "@/components/GridBackground"
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import "@/styles/globals.css"
@@ -17,12 +18,10 @@ export default async function Layout({ children }: LayoutProps) {
     <html className={`${GeistSans.variable}`}>
       <head />
       <body>
-        <ContextProvider session={session}>
-          <SmallGridBackground>
-            <main>{children}</main>
-          </SmallGridBackground>
-        </ContextProvider>
+        <SmallGridBackground></SmallGridBackground>
+        <ContextProvider session={session}>{children}</ContextProvider>
         <Toaster />
+        <Footer />
       </body>
     </html>
   )
