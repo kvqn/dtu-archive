@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { isMobile } from "react-device-detect"
 import { twMerge } from "tailwind-merge"
 
 export function Card({
@@ -19,11 +18,8 @@ export function Card({
     <Link
       href={href}
       className={twMerge(
-        "relative flex h-[180px] w-[180px] flex-col items-center justify-center rounded-xl border bg-white p-4 text-white shadow-md transition-colors hover:text-gray-300 hover:shadow-xl lg:h-72 lg:w-[300px]",
-        hover && "border-2 border-lime-900 bg-green-100",
-        isMobile
-          ? "pattern-dots-sm border-green-800 bg-green-50 text-gray-300"
-          : "pattern-dots-md"
+        "pattern-dots-sm group relative flex h-[180px] w-[180px] flex-col items-center justify-center rounded-xl border border-green-800 bg-green-50 p-4 text-gray-300 shadow-md transition-colors hover:text-gray-300 hover:shadow-xl lg:h-72 lg:w-[300px] lg:bg-white lg:text-white",
+        hover && "lg:border-2 lg:border-lime-900 lg:bg-green-100"
       )}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
@@ -33,9 +29,8 @@ export function Card({
       </div>
       <div
         className={twMerge(
-          "text-center font-geist text-base font-normal text-black transition-all lg:text-xl",
-          hover || isMobile ? "h-14" : "h-0 opacity-0",
-          isMobile && "h-[60%]"
+          "h-[60%] text-center font-geist text-base font-normal text-black transition-all lg:text-xl",
+          hover ? "lg:h-14" : "lg:h-0 lg:opacity-0"
         )}
       >
         {description}
