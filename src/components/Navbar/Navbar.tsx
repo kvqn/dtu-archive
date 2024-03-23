@@ -31,10 +31,10 @@ function NavbarLeft(props: {
       <NavbarDtuarchive />
       <div className="flex items-center">
         {children.map((child, index) => (
-          <>
+          <div key={index} className="flex items-center gap-1">
             <NavbarDivider />
             {child}
-          </>
+          </div>
         ))}
       </div>
     </div>
