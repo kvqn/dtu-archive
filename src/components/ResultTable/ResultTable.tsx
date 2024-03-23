@@ -40,14 +40,11 @@ export default function ResultTable(props: ResultTableProps) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-table-dropdown-button-bg text-table-dropdown-button-fg hover:bg-table-dropdown-button-hover-bg hover:text-table-dropdown-button-hover-fg">
+            <Button className="border border-green-800 bg-green-500 text-black hover:bg-green-600">
               Columns
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="end"
-            className="bg-table-dropdown-bg text-table-dropdown-fg"
-          >
+          <DropdownMenuContent align="end" className="">
             {table
               .getAllColumns()
               // @ts-ignore
@@ -56,7 +53,7 @@ export default function ResultTable(props: ResultTableProps) {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="focus:bg-table-dropdown-hover-bg focus:text-table-dropdown-hover-fg"
+                    className="focus:bg-green-200"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
@@ -71,20 +68,20 @@ export default function ResultTable(props: ResultTableProps) {
         </DropdownMenu>
       </div>
 
-      <div className="m-10 overflow-hidden rounded-lg border-2 border-table-border-color bg-zinc-900">
+      <div className="m-10 overflow-hidden rounded-lg border-2">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
                 key={headerGroup.id}
-                className="bg-table-header-bg hover:bg-table-header-hover-bg"
+                className="bg-green-300 hover:bg-green-300"
               >
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
                       className={
-                        "text-table-header-fg hover:text-table-header-hover-fg" +
+                        "text-black" +
                         (header.id != "name" ? " text-center" : "")
                       }
                     >
@@ -98,13 +95,13 @@ export default function ResultTable(props: ResultTableProps) {
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
+          <TableBody className="">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row, row_index) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="bg-table-row-bg text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
+                  className="even:bg-slate-100 hover:bg-green-50"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
@@ -127,10 +124,7 @@ export default function ResultTable(props: ResultTableProps) {
               ))
             ) : (
               <TableRow>
-                <TableCell
-                  colSpan={table.getAllColumns().length}
-                  className="h-24 bg-table-row-bg text-center text-table-row-fg hover:bg-table-row-hover-bg hover:text-table-row-hover-fg"
-                >
+                <TableCell colSpan={table.getAllColumns().length}>
                   No results.
                 </TableCell>
               </TableRow>
