@@ -1,6 +1,7 @@
 import { Card } from "@/components/Card"
 import { Logo } from "@/components/Logo"
 import { Navbar } from "@/components/Navbar/Navbar"
+import { SortButton } from "@/components/SortButton"
 import { Metadata } from "next"
 import Head from "next/head"
 import Link from "next/link"
