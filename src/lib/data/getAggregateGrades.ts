@@ -10,7 +10,7 @@ type AggregateGradesRaw = {
   credits: number
 }
 
-type AggregateResult = {
+export type AggregateResult = {
   students: {
     name: string
     rollno: string
@@ -21,6 +21,8 @@ type AggregateResult = {
         grade: string
         credits: number
       }[]
+      cgpa: number
+      credits: number
     }[]
     totalCredits: number
     cgpa: number
@@ -28,7 +30,7 @@ type AggregateResult = {
   }[]
 }
 
-export async function getAggregateGrades(
+export async function getAggregateResult(
   batch: string,
   branch: string
 ): Promise<AggregateResult> {
@@ -134,6 +136,8 @@ from
         grade: grade.grade,
         credits: grade.credits,
       })
+      semester.cgpa += grade.credits * gradeValue(grade.grade)
+      semester.credits += grade.credits
     } else {
       student.semesters.push({
         semester: grade.semester,
@@ -144,6 +148,8 @@ from
             credits: grade.credits,
           },
         ],
+        cgpa: grade.credits * gradeValue(grade.grade),
+        credits: grade.credits,
       })
     }
 
@@ -154,9 +160,20 @@ from
   for (const rollno of Array.from(students.keys())) {
     const student = students.get(rollno)!
     student.cgpa /= student.totalCredits
+    for (const semester of student.semesters) {
+      semester.cgpa /= semester.credits
+    }
+  }
+
+  const students_list = Array.from(students.values()).sort(
+    (a, b) => b.cgpa - a.cgpa
+  )
+  for (let i = 0; i < students_list.length; i++) {
+    students_list[i].rank = i + 1
+    students_list[i].semesters.sort((a, b) => a.semester - b.semester)
   }
 
   return {
-    students: Array.from(students.values()),
+    students: students_list,
   }
 }

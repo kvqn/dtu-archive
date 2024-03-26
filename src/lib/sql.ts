@@ -1,11 +1,12 @@
-import { createConnection } from "mysql"
+import { env } from "@/env.mjs"
+import { createConnection } from "mysql2"
 
 const conn = createConnection({
-  host: process.env.MARIADB_HOST,
-  user: process.env.MARIADB_USER,
-  password: process.env.MARIADB_PASS,
-  port: parseInt(process.env.MARIADB_PORT as string),
-  database: process.env.MARIADB_DB,
+  host: env.MARIADB_HOST,
+  user: env.MARIADB_USER,
+  password: env.MARIADB_PASS,
+  port: parseInt(env.MARIADB_PORT as string),
+  database: env.MARIADB_DB,
 })
 
 conn.connect()

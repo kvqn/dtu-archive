@@ -17,9 +17,9 @@ export function Footer() {
     >
       Star
       {hover ? (
-        <FontAwesomeIcon icon={faStarSolid} />
+        <FontAwesomeIcon icon={faStarSolid} className="h-4" />
       ) : (
-        <FontAwesomeIcon icon={faStarRegular} />
+        <FontAwesomeIcon icon={faStarRegular} className="h-4" />
       )}
       this project on GitHub
     </Link>

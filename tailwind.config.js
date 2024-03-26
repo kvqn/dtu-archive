@@ -32,6 +32,7 @@ module.exports = {
         "permanent-marker": ["Permanent Marker", "cursive"],
         rowdies: ["Rowdies", "cursive"],
         geist: ["var(--font-geist-sans)"],
+        "geist-mono": ["var(--font-geist-mono)"],
       },
       colors: {
         border: "hsl(var(--border))",

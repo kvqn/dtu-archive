@@ -1,5 +1,23 @@
 import { SemesterResult } from "@/components/SemesterResult"
-import getSemesterResult from "@/lib/data/getSemesterGrades"
+import { getBatches, getBranches, getSemesters } from "@/lib/data"
+
+export async function generateStaticParams() {
+  const paths = []
+  const batches = await getBatches()
+  for (const batch of batches) {
+    const branches = await getBranches(batch)
+    if (!branches) continue
+    for (const branch of branches) {
+      const semesters = await getSemesters(batch, branch)
+      if (!semesters) continue
+      for (const sem of semesters) {
+        paths.push({ batch: batch, branch: branch, semester: sem.toString() })
+      }
+    }
+  }
+
+  return paths
+}
 
 export default async function Page({
   params,
