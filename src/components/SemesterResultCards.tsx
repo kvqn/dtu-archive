@@ -40,7 +40,7 @@ export function SemesterResultCards({ result }: { result: SemesterResult }) {
 
   return (
     <div className="flex w-full justify-center font-geist">
-      <div className="flex w-[90%] flex-col items-center gap-4">
+      <div className="flex w-[90%] max-w-[600px] flex-col items-center gap-4">
         {filteredStudents.map((student, index) => (
           <div
             key={index}

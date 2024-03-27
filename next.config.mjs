@@ -26,7 +26,23 @@ const nextConfig = {
     return config
   },
   async redirects() {
-    return []
+    return [
+      {
+        source: "/notices",
+        destination: "/under-construction",
+        permanent: false,
+      },
+      {
+        source: "/pyqs",
+        destination: "/under-construction",
+        permanent: false,
+      },
+      {
+        source: "/students",
+        destination: "/under-construction",
+        permanent: false,
+      },
+    ]
   },
   async rewrites() {
     return [
