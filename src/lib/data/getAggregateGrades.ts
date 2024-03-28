@@ -56,11 +56,11 @@ from
 where
 	latest_rollno rlike '${batch}/${branch}/.*'
 ),
-MIN_HEIRARCHY as (
+MAX_HEIRARCHY as (
 select
 	latest_rollno,
 	subject,
-	min(heirarchy) as min_heirarchy
+	max(heirarchy) as max_heirarchy
 from
 	CORRECT_BATCH
 natural join result_heirarchy
@@ -75,9 +75,9 @@ select
 	subject,
 	semester
 from
-	MIN_HEIRARCHY
+	MAX_HEIRARCHY
 inner join result_heirarchy on
-	heirarchy = min_heirarchy
+	heirarchy = max_heirarchy
 ),
 FINAL_RESULT as (
 select
