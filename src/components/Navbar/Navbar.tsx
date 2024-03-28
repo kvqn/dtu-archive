@@ -47,7 +47,7 @@ function NavbarRight(props: { children: React.ReactNode; className?: string }) {
   return (
     <div className="flex items-center gap-4 px-2">
       {children}
-      <LoggedInStatus />
+      {/* <LoggedInStatus /> */}
     </div>
   )
 }

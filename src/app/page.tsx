@@ -1,33 +1,45 @@
+"use client"
+
 import { Card } from "@/components/Card"
 import { Logo } from "@/components/Logo"
-import { Navbar } from "@/components/Navbar/Navbar"
-import { SortButton } from "@/components/SortButton"
-import { Metadata } from "next"
-import Head from "next/head"
-import Link from "next/link"
+import LoggedInStatus from "@/components/Navbar/LoggedInStatus"
+import { cn } from "@/lib/utils"
 import { useState } from "react"
 import { twMerge } from "tailwind-merge"
 
 // import { GeistMono } from 'geist/font/mono';
 
-export const metadata: Metadata = {
-  title: "DTU Archive",
-}
-
 export default function Page() {
+  const [clickedTitle, setClickedTitle] = useState(0)
+
   return (
     <div className="flex flex-grow flex-col">
       {/* <Navbar /> */}
       <div className="flex w-full flex-grow flex-col items-center justify-evenly">
         <div
           className={twMerge(
-            "flex w-full flex-col items-center justify-center gap-20 text-center"
+            "flex w-full flex-col items-center justify-center gap-4 text-center"
           )}
         >
           <div className="flex items-center justify-evenly">
             <Logo className="lg:h-[200px] lg:w-[200px]" />
-            <div className="w-full justify-center text-center font-permanent-marker text-5xl lg:text-9xl">
+            <div
+              className="w-full select-none justify-center text-center font-permanent-marker text-5xl lg:text-9xl"
+              onClick={() => {
+                setClickedTitle(clickedTitle + 1)
+              }}
+            >
               DTU ARCHIVE
+            </div>
+          </div>
+          <div>
+            <div
+              className={cn(
+                "transition-opacity",
+                clickedTitle >= 5 ? "opacity-100" : "opacity-0"
+              )}
+            >
+              <LoggedInStatus />
             </div>
           </div>
           <div className="mx-[10%] font-geist text-3xl font-extrabold md:text-5xl">
