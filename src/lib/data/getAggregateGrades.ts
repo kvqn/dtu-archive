@@ -81,11 +81,19 @@ inner join result_heirarchy on
 ),
 FINAL_RESULT as (
 select
-	*,
-	4 as credits
+	*
 FROM
 	CORRECT_BATCH
 natural join CORRECT_RESULT
+),
+WITH_CREDITS as (
+select
+	FINAL_RESULT.*,
+	ifnull(subject_details.credits, 4) as credits
+from
+	FINAL_RESULT
+left join subject_details on
+	FINAL_RESULT.subject = subject_details.code
 )
 select
 	latest_rollno,
@@ -94,7 +102,7 @@ select
 	semester,
 	credits
 from
-	FINAL_RESULT;
+	WITH_CREDITS;
     `)
   ).map((x: any) => ({
     latest_rollno: x["latest_rollno"],

@@ -13,10 +13,10 @@ export const authOptions = {
       clientId: env.GITHUB_ID,
       clientSecret: env.GITHUB_SECRET,
     }),
-    // DiscordProvider({
-    //   clientId: env.DISCORD_ID,
-    //   clientSecret: env.DISCORD_SECRET,
-    // }),
+    DiscordProvider({
+      clientId: env.DISCORD_ID,
+      clientSecret: env.DISCORD_SECRET,
+    }),
     // ...add more providers here
   ],
 }

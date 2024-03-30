@@ -85,16 +85,24 @@ inner join result_heirarchy on
 ),
 FINAL_RESULT as (
 select
-	*,
-  4 as credits
+	*
 from
 	CORRECT_BATCH
-natural join CORRECT_RESULT
+natural join CORRECT_RESULT natural join subject_details
+),
+WITH_CREDITS as (
+select
+	FINAL_RESULT.*,
+	ifnull(subject_details.credits, 4) as credits
+from
+	FINAL_RESULT
+left join subject_details on
+	FINAL_RESULT.subject = subject_details.code
 )
 select
 	*
 from
-	FINAL_RESULT;
+	WITH_CREDITS;
     `)
   ).map((row: any) => ({
     result: row["result"],

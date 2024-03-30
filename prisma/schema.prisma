@@ -47,6 +47,12 @@ model rollnos {
   new String @unique(map: "new") @db.Char(16)
 }
 
+model subject_details {
+  code    String @id @db.Char(10)
+  name    String @db.Char(100)
+  credits Int    @db.SmallInt
+}
+
 enum FileType {
   PDF
   JPEG
