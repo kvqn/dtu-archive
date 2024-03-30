@@ -60,7 +60,9 @@ export default function Page(
       />
 
       <div>
-        <h1 className="heading-select">Select semester</h1>
+        <h1 className="w-full p-10 text-center font-geologica text-3xl lg:text-5xl">
+          Select semester
+        </h1>
         <GradientLink
           href={`/result/${batch}/${branch}/aggregate`}
           name="Aggregate"

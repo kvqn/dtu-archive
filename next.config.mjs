@@ -27,11 +27,21 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // {
-      //   source: "/result",
-      //   destination: "/under-construction",
-      //   permanent: false,
-      // },
+      {
+        source: "/notices",
+        destination: "/under-construction",
+        permanent: false,
+      },
+      {
+        source: "/pyqs",
+        destination: "/under-construction",
+        permanent: false,
+      },
+      {
+        source: "/students",
+        destination: "/under-construction",
+        permanent: false,
+      },
     ]
   },
   async rewrites() {

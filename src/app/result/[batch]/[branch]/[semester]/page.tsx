@@ -1,46 +1,39 @@
-import Custom404 from "@/components/Custom404"
-import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
-import { getSemesterResult } from "@/server/getSemesterResult"
-import Head from "next/head"
+import { SemesterResult } from "@/components/SemesterResult"
+import { getBatches, getBranches, getSemesters } from "@/lib/data"
 
-import SemesterResultTable from "./SemesterResultTable"
+export async function generateStaticParams() {
+  const paths = []
+  const batches = await getBatches()
+  for (const batch of batches) {
+    const branches = await getBranches(batch)
+    if (!branches) continue
+    for (const branch of branches) {
+      const semesters = await getSemesters(batch, branch)
+      if (!semesters) continue
+      for (const sem of semesters) {
+        paths.push({ batch: batch, branch: branch, semester: sem.toString() })
+      }
+    }
+  }
+
+  return paths
+}
 
 export default async function Page({
   params,
 }: {
   params: { batch: string; branch: string; semester: string }
 }) {
-  const batch = params.batch
-  const branch = params.branch
-  const semester = params.semester
-  const result = await getSemesterResult(batch, branch, semester)
-
-  if (!result) return Custom404()
+  // TODO: check params
 
   return (
     <>
-      <Head>
-        <title>Semester Result</title>
-      </Head>
-
-      <Navbar
-        left={[
-          <NavbarItem name="Result" href="/result" key="result" />,
-          <NavbarItem name={batch} href={`/result/${batch}`} key="batch" />,
-          <NavbarItem
-            name={branch}
-            href={`/result/${batch}/${branch}`}
-            key="branch"
-          />,
-          <NavbarItem
-            name={"Sem " + semester}
-            href={`/result/${batch}/${branch}/${semester}`}
-            key="semester"
-          />,
-        ]}
+      {/* @ts-expect-error Server Component */}
+      <SemesterResult
+        batch={params.batch}
+        branch={params.branch}
+        semester={parseInt(params.semester)}
       />
-
-      <SemesterResultTable result={result} />
     </>
   )
 }

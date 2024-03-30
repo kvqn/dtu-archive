@@ -1,23 +1,23 @@
 "use client"
 
 import "@theme-toggles/react/css/Around.css"
-import { signIn, useSession } from "next-auth/react"
-import Image from "next/image"
 import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 
-import { ClientSideOnly } from "../ClientSideOnly"
-import GithubIcon from "./GithubIcon"
+import { Logo } from "../Logo"
 import LoggedInStatus from "./LoggedInStatus"
-import styles from "./Navbar.module.css"
-import ThemeToggle from "./ThemeToggle"
 
 function NavbarDtuarchive() {
-  return NavbarItem({ name: "DTU Archive", href: "/" })
+  // return NavbarItem({ name: "DTU Archive", href: "/" })
+  return (
+    <Link href="/">
+      <Logo />
+    </Link>
+  )
 }
 
 function NavbarDivider() {
-  return <div className={styles.navbardivider}> / </div>
+  return <div className="">/</div>
 }
 
 function NavbarLeft(props: {
@@ -27,14 +27,16 @@ function NavbarLeft(props: {
   let { children, className } = props
   if (!className) className = ""
   return (
-    <div className={styles.navbarleft + " " + className}>
+    <div className="flex items-center gap-1 lg:gap-4">
       <NavbarDtuarchive />
-      {children.map((child, index) => (
-        <div key={index}>
-          <NavbarDivider />
-          {child}
-        </div>
-      ))}
+      <div className="flex items-center">
+        {children.map((child, index) => (
+          <div key={index} className="flex items-center gap-1">
+            <NavbarDivider />
+            {child}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -43,13 +45,9 @@ function NavbarRight(props: { children: React.ReactNode; className?: string }) {
   let { children, className } = props
   if (!className) className = ""
   return (
-    <div className={styles.navbarright + " " + className}>
+    <div className="flex items-center gap-4 px-2">
       {children}
-      <LoggedInStatus />
-      <ThemeToggle />
-      <ClientSideOnly>
-        <GithubIcon />
-      </ClientSideOnly>
+      {/* <LoggedInStatus /> */}
     </div>
   )
 }
@@ -60,7 +58,23 @@ function NavbarCenter(props: {
 }) {
   let { children, className } = props
   if (!className) className = ""
-  return <div className={styles.navbarcenter + " " + className}>{children}</div>
+  return <div className="flex flex-grow">{children}</div>
+}
+
+function LinkOrDiv(props: {
+  href?: string
+  className?: string
+  children: React.ReactNode
+}) {
+  let { href, className, children } = props
+  if (!className) className = ""
+  if (href)
+    return (
+      <Link className={className} href={href}>
+        {children}
+      </Link>
+    )
+  else return <div className={className}>{children}</div>
 }
 
 export function NavbarItem(props: {
@@ -72,15 +86,19 @@ export function NavbarItem(props: {
   let { name, className, active, href } = props
   if (!className) className = ""
   if (!active) active = false
-  if (active) className = className + " " + styles.active
-  if (!href)
-    return <div className={styles.navbaritem + " " + className}>{name}</div>
-  else
-    return (
-      <Link href={href} className={styles.navbaritem + " " + className}>
-        {name}
-      </Link>
-    )
+
+  return (
+    <LinkOrDiv
+      className={twMerge(
+        "relative mx-2 my-1 flex items-center justify-center border-b-2 border-white px-1 py-1 font-semibold transition-all hover:border-black",
+        active && "border-gray-400",
+        className
+      )}
+      href={href}
+    >
+      {name}
+    </LinkOrDiv>
+  )
 }
 
 export function Navbar(props: {
@@ -94,7 +112,12 @@ export function Navbar(props: {
 
   if (!className) className = ""
   return (
-    <div className={twMerge(styles.navbar, className, "dark:border-[#363b3d")}>
+    <div
+      className={twMerge(
+        "flex w-full font-geologica text-base sm:text-lg lg:text-xl",
+        className
+      )}
+    >
       <NavbarLeft>{left}</NavbarLeft>
       <NavbarCenter>{center}</NavbarCenter>
       <NavbarRight>{right}</NavbarRight>

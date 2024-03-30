@@ -7,6 +7,7 @@ import posthog from "posthog-js"
 import { PostHogProvider } from "posthog-js/react"
 import { useEffect } from "react"
 
+import { Footer } from "../components/Footer"
 import { env } from "../env.mjs"
 import "../styles/globals.css"
 
@@ -40,7 +41,10 @@ export default function MyApp({ Component, pageProps }) {
       <SessionProvider session={pageProps.session}>
         <ThemeProvider defaultTheme={"light"}>
           <PostHogProvider client={posthog}>
-            <Component {...pageProps} />
+            <div className="flex w-full flex-col">
+              <Component {...pageProps} />
+              <Footer />
+            </div>
           </PostHogProvider>
         </ThemeProvider>
       </SessionProvider>

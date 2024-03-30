@@ -12,7 +12,7 @@ export default function GithubIcon() {
     return (
       <Link
         href="https://github.com/kvqn/dtu-archive"
-        className="transition-transform hover:scale-125"
+        className="transition-transform hover:scale-110"
       >
         <FontAwesomeIcon
           icon={faGithub}
@@ -25,7 +25,7 @@ export default function GithubIcon() {
     return (
       <Link
         href="https://github.com/kvqn/dtu-archive"
-        className="transition-transform hover:scale-125"
+        className="transition-transform hover:scale-110"
       >
         <FontAwesomeIcon
           icon={faGithub}

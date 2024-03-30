@@ -16,9 +16,7 @@
     "nextjs",
     "pageview",
     "POSTHOG",
-    "pyqs",
-    "rollno",
-    "rollnos",
-    "tanstack"
-  ]
+    "pyqs"
+  ],
+  "prettier.configPath": "prettier.config.js"
 }
