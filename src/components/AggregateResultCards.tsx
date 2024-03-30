@@ -5,7 +5,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
 
-import { SortButton } from "./SortButton"
+import { BottomSearchBar } from "./BottomSearchBar"
 
 export function AggregateResultCards({ result }: { result: AggregateResult }) {
   const [filter, setFilter] = useState("")
@@ -76,21 +76,12 @@ export function AggregateResultCards({ result }: { result: AggregateResult }) {
           </div>
         ))}
       </div>
-      <div className="fixed bottom-10 flex h-10 w-[95%] items-center gap-2 rounded-lg border-2 border-black bg-white p-2 text-lg shadow-lg">
-        <FontAwesomeIcon icon={faMagnifyingGlass} className="text-black" />
-        <input
-          className="flex-grow font-geist outline-none"
-          placeholder="Filter ..."
-          onChange={(e) => {
-            setFilter(e.target.value)
-          }}
-        />
-        <SortButton
-          options={sortOptions}
-          selectedOption={selectedSortOption}
-          setSelectedOption={setSelectedSortOption}
-        />
-      </div>
+      <BottomSearchBar
+        onChange={(e) => setFilter(e.target.value)}
+        sortOptions={sortOptions}
+        selectedSortOption={selectedSortOption}
+        setSelectedSortOption={setSelectedSortOption}
+      />
     </div>
   )
 }

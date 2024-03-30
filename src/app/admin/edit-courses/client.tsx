@@ -1,5 +1,6 @@
 "use client"
 
+import { BottomSearchBar } from "@/components/BottomSearchBar"
 import { RoundedSection } from "@/components/RoundedSection"
 import { cn } from "@/lib/utils"
 import { saveCourse } from "@/server/actions/saveCourse"
@@ -7,7 +8,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { Prisma } from "@prisma/client"
 import * as Dialog from "@radix-ui/react-dialog"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
 
 export default function EditCourses({
@@ -32,6 +33,30 @@ export default function EditCourses({
   const [collapsedKnown, setCollapsedKnown] = useState<boolean>(false)
   const [collapsedUnknown, setCollapsedUnknown] = useState<boolean>(false)
 
+  const [filter, setFilter] = useState("")
+
+  useEffect(() => {
+    setKnownCourses(
+      courses
+        .filter(
+          (course) =>
+            course.code.toLowerCase().includes(filter.toLowerCase()) ||
+            course.name.toLowerCase().includes(filter.toLowerCase())
+        )
+        .sort((a, b) => a.code.localeCompare(b.code))
+    )
+
+    setUnknownCourses(
+      allCourses
+        .filter(
+          (course) =>
+            course.toLowerCase().includes(filter.toLowerCase()) &&
+            !courses.find((c) => c.code === course)
+        )
+        .sort()
+    )
+  }, [filter, courses, allCourses])
+
   return (
     <div className="flex w-full flex-col items-center gap-4">
       <div className="font-geologica text-3xl">Edit Courses</div>
@@ -54,15 +79,19 @@ export default function EditCourses({
               "transition-transition-all flex w-[90%] flex-col gap-4 overflow-hidden py-2"
             )}
           >
-            {knownCourses.map((course) => (
-              <Course
-                key={course.code}
-                name={course.name}
-                credits={course.credits}
-                code={course.code}
-                color="red"
-              />
-            ))}
+            {knownCourses.length === 0 ? (
+              <div className="w-full text-center">No Results</div>
+            ) : (
+              knownCourses.map((course) => (
+                <Course
+                  key={course.code}
+                  name={course.name}
+                  credits={course.credits}
+                  code={course.code}
+                  color="red"
+                />
+              ))
+            )}
           </div>
         )}
       </div>
@@ -81,12 +110,22 @@ export default function EditCourses({
         </div>
         {!collapsedUnknown && (
           <div className="flex w-[90%] flex-col gap-4 py-2">
-            {unknownCourses.map((course) => (
-              <Course key={course} code={course} color="blue" />
-            ))}
+            {unknownCourses.length === 0 ? (
+              <div className="w-full text-center">No Results</div>
+            ) : (
+              unknownCourses.map((course) => (
+                <Course key={course} code={course} color="blue" />
+              ))
+            )}
           </div>
         )}
       </div>
+
+      <BottomSearchBar
+        onChange={(e) => {
+          setFilter(e.target.value)
+        }}
+      />
     </div>
   )
 }
