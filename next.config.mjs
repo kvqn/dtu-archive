@@ -10,7 +10,7 @@ const nextConfig = {
   //   return config;
   // }
   reactStrictMode: true,
-  staticPageGenerationTimeout: 120,
+  staticPageGenerationTimeout: 300,
   images: {
     remotePatterns: [
       {
