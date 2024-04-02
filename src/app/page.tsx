@@ -73,6 +73,25 @@ export default function Page() {
         <div className="flex flex-wrap items-center justify-evenly gap-4 py-10 md:flex-row">
           <div className="flex gap-4">
             <Card
+              title="Results"
+              description="View results published by your university in style"
+              href="/result"
+            />
+            <Card
+              title="Students"
+              description="View detailed individual student records"
+              href="/student"
+            />
+          </div>
+          <div>
+            <Card
+              title="Courses"
+              description="This helps a lot during course registration"
+              href="/courses"
+            />
+          </div>
+          {/* <div className="flex gap-4">
+            <Card
               title="Archive"
               description="A collection of past MTE and ETE papers"
               href="/pyqs"
@@ -82,26 +101,7 @@ export default function Page() {
               description="Notices scraped from DTU's website. All in one place."
               href="/notices"
             />
-          </div>
-          <div className="flex gap-4">
-            <Card
-              title="Results"
-              description="View results published by your university in style"
-              href="/result"
-            />
-            <Card
-              title="Courses"
-              description="This helps a lot during course registration"
-              href="/courses"
-            />
-          </div>
-          <div>
-            <Card
-              title="Students"
-              description="View detailed individual student records"
-              href="/student"
-            />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
