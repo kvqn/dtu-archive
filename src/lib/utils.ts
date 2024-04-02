@@ -33,3 +33,18 @@ export function gradeValue(grade: string) {
       return 0
   }
 }
+
+export function rollBreakdown(rollno: string): {
+  batch: string
+  branch: string
+  roll: number
+} {
+  const match = rollno.match(/(2K\d+)\/([A-Z0-9]+)\/(\d+)/)
+  if (!match) throw new Error("Invalid rollno")
+
+  return {
+    batch: match[1],
+    branch: match[2],
+    roll: parseInt(match[3]),
+  }
+}

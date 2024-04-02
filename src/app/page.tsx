@@ -95,6 +95,13 @@ export default function Page() {
               href="/courses"
             />
           </div>
+          <div>
+            <Card
+              title="Students"
+              description="View detailed individual student records"
+              href="/student"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -92,7 +92,10 @@ natural join CORRECT_RESULT natural join subject_details
 ),
 WITH_CREDITS as (
 select
-	FINAL_RESULT.*,
+	FINAL_RESULT.result,
+  FINAL_RESULT.latest_rollno,
+  FINAL_RESULT.subject,
+  FINAL_RESULT.grade,
 	ifnull(subject_details.credits, 4) as credits
 from
 	FINAL_RESULT

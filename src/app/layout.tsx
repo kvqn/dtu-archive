@@ -2,6 +2,7 @@ import { Footer } from "@/components/Footer"
 import { SmallGridBackground } from "@/components/GridBackground"
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import "@/styles/globals.css"
+import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 import { Metadata } from "next"
 import { getServerSession } from "next-auth"
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 export default async function Layout({ children }: LayoutProps) {
   const session = await getServerSession(authOptions)
   return (
-    <html className={`${GeistSans.variable}`}>
+    <html className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head />
       <body>
         <SmallGridBackground></SmallGridBackground>
