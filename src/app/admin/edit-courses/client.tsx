@@ -8,7 +8,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { Prisma } from "@prisma/client"
 import * as Dialog from "@radix-ui/react-dialog"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import toast from "react-hot-toast"
 
 export default function EditCourses({
@@ -181,14 +181,21 @@ function EditCourse({
   name?: string | null
   credits?: number | null
 }) {
-  let courseName = ""
+  const [courseName, setCourseName] = useState<string>(name ?? "")
   const [selectedCredits, setCredits] = useState<number>(credits ?? 4)
 
+  const dialogCloseButtonRef = useRef<HTMLDivElement>(null)
+  function closeDialog() {
+    dialogCloseButtonRef.current?.click()
+  }
+
   async function SaveAction() {
-    if (courseName === "" || (selectedCredits != 3 && selectedCredits != 4)) {
+    if (courseName === "") {
       toast.error("Please fill all the fields")
       return
     }
+
+    closeDialog()
 
     const resp = await saveCourse({
       code,
@@ -202,12 +209,11 @@ function EditCourse({
     }
 
     toast.success("Course Updated")
-    window.location.reload()
   }
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <FontAwesomeIcon icon={faPenToSquare} />
+        <FontAwesomeIcon icon={faPenToSquare} className="cursor-pointer" />
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/50" />
@@ -222,10 +228,11 @@ function EditCourse({
               classNameTitle="border border-stone-300"
             >
               <input
-                className="h-10 w-full rounded-md border border-gray-400 px-2 outline-none"
+                className="h-10 w-full rounded-md border border-gray-400 px-2 font-geist outline-none"
+                defaultValue={name ?? ""}
                 placeholder="Course Name"
                 onChange={(e) => {
-                  courseName = e.target.value
+                  setCourseName(e.target.value)
                 }}
               />
             </RoundedSection>
@@ -237,7 +244,7 @@ function EditCourse({
               <div className="flex w-full items-center justify-evenly">
                 <div
                   className={cn(
-                    "rounded-md border border-blue-600 bg-blue-200 px-4 py-2",
+                    "cursor-pointer rounded-md border border-blue-600 bg-blue-200 px-4 py-2",
                     {
                       "scale-105 border-2 bg-blue-300 shadow-sm":
                         selectedCredits === 2,
@@ -249,7 +256,7 @@ function EditCourse({
                 </div>
                 <div
                   className={cn(
-                    "rounded-md border border-blue-600 bg-blue-200 px-4 py-2",
+                    "cursor-pointer rounded-md border border-blue-600 bg-blue-200 px-4 py-2",
                     {
                       "scale-105 border-2 bg-blue-300 shadow-sm":
                         selectedCredits === 3,
@@ -261,7 +268,7 @@ function EditCourse({
                 </div>
                 <div
                   className={cn(
-                    "rounded-md border border-blue-600 bg-blue-200 px-4 py-2",
+                    "cursor-pointer rounded-md border border-blue-600 bg-blue-200 px-4 py-2",
                     {
                       "scale-105 border-2 bg-blue-300 shadow-sm":
                         selectedCredits === 4,
@@ -275,13 +282,16 @@ function EditCourse({
             </RoundedSection>
             <div className="flex w-full justify-around">
               <div
-                className="w-[40%] select-none rounded-lg border border-green-600 bg-green-200 px-4 py-2 text-center font-bold"
+                className="w-[40%] cursor-pointer select-none rounded-lg border border-green-600 bg-green-200 px-4 py-2 text-center font-bold"
                 onClick={SaveAction}
               >
                 Save
               </div>
               <Dialog.Close className="w-[40%]">
-                <div className="select-none rounded-lg border border-red-600 bg-red-200 px-4 py-2 text-center font-bold">
+                <div
+                  className="cursor-pointer select-none rounded-lg border border-red-600 bg-red-200 px-4 py-2 text-center font-bold"
+                  ref={dialogCloseButtonRef}
+                >
                   Cancel
                 </div>
               </Dialog.Close>

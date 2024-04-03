@@ -1,6 +1,7 @@
 "use server"
 
 import { prisma } from "@/prisma"
+import { revalidatePath } from "next/cache"
 
 export async function saveCourse({
   code,
@@ -17,5 +18,6 @@ export async function saveCourse({
     create: { code, name, credits },
   })
 
+  revalidatePath("/admin/edit-courses")
   return "success"
 }

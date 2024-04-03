@@ -99,6 +99,9 @@ export default async function Page({
                         <div className="flex-grow bg-white p-1 text-center">
                           {grade.subject_name ?? "-- Unknown --"}
                         </div>
+                        <div className="w-[10%] bg-yellow-50 p-1 text-center">
+                          {grade.credits}
+                        </div>
                         <div className="w-[12%] bg-emerald-300 p-1 px-2 text-left font-medium">
                           {grade.grade}
                         </div>
