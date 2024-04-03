@@ -156,12 +156,12 @@ function Course({
         <div className="font-bold">{code}</div>
         <EditCourse code={code} name={name} credits={credits} />
       </div>
-      <div className="flex justify-between">
-        <div className="flex divide-x divide-black overflow-hidden rounded-sm border border-black text-sm">
+      <div className="flex items-end justify-between">
+        <div className="flex max-w-[60%] divide-x divide-black overflow-hidden rounded-sm border border-black text-sm">
           <div className="flex-grow bg-yellow-100 px-2 py-1">Name</div>
           <div className="bg-white px-2 py-1 text-center">{name ?? "??"}</div>
         </div>
-        <div className="flex divide-x divide-black overflow-hidden rounded-sm border border-black text-sm">
+        <div className="flex h-fit divide-x divide-black overflow-hidden rounded-sm border border-black text-sm">
           <div className="flex-grow bg-yellow-100 px-2 py-1">Credits</div>
           <div className="bg-white px-2 py-1 text-center">
             {credits ?? "??"}
@@ -235,6 +235,18 @@ function EditCourse({
               classNameTitle="border"
             >
               <div className="flex w-full items-center justify-evenly">
+                <div
+                  className={cn(
+                    "rounded-md border border-blue-600 bg-blue-200 px-4 py-2",
+                    {
+                      "scale-105 border-2 bg-blue-300 shadow-sm":
+                        selectedCredits === 2,
+                    }
+                  )}
+                  onClick={() => setCredits(2)}
+                >
+                  2
+                </div>
                 <div
                   className={cn(
                     "rounded-md border border-blue-600 bg-blue-200 px-4 py-2",
