@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer"
 import { SmallGridBackground } from "@/components/GridBackground"
+import { Navbar } from "@/components/navbar"
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import "@/styles/globals.css"
 import { GeistMono } from "geist/font/mono"
@@ -21,11 +22,16 @@ export const metadata: Metadata = {
 export default async function Layout({ children }: LayoutProps) {
   const session = await getServerSession(authOptions)
   return (
-    <html className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html
+      className={`${GeistSans.variable} ${GeistMono.variable} font-geist-sans`}
+    >
       <head />
       <body>
         <SmallGridBackground></SmallGridBackground>
-        <ContextProvider session={session}>{children}</ContextProvider>
+        <ContextProvider session={session}>
+          <Navbar />
+          {children}
+        </ContextProvider>
         <Toaster />
         <Footer />
       </body>
