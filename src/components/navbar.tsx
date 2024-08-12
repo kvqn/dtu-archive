@@ -9,7 +9,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { usePathname } from "@/lib/hooks/pathname"
 import { ChevronRightIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 
@@ -18,31 +17,22 @@ import { Button } from "./ui/button"
 import { Separator } from "./ui/separator"
 
 export function Navbar() {
-  const pathname = usePathname()
-
   return (
     <>
       <div className="flex items-center gap-2 p-2">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Home
-                </NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink
+                className={navigationMenuTriggerStyle()}
+                href="/"
+              >
+                Home
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <ChevronRightIcon />
             <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                {pathname.startsWith("/result")
-                  ? "Branch-Wise Result"
-                  : pathname.startsWith("/courses")
-                  ? "Course-Wise Result"
-                  : pathname.startsWith("/student")
-                  ? "Student-Wise Result"
-                  : "Browse"}
-              </NavigationMenuTrigger>
+              <NavigationMenuTrigger>Browse</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="flex w-80 flex-col gap-2 p-2">
                   <NavLink
@@ -66,7 +56,7 @@ export function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex-grow"></div>
-        <Button>Login</Button>
+        <Button variant={"outline"}>Login</Button>
         <Settings />
       </div>
       <Separator />

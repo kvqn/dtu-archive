@@ -26,14 +26,13 @@ export default async function Layout({ children }: LayoutProps) {
       className={`${GeistSans.variable} ${GeistMono.variable} font-geist-sans`}
     >
       <head />
-      <body>
+      <body className="flex h-screen flex-col">
         <SmallGridBackground></SmallGridBackground>
         <ContextProvider session={session}>
           <Navbar />
           {children}
         </ContextProvider>
         <Toaster />
-        <Footer />
       </body>
     </html>
   )

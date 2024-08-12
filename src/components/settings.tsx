@@ -17,7 +17,7 @@ export function Settings() {
 
   return (
     <Popover>
-      <PopoverTrigger>
+      <PopoverTrigger asChild>
         <Button variant="outline" className="p-2">
           <HamburgerMenuIcon width={"1.5rem"} height="1.5rem" />
         </Button>
