@@ -39,7 +39,7 @@ export function AggregateResultCards({ result }: { result: AggregateResult }) {
   }, [filter, selectedSortOption, result.students])
 
   return (
-    <div className="flex w-full justify-center font-geist">
+    <div className="font-geist flex w-full justify-center">
       <div className="flex w-[90%] max-w-[600px] flex-col items-center gap-4">
         {filteredStudents.map((student, index) => (
           <div
@@ -47,29 +47,35 @@ export function AggregateResultCards({ result }: { result: AggregateResult }) {
             className="flex w-full flex-col divide-y divide-black overflow-hidden rounded-xl border border-black shadow-lg"
           >
             <div className="flex divide-x divide-black font-bold">
-              <div className="bg-emerald-300 p-2">{student.rank}</div>
-              <div className="flex-grow bg-emerald-500 p-2">{student.name}</div>
-              <div className="bg-emerald-300 p-2">{student.rollno}</div>
+              <div className="bg-emerald-300 p-2 dark:bg-emerald-700">
+                {student.rank}
+              </div>
+              <div className="flex-grow bg-emerald-500 p-2 dark:bg-emerald-800">
+                {student.name}
+              </div>
+              <div className="bg-emerald-300 p-2 dark:bg-emerald-700">
+                {student.rollno}
+              </div>
             </div>
-            <div className="grid grid-cols-2 place-content-center gap-1 bg-emerald-50 p-2 text-sm">
+            <div className="grid grid-cols-2 place-content-center gap-1 bg-emerald-50 p-2 text-sm dark:bg-emerald-950">
               {student.semesters.map((semester, index) => (
                 <div
                   key={index}
                   className="flex divide-x divide-black overflow-hidden rounded-lg border border-black text-xs"
                 >
-                  <div className="w-[30%] bg-white px-2">
+                  <div className="w-[30%] bg-white px-2 dark:bg-black">
                     Sem {semester.semester}
                   </div>
-                  <div className="w-[25%] bg-emerald-200 px-2 font-geist-mono">
+                  <div className="w-[25%] bg-emerald-200 px-2 font-geist-mono dark:bg-emerald-800">
                     {semester.cgpa.toFixed(2)}
                   </div>
-                  <div className="flex flex-grow items-center bg-white px-2">
+                  <div className="flex flex-grow items-center bg-white px-2 dark:bg-black">
                     {semester.credits} credits
                   </div>
                 </div>
               ))}
             </div>
-            <div className="grid grid-cols-2 divide-x divide-black bg-yellow-100">
+            <div className="grid grid-cols-2 divide-x divide-black bg-yellow-100 dark:bg-yellow-900">
               <div className="p-2">Total Credits: {student.totalCredits}</div>
               <div className="p-2">CGPA: {student.cgpa.toFixed(2)}</div>
             </div>
