@@ -23,7 +23,7 @@ function Card({ href, title }: { href: string; title: string }) {
   return (
     <Link
       href={href}
-      className="m-4 flex flex-grow items-center justify-center rounded-xl border p-8 text-center text-2xl font-semibold hover:bg-neutral-900 lg:m-8"
+      className="m-4 flex flex-grow items-center justify-center rounded-xl border p-8 text-center text-2xl font-semibold transition-colors hover:bg-neutral-100 hover:dark:bg-neutral-900 lg:m-8"
     >
       {title}
     </Link>
