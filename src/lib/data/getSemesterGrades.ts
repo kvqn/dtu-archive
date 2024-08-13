@@ -1,4 +1,5 @@
 import { SemesterResult } from "@/components/SemesterResult"
+import { prisma } from "@/prisma"
 
 import { query_result } from "../sql"
 import { gradeValue } from "../utils"
@@ -30,6 +31,16 @@ export default async function getSemesterResult(
   semester: number
 ): Promise<SemesterResult> {
   // TODO: check input
+
+  const subject_details = await prisma.subjectDetails.findMany()
+  const subject_map = new Map<string, { name: string; credits: number }>()
+
+  for (const subject of subject_details) {
+    subject_map.set(subject.code, {
+      name: subject.name,
+      credits: subject.credits,
+    })
+  }
 
   const rawGrades: SemesterResultGradesRaw[] = (
     await query_result(`
@@ -84,44 +95,30 @@ from
 	MAX_HEIRARCHY
 inner join result_heirarchy on
 	heirarchy = max_heirarchy
-)
-,
+),
 FINAL_RESULT as (
 select
-	CORRECT_BATCH.*,
-	subject_details.name as subject_name,
-	subject_details.credits
+	CORRECT_BATCH.*
 from
 	CORRECT_BATCH
-natural join CORRECT_RESULT left join subject_details on subject = code
-)
-,
-WITH_CREDITS as (
-select
-  FINAL_RESULT.result,
-  FINAL_RESULT.latest_rollno,
-  FINAL_RESULT.subject,
-  FINAL_RESULT.grade,
-  FINAL_RESULT.subject_name,
-  ifnull(subject_details.credits, 4) as credits
-from
-	FINAL_RESULT
-left join subject_details on
-	FINAL_RESULT.subject = subject_details.code
+natural join CORRECT_RESULT
 )
 SELECT
 	*
 from
-	WITH_CREDITS;
+	FINAL_RESULT;
     `)
-  ).map((row: any) => ({
-    result: row["result"],
-    latest_rollno: row["latest_rollno"],
-    subject: row["subject"],
-    subject_name: row["subject_name"],
-    grade: row["grade"],
-    credits: row["credits"],
-  }))
+  ).map((row: any) => {
+    const subject_details = subject_map.get(row["subject"])
+    return {
+      result: row["result"],
+      latest_rollno: row["latest_rollno"],
+      subject: row["subject"],
+      grade: row["grade"],
+      subject_name: subject_details?.name ?? "-- Unknown -- ",
+      credits: subject_details?.credits ?? 4,
+    }
+  })
 
   const rawGradesMap = new Map<string, SemesterResultGradesRaw[]>()
   for (const row of rawGrades) {

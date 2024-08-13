@@ -4,7 +4,7 @@ import { prisma } from "@/prisma"
 import EditCourses from "./client"
 
 export default async function Page() {
-  const courses = await prisma.subject_details.findMany({})
+  const courses = await prisma.subjectDetails.findMany({})
   const allCourses = await getAllCourses()
 
   return <EditCourses courses={courses} allCourses={allCourses} />

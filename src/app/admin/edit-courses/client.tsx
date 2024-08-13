@@ -15,7 +15,7 @@ export default function EditCourses({
   courses,
   allCourses,
 }: {
-  courses: Prisma.subject_detailsGetPayload<{}>[]
+  courses: Prisma.SubjectDetailsGetPayload<{}>[]
   allCourses: string[]
 }) {
   const [knownCourses, setKnownCourses] = useState<

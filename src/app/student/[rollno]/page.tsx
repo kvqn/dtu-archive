@@ -1,7 +1,7 @@
 import { getStudentGrades } from "@/lib/data/getStudentGrades"
 import { getStudentInfo } from "@/lib/data/getStudentInfo"
+import { query_result } from "@/lib/sql"
 import { gradeValue } from "@/lib/utils"
-import { prisma } from "@/prisma"
 
 async function getValidRollno(rollno: string): Promise<string | null> {
   const match = rollno.match(/^(2K\d{2})-([A-Z\d]+)-([0-9]+)$/)
@@ -9,18 +9,15 @@ async function getValidRollno(rollno: string): Promise<string | null> {
   const batch = match[1]
   const branch = match[2]
   const roll = match[3]
-  const found = await prisma.result_grades.findFirst({
-    where: {
-      rollno: `${batch}/${branch}/${roll}`,
-    },
-    select: {
-      rollno: true,
-    },
-  })
+  const found = (
+    await query_result(
+      `select rollno from result_student_details where rollno = '${batch}/${branch}/${roll}' limit 1`
+    )
+  ).map((row: any) => row["rollno"])
 
-  if (!found) return null
+  if (found.length == 0) return null
 
-  return found.rollno
+  return found[0]
 }
 
 export default async function Page({

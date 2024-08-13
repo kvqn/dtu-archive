@@ -1,3 +1,5 @@
+import { prisma } from "@/prisma"
+
 import { query_result } from "../sql"
 
 type StudentGrade = {
@@ -9,10 +11,15 @@ type StudentGrade = {
   grade: string
 }
 
+type StudentGradeWithoutSubjectDetails = Omit<
+  StudentGrade,
+  "subject_name" | "credits"
+>
+
 export async function getStudentGrades(
   rollno: string
 ): Promise<StudentGrade[]> {
-  const grades: StudentGrade[] = (
+  const grades: StudentGradeWithoutSubjectDetails[] = (
     await query_result(
       `
 with 
@@ -67,21 +74,12 @@ inner join MAX_HEIRARCHY on
 	heirarchy = max_heirarchy
 	and WITH_HEIRARCHY.semester = MAX_HEIRARCHY.semester
 	and WITH_HEIRARCHY.subject = MAX_HEIRARCHY.subject
-),
-WITH_CREDITS as (
-select
-	CORRECT_RESULT.*,
-	subject_details.name as name,
-	ifnull(subject_details.credits, 4) as credits
-from
-	CORRECT_RESULT
-left join subject_details on
-	subject = code
 )
 select
 	*
 from
-	WITH_CREDITS
+	CORRECT_RESULT
+order by semester, subject
 `
     )
   ).map((row: any) => {
@@ -89,11 +87,28 @@ from
       result: row["result"],
       semester: row["semester"],
       subject_code: row["subject"],
-      subject_name: row["name"],
-      credits: row["credits"],
       grade: row["grade"],
     }
   })
 
-  return grades
+  const subject_details = await prisma.subjectDetails.findMany()
+  const subject_map = new Map<string, { name: string; credits: number }>()
+
+  for (const subject of subject_details) {
+    subject_map.set(subject.code, {
+      name: subject.name,
+      credits: subject.credits,
+    })
+  }
+
+  const grades_with_subject_details = grades.map((grade) => {
+    const subject_details = subject_map.get(grade.subject_code)
+    return {
+      ...grade,
+      subject_name: subject_details?.name ?? "-- Unknown -- ",
+      credits: subject_details?.credits ?? 4,
+    }
+  })
+
+  return grades_with_subject_details
 }
