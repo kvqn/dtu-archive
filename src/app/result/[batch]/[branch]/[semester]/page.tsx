@@ -25,15 +25,10 @@ export default async function Page({
   params: { batch: string; branch: string; semester: string }
 }) {
   // TODO: check params
-
-  return (
-    <>
-      {/* @ts-expect-error Server Component */}
-      <SemesterResult
-        batch={params.batch}
-        branch={params.branch}
-        semester={parseInt(params.semester)}
-      />
-    </>
-  )
+  const result = await SemesterResult({
+    batch: params.batch,
+    branch: params.branch,
+    semester: parseInt(params.semester),
+  })
+  return result
 }

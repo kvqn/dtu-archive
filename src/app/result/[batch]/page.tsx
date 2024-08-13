@@ -1,8 +1,6 @@
 import Custom404 from "@/components/Custom404"
 import GradientLink from "@/components/GradientLink/GradientLink"
-import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { getBranches } from "@/server/getBranches"
-import Head from "next/head"
 
 export default async function Page({
   params,

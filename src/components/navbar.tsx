@@ -46,9 +46,9 @@ export function Navbar() {
                     description="See your grades accross all semesters"
                   />
                   <NavLink
-                    href="/courses"
-                    title="Course-Wise Result"
-                    description="Compare courses and their grades"
+                    href="/aggregate"
+                    title="All Branches Aggregate Result"
+                    description="See where you rank in the university"
                   />
                 </div>
               </NavigationMenuContent>

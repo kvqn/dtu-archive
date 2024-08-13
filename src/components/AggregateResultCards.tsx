@@ -1,14 +1,12 @@
 "use client"
 
 import { AggregateResult } from "@/lib/data/getAggregateGrades"
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import { BottomSearchBar } from "./BottomSearchBar"
 
 export function AggregateResultCards({ result }: { result: AggregateResult }) {
-  const [filter, setFilter] = useState("")
+  let filter = ""
   const [filteredStudents, setFilteredStudents] = useState(result.students)
 
   const sortOptions = new Map([
@@ -18,7 +16,7 @@ export function AggregateResultCards({ result }: { result: AggregateResult }) {
 
   const [selectedSortOption, setSelectedSortOption] = useState("rank")
 
-  useEffect(() => {
+  function updateFilteredStudents() {
     setFilteredStudents(
       result.students
         .filter(
@@ -36,7 +34,7 @@ export function AggregateResultCards({ result }: { result: AggregateResult }) {
           }
         })
     )
-  }, [filter, selectedSortOption, result.students])
+  }
 
   return (
     <div className="flex w-full justify-center font-geist">
@@ -83,10 +81,11 @@ export function AggregateResultCards({ result }: { result: AggregateResult }) {
         ))}
       </div>
       <BottomSearchBar
-        onChange={(e) => setFilter(e.target.value)}
+        onChange={(e) => (filter = e.target.value)}
         sortOptions={sortOptions}
         selectedSortOption={selectedSortOption}
         setSelectedSortOption={setSelectedSortOption}
+        onSubmit={updateFilteredStudents}
       />
     </div>
   )

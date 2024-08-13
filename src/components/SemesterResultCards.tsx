@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import { BottomSearchBar } from "./BottomSearchBar"
 
 export function SemesterResultCards({ result }: { result: SemesterResult }) {
-  const [filter, setFilter] = useState("")
+  let filter = ""
   const [filteredStudents, setFilteredStudents] = useState(result.students)
 
   const sortOptions = new Map([
@@ -16,7 +16,7 @@ export function SemesterResultCards({ result }: { result: SemesterResult }) {
 
   const [selectedSortOption, setSelectedSortOption] = useState("rank")
 
-  useEffect(() => {
+  function submitAction() {
     setFilteredStudents(
       result.students
         .filter(
@@ -34,7 +34,7 @@ export function SemesterResultCards({ result }: { result: SemesterResult }) {
           }
         })
     )
-  }, [filter, selectedSortOption, result.students])
+  }
 
   return (
     <div className="flex w-full justify-center font-geist">
@@ -81,10 +81,11 @@ export function SemesterResultCards({ result }: { result: SemesterResult }) {
         ))}
       </div>
       <BottomSearchBar
-        onChange={(e) => setFilter(e.target.value)}
+        onChange={(e) => (filter = e.target.value)}
         sortOptions={sortOptions}
         selectedSortOption={selectedSortOption}
         setSelectedSortOption={setSelectedSortOption}
+        onSubmit={submitAction}
       />
     </div>
   )

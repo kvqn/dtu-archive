@@ -41,6 +41,7 @@
     "@types/react-pdf": "^7.0.0",
     "autoprefixer": "10.4.14",
     "axios": "^1.6.2",
+    "caniuse-lite": "^1.0.30001651",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "commitlint": "^18.6.1",

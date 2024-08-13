@@ -11,7 +11,7 @@ export default async function Page() {
           Select your batch
         </h1>
         {batches.map((batch) => (
-          <GradientLink href={`/result/${batch}`} name={batch} key={batch} />
+          <GradientLink href={`/aggregate/${batch}`} name={batch} key={batch} />
         ))}
       </div>
     </>

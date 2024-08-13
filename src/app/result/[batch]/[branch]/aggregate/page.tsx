@@ -1,14 +1,13 @@
 import { AggregateResult } from "@/components/AggregateResult"
 
-export default function Page({
+export default async function Page({
   params,
 }: {
   params: { batch: string; branch: string }
 }) {
-  return (
-    <>
-      {/* @ts-expect-error Server Component */}
-      <AggregateResult batch={params.batch} branch={params.branch} />
-    </>
-  )
+  const result = await AggregateResult({
+    batch: params.batch,
+    branch: params.branch,
+  })
+  return result
 }
