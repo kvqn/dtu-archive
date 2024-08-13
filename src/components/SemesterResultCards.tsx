@@ -1,7 +1,7 @@
 "use client"
 
 import { SemesterResult } from "@/lib/data/getSemesterGrades"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import { BottomSearchBar } from "./BottomSearchBar"
 

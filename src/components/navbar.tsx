@@ -9,14 +9,23 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { useUser } from "@/lib/hooks/user"
+import { isAdmin } from "@/server/actions/isAdmin"
 import { ChevronRightIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 import { Settings } from "./settings"
-import { Button } from "./ui/button"
 import { Separator } from "./ui/separator"
 
 export function Navbar() {
+  const [admin, setAdmin] = useState(false)
+  const user = useUser()
+
+  useEffect(() => {
+    isAdmin().then(setAdmin)
+  }, [])
+
   return (
     <>
       <div className="flex items-center gap-2 p-2">
@@ -53,10 +62,19 @@ export function Navbar() {
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
+            {admin && (
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  href="/admin"
+                >
+                  Admin Page
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            )}
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex-grow"></div>
-        <Button variant={"outline"}>Login</Button>
         <Settings />
       </div>
       <Separator />

@@ -58,7 +58,7 @@ export default function EditCourses({
   }
 
   return (
-    <div className="flex w-full flex-col items-center gap-4">
+    <div className="flex w-full flex-col items-center gap-4 pt-16">
       <div className="font-geologica text-3xl">Edit Courses</div>
 
       <div className="flex w-[90%] flex-col items-center rounded-xl border-2 border-red-600 bg-red-100 py-2">
