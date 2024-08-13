@@ -39,10 +39,10 @@ export async function AggregateResult({
 
   return (
     <>
-      <div className="font-geologica text-center text-2xl font-bold">
+      <div className="mt-16 text-center font-geologica text-2xl font-bold">
         Result
       </div>
-      <div className="font-geologica pb-6 text-center text-xl font-bold">{`${batch} ${branch} - Aggregate`}</div>
+      <div className="pb-6 text-center font-geologica text-xl font-bold">{`${batch} ${branch} - Aggregate`}</div>
       <AggregateResultCards result={result} />
     </>
   )
