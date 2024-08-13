@@ -1,5 +1,4 @@
 import GradientLink from "@/components/GradientLink/GradientLink"
-import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
 import { getBatches } from "@/server/getBatches"
 
 export default async function Page() {

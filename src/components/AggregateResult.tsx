@@ -1,7 +1,6 @@
 import { getAggregateResult } from "@/lib/data/getAggregateGrades"
 
 import { AggregateResultCards } from "./AggregateResultCards"
-import { Navbar } from "./Navbar/Navbar"
 
 export async function AggregateResult({
   batch,

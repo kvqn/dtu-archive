@@ -33,9 +33,9 @@ export default function EditCourses({
   const [collapsedKnown, setCollapsedKnown] = useState<boolean>(false)
   const [collapsedUnknown, setCollapsedUnknown] = useState<boolean>(false)
 
-  const [filter, setFilter] = useState("")
+  let filter = ""
 
-  useEffect(() => {
+  function submitAction() {
     setKnownCourses(
       courses
         .filter(
@@ -55,7 +55,7 @@ export default function EditCourses({
         )
         .sort()
     )
-  }, [filter, courses, allCourses])
+  }
 
   return (
     <div className="flex w-full flex-col items-center gap-4">
@@ -123,8 +123,9 @@ export default function EditCourses({
 
       <BottomSearchBar
         onChange={(e) => {
-          setFilter(e.target.value)
+          filter = e.target.value
         }}
+        onSubmit={submitAction}
       />
     </div>
   )
