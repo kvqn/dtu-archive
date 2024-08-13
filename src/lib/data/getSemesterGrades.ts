@@ -8,6 +8,7 @@ type SemesterResultGradesRaw = {
   result: string
   latest_rollno: string
   subject: string
+  subject_name: string
   grade: string
   credits: number
 }
@@ -16,7 +17,7 @@ export type SemesterResult = {
   students: {
     name: string
     rollno: string
-    subjects: { subject: string; grade: string; credits: number }[]
+    subjects: { code: string; name: string; grade: string; credits: number }[]
     totalCredits: number
     cgpa: number
     rank: number
@@ -72,7 +73,8 @@ natural join result_heirarchy
 group by
 	latest_rollno,
 	subject
-),
+) 
+,
 CORRECT_RESULT as (
 select
 	result,
@@ -82,27 +84,32 @@ from
 	MAX_HEIRARCHY
 inner join result_heirarchy on
 	heirarchy = max_heirarchy
-),
+)
+,
 FINAL_RESULT as (
 select
-	*
+	CORRECT_BATCH.*,
+	subject_details.name as subject_name,
+	subject_details.credits
 from
 	CORRECT_BATCH
-natural join CORRECT_RESULT natural join subject_details
-),
+natural join CORRECT_RESULT left join subject_details on subject = code
+)
+,
 WITH_CREDITS as (
 select
-	FINAL_RESULT.result,
+  FINAL_RESULT.result,
   FINAL_RESULT.latest_rollno,
   FINAL_RESULT.subject,
   FINAL_RESULT.grade,
-	ifnull(subject_details.credits, 4) as credits
+  FINAL_RESULT.subject_name,
+  ifnull(subject_details.credits, 4) as credits
 from
 	FINAL_RESULT
 left join subject_details on
 	FINAL_RESULT.subject = subject_details.code
 )
-select
+SELECT
 	*
 from
 	WITH_CREDITS;
@@ -111,6 +118,7 @@ from
     result: row["result"],
     latest_rollno: row["latest_rollno"],
     subject: row["subject"],
+    subject_name: row["subject_name"],
     grade: row["grade"],
     credits: row["credits"],
   }))
@@ -118,7 +126,7 @@ from
   const rawGradesMap = new Map<string, SemesterResultGradesRaw[]>()
   for (const row of rawGrades) {
     if (rawGradesMap.has(row.latest_rollno))
-      rawGradesMap.get(row.latest_rollno)?.push(row)
+      rawGradesMap.get(row.latest_rollno)!.push(row)
     else rawGradesMap.set(row.latest_rollno, [row])
   }
 
@@ -127,10 +135,10 @@ from
   const students: SemesterResult["students"] = []
 
   for (const { rollno, name } of names) {
-    const student = {
+    const student: (typeof students)[0] = {
       name: name,
       rollno: rollno,
-      subjects: [] as { subject: string; grade: string; credits: number }[],
+      subjects: [],
       totalCredits: 0,
       cgpa: 0,
       rank: 0,
@@ -139,7 +147,8 @@ from
     if (!rawGradesMap.has(rollno)) continue
     for (const grade of rawGradesMap.get(rollno)!) {
       student.subjects.push({
-        subject: grade.subject,
+        code: grade.subject,
+        name: grade.subject_name,
         grade: grade.grade,
         credits: grade.credits,
       })

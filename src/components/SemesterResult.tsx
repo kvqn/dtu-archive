@@ -15,14 +15,16 @@ export async function SemesterResult({
   semester: number
 }) {
   const result = await getSemesterResult(batch, branch, semester)
+  console.log(result)
 
   return (
     <div>
       <Navbar />
-      <div className="text-center font-geologica text-2xl font-bold">
+      <div className="font-geologica text-center text-2xl font-bold">
         Result
       </div>
-      <div className="pb-6 text-center font-geologica text-xl font-bold">{`${batch} ${branch} - ${semester}th Sem`}</div>
+      <div className="font-geologica pb-6 text-center text-xl font-bold">{`${batch} ${branch} - ${semester}th Sem`}</div>
+      {/* {JSON.stringify(result)} */}
       <SemesterResultCards result={result} />
     </div>
   )
