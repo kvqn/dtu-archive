@@ -1,12 +1,9 @@
 "use client"
 
 import { SemesterResult } from "@/lib/data/getSemesterGrades"
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
 
 import { BottomSearchBar } from "./BottomSearchBar"
-import { SortButton } from "./SortButton"
 
 export function SemesterResultCards({ result }: { result: SemesterResult }) {
   const [filter, setFilter] = useState("")
@@ -48,27 +45,35 @@ export function SemesterResultCards({ result }: { result: SemesterResult }) {
             className="flex w-full flex-col divide-y divide-black overflow-hidden rounded-xl border border-black shadow-lg"
           >
             <div className="flex divide-x divide-black font-bold">
-              <div className="bg-emerald-300 p-2">{student.rank}</div>
-              <div className="flex-grow bg-emerald-500 p-2">{student.name}</div>
-              <div className="bg-emerald-300 p-2">{student.rollno}</div>
+              <div className="bg-emerald-300 p-2 dark:bg-emerald-900">
+                {student.rank}
+              </div>
+              <div className="flex-grow bg-emerald-500 p-2 dark:bg-emerald-950">
+                {student.name}
+              </div>
+              <div className="bg-emerald-300 p-2 dark:bg-emerald-900">
+                {student.rollno}
+              </div>
             </div>
-            <div className="grid grid-cols-2 place-content-center gap-1 bg-emerald-50 p-2 text-sm">
+            <div className="grid grid-cols-2 place-content-center gap-1 bg-emerald-50 p-2 text-sm dark:bg-neutral-900">
               {student.subjects.map((subject, index) => (
                 <div
                   key={index}
                   className="flex divide-x divide-black overflow-hidden rounded-lg border border-black"
                 >
-                  <div className="flex-grow bg-white px-2">
-                    {subject.subject}
+                  <div className="flex-grow bg-white px-2 dark:bg-neutral-800">
+                    {subject.code}
                   </div>
-                  <div className="w-[20%] bg-emerald-200 px-2">
+                  <div className="w-[20%] bg-emerald-200 px-2 dark:bg-emerald-900">
                     {subject.grade}
                   </div>
-                  <div className="w-[15%] bg-white px-2">{subject.credits}</div>
+                  <div className="w-[15%] bg-white px-2 dark:bg-neutral-800">
+                    {subject.credits}
+                  </div>
                 </div>
               ))}
             </div>
-            <div className="grid grid-cols-2 divide-x divide-black bg-yellow-100">
+            <div className="grid grid-cols-2 divide-x divide-black bg-yellow-100 dark:bg-emerald-950">
               <div className="p-2">Total Credits: {student.totalCredits}</div>
               <div className="p-2">CGPA: {student.cgpa.toFixed(2)}</div>
             </div>

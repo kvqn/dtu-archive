@@ -19,7 +19,7 @@ export function SortButton({
     <div className="relative">
       <div
         className={cn(
-          "rounded-lg bg-white px-2 transition-colors duration-200",
+          "rounded-lg bg-white px-2 transition-colors duration-200 dark:bg-neutral-950",
           showMenu && "bg-green-200"
         )}
       >
@@ -36,14 +36,14 @@ export function SortButton({
       </div>
       <div
         className={cn(
-          "absolute -top-20 right-10 flex w-fit select-none flex-col whitespace-nowrap rounded-lg border border-black bg-white p-2 font-geist opacity-0 shadow-xl transition-opacity",
+          "font-geist absolute -top-20 right-10 flex w-fit select-none flex-col whitespace-nowrap rounded-lg border border-black bg-white p-2 opacity-0 shadow-xl transition-opacity dark:bg-neutral-900",
           showMenu && "opacity-100"
         )}
       >
         <p className="text-lg font-bold">Sort By</p>
         {Array.from(options).map(([option, value]) => (
           <div
-            className="flex items-center gap-2 text-left"
+            className="flex cursor-pointer items-center gap-2 text-left"
             key={value}
             onClick={() => {
               setSelectedOption(value)

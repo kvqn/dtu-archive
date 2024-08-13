@@ -18,19 +18,10 @@ export default async function Page({
 
   return (
     <>
-      <Head>
-        <title>Batch of {batch}</title>
-      </Head>
-
-      <Navbar
-        left={[
-          <NavbarItem name="Result" href="/result" key="result" />,
-          <NavbarItem name={batch} href={`/result/${batch}`} key="batch" />,
-        ]}
-      />
-
       <div>
-        <h1 className="heading-select">Select your branch</h1>
+        <h1 className="mb-16 text-center text-5xl font-black">
+          Select your branch
+        </h1>
         <div className="grid grid-cols-3">
           {branches.map((branch) => (
             <GradientLink

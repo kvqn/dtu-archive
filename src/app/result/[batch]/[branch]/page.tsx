@@ -19,24 +19,10 @@ export default async function Page({
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-      </Head>
-
-      <Navbar
-        left={[
-          <NavbarItem name="Result" href="/result" key="result" />,
-          <NavbarItem name={batch} href={`/result/${batch}`} key="batch" />,
-          <NavbarItem
-            name={branch}
-            href={`/result/${batch}/${branch}`}
-            key="branch"
-          />,
-        ]}
-      />
-
       <div>
-        <h1 className="heading-select">Select semester</h1>
+        <h1 className="my-16 text-center text-5xl font-black">
+          Select Semester
+        </h1>
         <GradientLink
           href={`/result/${batch}/${branch}/aggregate`}
           name="Aggregate"

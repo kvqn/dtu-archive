@@ -18,8 +18,7 @@ export async function SemesterResult({
 
   return (
     <div>
-      <Navbar />
-      <div className="text-center font-geologica text-2xl font-bold">
+      <div className="mt-16 text-center font-geologica text-2xl font-bold">
         Result
       </div>
       <div className="pb-6 text-center font-geologica text-xl font-bold">{`${batch} ${branch} - ${semester}th Sem`}</div>

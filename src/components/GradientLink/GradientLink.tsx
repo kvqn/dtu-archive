@@ -1,5 +1,6 @@
 "use client"
 
+import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 import styles from "./GradientLink.module.css"
@@ -13,8 +14,6 @@ type Props = {
 export default function GradientLink(props: Props) {
   let { href, name, className } = props
 
-  if (!className) className = ""
-
   const onMouseMove = (e: any) => {
     let x = ((e.clientX / innerWidth) * 100).toString()
     e.currentTarget.style.setProperty("--mouse-x", x + "%")
@@ -22,7 +21,7 @@ export default function GradientLink(props: Props) {
 
   return (
     <Link
-      className={styles.link + " " + className}
+      className={cn(styles.link, className)}
       onMouseMove={onMouseMove}
       href={href}
     >

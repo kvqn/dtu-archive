@@ -8,7 +8,6 @@ import { Navbar } from "./Navbar/Navbar"
 export function LoadingPage() {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">
-      <Navbar className="fixed top-0" />
       <div className="flex flex-grow flex-col items-center justify-center gap-4">
         <Image
           src="/doof.gif"
