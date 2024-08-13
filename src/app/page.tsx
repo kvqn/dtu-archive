@@ -14,6 +14,7 @@ export default function Page() {
       <div className="flex h-full flex-grow basis-0 flex-col justify-center">
         <Card href="/student" title="Student Wise Result" />
         <Card href="/result" title="Branch Wise Result" />
+        <Card href="/aggregate" title="All Branches Aggregate Result" />
       </div>
     </div>
   )

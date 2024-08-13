@@ -33,3 +33,7 @@ export function gradeValue(grade: string) {
       return 0
   }
 }
+
+export async function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
