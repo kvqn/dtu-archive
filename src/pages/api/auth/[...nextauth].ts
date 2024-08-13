@@ -9,10 +9,10 @@ export const authOptions = {
   // Configure one or more authentication providers
   adapter: PrismaAdapter(prisma),
   providers: [
-    GithubProvider({
-      clientId: env.GITHUB_ID,
-      clientSecret: env.GITHUB_SECRET,
-    }),
+    // GithubProvider({
+    //   clientId: env.GITHUB_ID,
+    //   clientSecret: env.GITHUB_SECRET,
+    // }),
     DiscordProvider({
       clientId: env.DISCORD_ID,
       clientSecret: env.DISCORD_SECRET,

@@ -12,7 +12,7 @@ export async function saveCourse({
   name: string
   credits: number
 }): Promise<"success" | "error"> {
-  await prisma.subject_details.upsert({
+  await prisma.subjectDetails.upsert({
     where: { code },
     update: { name, credits },
     create: { code, name, credits },

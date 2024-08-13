@@ -1,3 +1,5 @@
+import { prisma } from "@/prisma"
+
 import { query_result } from "../sql"
 import { gradeValue } from "../utils"
 import { getLatestNamesFromBranch } from "./getLatestNames"
@@ -34,6 +36,15 @@ export async function getAggregateResult(
   batch: string,
   branch: string
 ): Promise<AggregateResult> {
+  const subject_details = await prisma.subjectDetails.findMany()
+  const subject_map = new Map<string, { name: string; credits: number }>()
+
+  for (const subject of subject_details) {
+    subject_map.set(subject.code, {
+      name: subject.name,
+      credits: subject.credits,
+    })
+  }
   const rawGrades: AggregateGradesRaw[] = (
     await query_result(`
 with 
@@ -85,32 +96,25 @@ select
 FROM
 	CORRECT_BATCH
 natural join CORRECT_RESULT
-),
-WITH_CREDITS as (
-select
-	FINAL_RESULT.*,
-	ifnull(subject_details.credits, 4) as credits
-from
-	FINAL_RESULT
-left join subject_details on
-	FINAL_RESULT.subject = subject_details.code
 )
 select
 	latest_rollno,
 	subject,
 	grade,
-	semester,
-	credits
+	semester
 from
-	WITH_CREDITS;
+	FINAL_RESULT;
     `)
-  ).map((x: any) => ({
-    latest_rollno: x["latest_rollno"],
-    subject: x["subject"],
-    grade: x["grade"],
-    semester: x["semester"],
-    credits: x["credits"],
-  }))
+  ).map((x: any) => {
+    const subject_details = subject_map.get(x["subject"])
+    return {
+      latest_rollno: x["latest_rollno"],
+      subject: x["subject"],
+      grade: x["grade"],
+      semester: x["semester"],
+      credits: subject_details?.credits ?? 4,
+    }
+  })
 
   const names = await getLatestNamesFromBranch(batch, branch)
 

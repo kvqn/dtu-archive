@@ -11,12 +11,16 @@
     "fortawesome",
     "geologica",
     "heirarchy",
+    "ifnull",
     "inngest",
     "NEXTAUTH",
     "nextjs",
     "pageview",
     "POSTHOG",
-    "pyqs"
+    "pyqs",
+    "rlike",
+    "rollno",
+    "rollnos"
   ],
   "prettier.configPath": "prettier.config.js"
 }

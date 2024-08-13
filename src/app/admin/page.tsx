@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Page() {
   return (
-    <div className="flex w-full flex-col items-center gap-6">
+    <div className="flex w-full flex-col items-center gap-6 pt-16">
       <div className="font-geologica text-4xl">Admin Console</div>
       <div className="flex">
         <Link
