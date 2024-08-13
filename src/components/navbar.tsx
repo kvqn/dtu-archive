@@ -41,7 +41,7 @@ export function Navbar() {
                     description="Compare yourself to your batchmates"
                   />
                   <NavLink
-                    href="/result"
+                    href="/student"
                     title="Student-Wise Result"
                     description="See your grades accross all semesters"
                   />
