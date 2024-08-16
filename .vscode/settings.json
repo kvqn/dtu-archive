@@ -20,7 +20,8 @@
     "pyqs",
     "rlike",
     "rollno",
-    "rollnos"
+    "rollnos",
+    "sonner"
   ],
   "prettier.configPath": "prettier.config.js"
 }

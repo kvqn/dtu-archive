@@ -17,41 +17,6 @@ model SubjectDetails {
   credits Int    @db.SmallInt
 }
 
-enum FileType {
-  PDF
-  JPEG
-}
-
-model file {
-  id         Int          @id @default(autoincrement())
-  name       String       @unique
-  blob       Bytes
-  type       FileType
-  createdAt  DateTime     @default(now()) @db.DateTime(6)
-  pyq        pyq[]
-  FileViews  FileViews[]
-  FileHearts FileHearts[]
-}
-
-enum PyqType {
-  MID_TERM_QUESTIONS
-  END_TERM_QUESTIONS
-  MID_TERM_ANSWERS
-  END_TERM_ANSWERS
-  SUPPLEMENTARY_QUESTIONS
-}
-
-model pyq {
-  subject_code  String
-  subject_name  String
-  year          Int
-  type          PyqType
-  uploadedBy_id String
-  uploadedBy    User    @relation(fields: [uploadedBy_id], references: [id], onUpdate: Restrict, map: "pyq_ibfk_2")
-  fileId        Int     @id
-  file          file    @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "pyq_ibfk_1")
-}
-
 model Account {
   id                String  @id @default(cuid())
   userId            String
@@ -87,10 +52,10 @@ model User {
   image           String?
   accounts        Account[]
   sessions        Session[]
-  pyq             pyq[]
   hearts          FileHearts[]
   FileViews       FileViews[]
   allowedToUpload Boolean?     @default(false)
+  File            File[]
 }
 
 model VerificationToken {
@@ -101,12 +66,30 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+enum FileType {
+  PDF
+  JPEG
+}
+
+model File {
+  id           Int          @id @default(autoincrement())
+  name         String       @unique
+  blob         Bytes
+  type         FileType
+  createdAt    DateTime     @default(now()) @db.DateTime(6)
+  FileViews    FileViews[]
+  FileHearts   FileHearts[]
+  uploadedBy   User         @relation(fields: [uploadedById], references: [id], onUpdate: Restrict)
+  uploadedById String
+  FileTags     FileTags[]
+}
+
 model FileHearts {
   userId String
   fileId Int
 
-  user User @relation(fields: [userId], references: [id], onUpdate: Restrict, map: "user_hearts_ibfk_1")
-  file file @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "user_hearts_ibfk_2")
+  user User @relation(fields: [userId], references: [id], onUpdate: Restrict, map: "user_hearts_ibfk_1", onDelete: Cascade)
+  file File @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "user_hearts_ibfk_2", onDelete: Cascade)
 
   @@id([userId, fileId])
 }
@@ -116,8 +99,24 @@ model FileViews {
   fileId Int
   userId String?
 
-  file file  @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "file_views_ibfk_1")
-  user User? @relation(fields: [userId], references: [id], onUpdate: Restrict, map: "file_views_ibfk_2")
+  file File  @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "file_views_ibfk_1", onDelete: Cascade)
+  user User? @relation(fields: [userId], references: [id], onUpdate: Restrict, map: "file_views_ibfk_2", onDelete: Cascade)
+}
+
+model Tag {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique
+  FileTags FileTags[]
+}
+
+model FileTags {
+  fileId Int
+  tagId  Int
+
+  file File @relation(fields: [fileId], references: [id], onUpdate: Restrict, map: "file_tags_ibfk_1", onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onUpdate: Restrict, map: "file_tags_ibfk_2", onDelete: Cascade)
+
+  @@id([fileId, tagId])
 }
 
 enum NoticeType {

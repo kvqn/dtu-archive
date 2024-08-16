@@ -3,7 +3,6 @@ import { useServerSession } from "@/lib/server_utils"
 import { prisma } from "@/prisma"
 import { isAllowedToUpload } from "@/server/isAllowedToUpload"
 import { Metadata } from "next"
-import Head from "next/head"
 
 import { PDFSelector } from "./PYQSelector"
 

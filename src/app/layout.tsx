@@ -1,13 +1,12 @@
-import { Footer } from "@/components/Footer"
 import { SmallGridBackground } from "@/components/GridBackground"
 import { Navbar } from "@/components/navbar"
+import { Toaster } from "@/components/ui/sonner"
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import "@/styles/globals.css"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 import { Metadata } from "next"
 import { getServerSession } from "next-auth"
-import { Toaster } from "react-hot-toast"
 
 import ContextProvider from "./providers"
 
@@ -31,8 +30,8 @@ export default async function Layout({ children }: LayoutProps) {
         <ContextProvider session={session}>
           <Navbar />
           {children}
+          <Toaster />
         </ContextProvider>
-        <Toaster />
       </body>
     </html>
   )
