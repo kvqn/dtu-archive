@@ -47,16 +47,14 @@ export async function getFile(
           tag: true,
         },
       },
-      FileHearts: userId
-        ? {
-            select: {
-              userId: true,
-            },
-            where: {
-              userId,
-            },
-          }
-        : false,
+      FileHearts: {
+        select: {
+          userId: true,
+        },
+        where: {
+          userId,
+        },
+      },
     },
     where: {
       id,

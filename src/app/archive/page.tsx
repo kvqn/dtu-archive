@@ -1,10 +1,8 @@
-import { getFiles } from "@/server/actions/getFiles"
-import { getTags } from "@/server/actions/getTags"
+import dynamic from "next/dynamic"
 
-import { ClientPage } from "./client"
+const ClientPage = dynamic(() => import("./client"), { ssr: false })
 
-export default async function Page() {
-  const tags = await getTags()
-  const files = await getFiles()
-  return <ClientPage tags={tags} files={files} />
+export default function Page() {
+  // @ts-ignore
+  return <ClientPage />
 }

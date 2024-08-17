@@ -44,16 +44,14 @@ export async function getFiles(tags?: number[]) {
           tag: true,
         },
       },
-      FileHearts: userId
-        ? {
-            select: {
-              userId: true,
-            },
-            where: {
-              userId,
-            },
-          }
-        : false,
+      FileHearts: {
+        select: {
+          userId: true,
+        },
+        where: {
+          userId,
+        },
+      },
     },
     orderBy: {
       createdAt: "desc",

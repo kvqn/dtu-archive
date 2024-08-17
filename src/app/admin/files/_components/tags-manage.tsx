@@ -54,7 +54,7 @@ export function EditTags() {
               {tags.map((tag) => (
                 <Badge key={tag.id} variant="secondary" className="relative">
                   <p>{tag.name}</p>
-                  <p className="absolute left-0 top-0 flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-white opacity-0 transition-opacity hover:opacity-100 ">
+                  <p className="absolute left-0 top-0 flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-background opacity-0 transition-opacity hover:opacity-100 ">
                     <DeleteTag tag={tag} onDelete={updateTags} />
                   </p>
                 </Badge>
@@ -109,7 +109,7 @@ function DeleteTag({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>
-        <TrashIcon className="h-4 w-4 text-background" />
+        <TrashIcon className="h-4 w-4 text-foreground" />
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

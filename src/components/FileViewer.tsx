@@ -2,8 +2,7 @@
 
 import { PDFViewer } from "@/components/PDFViewer"
 import { SimpleTooltip } from "@/components/Tooltip"
-import { prisma } from "@/prisma"
-import { getFile } from "@/server/getFile"
+import type { getFiles } from "@/server/actions/getFiles"
 import {
   faDownload,
   faLink,
@@ -11,13 +10,16 @@ import {
   faMagnifyingGlassPlus,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Prisma } from "@prisma/client"
-import { useSession } from "next-auth/react"
-import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import useDraggableScroll from "use-draggable-scroll"
 
-export function FileViewer({ url, type }: { url: string; type: string }) {
+export function FileViewer({
+  file,
+}: {
+  file: Awaited<ReturnType<typeof getFiles>>[0]
+}) {
+  const type = file.type
+  const url = encodeURI(`/api/file/${file.name}`)
   const [scale, setScale] = useState(1)
 
   const draggableScroll_ref = useRef(null)
@@ -54,6 +56,7 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
             content="Zoom Out"
           />
         </div>
+        <div className="flex-grow text-center">{file.name}</div>
         <div className="flex items-center gap-4">
           <SimpleTooltip
             trigger={
@@ -107,43 +110,4 @@ export function FileViewer({ url, type }: { url: string; type: string }) {
       </div>
     </div>
   )
-}
-
-export function FileViewerUsingName({ name }: { name: string }) {
-  const { data: session } = useSession()
-  const [file, setFile] = useState<Prisma.fileGetPayload<{}> | null>()
-  const [loading, setLoading] = useState(true)
-
-  async function fetchFile() {
-    setLoading(true)
-    setFile(await getFile(name, session))
-    setLoading(false)
-  }
-
-  useEffect(() => {
-    fetchFile()
-  }, [name])
-
-  if (loading) {
-    return (
-      <div className="flex h-full w-full items-center justify-center">
-        <p>Loading</p>
-      </div>
-    )
-  }
-
-  if (!file)
-    return (
-      <div className="flex h-full w-full flex-col items-center justify-center">
-        <div>File not found</div>
-        <button onClick={() => fetchFile()} className="hover:underline">
-          Retry?
-        </button>
-      </div>
-    )
-
-  const url = `/api/file/${name}`
-  const type = file.type
-
-  return <FileViewer url={url} type={type} />
 }
