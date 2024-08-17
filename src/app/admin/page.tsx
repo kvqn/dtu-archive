@@ -12,9 +12,6 @@ export default function Page() {
         <Link href="/admin/files">
           <Button>Manage Files</Button>
         </Link>
-        <Link href="/admin/tags">
-          <Button>Manage Tags</Button>
-        </Link>
       </div>
     </div>
   )
