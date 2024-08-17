@@ -9,14 +9,14 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { Separator } from "@/components/ui/separator"
 import { useUser } from "@/lib/hooks/user"
 import { isAdmin } from "@/server/actions/isAdmin"
 import { ChevronRightIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
-import { Settings } from "./settings"
-import { Separator } from "./ui/separator"
+import { Settings } from "./navbar-settings"
 
 export function Navbar() {
   const [admin, setAdmin] = useState(false)
@@ -47,12 +47,12 @@ export function Navbar() {
                   <NavLink
                     href="/result"
                     title="Branch-Wise Result"
-                    description="Compare yourself to your batchmates"
+                    description="Compare yourself to your batch mates"
                   />
                   <NavLink
                     href="/student"
                     title="Student-Wise Result"
-                    description="See your grades accross all semesters"
+                    description="See your grades across all semesters"
                   />
                   <NavLink
                     href="/aggregate"

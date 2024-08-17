@@ -1,7 +1,6 @@
 "use client"
 
 import { BottomSearchBar } from "@/components/BottomSearchBar"
-import { RoundedSection } from "@/components/RoundedSection"
 import { cn } from "@/lib/utils"
 import { saveCourse } from "@/server/actions/saveCourse"
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
@@ -301,5 +300,36 @@ function EditCourse({
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
+  )
+}
+
+export function RoundedSection({
+  title,
+  children,
+  classNameContainer,
+  classNameTitle,
+}: {
+  title?: string
+  children: React.ReactNode
+  classNameContainer?: string
+  classNameTitle?: string
+}) {
+  return (
+    <div
+      className={cn(
+        "relative flex flex-col items-center rounded-xl border py-4",
+        classNameContainer
+      )}
+    >
+      <div
+        className={cn(
+          "absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-xl bg-white px-2 font-geist",
+          classNameTitle
+        )}
+      >
+        {title}
+      </div>
+      <div className="h-fit w-full px-2">{children}</div>
+    </div>
   )
 }

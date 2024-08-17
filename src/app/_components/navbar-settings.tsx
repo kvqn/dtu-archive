@@ -10,10 +10,10 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons"
 import { signIn, signOut } from "next-auth/react"
 import { useTheme } from "next-themes"
 
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
-import { Button } from "./ui/button"
-import { Separator } from "./ui/separator"
-import { Switch } from "./ui/switch"
+import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar"
+import { Button } from "../../components/ui/button"
+import { Separator } from "../../components/ui/separator"
+import { Switch } from "../../components/ui/switch"
 
 export function Settings() {
   const { theme, setTheme } = useTheme()

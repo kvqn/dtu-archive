@@ -1,5 +1,5 @@
-import { SmallGridBackground } from "@/components/GridBackground"
-import { Navbar } from "@/components/navbar"
+import { Navbar } from "@/app/_components/navbar"
+// import { SmallGridBackground } from "@/components/GridBackground"
 import { Toaster } from "@/components/ui/sonner"
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import "@/styles/globals.css"
@@ -26,7 +26,7 @@ export default async function Layout({ children }: LayoutProps) {
     >
       <head />
       <body className="flex h-screen flex-col">
-        <SmallGridBackground></SmallGridBackground>
+        {/* <SmallGridBackground></SmallGridBackground> */}
         <ContextProvider session={session}>
           <Navbar />
           {children}

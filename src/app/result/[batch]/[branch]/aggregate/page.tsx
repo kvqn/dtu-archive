@@ -1,4 +1,4 @@
-import { AggregateResult } from "@/components/AggregateResult"
+import { AggregateResult } from "../../_components/AggregateResult"
 
 export default async function Page({
   params,

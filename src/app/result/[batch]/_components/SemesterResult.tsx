@@ -2,7 +2,6 @@ import getSemesterResult, {
   type SemesterResult as SemesterResultType,
 } from "@/lib/data/getSemesterGrades"
 
-import { Navbar } from "./Navbar/Navbar"
 import { SemesterResultCards } from "./SemesterResultCards"
 
 export async function SemesterResult({

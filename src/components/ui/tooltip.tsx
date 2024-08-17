@@ -27,3 +27,17 @@ const TooltipContent = React.forwardRef<
 TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
 export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
+
+export function SimpleTooltip(props: {
+  trigger: React.ReactNode
+  content: React.ReactNode
+}) {
+  return (
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger>{props.trigger}</TooltipTrigger>
+        <TooltipContent>{props.content}</TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  )
+}

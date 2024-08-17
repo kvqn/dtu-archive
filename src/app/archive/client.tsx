@@ -1,6 +1,6 @@
 "use client"
 
-import { FileViewer } from "@/components/FileViewer"
+import { FileViewer } from "@/components/file-viewer"
 import { Input } from "@/components/ui/input"
 import {
   ResizableHandle,

@@ -3,8 +3,6 @@
 import Image from "next/image"
 import { useState } from "react"
 
-import { Navbar } from "./Navbar/Navbar"
-
 export function LoadingPage() {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">

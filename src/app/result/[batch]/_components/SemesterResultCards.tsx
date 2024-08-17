@@ -1,11 +1,10 @@
 "use client"
 
-import { AggregateResult } from "@/lib/data/getAggregateGrades"
+import { BottomSearchBar } from "@/components/BottomSearchBar"
+import { SemesterResult } from "@/lib/data/getSemesterGrades"
 import { useState } from "react"
 
-import { BottomSearchBar } from "./BottomSearchBar"
-
-export function AggregateResultCards({ result }: { result: AggregateResult }) {
+export function SemesterResultCards({ result }: { result: SemesterResult }) {
   let filter = ""
   const [filteredStudents, setFilteredStudents] = useState(result.students)
 
@@ -16,7 +15,7 @@ export function AggregateResultCards({ result }: { result: AggregateResult }) {
 
   const [selectedSortOption, setSelectedSortOption] = useState("rank")
 
-  function updateFilteredStudents() {
+  function submitAction() {
     setFilteredStudents(
       result.students
         .filter(
@@ -45,35 +44,35 @@ export function AggregateResultCards({ result }: { result: AggregateResult }) {
             className="flex w-full flex-col divide-y divide-black overflow-hidden rounded-xl border border-black shadow-lg"
           >
             <div className="flex divide-x divide-black font-bold">
-              <div className="bg-emerald-300 p-2 dark:bg-teal-950">
+              <div className="bg-emerald-300 p-2 dark:bg-emerald-900">
                 {student.rank}
               </div>
               <div className="flex-grow bg-emerald-500 p-2 dark:bg-emerald-950">
                 {student.name}
               </div>
-              <div className="bg-emerald-300 p-2 dark:bg-teal-950">
+              <div className="bg-emerald-300 p-2 dark:bg-emerald-900">
                 {student.rollno}
               </div>
             </div>
-            <div className="grid grid-cols-2 place-content-center gap-1 bg-emerald-50 p-2 text-sm dark:bg-emerald-950">
-              {student.semesters.map((semester, index) => (
+            <div className="grid grid-cols-2 place-content-center gap-1 bg-emerald-50 p-2 text-sm dark:bg-neutral-900">
+              {student.subjects.map((subject, index) => (
                 <div
                   key={index}
-                  className="flex divide-x divide-black overflow-hidden rounded-lg border border-black text-xs"
+                  className="flex divide-x divide-black overflow-hidden rounded-lg border border-black"
                 >
-                  <div className="w-[30%] bg-white px-2 dark:bg-neutral-900">
-                    Sem {semester.semester}
+                  <div className="flex-grow bg-white px-2 dark:bg-neutral-800">
+                    {subject.code}
                   </div>
-                  <div className="w-[25%] bg-emerald-200 px-2 text-center font-geist-mono dark:bg-emerald-800">
-                    {semester.cgpa.toFixed(2)}
+                  <div className="w-[20%] bg-emerald-200 px-2 dark:bg-emerald-900">
+                    {subject.grade}
                   </div>
-                  <div className="flex flex-grow items-center justify-end bg-white px-2 dark:bg-neutral-900">
-                    {semester.credits} credits
+                  <div className="w-[15%] bg-white px-2 dark:bg-neutral-800">
+                    {subject.credits}
                   </div>
                 </div>
               ))}
             </div>
-            <div className="grid grid-cols-2 divide-x divide-black bg-yellow-100 dark:bg-teal-950">
+            <div className="grid grid-cols-2 divide-x divide-black bg-yellow-100 dark:bg-emerald-950">
               <div className="p-2">Total Credits: {student.totalCredits}</div>
               <div className="p-2">CGPA: {student.cgpa.toFixed(2)}</div>
             </div>
@@ -85,7 +84,7 @@ export function AggregateResultCards({ result }: { result: AggregateResult }) {
         sortOptions={sortOptions}
         selectedSortOption={selectedSortOption}
         setSelectedSortOption={setSelectedSortOption}
-        onSubmit={updateFilteredStudents}
+        onSubmit={submitAction}
       />
     </div>
   )

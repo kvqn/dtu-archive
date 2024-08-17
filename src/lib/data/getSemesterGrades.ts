@@ -1,4 +1,5 @@
-import { SemesterResult } from "@/components/SemesterResult"
+// import { SemesterResult } from "@/components/SemesterResult"
+import { SemesterResult } from "@/app/result/[batch]/_components/SemesterResult"
 import { prisma } from "@/prisma"
 
 import { query_result } from "../sql"
