@@ -1,7 +1,7 @@
 "use client"
 
+import { SemesterResult } from "@/app/result/_lib/server/get-semester-grades"
 import { BottomSearchBar } from "@/components/BottomSearchBar"
-import { SemesterResult } from "@/lib/data/getSemesterGrades"
 import { useState } from "react"
 
 export function SemesterResultCards({ result }: { result: SemesterResult }) {

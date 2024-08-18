@@ -1,6 +1,5 @@
+import { sql } from "@/lib/sql"
 import { prisma } from "@/prisma"
-
-import { query_result } from "../sql"
 
 type StudentGrade = {
   result: string
@@ -20,7 +19,7 @@ export async function getStudentGrades(
   rollno: string
 ): Promise<StudentGrade[]> {
   const grades: StudentGradeWithoutSubjectDetails[] = (
-    await query_result(
+    await sql(
       `
 with 
 ROLLS as (

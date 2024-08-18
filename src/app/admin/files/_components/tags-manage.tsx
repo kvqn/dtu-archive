@@ -1,5 +1,8 @@
 "use client"
 
+import { createTag } from "@/app/admin/files/_lib/actions/tag-create"
+import { deleteTag } from "@/app/admin/files/_lib/actions/tag-delete"
+import { getTags } from "@/app/admin/files/_lib/actions/tags-get"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,9 +15,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { createTag } from "@/server/actions/createTag"
-import { deleteTag } from "@/server/actions/deleteTag"
-import { getTags } from "@/server/actions/getTags"
 import { TrashIcon } from "@radix-ui/react-icons"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"

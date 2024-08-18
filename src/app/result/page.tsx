@@ -1,5 +1,5 @@
+import { getBatches } from "@/app/result/_lib/server/get-batches"
 import GradientLink from "@/components/GradientLink/GradientLink"
-import { getBatches } from "@/server/getBatches"
 
 export default async function Page() {
   const batches = await getBatches()

@@ -1,5 +1,8 @@
 "use client"
 
+import { getFile } from "@/app/admin/files/_lib/actions/file-get"
+import { updateFile } from "@/app/admin/files/_lib/actions/file-update"
+import { getTags } from "@/app/admin/files/_lib/actions/tags-get"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,9 +15,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { getFile } from "@/server/actions/getFile"
-import { getTags } from "@/server/actions/getTags"
-import { updateFile } from "@/server/actions/updateFile"
 import { Loader2 } from "lucide-react"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"

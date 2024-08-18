@@ -1,5 +1,4 @@
-import { getAggregateResult } from "@/lib/data/getAggregateGrades"
-
+import { getAggregateResult } from "../../_lib/server/get-aggregate-grades"
 import { AggregateResultCards } from "./AggregateResultCards"
 
 export async function AggregateResult({

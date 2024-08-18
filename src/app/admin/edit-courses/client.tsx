@@ -1,8 +1,8 @@
 "use client"
 
+import { saveCourse } from "@/app/admin/edit-courses/_lib/actions/course-save"
 import { BottomSearchBar } from "@/components/BottomSearchBar"
 import { cn } from "@/lib/utils"
-import { saveCourse } from "@/server/actions/saveCourse"
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import type { Prisma } from "@prisma/client"

@@ -1,8 +1,8 @@
+import { sql } from "@/lib/sql"
+import { gradeValue } from "@/lib/utils"
 import { prisma } from "@/prisma"
 
-import { query_result } from "../sql"
-import { gradeValue } from "../utils"
-import { getLatestNamesFromBranch } from "./getLatestNames"
+import { getLatestNamesFromBranch } from "./get-latest-names"
 
 type AggregateGradesRaw = {
   latest_rollno: string
@@ -46,7 +46,7 @@ export async function getAggregateResult(
     })
   }
   const rawGrades: AggregateGradesRaw[] = (
-    await query_result(`
+    await sql(`
 with 
 LATEST_ROLLNO as (
 select

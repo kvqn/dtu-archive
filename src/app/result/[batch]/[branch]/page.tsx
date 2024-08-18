@@ -1,6 +1,6 @@
 import NotFound from "@/app/not-found"
+import { getSemesters } from "@/app/result/_lib/server/get-semesters"
 import GradientLink from "@/components/GradientLink/GradientLink"
-import { getSemesters } from "@/server/getSemesters"
 
 export default async function Page({
   params,

@@ -1,4 +1,4 @@
-import { query_result } from "../sql"
+import { sql } from "@/lib/sql"
 
 export type Student = {
   name: string
@@ -8,7 +8,7 @@ export type Student = {
 
 export async function getAllStudents() {
   const students: Student[] = (
-    await query_result(
+    await sql(
       `
 WITH 
 NEW as (

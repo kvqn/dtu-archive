@@ -1,7 +1,7 @@
 "use client"
 
 import { SimpleTooltip } from "@/components/ui/tooltip"
-import type { getFiles } from "@/server/actions/getFiles"
+import { getFiles } from "@/lib/actions/get-files"
 import {
   faDownload,
   faLink,

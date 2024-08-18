@@ -10,8 +10,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Separator } from "@/components/ui/separator"
+import { isAdmin } from "@/lib/actions/is-admin"
 import { useUser } from "@/lib/hooks/user"
-import { isAdmin } from "@/server/actions/isAdmin"
 import { ChevronRightIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import { useEffect, useState } from "react"

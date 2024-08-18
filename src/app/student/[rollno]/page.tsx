@@ -1,7 +1,8 @@
-import { getStudentGrades } from "@/lib/data/getStudentGrades"
-import { getStudentInfo } from "@/lib/data/getStudentInfo"
-import { query_result } from "@/lib/sql"
+import { sql } from "@/lib/sql"
 import { gradeValue } from "@/lib/utils"
+
+import { getStudentGrades } from "../_lib/server/get-student-grades"
+import { getStudentInfo } from "../_lib/server/get-student-info"
 
 async function getValidRollno(rollno: string): Promise<string | null> {
   const match = rollno.match(/^(2K\d{2})-([A-Z\d]+)-([0-9]+)$/)
@@ -10,7 +11,7 @@ async function getValidRollno(rollno: string): Promise<string | null> {
   const branch = match[2]
   const roll = match[3]
   const found = (
-    await query_result(
+    await sql(
       `select rollno from result_student_details where rollno = '${batch}/${branch}/${roll}' limit 1`
     )
   ).map((row: any) => row["rollno"])
@@ -77,7 +78,7 @@ export default async function Page({
             (semester) => (
               <div
                 key={semester}
-                className="divide-y-black w-fulldivide-y divide-y-2 divide-black overflow-hidden rounded-xl border-2 border-black bg-emerald-100 shadow-lg dark:bg-emerald-950"
+                className="divide-y-black w-full divide-y-2 divide-black overflow-hidden rounded-xl border-2 border-black bg-emerald-100 shadow-lg dark:bg-emerald-950"
               >
                 <div className="p-2 text-center font-geologica text-xl dark:bg-teal-950">
                   Semester {semester}

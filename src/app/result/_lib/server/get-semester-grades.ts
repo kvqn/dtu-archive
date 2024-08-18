@@ -2,9 +2,9 @@
 import { SemesterResult } from "@/app/result/[batch]/_components/SemesterResult"
 import { prisma } from "@/prisma"
 
-import { query_result } from "../sql"
-import { gradeValue } from "../utils"
-import { getLatestNamesFromBranch } from "./getLatestNames"
+import { sql } from "../../../../lib/sql"
+import { gradeValue } from "../../../../lib/utils"
+import { getLatestNamesFromBranch } from "./get-latest-names"
 
 type SemesterResultGradesRaw = {
   result: string
@@ -44,7 +44,7 @@ export default async function getSemesterResult(
   }
 
   const rawGrades: SemesterResultGradesRaw[] = (
-    await query_result(`
+    await sql(`
 with 
 CORRECT_SEMESTER as (
 select

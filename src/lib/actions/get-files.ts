@@ -1,8 +1,7 @@
 "use server"
 
+import { getUser } from "@/lib/actions/get-user"
 import { prisma } from "@/prisma"
-
-import { getUser } from "./getUser"
 
 export async function getFiles(tags?: number[]) {
   const user = await getUser()

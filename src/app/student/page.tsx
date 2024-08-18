@@ -1,5 +1,4 @@
-import { getAllStudents } from "@/lib/data/getAllStudents"
-
+import { getAllStudents } from "./_lib/server/get-students"
 import { SearchStudent } from "./client"
 
 export default async function Page() {

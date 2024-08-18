@@ -1,9 +1,9 @@
 "use server"
 
-import { query_result } from "@/lib/sql"
+import { sql } from "@/lib/sql"
 
 export async function getBranches(batch: string): Promise<string[]> {
-  const result = await query_result(
+  const result = await sql(
     `
     select 
       unique regexp_substr(rollno, '(?<=\/)[a-zA-Z0-9]+') as branch 

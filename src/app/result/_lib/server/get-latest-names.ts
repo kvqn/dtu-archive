@@ -1,11 +1,11 @@
-import { query_result } from "../sql"
+import { sql } from "@/lib/sql"
 
 export async function getLatestNamesFromBranch(
   batch: string,
   branch: string
 ): Promise<{ rollno: string; name: string }[]> {
   const resp: { rollno: string; name: string }[] = (
-    await query_result(`
+    await sql(`
 with 
 LATEST_ROLLNOS as (
 select

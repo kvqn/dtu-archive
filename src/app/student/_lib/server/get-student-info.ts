@@ -1,4 +1,4 @@
-import { query_result } from "../sql"
+import { sql } from "@/lib/sql"
 
 type StudentInfo = {
   name: string
@@ -6,7 +6,7 @@ type StudentInfo = {
 }
 export async function getStudentInfo(rollno: string): Promise<StudentInfo> {
   const _name = (
-    await query_result(
+    await sql(
       `select name from result_student_details where rollno = '${rollno}' limit 1`
     )
   ).map((row: any) => row["name"])
@@ -18,9 +18,7 @@ export async function getStudentInfo(rollno: string): Promise<StudentInfo> {
   const name: string = _name[0]
 
   const _old = (
-    await query_result(
-      `select old from rollnos where new = '${rollno}' limit 1`
-    )
+    await sql(`select old from rollnos where new = '${rollno}' limit 1`)
   ).map((row: any) => row["old"])
 
   let old: string | undefined = undefined

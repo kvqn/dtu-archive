@@ -1,15 +1,15 @@
 "use client"
 
+import { getFile } from "@/app/admin/files/_lib/actions/file-get"
 import { ALLOWED_FILE_TYPES } from "@/lib/consts"
-import { getFile } from "@/server/actions/getFile"
-import { getFiles } from "@/server/actions/getFiles"
-import { uploadFile } from "@/server/actions/uploadFile"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
+import { getFiles } from "../../../lib/actions/get-files"
 import { Dropzone } from "./_components/dropzone"
 import { FileCard, UploadingFileCard } from "./_components/file-card"
 import { EditTags } from "./_components/tags-manage"
+import { uploadFile } from "./_lib/actions/file-upload"
 
 export default function ClientPage() {
   const [files, setFiles] = useState<Awaited<ReturnType<typeof getFiles>>>([])

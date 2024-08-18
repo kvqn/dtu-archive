@@ -1,8 +1,9 @@
 "use client"
 
 import { BottomSearchBar } from "@/components/BottomSearchBar"
-import { AggregateResult } from "@/lib/data/getAggregateGrades"
 import { useState } from "react"
+
+import { AggregateResult } from "../../_lib/server/get-aggregate-grades"
 
 export function AggregateResultCards({ result }: { result: AggregateResult }) {
   let filter = ""

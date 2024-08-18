@@ -1,5 +1,6 @@
 "use client"
 
+import { getTags } from "@/app/admin/files/_lib/actions/tags-get"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -7,7 +8,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { getTags } from "@/server/actions/getTags"
 
 export function TagSelect({
   tags,

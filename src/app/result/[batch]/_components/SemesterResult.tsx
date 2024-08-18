@@ -1,6 +1,4 @@
-import getSemesterResult, {
-  type SemesterResult as SemesterResultType,
-} from "@/lib/data/getSemesterGrades"
+import getSemesterResult from "@/app/result/_lib/server/get-semester-grades"
 
 import { SemesterResultCards } from "./SemesterResultCards"
 

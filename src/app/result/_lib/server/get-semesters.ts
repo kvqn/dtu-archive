@@ -1,10 +1,10 @@
-import { query_result } from "@/lib/sql"
+import { sql } from "@/lib/sql"
 
 export async function getSemesters(
   batch: string,
   branch: string
 ): Promise<number[]> {
-  const result = await query_result(
+  const result = await sql(
     `
     select 
       distinct semester 

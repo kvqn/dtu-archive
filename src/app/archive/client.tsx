@@ -1,5 +1,6 @@
 "use client"
 
+import { getTags } from "@/app/admin/files/_lib/actions/tags-get"
 import { FileViewer } from "@/components/file-viewer"
 import { Input } from "@/components/ui/input"
 import {
@@ -7,12 +8,10 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { useScreen } from "@/lib/hooks/screen"
-import { getFiles } from "@/server/actions/getFiles"
-import { getTags } from "@/server/actions/getTags"
 import { useEffect, useState } from "react"
 
+import { getFiles } from "../../lib/actions/get-files"
 import { FileCard } from "./_components/file-card"
 import { FileDialog } from "./_components/file-dialog"
 import { TagSelect } from "./_components/tag-select"

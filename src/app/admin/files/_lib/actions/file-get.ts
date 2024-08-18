@@ -1,9 +1,9 @@
 "use server"
 
+import { getUser } from "@/lib/actions/get-user"
 import { prisma } from "@/prisma"
 
-import type { getFiles } from "./getFiles"
-import { getUser } from "./getUser"
+import type { getFiles } from "../../../../../lib/actions/get-files"
 
 export async function getFile(
   id: number

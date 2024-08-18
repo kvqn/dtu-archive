@@ -1,6 +1,6 @@
 import NotFound from "@/app/not-found"
+import { getBranches } from "@/app/result/_lib/server/get-branches"
 import GradientLink from "@/components/GradientLink/GradientLink"
-import { getBranches } from "@/server/getBranches"
 
 export default async function Page({
   params,

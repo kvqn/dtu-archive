@@ -1,5 +1,6 @@
 "use client"
 
+import { deleteFile } from "@/app/admin/files/_lib/actions/file-delete"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -10,7 +11,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { deleteFile } from "@/server/actions/deleteFile"
 import { Loader2 } from "lucide-react"
 import { useState } from "react"
 import { toast } from "sonner"

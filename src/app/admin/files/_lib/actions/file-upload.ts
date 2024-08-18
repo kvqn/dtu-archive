@@ -1,9 +1,8 @@
 "use server"
 
+import { getFullUser } from "@/lib/actions/get-user"
 import { prisma } from "@/prisma"
 import { FileType } from "@prisma/client"
-
-import { getFullUser } from "./getFullUser"
 
 export async function uploadFile(formData: FormData) {
   const file = formData.get("file") as File
