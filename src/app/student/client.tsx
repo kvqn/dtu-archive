@@ -1,11 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import type { Student } from "@/lib/data/getAllStudents"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
-import { Suspense, useState } from "react"
+import { useState } from "react"
+
+import type { Student } from "./_lib/server/get-students"
 
 function rollBreakdown(rollno: string): {
   batch: string
@@ -60,7 +61,7 @@ export function SearchStudent({ students }: { students: Student[] }) {
           <Link
             href={rollnoToUrl(student.new ?? student.old)}
             key={student.old}
-            className="font-geist flex h-[80px] items-center divide-x overflow-hidden rounded-md border shadow-lg transition-all hover:scale-105"
+            className="flex h-[80px] items-center divide-x overflow-hidden rounded-md border font-geist shadow-lg transition-all hover:scale-105"
           >
             <div className="whitespace-preline flex h-full flex-grow items-center bg-neutral-100 p-2 px-4 font-medium dark:bg-neutral-900">
               {student.name}

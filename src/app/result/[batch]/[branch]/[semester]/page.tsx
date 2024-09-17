@@ -1,5 +1,8 @@
-import { SemesterResult } from "@/components/SemesterResult"
-import { getBatches, getBranches, getSemesters } from "@/lib/data"
+import { getBatches } from "@/app/result/_lib/server/get-batches"
+import { getBranches } from "@/app/result/_lib/server/get-branches"
+import { getSemesters } from "@/app/result/_lib/server/get-semesters"
+
+import { SemesterResult } from "../../_components/SemesterResult"
 
 export async function generateStaticParams() {
   const paths = []

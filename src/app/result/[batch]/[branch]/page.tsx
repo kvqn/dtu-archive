@@ -1,8 +1,6 @@
-import Custom404 from "@/components/Custom404"
+import NotFound from "@/app/not-found"
+import { getSemesters } from "@/app/result/_lib/server/get-semesters"
 import GradientLink from "@/components/GradientLink/GradientLink"
-import { Navbar, NavbarItem } from "@/components/Navbar/Navbar"
-import { getSemesters } from "@/server/getSemesters"
-import Head from "next/head"
 
 export default async function Page({
   params,
@@ -13,7 +11,7 @@ export default async function Page({
   const branch = params.branch
   const semesters = await getSemesters(batch, branch)
 
-  if (!semesters) return Custom404()
+  if (semesters.length == 0) return NotFound()
 
   const title = `${branch} ${batch}`
 

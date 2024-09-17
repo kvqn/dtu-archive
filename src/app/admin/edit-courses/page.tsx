@@ -1,6 +1,6 @@
-import { getAllCourses } from "@/lib/data/getAllCourses"
 import { prisma } from "@/prisma"
 
+import { getAllCourses } from "./_lib/actions/courses-get"
 import EditCourses from "./client"
 
 export default async function Page() {

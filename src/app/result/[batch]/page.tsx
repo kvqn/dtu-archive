@@ -1,6 +1,6 @@
-import Custom404 from "@/components/Custom404"
+import NotFound from "@/app/not-found"
+import { getBranches } from "@/app/result/_lib/server/get-branches"
 import GradientLink from "@/components/GradientLink/GradientLink"
-import { getBranches } from "@/server/getBranches"
 
 export default async function Page({
   params,
@@ -12,7 +12,7 @@ export default async function Page({
   const batch = params.batch
   const branches = await getBranches(params.batch)
 
-  if (!branches) return Custom404()
+  if (branches.length == 0) return NotFound()
 
   return (
     <>

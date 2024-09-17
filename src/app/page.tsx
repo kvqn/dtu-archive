@@ -15,6 +15,7 @@ export default function Page() {
         <Card href="/student" title="Student Wise Result" />
         <Card href="/result" title="Branch Wise Result" />
         <Card href="/aggregate" title="All Branches Aggregate Result" />
+        <Card href="/archive" title="Archive" />
       </div>
     </div>
   )

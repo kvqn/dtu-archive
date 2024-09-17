@@ -1,11 +1,15 @@
 {
   "cSpell.words": [
     "bunx",
+    "caniuse",
     "cgpa",
     "cgpas",
     "clientside",
+    "clsx",
     "commitlint",
+    "consts",
     "discordapp",
+    "doof",
     "DTUARCHIVE",
     "fontawesome",
     "fortawesome",
@@ -13,6 +17,7 @@
     "heirarchy",
     "ifnull",
     "inngest",
+    "lucide",
     "NEXTAUTH",
     "nextjs",
     "pageview",
@@ -20,7 +25,11 @@
     "pyqs",
     "rlike",
     "rollno",
-    "rollnos"
+    "rollnos",
+    "sonner",
+    "tailwindcss",
+    "tanstack",
+    "trivago"
   ],
   "prettier.configPath": "prettier.config.js"
 }
