@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { getFiles } from "@/lib/actions/get-files"
+import { type getFiles } from "@/lib/actions/get-files"
 import Link from "next/link"
 
 export function FileDialog({

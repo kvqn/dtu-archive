@@ -6,10 +6,9 @@ export type Student = {
   new: string | null
 }
 
-export async function getAllStudents() {
-  const students: Student[] = (
-    await sql(
-      `
+export async function getAllStudents(): Promise<Student[]> {
+  const students = await sql<Student>(
+    `
 WITH 
 NEW as (
 select
@@ -53,14 +52,6 @@ select
 from
 	WITH_NEW
         `
-    )
-  ).map((row: any) => {
-    return {
-      name: row.name,
-      old: row.old,
-      new: row.new,
-    }
-  })
-
+  )
   return students
 }

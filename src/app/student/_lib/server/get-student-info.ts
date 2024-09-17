@@ -9,7 +9,7 @@ export async function getStudentInfo(rollno: string): Promise<StudentInfo> {
     await sql(
       `select name from result_student_details where rollno = '${rollno}' limit 1`
     )
-  ).map((row: any) => row["name"])
+  ).map((row: any) => row.name)
 
   if (_name.length == 0) {
     throw new Error("Invalid rollno")
@@ -19,7 +19,7 @@ export async function getStudentInfo(rollno: string): Promise<StudentInfo> {
 
   const _old = (
     await sql(`select old from rollnos where new = '${rollno}' limit 1`)
-  ).map((row: any) => row["old"])
+  ).map((row: any) => row.old)
 
   let old: string | undefined = undefined
 

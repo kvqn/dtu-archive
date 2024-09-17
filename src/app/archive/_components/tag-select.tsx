@@ -1,6 +1,6 @@
 "use client"
 
-import { getTags } from "@/app/admin/files/_lib/actions/tags-get"
+import { type getTags } from "@/app/admin/files/_lib/actions/tags-get"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {

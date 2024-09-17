@@ -17,17 +17,30 @@ export default function ClientPage() {
     { key: string; name: string }[]
   >([])
 
-  function refetchFiles() {
-    getFiles().then((files) => {
-      setFiles(files)
-    })
+  const uploadQueue: Array<File> = []
+
+  async function refetchFiles() {
+    setFiles(await getFiles())
   }
 
   useEffect(() => {
-    refetchFiles()
+    void refetchFiles()
   }, [])
 
-  function tryToUploadFile(file: File) {
+  let processingUploadQueue = false
+
+  async function processUploadQueue() {
+    if (processingUploadQueue) return
+    processingUploadQueue = true
+    while (uploadQueue.length > 0) {
+      const file = uploadQueue.shift()
+      if (file) {
+        await tryToUploadFile(file)
+      }
+    }
+    processingUploadQueue = false
+  }
+  async function tryToUploadFile(file: File) {
     if (!ALLOWED_FILE_TYPES.includes(file.type)) {
       toast.error(file.name, {
         description: "Invalid file type",
@@ -38,32 +51,27 @@ export default function ClientPage() {
 
     const formData = new FormData()
     formData.set("file", file)
-    setUploadingFiles((prev) => [
-      { key: file.webkitRelativePath, name: file.name },
-      ...prev,
-    ])
-    uploadFile(formData)
-      .then((resp) => {
-        if (resp.status == "error") {
-          toast.error(file.name, {
-            description: resp.error,
-            duration: 5000,
-          })
-        } else {
-          toast.success(file.name, {
-            description: `File uploaded with id ${resp.fileId}`,
-            duration: 5000,
-          })
-          getFile(resp.fileId).then((file) => {
-            if (file) setFiles((prev) => [file, ...prev])
-          })
-        }
-      })
-      .finally(() => {
-        setUploadingFiles((prev) =>
-          prev.filter((f) => f.key !== file.webkitRelativePath)
-        )
-      })
+
+    try {
+      const resp = await uploadFile(formData)
+      if (resp.status == "error") {
+        toast.error(file.name, {
+          description: resp.error,
+          duration: 5000,
+        })
+      } else {
+        toast.success(file.name, {
+          description: `File uploaded with id ${resp.fileId}`,
+          duration: 5000,
+        })
+        const uploadedFile = await getFile(resp.fileId)
+        if (uploadedFile) setFiles((prev) => [uploadedFile, ...prev])
+      }
+    } finally {
+      setUploadingFiles((prev) =>
+        prev.filter((f) => f.key !== file.webkitRelativePath)
+      )
+    }
   }
 
   return (
@@ -73,7 +81,12 @@ export default function ClientPage() {
         className="w-full"
         onDrop={(files) => {
           files.forEach((file) => {
-            tryToUploadFile(file)
+            uploadQueue.push(file)
+            setUploadingFiles((prev) => [
+              ...prev,
+              { key: file.webkitRelativePath, name: file.name },
+            ])
+            void processUploadQueue()
           })
         }}
       />

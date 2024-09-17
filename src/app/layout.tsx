@@ -5,7 +5,7 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import "@/styles/globals.css"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
-import { Metadata } from "next"
+import { type Metadata } from "next"
 import { getServerSession } from "next-auth"
 
 import ContextProvider from "./providers"

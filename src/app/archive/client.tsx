@@ -8,6 +8,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import { useScreen } from "@/lib/hooks/screen"
 import { useEffect, useState } from "react"
 
@@ -24,32 +25,44 @@ export default function ClientPage() {
   const [filteredFiles, setFilteredFiles] = useState<typeof files>([])
   const { isLarge } = useScreen()
 
+  const [filter, setFilter] = useState("")
+
   const [dialogOpen, setDialogOpen] = useState(false)
 
   useEffect(() => {
-    getFiles().then(setFiles)
-    getTags().then((_tags) => {
-      setTags(_tags)
-    })
+    void (async () => {
+      setFiles(await getFiles())
+      setTags(await getTags())
+    })()
   }, [])
 
   useEffect(() => {
     setFilteredFiles(
       files.filter((file) => {
-        if (activeTags.length === 0) return true
-        return file.tags.some((tag) => activeTags.includes(tag.id))
+        if (!file.name.toLowerCase().includes(filter.toLowerCase()))
+          return false
+        if (
+          activeTags.length != 0 &&
+          !file.tags.some((tag) => activeTags.includes(tag.id))
+        )
+          return false
+        return true
       })
     )
-  }, [files, activeTags])
+  }, [files, activeTags, filter])
 
   return (
-    <div className="flex flex-col gap-4 p-4">
+    <div className="flex h-full flex-col gap-4 p-4">
       <FileDialog open={dialogOpen} setOpen={setDialogOpen} file={activeFile} />
       <ResizablePanelGroup direction="horizontal">
         <ResizablePanel>
           <div className="flex flex-col lg:pr-4">
             <div className="mb-2 flex gap-4">
-              <Input placeholder="Search" className="flex-grow" />
+              <Input
+                placeholder="Search"
+                className="flex-grow"
+                onChange={(e) => setFilter(e.target.value)}
+              />
               <TagSelect
                 tags={tags}
                 activeTags={activeTags}
@@ -59,8 +72,8 @@ export default function ClientPage() {
             <div className="mb-4 text-sm text-muted-foreground">
               Showing {filteredFiles.length} of {files.length} files
             </div>
-            <div>
-              <div className="flex flex-col gap-4">
+            <ScrollArea className="h-[80vh]">
+              <div className="flex flex-col gap-4 overflow-y-auto">
                 {filteredFiles.map((file) => (
                   <FileCard
                     key={file.id}
@@ -73,7 +86,7 @@ export default function ClientPage() {
                   />
                 ))}
               </div>
-            </div>
+            </ScrollArea>
           </div>
         </ResizablePanel>
         {isLarge && (

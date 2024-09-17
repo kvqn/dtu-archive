@@ -12,17 +12,15 @@ type Props = {
 }
 
 export default function GradientLink(props: Props) {
-  let { href, name, className } = props
-
-  const onMouseMove = (e: any) => {
-    let x = ((e.clientX / innerWidth) * 100).toString()
-    e.currentTarget.style.setProperty("--mouse-x", x + "%")
-  }
+  const { href, name, className } = props
 
   return (
     <Link
       className={cn(styles.link, className)}
-      onMouseMove={onMouseMove}
+      onMouseMove={(e) => {
+        const x = ((e.clientX / innerWidth) * 100).toString()
+        e.currentTarget.style.setProperty("--mouse-x", x + "%")
+      }}
       href={href}
     >
       {name}

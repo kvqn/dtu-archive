@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge"
-import { getFiles } from "@/lib/actions/get-files"
+import { type getFiles } from "@/lib/actions/get-files"
 import { cn } from "@/lib/utils"
 import { EyeOpenIcon } from "@radix-ui/react-icons"
 import { formatDistanceToNow } from "date-fns"

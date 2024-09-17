@@ -106,12 +106,12 @@ from
 	FINAL_RESULT;
     `)
   ).map((x: any) => {
-    const subject_details = subject_map.get(x["subject"])
+    const subject_details = subject_map.get(x.subject)
     return {
-      latest_rollno: x["latest_rollno"],
-      subject: x["subject"],
-      grade: x["grade"],
-      semester: x["semester"],
+      latest_rollno: x.latest_rollno,
+      subject: x.subject,
+      grade: x.grade,
+      semester: x.semester,
       credits: subject_details?.credits ?? 4,
     }
   })

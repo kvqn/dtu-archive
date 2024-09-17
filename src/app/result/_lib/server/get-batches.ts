@@ -13,5 +13,5 @@ export async function getBatches(): Promise<string[]> {
     batch desc
     `
   )
-  return result.map((row: any) => row["batch"])
+  return result.map((row: any) => row.batch)
 }

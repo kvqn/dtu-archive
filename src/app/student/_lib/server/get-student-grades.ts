@@ -83,10 +83,10 @@ order by semester, subject
     )
   ).map((row: any) => {
     return {
-      result: row["result"],
-      semester: row["semester"],
-      subject_code: row["subject"],
-      grade: row["grade"],
+      result: row.result,
+      semester: row.semester,
+      subject_code: row.subject,
+      grade: row.grade,
     }
   })
 

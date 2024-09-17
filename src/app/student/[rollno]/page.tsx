@@ -14,7 +14,7 @@ async function getValidRollno(rollno: string): Promise<string | null> {
     await sql(
       `select rollno from result_student_details where rollno = '${batch}/${branch}/${roll}' limit 1`
     )
-  ).map((row: any) => row["rollno"])
+  ).map((row: any) => row.rollno)
 
   if (found.length == 0) return null
 

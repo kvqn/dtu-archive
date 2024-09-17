@@ -1,7 +1,7 @@
 "use server"
 
 import { prisma } from "@/prisma"
-import { Session } from "next-auth"
+import { type Session } from "next-auth"
 
 export async function heartFile(fileId: number, session: Session) {
   if (!session.user?.email) return false

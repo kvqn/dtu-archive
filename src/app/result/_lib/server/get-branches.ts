@@ -28,5 +28,5 @@ export async function getBranches(batch: string): Promise<string[]> {
       branch asc
     `
   )
-  return result.map((row: any) => row["branch"])
+  return result.map((row: any) => row.branch)
 }

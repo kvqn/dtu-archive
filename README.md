@@ -12,11 +12,11 @@ This is my gift to you, the analytical ones, that will spend their time fretting
 
 ## FAQ
 
-### \# There's a problem with the results
+### # There's a problem with the results
 
 See [here](https://github.com/kvqn/dtu-archive-migrations#creating-an-issue)
 
-### \# There's a feature I want to see added
+### # There's a feature I want to see added
 
 Create an Issue.
 

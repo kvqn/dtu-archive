@@ -1,5 +1,5 @@
 // import { SemesterResult } from "@/components/SemesterResult"
-import { SemesterResult } from "@/app/result/[batch]/_components/SemesterResult"
+import { type SemesterResult } from "@/app/result/[batch]/_components/SemesterResult"
 import { prisma } from "@/prisma"
 
 import { sql } from "../../../../lib/sql"
@@ -110,12 +110,12 @@ from
 	FINAL_RESULT;
     `)
   ).map((row: any) => {
-    const subject_details = subject_map.get(row["subject"])
+    const subject_details = subject_map.get(row.subject)
     return {
-      result: row["result"],
-      latest_rollno: row["latest_rollno"],
-      subject: row["subject"],
-      grade: row["grade"],
+      result: row.result,
+      latest_rollno: row.latest_rollno,
+      subject: row.subject,
+      grade: row.grade,
       subject_name: subject_details?.name ?? "-- Unknown -- ",
       credits: subject_details?.credits ?? 4,
     }

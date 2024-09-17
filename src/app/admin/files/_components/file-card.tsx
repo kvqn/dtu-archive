@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { format } from "date-fns"
 
-import { getFiles } from "../../../../lib/actions/get-files"
+import { type getFiles } from "../../../../lib/actions/get-files"
 import { EditFile } from "./file-edit"
 
 export function UploadingFileCard({ fileName }: { fileName: string }) {

@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { DropzoneOptions, useDropzone } from "react-dropzone"
+import { type DropzoneOptions, useDropzone } from "react-dropzone"
 
 export function Dropzone({
   onDrop,

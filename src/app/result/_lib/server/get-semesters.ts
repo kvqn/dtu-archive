@@ -38,5 +38,5 @@ export async function getSemesters(
       semester desc
     `
   )
-  return result.map((row: any) => row["semester"])
+  return result.map((row: any) => row.semester)
 }

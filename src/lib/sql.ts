@@ -5,7 +5,7 @@ const conn = createConnection({
   host: env.MIGRATIONS_HOST,
   user: env.MIGRATIONS_USER,
   password: env.MIGRATIONS_PASS,
-  port: parseInt(env.MIGRATIONS_PORT as string),
+  port: parseInt(env.MIGRATIONS_PORT),
   database: env.MIGRATIONS_DB,
 })
 
@@ -13,11 +13,11 @@ conn.connect()
 
 export default conn
 
-export async function sql(query: string): Promise<any> {
+export async function sql<T>(query: string): Promise<T[]> {
   return new Promise((resolve, reject) => {
     conn.query(query, (err, rows) => {
       if (err) reject(err)
-      else resolve(rows)
+      else resolve(rows as T[])
     })
   })
 }

@@ -1,7 +1,7 @@
 "use client"
 
 import { SimpleTooltip } from "@/components/ui/tooltip"
-import { getFiles } from "@/lib/actions/get-files"
+import { type getFiles } from "@/lib/actions/get-files"
 import {
   faDownload,
   faLink,
@@ -86,7 +86,7 @@ export function FileViewer({
         </div>
       </div>
       <div
-        className="relative h-full w-full overflow-auto"
+        className="relative w-full flex-grow overflow-auto"
         ref={draggableScroll_ref}
         onMouseDown={draggableScroll_onMouseDown}
       >
@@ -118,7 +118,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 export function PDFViewer(props: { url: string }) {
   const [numPages, setNumPages] = useState<number>()
-  const [pageNumber, setPageNumber] = useState<number>(1)
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
     setNumPages(numPages)
   }
