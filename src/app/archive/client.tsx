@@ -11,6 +11,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useScreen } from "@/lib/hooks/screen"
 import { useEffect, useState } from "react"
+import { StringParam, useQueryParam, withDefault } from "use-query-params"
 
 import { getFiles } from "../../lib/actions/get-files"
 import { FileCard } from "./_components/file-card"
@@ -25,7 +26,10 @@ export default function ClientPage() {
   const [filteredFiles, setFilteredFiles] = useState<typeof files>([])
   const { isLarge } = useScreen()
 
-  const [filter, setFilter] = useState("")
+  const [filter, setFilter] = useQueryParam(
+    "filter",
+    withDefault(StringParam, "")
+  )
 
   const [dialogOpen, setDialogOpen] = useState(false)
 
@@ -61,6 +65,7 @@ export default function ClientPage() {
               <Input
                 placeholder="Search"
                 className="flex-grow"
+                value={filter}
                 onChange={(e) => setFilter(e.target.value)}
               />
               <TagSelect
